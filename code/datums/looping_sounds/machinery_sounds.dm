@@ -47,9 +47,9 @@
 	start_sound = 'sound/machines/computer/computer_start.ogg'
 	start_length = 10
 	mid_sounds = list('sound/machines/computer/computer_mid1.ogg'=1, 'sound/machines/computer/computer_mid2.ogg'=5, 'sound/machines/computer/computer_mid3.ogg'=5)
-	mid_length = 4
+	mid_length = 10
 	end_sound = 'sound/machines/computer/computer_end.ogg'
-	volume = 3
+	volume = 2
 	extra_range = -14
 	ignore_walls = FALSE
 
