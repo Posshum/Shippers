@@ -32,10 +32,13 @@
 
 	pipe_state = "scrubber"
 
+	var/datum/looping_sound/vent/soundloop
+
 /obj/machinery/atmospherics/components/unary/vent_scrubber/New()
 	..()
 	if(!id_tag)
 		id_tag = assign_uid_vents()
+	soundloop = new(list(src), FALSE)
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/Destroy()
 	var/area/A = get_area(src)
@@ -47,6 +50,7 @@
 	SSradio.remove_object(src,frequency)
 	radio_connection = null
 	adjacent_turfs.Cut()
+	QDEL_NULL(soundloop)
 	return ..()
 /*
 /obj/machinery/atmospherics/components/unary/vent_scrubber/auto_use_power() //auto_use_power no longer called
@@ -139,13 +143,16 @@
 	if(welded || !on || !is_operational)
 		if(use_static_power != NO_POWER_USE)
 			set_no_power()
+		soundloop.stop()
 		return FALSE
 
 	if(!nodes[1] || !islist(filter_types))
+		soundloop.stop()
 		return FALSE
 
 	var/datum/gas_mixture/air_contents = airs[1]
 	if(air_contents.return_pressure() >= 50 * ONE_ATMOSPHERE)
+		soundloop.stop()
 		return FALSE
 
 	var/turf/location = loc
@@ -166,6 +173,7 @@
 
 	tile.air_update_turf()
 	update_parents()
+	soundloop.start()
 
 	return TRUE
 

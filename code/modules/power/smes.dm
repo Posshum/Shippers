@@ -45,6 +45,8 @@
 	var/emp_timer = TIMER_ID_NULL
 	var/is_emped = FALSE // to prevent output when emped
 
+	var/datum/looping_sound/smes/soundloop
+
 /obj/machinery/power/smes/examine(user)
 	. = ..()
 	if(!terminal)
@@ -65,6 +67,7 @@
 		return
 	terminal.master = src
 	update_appearance()
+	soundloop = new(list(src), FALSE)
 
 /obj/machinery/power/smes/RefreshParts()
 	var/IO = 0
@@ -192,6 +195,7 @@
 		investigate_log("<font color='red'>deleted</font> at [AREACOORD(T)]", INVESTIGATE_SINGULO)
 	if(terminal)
 		disconnect_terminal()
+	QDEL_NULL(soundloop)
 	return ..()
 
 // create a terminal object pointing towards the SMES
@@ -301,21 +305,27 @@
 	if(output_attempt)
 		if(outputting)
 			output_used = min(charge/SMESRATE, output_level)		//limit output to that stored
+			soundloop.start()
 
 			if (add_avail(output_used))				// add output to powernet if it exists (smes side)
 				charge -= output_used*SMESRATE		// reduce the storage (may be recovered in /restore() if excessive)
 			else
 				outputting = FALSE
+				soundloop.stop()
 
 			if(output_used < 0.0001)		// either from no charge or set to 0
 				outputting = FALSE
+				soundloop.stop()
 				investigate_log("lost power and turned <font color='red'>off</font>", INVESTIGATE_SINGULO)
+
 		else if(output_attempt && charge > output_level && output_level > 0)
 			outputting = TRUE
+			soundloop.start()
 		else
 			output_used = 0
 	else
 		outputting = FALSE
+		soundloop.stop()
 
 	// only update icon if state changed
 	if(last_disp != chargedisplay() || last_chrg != inputting || last_onln != outputting)

@@ -130,6 +130,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	var/obj/item/color_source
 	var/max_wash_capacity = 5
 	var/should_we_be_dense = TRUE
+	var/datum/looping_sound/washing_machine/soundloop
 
 /obj/machinery/washing_machine/examine(mob/user)
 	. = ..()
@@ -149,7 +150,8 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		return
 	busy = TRUE
 	update_appearance()
-	addtimer(CALLBACK(src, PROC_REF(wash_cycle)), 200)
+	addtimer(CALLBACK(src, PROC_REF(wash_cycle)), 400 + (60 * max_wash_capacity))
+	soundloop.start()
 
 	START_PROCESSING(SSfastprocess, src)
 
@@ -188,6 +190,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		qdel(color_source)
 		color_source = null
 	update_appearance()
+	soundloop.stop()
 
 /obj/item/proc/dye_item(dye_color, dye_key_override)
 	var/dye_key_selector = dye_key_override ? dye_key_override : dying_key
@@ -335,12 +338,15 @@ GLOBAL_LIST_INIT(dye_registry, list(
 
 	if(!state_open)
 		open_machine()
+		playsound(src, 'sound/machines/washing_machine/washing_machine_door_open.ogg', 44, FALSE, -14, ignore_walls = FALSE)
 	else
 		state_open = FALSE //close the door
 		update_appearance()
+		playsound(src, 'sound/machines/washing_machine/washing_machine_door_close.ogg', 66, FALSE, -14, ignore_walls = FALSE)
 
 /obj/machinery/washing_machine/deconstruct(disassembled = TRUE)
 	new /obj/item/stack/sheet/metal(drop_location(), 2)
+	QDEL_NULL(soundloop)
 	qdel(src)
 
 /obj/machinery/washing_machine/open_machine(drop = 1)
@@ -348,3 +354,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	if(should_we_be_dense)
 		density = TRUE //because machinery/open_machine() sets it to 0
 	color_source = null
+
+/obj/machinery/washing_machine/Initialize(mapload, apply_default_parts)
+	. = ..()
+	soundloop = new(list(src), FALSE)

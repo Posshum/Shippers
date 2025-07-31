@@ -39,10 +39,13 @@
 
 	pipe_state = "uvent"
 
+	var/datum/looping_sound/vent/soundloop
+
 /obj/machinery/atmospherics/components/unary/vent_pump/New()
 	..()
 	if(!id_tag)
 		id_tag = assign_uid_vents()
+	soundloop = new(list(src), FALSE)
 
 /obj/machinery/atmospherics/components/unary/vent_pump/Destroy()
 	var/area/A = get_area(src)
@@ -55,6 +58,7 @@
 
 	SSradio.remove_object(src,frequency)
 	radio_connection = null
+	QDEL_NULL(soundloop)
 	return ..()
 
 /obj/machinery/atmospherics/components/unary/vent_pump/update_icon_nopipes()
@@ -97,10 +101,13 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/process_atmos(seconds_per_tick)
 	..()
 	if(!is_operational)
+		soundloop.stop()
 		return
 	if(!nodes[1])
+		soundloop.stop()
 		return
 	if(!on || welded)
+		soundloop.stop()
 		return
 
 	var/datum/gas_mixture/air_contents = airs[1]
@@ -135,6 +142,7 @@
 				loc.transfer_air(air_contents, moles_delta)
 				air_update_turf()
 	update_parents()
+	soundloop.start()
 
 //Radio remote control
 

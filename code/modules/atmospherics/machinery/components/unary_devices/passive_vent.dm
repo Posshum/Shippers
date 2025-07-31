@@ -12,6 +12,12 @@
 
 	pipe_state = "pvent"
 
+	var/datum/looping_sound/vent/soundloop
+
+/obj/machinery/atmospherics/components/unary/passive_vent/Initialize()
+	. = ..()
+	soundloop = new(list(src), FALSE)
+
 /obj/machinery/atmospherics/components/unary/passive_vent/update_icon_nopipes()
 	cut_overlays()
 	if(showpipe)
@@ -41,6 +47,9 @@
 	if(active)
 		air_update_turf()
 		update_parents()
+		soundloop.start()
+	else
+		soundloop.stop()
 
 /obj/machinery/atmospherics/components/unary/passive_vent/can_crawl_through()
 	return TRUE

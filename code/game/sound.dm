@@ -38,7 +38,6 @@ channel - The channel the sound is played at
 pressure_affected - Whether or not difference in pressure affects the sound (E.g. if you can hear in space)
 ignore_walls - Whether or not the sound can pass through walls.
 falloff_distance - Distance at which falloff begins. Sound is at peak volume (in regards to falloff) aslong as it is in this range.
-
 */
 
 /proc/playsound(atom/source, soundin, vol as num, vary, extrarange as num, falloff_exponent = SOUND_FALLOFF_EXPONENT, frequency = null, channel = 0, pressure_affected = TRUE, ignore_walls = TRUE, falloff_distance = SOUND_DEFAULT_FALLOFF_DISTANCE, use_reverb = TRUE, mono_adj = FALSE)	//WS Edit, Make tools and nearby airlocks use mono sound

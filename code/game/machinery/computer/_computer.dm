@@ -20,11 +20,13 @@
 	var/obj/structure/frame/computer/deconpath = /obj/structure/frame/computer
 	///Does this computer have a unique icon_state? Prevents the changing of icons from alternative computer construction
 	var/unique_icon = FALSE
+	var/datum/looping_sound/computer/soundloop
 
 	hitsound_type = PROJECTILE_HITSOUND_GLASS
 
 /obj/machinery/computer/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
+	soundloop = new(list(src), FALSE)
 	power_change()
 	if(!QDELETED(C))
 		qdel(circuit)
@@ -33,6 +35,7 @@
 
 /obj/machinery/computer/process(seconds_per_tick)
 	if(machine_stat & (NOPOWER|BROKEN))
+		soundloop.stop()
 		return 0
 	return 1
 
@@ -52,8 +55,10 @@
 	. = ..()
 	if(machine_stat & (NOPOWER|BROKEN))
 		set_light(0)
+		soundloop.stop()
 	else
 		set_light(brightness_on)
+		soundloop.start()
 
 /obj/machinery/computer/screwdriver_act(mob/living/user, obj/item/I)
 	if(..())
@@ -117,6 +122,7 @@
 			newframe.update_appearance()
 		for(var/obj/internal_objects in src)
 			internal_objects.forceMove(loc)
+	QDEL_NULL(soundloop)
 	qdel(src)
 
 /obj/machinery/computer/AltClick(mob/user)
