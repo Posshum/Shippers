@@ -270,6 +270,12 @@
 	var/buildstacktype = /obj/item/stack/sheet/metal
 	var/buildstackamount = 1
 
+	var/datum/looping_sound/sink/soundloop
+
+/obj/structure/sink/Initialize()
+	. = ..()
+	soundloop = new(list(src), FALSE)
+
 /obj/structure/sink/attack_hand(mob/living/user)
 	. = ..()
 	if(.)
@@ -291,12 +297,16 @@
 	user.visible_message(span_notice("[user] starts washing [user.p_their()] [washing_face ? "face" : "hands"]..."), \
 						span_notice("You start washing your [washing_face ? "face" : "hands"]..."))
 	busy = TRUE
+	soundloop.start()
 
 	if(!do_after(user, 40, target = src))
 		busy = FALSE
+		sleep(10) //Should ensure that sink enters mid-loop before stopping.
+		soundloop.stop()
 		return
 
 	busy = FALSE
+	soundloop.stop()
 
 	if(washing_face)
 		SEND_SIGNAL(user, COMSIG_COMPONENT_CLEAN_FACE_ACT, CLEAN_WASH)
@@ -371,10 +381,13 @@
 	if(user.a_intent != INTENT_HARM)
 		to_chat(user, span_notice("You start washing [O]..."))
 		busy = TRUE
+		soundloop.start()
 		if(!do_after(user, 40, target = src))
 			busy = FALSE
+			soundloop.stop()
 			return 1
 		busy = FALSE
+		soundloop.stop()
 		O.wash(CLEAN_WASH)
 		O.acid_level = 0
 		create_reagents(5)

@@ -493,6 +493,7 @@
 			user.visible_message(span_notice("[user] [locked ? null : "un"]locks [src]."),
 							span_notice("You [locked ? null : "un"]lock [src]."))
 			update_appearance()
+			playsound(src, 'sound/machines/locktoggle.ogg', 50, TRUE, -15, ignore_walls = FALSE)
 		else if(!silent)
 			to_chat(user, span_alert("Access Denied."))
 	else if(secure && broken)

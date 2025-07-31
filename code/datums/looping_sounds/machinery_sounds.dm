@@ -63,6 +63,16 @@
 	extra_range = -12
 	ignore_walls = FALSE
 
+/datum/looping_sound/sink
+	start_sound = 'sound/machines/sink/sink_start.ogg'
+	start_length = 1 SECONDS
+	mid_sounds = list('sound/machines/sink/sink_mid.ogg'=1)
+	mid_length = 2 SECONDS
+	end_sound = 'sound/machines/sink/sink_end.ogg'
+	volume = 25
+	extra_range = -11
+	ignore_walls = FALSE
+
 /datum/looping_sound/vent
 	start_sound = 'sound/machines/vents/vent_start.ogg'
 	start_length = 10

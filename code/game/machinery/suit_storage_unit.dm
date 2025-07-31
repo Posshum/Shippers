@@ -359,27 +359,33 @@
 		if ("open")
 			if (!state_open)
 				open_machine(drop = FALSE)
+				playsound(src, 'sound/machines/suit_storage_unit/suit_storage_unit_open.ogg', 33, TRUE, -14, ignore_walls = FALSE)
 				if (occupant)
 					dump_contents()
 		if ("close")
 			if (state_open)
 				close_machine()
+				playsound(src, 'sound/machines/suit_storage_unit/suit_storage_unit_close.ogg', 33, TRUE, -14, ignore_walls = FALSE)
 		if ("disinfect")
 			if (occupant && safeties)
 				say("Alert: safeties triggered, occupant detected!")
+				playsound(src, 'sound/machines/buzz-two.ogg', 50, FALSE, -12, ignore_walls = FALSE)
 				return
 			else if (!helmet && !mask && !suit && !storage && !occupant)
 				to_chat(user, span_notice("There's nothing inside [src] to disinfect!"))
+				playsound(src, 'sound/machines/buzz-two.ogg', 50, FALSE, -12, ignore_walls = FALSE)
 				return
 			else
 				if (occupant)
 					var/mob/living/mob_occupant = occupant
 					to_chat(mob_occupant, span_userdanger("[src]'s confines grow warm, then hot, then scorching. You're being burned [!mob_occupant.stat ? "alive" : "away"]!"))
 				cook()
+				playsound(src, 'sound/machines/beep.ogg', 25, FALSE, -12, ignore_walls = FALSE)
 		if ("lock", "unlock")
 			if (!state_open)
 				locked = !locked
 				update_icon()
+				playsound(src, 'sound/machines/locktoggle.ogg', 50, TRUE, -15, ignore_walls = FALSE)
 		else
 			var/obj/item/item_to_dispense = vars[choice]
 			if (item_to_dispense)
