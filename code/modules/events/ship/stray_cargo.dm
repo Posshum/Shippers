@@ -3,8 +3,8 @@
 	name = "Stray Cargo Pod"
 	typepath = /datum/round_event/ship/stray_cargo
 	weight = 1
-	max_occurrences = 2
-	min_players = 10
+	max_occurrences = 5
+	min_players = 0
 	earliest_start = 10 MINUTES
 	category = EVENT_CATEGORY_BUREAUCRATIC
 	description = "A pod containing a random supply crate lands on the station."

@@ -2,8 +2,8 @@
 	name = "Small Rodent Infestation"
 	typepath = /datum/round_event/ship/rodent_infestation
 	weight = 15
-	max_occurrences = 5
-	min_players = 1
+	max_occurrences = INFINITY
+	min_players = 0
 	earliest_start = 5 MINUTES
 	admin_setup = list(
 		/datum/event_admin_setup/listed_options/ship,

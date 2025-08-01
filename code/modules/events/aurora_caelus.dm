@@ -3,8 +3,8 @@
 	typepath = /datum/round_event/aurora_caelus
 	weight = 5
 	earliest_start = 0
-	min_players = 1
-	max_occurrences = 0
+	min_players = 0
+	max_occurrences = INFINITY
 
 /datum/round_event_control/aurora_caelus/can_spawn_event(players, gamemode)
 	if(!CONFIG_GET(flag/starlight))

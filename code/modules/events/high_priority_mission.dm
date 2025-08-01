@@ -1,7 +1,7 @@
 /datum/round_event_control/high_priority_mission
 	name = "High Priority Mission"
 	typepath = /datum/round_event/high_priority_mission
-	max_occurrences = 3
+	max_occurrences = INFINITY
 	weight = 20
 	earliest_start = 5 MINUTES
 

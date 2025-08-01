@@ -2,8 +2,8 @@
 	name = "Random Pet"
 	typepath = /datum/round_event/ship/random_pet
 	weight = 5
-	max_occurrences = 2
-	min_players = 1
+	max_occurrences = 5
+	min_players = 0
 	earliest_start = 5 MINUTES
 
 /datum/round_event/ship/random_pet

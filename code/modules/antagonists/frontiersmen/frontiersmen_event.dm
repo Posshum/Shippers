@@ -2,9 +2,9 @@
 	name = "Spawn Frontiersmen"
 	typepath = /datum/round_event/ghost_role/frontiersmen
 	weight = 0
-	earliest_start = 60 MINUTES
-	max_occurrences = 1
-	min_players = 30
+	earliest_start = 15 MINUTES
+	max_occurrences = INFINITY
+	min_players = 0
 
 /datum/round_event/ghost_role/frontiersmen
 	role_name = ROLE_FRONTIERSMEN

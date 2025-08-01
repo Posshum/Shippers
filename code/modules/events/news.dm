@@ -6,9 +6,9 @@ GLOBAL_LIST_INIT(premade_news_stories, list(\
 /datum/round_event_control/news_report
 	name = "News Report"
 	typepath = /datum/round_event/news_report
-	weight = 5
-	max_occurrences = 2
-	min_players = 1
+	weight = 15
+	max_occurrences = 2 //Tied to how many possible stories there are.
+	min_players = 0
 	earliest_start = 5 MINUTES
 
 /datum/round_event_control/news_report/can_spawn_event(players, gamemode)
