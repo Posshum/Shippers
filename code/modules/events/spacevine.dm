@@ -546,6 +546,7 @@ ACTUAL EVENT HANDLING
 	category = EVENT_CATEGORY_ENTITIES
 	description = "Kudzu begins to overtake the ships. Might spawn man-traps. Happens because space kudzu flings around everywhere in space."
 	admin_setup = list(
+		/datum/event_admin_setup/listed_options/ship,
 		/datum/event_admin_setup/set_location/spacevine,
 		/datum/event_admin_setup/multiple_choice/spacevine,
 		/datum/event_admin_setup/input_number/spacevine_potency,
@@ -568,16 +569,15 @@ ACTUAL EVENT HANDLING
 /datum/round_event/ship/spacevine/start()
 	var/list/turfs = list() //list of all the empty floor turfs in the hallway areas
 
-
 	if(override_turf)
 		turfs += override_turf
 	else
 		var/obj/structure/spacevine/vine = new()
 
-		for(var/area/ship/area in find_event_turf())
-			for(var/turf/open/floor in area)
-				if(floor.loc.Enter(vine))
-					turfs += floor
+		for(var/area/ship_area in target_ship.shuttle_port.shuttle_areas)
+			for(var/obj/machinery/atmospherics/components/unary/vent_scrubber/temp_vent in ship_area)
+				if(temp_vent.Enter(vine))
+					turfs += get_turf(temp_vent)
 
 		qdel(vine)
 
@@ -632,6 +632,7 @@ ACTUAL EVENT HANDLING
 
 /datum/event_admin_setup/input_number/spacevine_potency/prompt_admins()
 	default_value = rand(50, 100)
+	chosen_value = default_value
 	return ..()
 
 /datum/event_admin_setup/input_number/spacevine_potency/apply_to_event(datum/round_event/ship/spacevine/event)
@@ -644,6 +645,7 @@ ACTUAL EVENT HANDLING
 
 /datum/event_admin_setup/input_number/spacevine_production/prompt_admins()
 	default_value = rand(1, 4)
+	chosen_value = default_value
 	return ..()
 
 /datum/event_admin_setup/input_number/spacevine_production/apply_to_event(datum/round_event/ship/spacevine/event)
