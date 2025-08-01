@@ -215,8 +215,12 @@
 		if(!M.anchored && !M.pulledby && M.last_high_pressure_movement_air_cycle < SSair.times_fired && (M.flags_1 & INITIALIZED_1) && !QDELETED(M))
 			M.experience_pressure_difference(pressure_difference * multiplier, pressure_direction, 0, pressure_specific_target)
 
-	if(pressure_difference > 100)
+	if((pressure_difference >= 50) && pressure_difference < 100) //If pressure difference is greater than 50 and less than 100...
 		new /obj/effect/temp_visual/dir_setting/space_wind(src, pressure_direction, clamp(round(sqrt(pressure_difference) * 2), 10, 255))
+		playsound(src, 'sound/effects/space_wind.ogg', 66, TRUE, -8, ignore_walls = TRUE) //Woosh...
+	else if(pressure_difference >= 100)
+		new /obj/effect/temp_visual/dir_setting/space_wind(src, pressure_direction, clamp(round(sqrt(pressure_difference) * 2), 10, 255))
+		playsound(src, 'sound/effects/space_wind_big.ogg', 66, TRUE, -4, ignore_walls = TRUE) //WOOSH...
 
 /atom/movable/var/pressure_resistance = 10
 /atom/movable/var/last_high_pressure_movement_air_cycle = 0

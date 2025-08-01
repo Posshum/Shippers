@@ -39,8 +39,7 @@
 	mid_sounds = list('sound/machines/generator/generator_mid1.ogg'=1, 'sound/machines/generator/generator_mid2.ogg'=1, 'sound/machines/generator/generator_mid3.ogg'=1)
 	mid_length = 4
 	end_sound = 'sound/machines/generator/generator_end.ogg'
-	volume = 22
-	extra_range = -10
+	volume = 45
 	ignore_walls = FALSE
 
 /datum/looping_sound/computer

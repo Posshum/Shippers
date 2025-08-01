@@ -29,7 +29,7 @@
 	if(!open)
 		to_chat(user, span_warning("Close the lid first!"))
 		return
-	if(w_items + I.w_class > WEIGHT_CLASS_HUGE)
+	if(w_items > WEIGHT_CLASS_HUGE)
 		to_chat(user, span_warning("The cistern is clogged!"))
 		return
 	busy = TRUE
