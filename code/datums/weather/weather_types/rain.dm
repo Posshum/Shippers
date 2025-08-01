@@ -47,7 +47,7 @@
 	sound_active_outside = /datum/looping_sound/weather/rain
 	sound_active_inside = /datum/looping_sound/weather/rain/indoors
 	sound_weak_outside = /datum/looping_sound/weather/rain
-	sound_weak_inside = /datum/looping_sound/weather/rainindoors
+	sound_weak_inside = /datum/looping_sound/weather/rain/indoors
 
 	fire_suppression = 8
 	thunder_chance = 2
