@@ -112,7 +112,6 @@ SUBSYSTEM_DEF(statpanels)
 	var/list/ahelp_tickets = GLOB.ahelp_tickets.stat_entry()
 	target.stat_panel.send_message("update_tickets", ahelp_tickets)
 	var/datum/interview_manager/m = GLOB.interviews
-
 	// get open interview count
 	var/dc = 0
 	for (var/ckey in m.open_interviews)

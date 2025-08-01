@@ -43,8 +43,11 @@ falloff_distance - Distance at which falloff begins. Sound is at peak volume (in
 /proc/playsound(atom/source, soundin, vol as num, vary, extrarange as num, falloff_exponent = SOUND_FALLOFF_EXPONENT, frequency = null, channel = 0, pressure_affected = TRUE, ignore_walls = TRUE, falloff_distance = SOUND_DEFAULT_FALLOFF_DISTANCE, use_reverb = TRUE, mono_adj = FALSE)	//WS Edit, Make tools and nearby airlocks use mono sound
 	if(isarea(source))
 		CRASH("playsound(): source is an area")
-
+	var/atom
 	var/turf/turf_source = get_turf(source)
+
+	if(isobj(source)) //Only for objects does 3D audio work. World audio still remains the same.
+		atom = source
 
 	if (!turf_source)
 		return
@@ -83,7 +86,7 @@ falloff_distance - Distance at which falloff begins. Sound is at peak volume (in
 		if(mono_adj)
 			ismono = get_dist(get_turf(P), turf_source) < 2	//If adjacent, play as mono
 		if(get_dist(M, turf_source) <= maxdistance)
-			M.playsound_local(turf_source, soundin, vol, vary, frequency, falloff_exponent, channel, pressure_affected, S, maxdistance, falloff_distance, ignore_direction = ismono)
+			M.playsound_local(turf_source, soundin, vol, vary, frequency, falloff_exponent, channel, pressure_affected, S, maxdistance, falloff_distance, ignore_direction = ismono, atom = atom)
 
 	for(var/P in LAZYACCESS(SSmobs.dead_players_by_virtual_z, source_z))
 		var/mob/M = P
@@ -91,7 +94,7 @@ falloff_distance - Distance at which falloff begins. Sound is at peak volume (in
 		if(mono_adj)
 			ismono = get_dist(get_turf(P), turf_source) < 2
 		if(get_dist(M, turf_source) <= maxdistance)
-			M.playsound_local(turf_source, soundin, vol, vary, frequency, falloff_exponent, channel, pressure_affected, S, maxdistance, falloff_distance, ignore_direction = ismono)
+			M.playsound_local(turf_source, soundin, vol, vary, frequency, falloff_exponent, channel, pressure_affected, S, maxdistance, falloff_distance, ignore_direction = ismono, atom = atom)
 
 /*! playsound
 
@@ -112,7 +115,7 @@ distance_multiplier - Can be used to multiply the distance at which the sound is
 
 */
 
-/mob/proc/playsound_local(turf/turf_source, soundin, vol as num, vary, frequency, falloff_exponent = SOUND_FALLOFF_EXPONENT, channel = 0, pressure_affected = TRUE, sound/S, max_distance, falloff_distance = SOUND_DEFAULT_FALLOFF_DISTANCE, distance_multiplier = 1, use_reverb = TRUE, envwet = -10000, envdry = 0, ignore_direction) // Env Wet / Dry is Reverb
+/mob/proc/playsound_local(turf/turf_source, soundin, vol as num, vary, frequency, falloff_exponent = SOUND_FALLOFF_EXPONENT, channel = 0, pressure_affected = TRUE, sound/S, max_distance, falloff_distance = SOUND_DEFAULT_FALLOFF_DISTANCE, distance_multiplier = 1, use_reverb = TRUE, envwet = -10000, envdry = 0, ignore_direction, atom) // Env Wet / Dry is Reverb
 	if(!client || !can_hear())
 		return
 
@@ -122,6 +125,8 @@ distance_multiplier - Can be used to multiply the distance at which the sound is
 	S.wait = 0 //No queue
 	S.channel = channel || SSsounds.random_available_channel()
 	S.volume = vol
+	if(atom) //If it's played from an object itself and not a location in the world, taking advantage of the new .atom proc.
+		S.atom = atom
 
 	if(vary)
 		if(frequency)
