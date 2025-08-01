@@ -12,23 +12,21 @@ SUBSYSTEM_DEF(ambience)
 	for(var/client/client_iterator as anything in ambience_listening_clients)
 
 		//Check to see if the client exists and isn't held by a new player
-		var/mob/client_mob = client_iterator?.mob
-
 		if(isnull(client_iterator) || isnewplayer(client_iterator.mob))
-			ambience_listening_clients -= client_iterator
-			continue
+			continue //No client to play to, or not in-game yet, don't bother.
 
 		if(ambience_listening_clients[client_iterator] > world.time)
 			continue //Not ready for the next sound
 
 		var/area/current_area = get_area(client_iterator.mob)
+		var/mob/client_mob = client_iterator?.mob
 
 		ambience_listening_clients[client_iterator] = world.time + current_area.play_ambience(client_mob)
 
 ///Attempts to play an ambient sound to a mob, returning the cooldown in deciseconds
-/area/proc/play_ambience(mob/M, sound/override_sound, volume = 33)
+/area/proc/play_ambience(mob/M, sound/override_sound, volume = 25)
 	var/sound/new_sound = override_sound || pick(ambientsounds)
-	new_sound = sound(new_sound, repeat = 0, wait = 0, volume = 44, channel = CHANNEL_AMBIENCE)
+	new_sound = sound(new_sound, repeat = 0, wait = 0, volume = 25, channel = CHANNEL_AMBIENCE)
 
 	SEND_SOUND(M, new_sound)
 
