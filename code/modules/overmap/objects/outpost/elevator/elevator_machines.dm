@@ -153,6 +153,7 @@
 			if(!added_floor || !(added_floor in master.floor_list))
 				return FALSE
 			master.set_dest_on_floor(added_floor)
+			playsound(src, 'sound/machines/elevator_button.ogg', 33, TRUE, -13)
 			return TRUE // updates the UI immediately
 
 		// these don't do anything. does anyone care?

@@ -2,6 +2,7 @@
 
 GLOBAL_LIST_INIT(generic_ambience,list(
 	'sound/ambience/ambigen1.ogg',
+	'sound/ambience/ambigen2.ogg',
 	'sound/ambience/ambigen3.ogg',
 	'sound/ambience/ambigen4.ogg',
 	'sound/ambience/ambigen5.ogg',
@@ -14,6 +15,8 @@ GLOBAL_LIST_INIT(generic_ambience,list(
 	'sound/ambience/ambigen12.ogg',
 	'sound/ambience/ambigen14.ogg',
 	'sound/ambience/ambigen15.ogg',
+	'sound/ambience/ambigen16.ogg',
+	'sound/ambience/ambigen17.ogg',
 ))
 
 GLOBAL_LIST_INIT(holy_ambience,list(
@@ -82,7 +85,10 @@ GLOBAL_LIST_INIT(space_ambience,list(
 	'sound/ambience/ambiatmos.ogg',
 	'sound/ambience/ambispace.ogg',
 	'sound/ambience/ambispace2.ogg',
-	'sound/ambience/title2.ogg',
+	'sound/ambience/ambispace3.ogg',
+	'sound/ambience/ambispace4.ogg',
+	'sound/ambience/ambispace5.ogg',
+	'sound/ambience/ambispace6.ogg',
 ))
 
 GLOBAL_LIST_INIT(maint_ambience,list(
@@ -181,6 +187,9 @@ GLOBAL_LIST_INIT(tundra_ambience,list(
 	'sound/ambience/wind/spooky1.ogg',
 ))
 
+GLOBAL_LIST_INIT(rare_generic_ambience,list(
+	'sound/ambience/ambirare1.ogg',))
+
 GLOBAL_LIST_INIT(ambience_assoc,list(
 	AMBIENCE_AWAY = GLOB.away_ambience,
 	AMBIENCE_DANGER = GLOB.danger_ambience,
@@ -198,4 +207,5 @@ GLOBAL_LIST_INIT(ambience_assoc,list(
 	AMBIENCE_BEACH = GLOB.beach_ambience,
 	AMBIENCE_DESERT = GLOB.desert_ambience,
 	AMBIENCE_TUNDRA = GLOB.tundra_ambience,
+	AMBIENCE_RARE = GLOB.rare_generic_ambience,
 ))
