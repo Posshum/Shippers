@@ -52,6 +52,7 @@
 	/// If the computer has a flashlight/LED light/what-have-you installed
 	var/has_light = FALSE
 
+	var/datum/looping_sound/computer/soundloop
 
 /obj/item/modular_computer/Initialize()
 	. = ..()
@@ -60,6 +61,7 @@
 		physical = src
 	idle_threads = list()
 	update_appearance()
+	soundloop = new(list(src), FALSE)
 
 
 /obj/item/modular_computer/Destroy()
@@ -73,6 +75,7 @@
 			all_components.Remove(CH.device_type)
 			qdel(CH)
 	physical = null
+	QDEL_NULL(soundloop)
 	return ..()
 
 /obj/item/modular_computer/AltClick(mob/user)
@@ -203,6 +206,7 @@
 		else
 			to_chat(user, span_notice("You press the power button and start up \the [src]."))
 		enabled = 1
+		soundloop.start()
 		update_appearance()
 		ui_interact(user)
 	else // Unpowered
@@ -215,6 +219,7 @@
 /obj/item/modular_computer/process(seconds_per_tick)
 	if(!enabled) // The computer is turned off
 		last_power_usage = 0
+		soundloop.stop()
 		return 0
 
 	if(obj_integrity <= integrity_failure * max_integrity)
@@ -361,6 +366,7 @@
 	if(loud)
 		physical.visible_message(span_notice("\The [src] shuts down."))
 	enabled = 0
+	soundloop.stop()
 	update_appearance()
 
 /obj/item/modular_computer/screwdriver_act(mob/user, obj/item/tool)
