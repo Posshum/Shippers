@@ -13,12 +13,33 @@
 	var/mob/living/swirlie = null	//the mob being given a swirlie
 	var/buildstacktype = /obj/item/stack/sheet/metal //they're metal now, shut up
 	var/buildstackamount = 1
+	var/busy = FALSE
 
 /obj/structure/toilet/Initialize()
 	. = ..()
 	open = round(rand(0, 1))
 	update_appearance()
 
+/obj/structure/toilet/AltClick(mob/user)
+	if(!user.canUseTopic(src, !issilicon(user)))
+		return
+	if(busy)
+		to_chat(user, span_warning("The [src] is still flushing. Relax."))
+		return
+	if(!open)
+		to_chat(user, span_warning("Close the lid first!"))
+		return
+	if(w_items + I.w_class > WEIGHT_CLASS_HUGE)
+		to_chat(user, span_warning("The cistern is clogged!"))
+		return
+	busy = TRUE
+	addtimer(CALLBACK(src, PROC_REF(flushing)), 10 SECONDS)
+	to_chat(user, span_warning("You flush the [src]."))
+	playsound(src, 'sound/machines/toilet_flush.ogg', 50, TRUE, -10)
+
+
+/obj/structure/toilet/proc/flushing()
+	busy = FALSE
 
 /obj/structure/toilet/attack_hand(mob/living/user)
 	. = ..()

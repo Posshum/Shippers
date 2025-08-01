@@ -146,11 +146,12 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		to_chat(user, span_warning("Close the door first!"))
 		return
 	if(bloody_mess)
-		to_chat(user, span_warning("[src] must be cleaned up first!"))
+		to_chat(user, span_warning("\The [src] must be cleaned up first!"))
 		return
 	busy = TRUE
 	update_appearance()
-	addtimer(CALLBACK(src, PROC_REF(wash_cycle)), 400 + (60 * max_wash_capacity))
+	addtimer(CALLBACK(src, PROC_REF(wash_cycle)), 5 MINUTES + (1 MINUTES * contents.len))
+	to_chat(user, span_warning("\The [src] locks, sealing itself as it begins a cycle."))
 	soundloop.start()
 
 	START_PROCESSING(SSfastprocess, src)
