@@ -403,6 +403,10 @@
 /obj/structure/chair/bench/red/directional/south,
 /turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
+"Iz" = (
+/obj/effect/spawner/random/trash/bin,
+/turf/open/floor/plasteel/tech,
+/area/hangar)
 "Jo" = (
 /obj/structure/flora/grass/rockplanet/dead,
 /turf/open/floor/plating/asteroid/rockplanet/safe/lit,
@@ -1533,7 +1537,7 @@ mm
 fm
 mm
 hI
-lg
+Iz
 xt
 jW
 tS

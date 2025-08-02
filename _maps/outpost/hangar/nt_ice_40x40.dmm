@@ -379,7 +379,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/warning,
-/obj/effect/decal/cleanable/ash,
+/obj/effect/spawner/random/trash/cigbutt,
 /turf/open/floor/plasteel/tech/grid,
 /area/hangar)
 "hT" = (
@@ -651,7 +651,6 @@
 /turf/open/floor/hangar/temperate,
 /area/hangar)
 "tb" = (
-/obj/structure/closet/crate/bin,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/light/small/directional/east{
 	pixel_y = 8
@@ -660,6 +659,7 @@
 /obj/machinery/newscaster/security_unit/directional/east{
 	pixel_y = -6
 	},
+/obj/effect/spawner/random/trash/bin,
 /turf/open/floor/plasteel/dark,
 /area/hangar)
 "ti" = (
@@ -1043,6 +1043,10 @@
 /obj/machinery/door/airlock/outpost,
 /turf/open/floor/plasteel/tech,
 /area/hangar)
+"HU" = (
+/obj/effect/spawner/random/trash/cigbutt,
+/turf/open/floor/plasteel/tech,
+/area/hangar)
 "Ia" = (
 /obj/effect/decal/fakelattice,
 /obj/effect/decal/cleanable/dirt{
@@ -1217,10 +1221,7 @@
 /obj/structure/chair{
 	dir = 4
 	},
-/obj/item/cigbutt{
-	pixel_x = 3;
-	pixel_y = 13
-	},
+/obj/effect/spawner/random/trash/cigbutt,
 /turf/open/floor/plasteel/tech/grid,
 /area/hangar)
 "Os" = (
@@ -4643,7 +4644,7 @@ aT
 aa
 Le
 rB
-Yt
+HU
 oL
 Lp
 JI

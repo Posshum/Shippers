@@ -114,6 +114,14 @@
 /area/hangar)
 "aT" = (
 /obj/structure/table,
+/obj/effect/spawner/random/food_or_drink{
+	pixel_x = -4;
+	pixel_y = 7
+	},
+/obj/effect/spawner/random/food_or_drink/soda_can{
+	pixel_y = 7;
+	pixel_x = 10
+	},
 /turf/open/floor/plasteel/grimy,
 /area/hangar)
 "aY" = (

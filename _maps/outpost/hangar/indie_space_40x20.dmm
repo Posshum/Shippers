@@ -220,6 +220,14 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"KG" = (
+/obj/effect/spawner/random/trash/crushed_can{
+	pixel_x = -11
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "Mh" = (
 /obj/machinery/conveyor/auto/outpost{
 	dir = 8
@@ -289,6 +297,10 @@
 /obj/structure/railing/corner{
 	dir = 1;
 	layer = 4.1
+	},
+/obj/effect/spawner/random/trash/crushed_can{
+	pixel_x = 6;
+	pixel_y = 14
 	},
 /turf/open/floor/plasteel{
 	planetary_atmos = 1
@@ -1580,7 +1592,7 @@ ab
 cQ
 SZ
 ab
-Ht
+KG
 nS
 aL
 aG

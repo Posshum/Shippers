@@ -154,6 +154,14 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"eA" = (
+/obj/effect/spawner/random/trash/crushed_can{
+	pixel_x = -11
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "hU" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel{
@@ -283,6 +291,10 @@
 /obj/structure/railing/corner{
 	dir = 1;
 	layer = 4.1
+	},
+/obj/effect/spawner/random/trash/crushed_can{
+	pixel_x = 6;
+	pixel_y = 14
 	},
 /turf/open/floor/plasteel{
 	planetary_atmos = 1
@@ -2025,7 +2037,7 @@ aa
 ib
 cE
 aa
-vf
+eA
 qg
 ah
 ac

@@ -166,6 +166,14 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"mf" = (
+/obj/effect/spawner/random/trash/crushed_can{
+	pixel_x = -11
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "mi" = (
 /obj/machinery/conveyor/auto/outpost{
 	dir = 8
@@ -258,6 +266,10 @@
 /obj/structure/railing/corner{
 	dir = 1;
 	layer = 4.1
+	},
+/obj/effect/spawner/random/trash/crushed_can{
+	pixel_x = 6;
+	pixel_y = 14
 	},
 /turf/open/floor/plasteel{
 	planetary_atmos = 1
@@ -1755,7 +1767,7 @@ ag
 Gq
 ZU
 ag
-Rt
+mf
 VM
 aJ
 al

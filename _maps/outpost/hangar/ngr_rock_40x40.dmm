@@ -152,6 +152,10 @@
 	},
 /turf/open/floor/hangar/plasteel/dark,
 /area/hangar)
+"qG" = (
+/obj/effect/spawner/random/trash/bin,
+/turf/open/floor/plasteel/tech,
+/area/hangar)
 "re" = (
 /obj/effect/turf_decal/corner/opaque/tan/three_quarters,
 /obj/effect/turf_decal/trimline/opaque/bar/line{
@@ -3238,7 +3242,7 @@ sk
 SV
 sk
 Ye
-xp
+qG
 TB
 Pv
 IB

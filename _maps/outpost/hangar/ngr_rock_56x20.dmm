@@ -29,6 +29,10 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/hangar)
+"eh" = (
+/obj/effect/spawner/random/trash/bin,
+/turf/open/floor/plasteel/tech,
+/area/hangar)
 "fv" = (
 /obj/effect/turf_decal/corner/opaque/tan{
 	dir = 8
@@ -3014,7 +3018,7 @@ YS
 ee
 YS
 gq
-aX
+eh
 jA
 yI
 Mh

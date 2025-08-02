@@ -501,6 +501,10 @@
 /obj/effect/turf_decal/industrial/hatch/red,
 /turf/open/floor/plasteel/tech,
 /area/hangar)
+"VZ" = (
+/obj/effect/spawner/random/trash/bin,
+/turf/open/floor/plasteel/tech,
+/area/hangar)
 "WX" = (
 /obj/structure/flora/rock/pile/rockplanet,
 /turf/open/floor/plating/asteroid/rockplanet/cracked/safe/lit,
@@ -4214,7 +4218,7 @@ if
 JE
 if
 QD
-MZ
+VZ
 Yf
 Yk
 ye

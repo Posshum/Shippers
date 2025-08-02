@@ -1,4 +1,12 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ab" = (
+/obj/effect/turf_decal/trimline/opaque/white/filled/warning{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine/weak,
+/turf/open/floor/plasteel/mono,
+/area/ruin/beach/complex)
 "ad" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 4
@@ -25,6 +33,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "aI" = (
@@ -45,6 +54,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/structure/spacevine/weak,
 /turf/open/floor/concrete/pavement{
 	light_range = 2
 	},
@@ -53,6 +63,8 @@
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning,
 /obj/effect/turf_decal/industrial/stand_clear/white,
 /obj/machinery/computer/cryopod/directional/south,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine/weak,
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex)
 "aV" = (
@@ -94,6 +106,25 @@
 	},
 /obj/structure/spacevine/weak,
 /turf/open/floor/concrete{
+	light_range = 2
+	},
+/area/ruin/beach/complex)
+"bC" = (
+/obj/effect/turf_decal/trimline/opaque/white/filled/warning,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/spacevine/weak,
+/turf/open/floor/concrete/pavement{
+	light_range = 2
+	},
+/area/ruin/beach/complex)
+"bE" = (
+/obj/effect/turf_decal/trimline/opaque/white/filled/warning{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement{
 	light_range = 2
 	},
 /area/ruin/beach/complex)
@@ -140,6 +171,13 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
+"cI" = (
+/obj/effect/turf_decal/trimline/opaque/white/filled/warning{
+	dir = 9
+	},
+/obj/effect/spawner/random/trash/grime,
+/turf/open/floor/plasteel/mono,
+/area/ruin/beach/complex)
 "cP" = (
 /obj/effect/overlay/palmtree_l,
 /turf/open/floor/plating/grass{
@@ -156,6 +194,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/structure/spacevine/weak,
 /turf/open/floor/concrete/pavement{
 	light_range = 2
 	},
@@ -172,6 +211,7 @@
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/complex)
 "dy" = (
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex)
 "dz" = (
@@ -225,6 +265,7 @@
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning,
 /obj/item/reagent_containers/blood,
 /obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex)
 "ea" = (
@@ -247,6 +288,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex/shuttle)
 "et" = (
@@ -273,7 +315,22 @@
 	dir = 8
 	},
 /obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
+/area/ruin/beach/complex)
+"fx" = (
+/obj/structure/marker_beacon,
+/obj/effect/turf_decal/trimline/opaque/white/filled/warning{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement{
+	light_range = 2
+	},
 /area/ruin/beach/complex)
 "fB" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -288,6 +345,7 @@
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning{
 	dir = 5
 	},
+/obj/structure/spacevine/weak,
 /turf/open/floor/concrete/pavement{
 	light_range = 2
 	},
@@ -332,6 +390,7 @@
 /obj/machinery/door/window{
 	dir = 8
 	},
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/complex)
 "fY" = (
@@ -418,6 +477,7 @@
 /area/ruin/beach/complex/wall)
 "hx" = (
 /obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/spacevine/weak,
 /turf/open/floor/plating/grass/beach/lit,
 /area/ruin/beach/complex)
 "hE" = (
@@ -435,6 +495,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "hT" = (
@@ -501,16 +562,13 @@
 /area/ruin/beach/complex/wall)
 "iB" = (
 /obj/item/reagent_containers/pill/patch/styptic{
-	name = "industrial medicine";
-	pixel_y = 5
-	},
-/obj/item/reagent_containers/pill/patch/styptic{
 	name = "industrial medicine"
 	},
 /obj/structure/table,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/complex)
 "iM" = (
@@ -521,6 +579,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/beach/complex/shuttle)
 "jc" = (
@@ -548,6 +607,7 @@
 /area/ruin/beach/complex)
 "jk" = (
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement{
 	light_range = 2
 	},
@@ -556,6 +616,7 @@
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning{
 	dir = 9
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex)
 "jE" = (
@@ -662,6 +723,13 @@
 	light_range = 2
 	},
 /area/ruin/beach/complex)
+"lu" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "lw" = (
 /obj/effect/turf_decal/weather/sand{
 	dir = 10
@@ -723,6 +791,11 @@
 /obj/item/toy/seashell,
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"mE" = (
+/obj/structure/flora/ausbushes/sunnybush,
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/complex)
 "mH" = (
 /obj/structure/flora/ausbushes/fernybush,
 /turf/open/floor/plating/grass/beach/lit,
@@ -856,6 +929,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/beach/complex/shuttle)
 "om" = (
@@ -978,6 +1052,20 @@
 	light_range = 2
 	},
 /area/ruin/beach/complex)
+"qo" = (
+/obj/machinery/cryopod{
+	icon_state = "cryopod";
+	name = "cryptosleep casket"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/spacevine/weak,
+/turf/open/floor/plasteel/mono,
+/area/ruin/beach/complex)
+"qq" = (
+/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/complex)
 "qs" = (
 /obj/structure/spacevine/weak,
 /turf/open/floor/concrete{
@@ -997,6 +1085,7 @@
 	secure = 1
 	},
 /obj/item/stack/sheet/mineral/uranium/twenty,
+/obj/effect/spawner/random/circuit/machine/common,
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex)
 "qE" = (
@@ -1027,6 +1116,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/beach/complex/shuttle)
 "qY" = (
@@ -1042,6 +1132,7 @@
 	name = "Shutters";
 	dir = 1
 	},
+/obj/structure/spacevine/weak,
 /turf/open/floor/concrete/pavement{
 	light_range = 2
 	},
@@ -1062,6 +1153,15 @@
 	},
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"rv" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_3,
+/area/ruin/beach/complex)
 "rA" = (
 /obj/machinery/light/small/directional/south,
 /obj/structure/cable{
@@ -1206,6 +1306,7 @@
 /obj/machinery/power/terminal{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex/shuttle)
 "tG" = (
@@ -1249,6 +1350,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "uG" = (
@@ -1276,6 +1378,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/complex)
 "uQ" = (
@@ -1295,6 +1398,7 @@
 	pixel_y = 5
 	},
 /obj/item/stock_parts/cell/bluespace/empty,
+/obj/effect/spawner/random/circuit/machine/rare,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/complex)
 "uW" = (
@@ -1326,6 +1430,7 @@
 /obj/machinery/computer/helm{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex/shuttle)
 "vH" = (
@@ -1338,6 +1443,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement{
 	light_range = 2
 	},
@@ -1360,6 +1466,11 @@
 	pixel_x = 30
 	},
 /turf/open/floor/plasteel/mono,
+/area/ruin/beach/complex)
+"vZ" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/grass/beach/lit,
 /area/ruin/beach/complex)
 "wa" = (
 /obj/structure/table,
@@ -1503,8 +1614,15 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex/shuttle)
+"xn" = (
+/obj/structure/spacevine/dense,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/trash/grime,
+/turf/open/floor/concrete/slab_3,
+/area/ruin/beach/complex)
 "xw" = (
 /obj/machinery/door/airlock/grunge,
 /turf/open/floor/concrete/slab_4,
@@ -1559,6 +1677,7 @@
 	dir = 4
 	},
 /obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex)
 "yl" = (
@@ -1612,6 +1731,11 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
+"zm" = (
+/obj/effect/turf_decal/industrial/stand_clear/white,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/mono,
+/area/ruin/beach/complex)
 "zn" = (
 /obj/machinery/light/small/directional/east,
 /obj/structure/cable{
@@ -1624,6 +1748,7 @@
 /area/ruin/beach/complex/wall)
 "zF" = (
 /obj/structure/table,
+/obj/effect/spawner/random/trash/botanical_waste,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/complex)
 "zT" = (
@@ -1649,6 +1774,14 @@
 	},
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"Ac" = (
+/obj/structure/spacevine/weak,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "Ae" = (
 /mob/living/basic/hivebot/strong{
 	name = "mechanoid";
@@ -1711,6 +1844,14 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
+"AH" = (
+/obj/effect/turf_decal/trimline/opaque/white/filled/warning{
+	dir = 5
+	},
+/obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/mono,
+/area/ruin/beach/complex)
 "AJ" = (
 /obj/structure/marker_beacon,
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning{
@@ -1755,6 +1896,14 @@
 /obj/structure/spacevine/weak,
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/complex)
+"Bw" = (
+/obj/machinery/cryopod{
+	icon_state = "cryopod";
+	name = "cryptosleep casket"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/mono,
+/area/ruin/beach/complex)
 "BA" = (
 /turf/open/floor/concrete/pavement{
 	light_range = 2
@@ -1779,10 +1928,6 @@
 "Cb" = (
 /obj/structure/table,
 /obj/item/reagent_containers/pill/patch/silver_sulf{
-	name = "industrial medicine"
-	},
-/obj/item/reagent_containers/pill/patch/silver_sulf{
-	pixel_y = -5;
 	name = "industrial medicine"
 	},
 /obj/machinery/door/window/eastright{
@@ -1864,12 +2009,14 @@
 	dir = 4
 	},
 /obj/machinery/light/dim/directional/east,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex)
 "Dc" = (
 /obj/machinery/light/dim/directional/south,
 /obj/structure/spacevine/dense,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/trash/grime,
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/complex)
 "Dd" = (
@@ -1940,6 +2087,7 @@
 /obj/structure/railing{
 	dir = 1
 	},
+/obj/effect/spawner/random/engineering/tool,
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/complex)
 "Ex" = (
@@ -1967,6 +2115,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/spacevine/weak,
 /turf/open/floor/concrete/pavement{
 	light_range = 2
 	},
@@ -1987,6 +2136,7 @@
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_x = -30
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/complex)
 "Fg" = (
@@ -2094,6 +2244,21 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/complex)
+"GG" = (
+/obj/effect/turf_decal/trimline/opaque/white/filled/warning{
+	dir = 4
+	},
+/obj/structure/spacevine/weak,
+/obj/effect/spawner/random/trash/mess,
+/turf/open/floor/plasteel/mono,
+/area/ruin/beach/complex)
+"GH" = (
+/obj/effect/turf_decal/trimline/opaque/white/filled/warning{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/mono,
+/area/ruin/beach/complex)
 "GV" = (
 /obj/structure/marker_beacon{
 	pixel_x = -12
@@ -2123,6 +2288,13 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/beach/complex/shuttle)
+"Hl" = (
+/obj/effect/turf_decal/trimline/opaque/white/filled/warning{
+	dir = 10
+	},
+/obj/structure/spacevine/dense,
+/turf/open/floor/plasteel/mono,
+/area/ruin/beach/complex)
 "Ht" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
@@ -2151,6 +2323,13 @@
 	light_range = 2
 	},
 /area/ruin/beach/complex)
+"HX" = (
+/obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement{
+	light_range = 2
+	},
+/area/ruin/beach/complex)
 "HY" = (
 /obj/structure/spacevine/dense,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2167,6 +2346,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/structure/spacevine/weak,
 /turf/open/floor/concrete/pavement{
 	light_range = 2
 	},
@@ -2234,6 +2414,11 @@
 	light_range = 2
 	},
 /area/ruin/beach/complex)
+"IU" = (
+/obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_3,
+/area/ruin/beach/complex)
 "Jh" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2267,6 +2452,7 @@
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning,
 /obj/effect/turf_decal/industrial/stand_clear/white,
 /obj/machinery/newscaster/directional/south,
+/obj/structure/spacevine/dense,
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex)
 "JC" = (
@@ -2315,6 +2501,11 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/beach/complex/shuttle)
+"Kp" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/complex)
 "Ks" = (
 /obj/structure/spacevine/dense,
 /turf/open/floor/concrete/slab_4,
@@ -2374,6 +2565,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "Ll" = (
@@ -2460,6 +2652,12 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"MD" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/pavement{
+	light_range = 2
+	},
+/area/ruin/beach/complex)
 "ME" = (
 /mob/living/simple_animal/beachcarp/trout,
 /turf/open/water/beach,
@@ -2473,6 +2671,7 @@
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning{
 	dir = 1
 	},
+/obj/effect/spawner/random/trash/mess,
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex)
 "MR" = (
@@ -2558,6 +2757,11 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex)
+"NS" = (
+/obj/effect/turf_decal/industrial/stand_clear/white,
+/obj/structure/spacevine/weak,
+/turf/open/floor/plasteel/mono,
+/area/ruin/beach/complex)
 "NV" = (
 /obj/effect/turf_decal/industrial/stand_clear/white,
 /turf/open/floor/plasteel/mono,
@@ -2565,6 +2769,7 @@
 "Oe" = (
 /obj/structure/bed,
 /obj/structure/spacevine/weak,
+/obj/effect/spawner/random/trash/mess,
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex)
 "Oo" = (
@@ -2664,6 +2869,13 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
+"PK" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "PO" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
@@ -2735,6 +2947,15 @@
 	light_range = 2
 	},
 /area/ruin/beach/complex)
+"Qm" = (
+/obj/effect/turf_decal/trimline/opaque/white/filled/warning{
+	dir = 4
+	},
+/obj/structure/spacevine/weak,
+/turf/open/floor/concrete/pavement{
+	light_range = 2
+	},
+/area/ruin/beach/complex)
 "Qr" = (
 /obj/machinery/power/smes/shuttle/precharged,
 /obj/structure/railing{
@@ -2760,10 +2981,18 @@
 	},
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/complex)
+"QN" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "Rk" = (
 /mob/living/basic/hivebot/strong{
 	name = "mechanoid"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/complex)
 "Rt" = (
@@ -2801,6 +3030,13 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
+"Sj" = (
+/obj/effect/turf_decal/trimline/opaque/white/filled/warning,
+/obj/structure/spacevine/weak,
+/turf/open/floor/concrete/pavement{
+	light_range = 2
+	},
+/area/ruin/beach/complex)
 "Sq" = (
 /obj/machinery/cryopod{
 	icon_state = "cryopod";
@@ -2832,16 +3068,15 @@
 	},
 /area/ruin/beach/complex)
 "SC" = (
-/obj/effect/turf_decal/trimline/opaque/white/filled/warning{
-	dir = 8
-	},
-/obj/machinery/light/dim/directional/west,
-/turf/open/floor/plasteel/mono,
+/obj/structure/flora/ausbushes/stalkybush,
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/grass/beach/lit,
 /area/ruin/beach/complex)
 "SG" = (
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning{
 	dir = 1
 	},
+/obj/structure/spacevine/weak,
 /turf/open/floor/concrete/pavement{
 	light_range = 2
 	},
@@ -2886,6 +3121,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/beach/complex/shuttle)
 "Tu" = (
@@ -2902,6 +3138,18 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
+"TB" = (
+/obj/effect/turf_decal/trimline/opaque/white/filled/warning{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/spacevine/weak,
+/turf/open/floor/concrete/pavement{
+	light_range = 2
+	},
+/area/ruin/beach/complex)
 "TG" = (
 /obj/structure/spacevine/dense,
 /obj/structure/cable{
@@ -2953,6 +3201,7 @@
 "UU" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/trash/botanical_waste,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/complex)
 "UY" = (
@@ -3024,6 +3273,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
 "Wm" = (
@@ -3058,6 +3308,11 @@
 	light_range = 2
 	},
 /area/ruin/beach/complex)
+"Xn" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/spacevine/weak,
+/turf/open/floor/plating/grass/beach/lit,
+/area/ruin/beach/complex)
 "Xo" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
@@ -3065,6 +3320,14 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/complex/wall)
+"XQ" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_3,
+/area/ruin/beach/complex)
 "XT" = (
 /obj/structure/railing{
 	dir = 4
@@ -3073,6 +3336,7 @@
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/complex)
 "XW" = (
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/slab_3,
 /area/ruin/beach/complex)
 "Yd" = (
@@ -3086,6 +3350,8 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement{
 	light_range = 2
 	},
@@ -3189,11 +3455,32 @@
 /obj/effect/turf_decal/weather/sand,
 /turf/open/water/beach,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"Zj" = (
+/obj/effect/turf_decal/trimline/opaque/white/filled/warning{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/spacevine/weak,
+/turf/open/floor/concrete/pavement{
+	light_range = 2
+	},
+/area/ruin/beach/complex)
+"Zx" = (
+/obj/machinery/light/small/directional/north,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/complex/wall)
 "ZB" = (
 /obj/effect/turf_decal/trimline/opaque/white/filled/warning{
 	dir = 6
 	},
 /obj/structure/spacevine/weak,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
 /area/ruin/beach/complex)
 "ZD" = (
@@ -5079,7 +5366,7 @@ wo
 Ao
 wo
 lS
-aV
+Zx
 lS
 uo
 Mt
@@ -5313,7 +5600,7 @@ AA
 LW
 wo
 lS
-pZ
+Ac
 lS
 mH
 ea
@@ -5456,7 +5743,7 @@ AA
 PR
 jE
 AA
-ju
+cI
 VD
 YE
 yt
@@ -5464,7 +5751,7 @@ AA
 AA
 Dh
 YX
-In
+XQ
 AA
 Ao
 mH
@@ -5521,7 +5808,7 @@ lS
 ny
 hg
 hg
-fP
+QN
 lS
 wo
 wo
@@ -5617,7 +5904,7 @@ yh
 Lq
 Rk
 Vw
-rC
+xn
 AA
 Pt
 ia
@@ -5625,7 +5912,7 @@ AA
 Ao
 wo
 lS
-pZ
+Ac
 lS
 uo
 ea
@@ -5690,7 +5977,7 @@ AA
 CO
 Vf
 IO
-NQ
+GH
 ou
 fq
 on
@@ -5773,7 +6060,7 @@ KU
 bb
 Oe
 dX
-Vf
+IU
 dm
 Vf
 gX
@@ -5781,7 +6068,7 @@ AA
 wo
 wo
 lS
-Fg
+lu
 lS
 uo
 uo
@@ -5846,10 +6133,10 @@ AA
 Ll
 Vf
 AA
-kM
+AH
 wO
 wO
-wO
+GG
 ZB
 Vw
 AA
@@ -6010,7 +6297,7 @@ fX
 wa
 AA
 Vw
-rS
+rv
 dm
 rQ
 rQ
@@ -6087,7 +6374,7 @@ IO
 IO
 AA
 AA
-Vf
+IU
 CO
 UB
 rQ
@@ -6162,7 +6449,7 @@ Qb
 UB
 yt
 ks
-Vf
+IU
 Vw
 yt
 Vw
@@ -6458,7 +6745,7 @@ lS
 wo
 fC
 AA
-qL
+vZ
 AE
 Lz
 ql
@@ -6536,13 +6823,13 @@ lS
 LW
 wo
 AA
-KZ
+mE
 Ie
 Ez
 ET
 de
-ET
-Ez
+fx
+TB
 jg
 AA
 Vw
@@ -6614,13 +6901,13 @@ lS
 Ao
 wo
 AA
-MH
-kh
-BA
+Xn
+Zj
+MD
 Sy
 lU
 Sy
-BA
+HX
 Yn
 AA
 Vf
@@ -6692,7 +6979,7 @@ lS
 mH
 Mt
 AA
-fB
+Kp
 BG
 Ka
 Sy
@@ -6770,14 +7057,14 @@ lS
 uo
 uo
 AA
-Ei
+qq
 kh
 Qr
 PO
 tA
 FL
 Yo
-Yn
+bC
 AA
 Br
 Vw
@@ -6787,10 +7074,10 @@ iq
 MR
 ju
 AW
-SC
-AW
-AW
-ZN
+VD
+ab
+on
+Hl
 AA
 uo
 uo
@@ -6848,7 +7135,7 @@ lS
 uo
 xP
 AA
-fB
+Kp
 vH
 la
 Tt
@@ -6866,8 +7153,8 @@ NB
 nV
 NV
 Sq
-NV
-Sq
+NS
+qo
 Jy
 AA
 LW
@@ -6926,14 +7213,14 @@ lS
 fC
 mH
 AA
-fB
+Kp
 SG
 MX
 fU
 ok
 iM
 JL
-jk
+Sj
 AA
 AA
 AA
@@ -6944,9 +7231,9 @@ jE
 IB
 dy
 dy
-dy
-dy
-et
+ou
+ou
+Lq
 AA
 fC
 wo
@@ -7004,7 +7291,7 @@ lS
 LW
 wo
 AA
-wv
+SC
 qY
 Sy
 xl
@@ -7021,8 +7308,8 @@ px
 Vf
 nV
 NV
-Sq
-NV
+Bw
+zm
 Sq
 aP
 AA
@@ -7160,7 +7447,7 @@ lS
 wo
 fC
 AA
-Ei
+qq
 SG
 BA
 Hg
@@ -7233,18 +7520,18 @@ ea
 uo
 mH
 lS
-Fg
+lu
 lS
 uo
 uo
 AA
-KZ
+mE
 fE
-sy
+Qm
 dR
 sy
 dR
-sy
+bE
 AJ
 AA
 AA
@@ -7567,7 +7854,7 @@ ny
 Ns
 wZ
 wG
-cG
+PK
 cG
 fP
 lS
@@ -7627,7 +7914,7 @@ rZ
 II
 Cz
 wZ
-cG
+PK
 Pn
 Ty
 th

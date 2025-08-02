@@ -580,10 +580,7 @@
 /obj/structure/chair{
 	dir = 4
 	},
-/obj/item/cigbutt{
-	pixel_x = 3;
-	pixel_y = 13
-	},
+/obj/effect/spawner/random/trash/cigbutt,
 /turf/open/floor/plasteel/tech/grid,
 /area/hangar)
 "pP" = (
@@ -632,6 +629,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil,
+/turf/open/floor/plasteel/tech,
+/area/hangar)
+"rM" = (
+/obj/effect/spawner/random/trash/cigbutt,
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "sw" = (
@@ -789,7 +790,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/industrial/warning,
-/obj/effect/decal/cleanable/ash,
+/obj/effect/spawner/random/trash/cigbutt,
 /turf/open/floor/plasteel/tech/grid,
 /area/hangar)
 "Be" = (
@@ -961,7 +962,6 @@
 	},
 /area/hangar)
 "Fn" = (
-/obj/structure/closet/crate/bin,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/light/small/directional/east{
 	pixel_y = 8
@@ -970,6 +970,7 @@
 /obj/machinery/newscaster/security_unit/directional/east{
 	pixel_y = -6
 	},
+/obj/effect/spawner/random/trash/bin,
 /turf/open/floor/plasteel/dark,
 /area/hangar)
 "Fr" = (
@@ -5635,7 +5636,7 @@ aI
 aH
 jQ
 Hc
-tj
+rM
 pP
 EO
 ad

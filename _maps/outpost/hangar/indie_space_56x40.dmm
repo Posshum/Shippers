@@ -149,6 +149,18 @@
 	dir = 1;
 	layer = 4.1
 	},
+/obj/effect/spawner/random/trash/crushed_can{
+	pixel_x = 6;
+	pixel_y = 14
+	},
+/turf/open/floor/plasteel{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"ln" = (
+/obj/effect/spawner/random/trash/crushed_can{
+	pixel_x = -11
+	},
 /turf/open/floor/plasteel{
 	planetary_atmos = 1
 	},
@@ -2575,7 +2587,7 @@ aH
 nZ
 sc
 aH
-nM
+ln
 Nm
 aP
 aE
