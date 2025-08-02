@@ -12,7 +12,6 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	/datum/hallucination/weird_sounds = 10,
 	/datum/hallucination/items_other = 7,
 	/datum/hallucination/husks = 7,
-	/datum/hallucination/stationmessage = 5,
 	/datum/hallucination/fake_flood = 5,
 	/datum/hallucination/bolts = 5,
 	/datum/hallucination/delusion = 5,

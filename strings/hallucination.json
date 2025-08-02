@@ -7,7 +7,13 @@
 		"Don't think that we don't know",
 		"Everyone knows it was you",
 		"Have anything you care to explain?",
-		"Whats in your pockets?"
+		"Whats in your pockets?",
+		"Why were you in there?",
+		"Why are you in here?",
+		"What are you doing?",
+		"Hey, @pick(add_name)what are you doing right now?",
+		"Why are you here?",
+		"Can you tell me why you're doing that?"
 	],
 
 	"conversation": [
@@ -26,7 +32,18 @@
 		"You alright?",
 		"Hmm",
 		"Yeah, I know",
-		"Weird"
+		"Weird",
+		"Yeah",
+		"Ye",
+		"Yeh",
+		"Yuh",
+		"Naaaah",
+		"Nuh",
+		"Nnno",
+		"Yyyyes",
+		"Yesn't",
+		"No. Maybe",
+		"Yes. Maybe"
 	],
 
 	"greetings": [
@@ -50,8 +67,7 @@
 		"What's happening",
 		"What's the story",
 		"Hello",
-		"Wait,",
-		"It's"
+		"Wait,"
 	],
 
 	"getout": [
@@ -63,9 +79,11 @@
 		"@pick(add_name)go out the airlock",
 		"@pick(add_name)get off this ship right now",
 		"Get off this ship right now",
-
+		"Captain told you to leave",
 		"OUT!",
-		"@pick(add_name)out!"
+		"@pick(add_name)out!",
+		"You aren't welcomed here.",
+		"@pick(add_name)please leave. I don't wanna hurt you."
 	],
 
 	"weird": [
@@ -89,7 +107,49 @@
 		"Snibby",
 		"Grrrrr",
 		"SNraGgrh",
-		"H-hhhhh..."
+		"H-hhhhh...",
+		"Whabbahoohahah",
+		"Hkoooloolooo",
+		"Humaahaaahahahhahahhahahhahahahaaaaaa",
+		"killyoukillyoukillyoukillyou what what what die die die",
+		"wormworms in my ears worms worms in my eyes worms worms in my head",
+		"slice your skin and peel it like a banana",
+		"haaaagaaagaaagaaahahwhewhwhwhwhehehheheheh",
+		"you need need too too what what need too what need huh",
+		"8008135",
+		"lick them lick it lick the wall the metal the blood the wall lick lick",
+		"WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWHAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+		"One. One. Two. Two. One. Two. Three. Four. Four. One. Six. No. No. No.",
+		"Nooononononononnoon no what nonononoon what what haha",
+		"heaaaaaheaaaueuuhjjjjjjjjjj",
+		"pineapple watermelon juice pinch salt juice sugar food what help",
+		"crate crate carp carp crap crap shit shit",
+		"toilet i need to shit please its bursting",
+		"JJJJJJOOOOOOOOYYYYYYY",
+		"think happy thoughts think happy thoughts think happy thoughts",
+		"THINK HAPPY THINK HAPPY THINK HAPPY",
+		"Happy thoughts please think happy happier happy thoughts",
+		"Stop this madness you know this isn't real think happy",
+		"This isnt real this isnt real this isnt real",
+		"1992104923902394858347958734",
+		"why why why why why why",
+		"w---h---y",
+		"whyamilikethiswhyareyoulikethisstophallucinating",
+		"schizoschizoschizo you so schizoschizoschizo",
+		"happier times happier thoughts stop the madness stop your heart",
+		"blade to chest end the madness",
+		"stop thinking just stop",
+		"rogue, rogue, a rogue town, the town of rogue, what?",
+		"a ship, ship, a testing ship, ship of tests?",
+		"colonials, colonial, marines... Marines who are colonial?",
+		"Tee... Gee... Tee of Gee... Tee Gee... a station?",
+		"Goons... Gooning. A gooning... Goon... Station...",
+		"Bee... Bee... Bees... on a station... Bee... Station?",
+		"Bubber... bub... bubber of... Bubber..?",
+		"Splurting... Splurt... Splurting everywhere... Everyone...",
+		"JOOOOOOOOOY",
+		"IM SO HAPPY",
+		"I'm so depressed about this so so depressed sad angry sad mad depressed what... why?"
 	],
 
 	"didyouhearthat": [
@@ -104,7 +164,14 @@
 		"I think there's something above us",
 		"I think there's something in the pipes",
 		"Did you just hear something in the pipes?",
-		"I swear I just heard something from beneath the floor"
+		"I swear I just heard something from beneath the floor",
+		"That's a weird sound",
+		"Did you hear that over there?",
+		"What was that noise?",
+		"What's that sound?",
+		"What even was that noise?",
+		"That's a really weird sound...",
+		"What an odd sound."
 	],
 
 	"add_name": ["%TARGETNAME%, ", "%TARGETNAME% ", ""],
@@ -115,7 +182,12 @@
 		"Wait, what?",
 		"@pick(add_name)wait",
 		"@pick(add_name)hold on",
-		"Uh..."
+		"Uh...",
+		"Uhm...",
+		"Why..?",
+		"Explain?",
+		"What's your reasoning, @pick(add_name)?",
+		"Why should I care?"
 	],
 
 	"aggressive": [
@@ -125,7 +197,8 @@
 		"@pick(add_name)fuck you!",
 		"@pick(add_name)drop that right now",
 		"@pick(add_name)if you keep doing that I will kill you",
-		"@pick(add_name)I'll break your fingers if you don't stop"
+		"@pick(add_name)I'll break your fingers if you don't stop",
+		"@pick(add_name)where's a gun I'll just fucking shoot you"
 	],
 
 	"threat": [
@@ -156,7 +229,8 @@
 		"shoot",
 		"dispatch",
 		"terminate",
-		"end"],
+		"end",
+		"slice"],
 
 	"help": [
 		"PLEASE HELP",
@@ -180,7 +254,15 @@
 		"IM GOING TO DIE PLEASE HELP",
 		"ITS OVER, IM GOING TO DIE HELP ME PLEASE",
 		"ITS INSIDE ME, I NEED YOU TO TAKE IT OUT",
-		"IM DEAD, PLEASE HELP ME"
+		"IM DEAD, PLEASE HELP ME",
+		"FUCK FUCK HELP HURRY",
+		"I NEED HELP HURRY UP PLEASE",
+		"QUICK HURRY UP I NEED HELP",
+		"HURRY THE FUCK UP HOLY SHIT I NEED HELP",
+		"HELP IM BEING ATTACKED",
+		"HELP IM BLEEDING OUT",
+		"HELP I NEED MEDS!!!",
+		"HELP I'M BLEEDING OUT!!!"
 	],
 
 	"escape": [
@@ -201,7 +283,15 @@
 		"TAKE THE SHIP AND ESCAPE!!",
 		"YOU'VE GOT TO LEAVE ME BEHIND!!",
 		"YOU CAN'T TAKE ME, IM ALREADY DEAD!",
-		"@pick(add_name)follow me!"
+		"@pick(add_name)follow me!",
+		"WE GOTTA GO!",
+		"NO TIME TO EXPLAIN RUN!",
+		"HURRY UP GO RUN!",
+		"WE CAN'T STAY HERE LETS GO!",
+		"THEY KNOW WE'RE HERE LETS GO!",
+		"HURRY UP LETS GO!",
+		"STOP FUCKING AROUND LETS MOVE!",
+		"WE NEED TO MOVE NOW!"
 	],
 
 	"infection_advice": [
@@ -218,7 +308,9 @@
 		"please call a medical ship, I don't want to die",
 		"stay away!",
 		"please help me",
-		"please don't let the others find me"
+		"please don't let the others find me",
+		"please let me stay sick",
+		"@pick(add_name), don't bother"
 
 	],
 
@@ -234,6 +326,9 @@
 		"the other ship",
 		"the janitor",
 		"the miner",
+		"the guy",
+		"the girl",
+		"the person",
 		"%TARGETNAME%",
 		"%TARGETNAME%",
 		"%TARGETNAME%"
@@ -286,6 +381,7 @@
 
 	"location": [
 		"outside the ship",
+		"out in space",
 		"the bridge",
 		"the armory",
 		"security",
@@ -298,7 +394,13 @@
 		"medical",
 		"captains office",
 		"storage",
-		"the canteen"
+		"the canteen",
+		"the kitchen",
+		"captains quarters",
+		"maints",
+		"somewhere in the ship",
+		"outside",
+		"inside"
 	],
 
 	"advice": [
@@ -311,7 +413,20 @@
 		"You need to kill them soon... You know who.",
 		"Good luck. You'll need it.",
 		"You have my permission... Do it.",
-		"End them, now."
+		"End them, now.",
+		"I think you should kill them.",
+		"Do it. It's worth it.",
+		"Kiss them.",
+		"Hug them.",
+		"Lick them.",
+		"Fuck them.",
+		"Murder them.",
+		"Save them.",
+		"Replce them.",
+		"You can give them it. They need it.",
+		"They really need it. Give it.",
+		"You can give it to me.",
+		"You can give it to them."
 	],
 
 	"chemicals": [
@@ -340,7 +455,15 @@
 		"Phlebotinium",
 		"Mana",
 		"Energy",
-		"?????"
+		"?????",
+		"Dirt",
+		"Cum",
+		"Semen",
+		"Ejaculate",
+		"Steam",
+		"Cotton",
+		"Lemons",
+		"Egg Whites"
 	]
-  
+
 }
