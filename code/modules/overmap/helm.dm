@@ -134,6 +134,12 @@
 		current_ship.move_overmaps(jump_destination, jump_coords["x"], jump_coords["y"])
 	else
 		current_ship.move_overmaps(jump_destination)
+
+	for(var/area/ship_area in current_ship.shuttle_port.shuttle_areas)
+		for(var/obj/item/food/bread/bread in ship_area)
+			if(prob(25) && bread.Enter(src)) //If it can enter the tile, then it works.
+				bread.bread_teleport()
+
 	jump_destination = null
 	jump_state = JUMP_STATE_OFF
 	jump_coords = null

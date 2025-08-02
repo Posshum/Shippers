@@ -348,3 +348,38 @@
 /obj/item/food/butterdog/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/slippery, 2 SECONDS)
+
+
+/obj/item/food/bread/proc/bread_teleport()
+	//I teleported nothing but bread for 3 days!
+	//You did what?!
+	new /mob/living/simple_animal/hostile/bread(get_turf(src))
+	visible_message("<span class='warning'>[src] begins to deform and grow grotesque tumors!</span>")
+	qdel(src)
+
+/obj/item/food/bread/tumor_bread
+	name = "dead tumor bread"
+	desc = "It's still within its expiration date, right?"
+	icon_state = "tumorbread"
+	slice_type = /obj/item/food/breadslice/tumor_bread
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment = 10,
+		/datum/reagent/toxin = 10,
+	)
+	foodtypes = GROSS | GRAIN
+	tastes = list("wheat and tumors" = 10)
+
+//teleporting tumor bread kills it
+/obj/item/food/bread/tumor_bread/bread_teleport()
+	visible_message(src, "<span class='warning'>[src] explodes in a horrible mess of tumor and flour!</span>")
+	qdel(src)
+
+/obj/item/food/breadslice/tumor_bread
+	name = "tumor bread slice"
+	desc = "A slice of bread filled with tumors!"
+	icon_state = "tumorbreadslice"
+	food_reagents = list(
+		/datum/reagent/consumable/nutriment = 2,
+		/datum/reagent/toxin = 2,
+		)
+	foodtypes = GROSS | GRAIN

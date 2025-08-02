@@ -87,6 +87,15 @@
 		var/mob/M = teleatom
 		M.cancel_camera()
 
+	var/static/list/bread_cache = typecacheof(/obj/item/food/bread)
+	var/list/breadlist = typecache_filter_list(teleatom.GetAllContents(), bread_cache)
+	if(breadlist.len && (channel == TELEPORT_CHANNEL_BLUESPACE || channel == TELEPORT_CHANNEL_QUANTUM))
+		for(var/obj/item/food/bread/bread in breadlist)
+			bread.bread_teleport()
+	else if(istype(teleatom, /obj/item/food/bread))
+		var/obj/obj/item/food/bread/bread = teleatom
+		bread.bread_teleport()
+
 	return TRUE
 
 /proc/tele_play_specials(atom/movable/teleatom, atom/location, datum/effect_system/effect, sound)
