@@ -26,6 +26,9 @@
 
 	var/attachment_holes = TRUE
 
+	//Assume darkness
+	luminosity = 0
+
 /turf/open/floor/plating/examine(mob/user)
 	. = ..()
 	if(broken || burnt)

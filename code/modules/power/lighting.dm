@@ -219,7 +219,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct/small, 28)
 	var/on = FALSE					// 1 if on, 0 if off
 	var/on_gs = FALSE
 	var/static_power_used = 0
-	var/brightness = 8			// luminosity when on, also used in power calculation
+	var/brightness = 7			// luminosity when on, also used in power calculation
 	var/bulb_power = 1			// basically the alpha of the emitted light source
 	var/bulb_colour = "#f3fffa"	// default colour of the light
 	var/status = LIGHT_OK		// LIGHT_OK, _EMPTY, _BURNED or _BROKEN
@@ -236,7 +236,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct/small, 28)
 
 	var/nightshift_enabled = FALSE	//Currently in night shift mode?
 	var/nightshift_allowed = TRUE	//Set to FALSE to never let this light get switched to night mode.
-	var/nightshift_brightness = 8
+	var/nightshift_brightness = 6
 	var/nightshift_light_power = 0.5
 	var/nightshift_light_color = "#FFDBB5"
 
@@ -248,7 +248,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct/small, 28)
 	var/bulb_emergency_pow_min = 0.5	// the minimum value for the light's power in emergency mode
 
 	var/bulb_vacuum_colour = "#4F82FF"	// colour of the light when air alarm is set to severe
-	var/bulb_vacuum_brightness = 8
+	var/bulb_vacuum_brightness = 5
 
 	var/constant_flickering = FALSE // Are we always flickering?
 	var/flicker_timer = null
@@ -329,7 +329,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 			brightness = A.lighting_brightness_bulb
 		else
 			bulb_colour = A.lighting_colour_tube
-			brightness = A.lighting_brightness_bulb
+			brightness = A.lighting_brightness_tube
 
 	if(nightshift_light_color == initial(nightshift_light_color))
 		nightshift_light_color = A.lighting_colour_night

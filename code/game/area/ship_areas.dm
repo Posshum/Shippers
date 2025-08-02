@@ -155,7 +155,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	ambientsounds = list('sound/ambience/signal.ogg')
 	lighting_colour_tube = "#ffce99"
 	lighting_colour_bulb = "#ffdbb4"
-	lighting_brightness_tube = 6
+	lighting_brightness_tube = 5
 
 /// Crew Quarters ///
 /area/ship/crew
@@ -163,7 +163,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "crew_quarters"
 	lighting_colour_tube = "#ffce99"
 	lighting_colour_bulb = "#ffdbb4"
-	lighting_brightness_tube = 6
+	lighting_brightness_tube = 5
 
 /area/ship/crew/crewtwo
 	name = "Crew Quarters 2"
@@ -451,7 +451,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Hallway"
 	lighting_colour_tube = "#ffce99"
 	lighting_colour_bulb = "#ffdbb4"
-	lighting_brightness_tube = 7
+	lighting_brightness_tube = 6
 	sound_environment = SOUND_AREA_TUNNEL_ENCLOSED
 
 /area/ship/hallway/aft

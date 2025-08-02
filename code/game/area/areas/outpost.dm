@@ -98,7 +98,7 @@
 	name = "Hallway"
 	lighting_colour_tube = "#FFF6ED"
 	lighting_colour_bulb = "#FFE6CC"
-	lighting_brightness_tube = 7
+	lighting_brightness_tube = 6
 
 /area/outpost/hallway/aft
 	name = "Aft Hallway"

@@ -75,9 +75,9 @@
 	var/lighting_colour_tube = "#FFF6ED"
 	var/lighting_colour_bulb = "#FFE6CC"
 	var/lighting_colour_night = "#FFDBB5"
-	var/lighting_brightness_tube = 10
-	var/lighting_brightness_bulb = 6
-	var/lighting_brightness_night = 6
+	var/lighting_brightness_tube = 6
+	var/lighting_brightness_bulb = 4
+	var/lighting_brightness_night = 2
 
 	///Used to decide what kind of reverb the area makes sound have
 	var/sound_environment = SOUND_ENVIRONMENT_NONE
