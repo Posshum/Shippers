@@ -67,6 +67,7 @@
 	. = ..()
 	set_init_door_layer()
 	update_freelook_sight()
+	update_light()
 	air_update_turf(1)
 	GLOB.airlocks += src
 	spark_system = new /datum/effect_system/spark_spread
