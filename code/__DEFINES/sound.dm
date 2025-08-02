@@ -26,10 +26,13 @@
 #define SOUND_MINIMUM_PRESSURE 10
 
 #define AMBIENCE_GENERIC "generic"
+#define AMBIENCE_RARE "rare"
+
 #define AMBIENCE_HOLY "holy"
 #define AMBIENCE_DANGER "danger"
 #define AMBIENCE_RUINS "ruins"
 #define AMBIENCE_ENGI "engi"
+#define AMBIENCE_HELM "helm"
 #define AMBIENCE_MINING "mining"
 #define AMBIENCE_MEDICAL "med"
 #define AMBIENCE_SPOOKY "spooky"

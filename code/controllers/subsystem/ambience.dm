@@ -27,6 +27,8 @@ SUBSYSTEM_DEF(ambience)
 /area/proc/play_ambience(mob/M, sound/override_sound, volume = 25)
 	var/sound/new_sound = override_sound || pick(ambientsounds)
 	new_sound = sound(new_sound, repeat = 0, wait = 0, volume = 25, channel = CHANNEL_AMBIENCE)
+	if(ambientsounds == AMBIENCE_GENERIC && prob(1))
+		new_sound = pick(AMBIENCE_RARE)
 
 	SEND_SOUND(M, new_sound)
 
