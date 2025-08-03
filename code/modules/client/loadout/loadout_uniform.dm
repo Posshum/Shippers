@@ -286,6 +286,8 @@
 	path = /obj/item/clothing/under/suit/dresssuit/skirt
 
 // Overalls
+/datum/gear/uniform/overalls
+	path = /obj/item/clothing/under/overalls
 
 /datum/gear/uniform/overalls/denim
 	display_name = "overalls, denim"
