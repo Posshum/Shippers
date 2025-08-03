@@ -99,8 +99,8 @@
 //Maintenence Decay: Handles how much an APC decays overtime. Scales with power consumption and battery types.
 ///How much the APC decays per decay tick. Default is 3. Modified amount by cells quality and power consumption.
 #define APC_DECAY_AMOUNT 3
-///How long it takes between each tick.
-#define APC_DECAY_TIME 1 MINUTES
+///How long it takes between each tick. Default is 2 minutes. Gives most APC's an average of ~30 min by default before starting to need repairs.
+#define APC_DECAY_TIME 2 MINUTES
 ///The chance at which it decays
 #define APC_DECAY_CHANCE 50
 
