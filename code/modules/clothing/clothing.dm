@@ -292,6 +292,7 @@
 	return .
 
 /obj/item/clothing/atom_break(damage_flag)
+	. = ..()
 	if(!damaged_clothes)
 		update_clothes_damaged_state(TRUE)
 

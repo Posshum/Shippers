@@ -67,7 +67,6 @@
 	. = ..()
 	set_init_door_layer()
 	update_freelook_sight()
-	update_light()
 	air_update_turf(1)
 	GLOB.airlocks += src
 	spark_system = new /datum/effect_system/spark_spread
@@ -80,6 +79,10 @@
 	//doors only block while dense though so we have to use the proc
 	real_explosion_block = explosion_block
 	explosion_block = EXPLOSION_BLOCK_PROC
+
+	//Update the lights after creation to ensure light doesn't flood through.
+	spawn(5)
+		update_light()
 
 /obj/machinery/door/proc/set_init_door_layer()
 	if(density)

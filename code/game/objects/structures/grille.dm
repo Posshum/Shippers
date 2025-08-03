@@ -242,6 +242,7 @@
 		return TRUE
 
 /obj/structure/grille/atom_break()
+	. = ..()
 	if(!broken && !(flags_1 & NODECONSTRUCT_1))
 		new broken_type(src.loc)
 		var/obj/R = new rods_type(drop_location(), rods_broken) || locate(rods_type) in drop_location() // see above

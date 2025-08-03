@@ -44,6 +44,7 @@
 			return set_sign(new_sign)
 
 /obj/structure/sign/barsign/atom_break(damage_flag)
+	. = ..()
 	if(!broken && !(flags_1 & NODECONSTRUCT_1))
 		broken = TRUE
 

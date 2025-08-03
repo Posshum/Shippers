@@ -141,6 +141,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 28)
 		. += "extinguisher_dooropen"
 
 /obj/structure/extinguisher_cabinet/atom_break(damage_flag)
+	. = ..()
 	if(!broken && !(flags_1 & NODECONSTRUCT_1))
 		broken = 1
 		opened = 1
