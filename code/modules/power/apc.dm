@@ -97,13 +97,12 @@
 #define UPOVERLAY_ENVIRON_SHIFT (8)
 
 //Maintenence Decay: Handles how much an APC decays overtime. Scales with power consumption and battery types.
-///How much the APC decays per decay tick.
-#define APC_DECAY_AMOUNT 5
+///How much the APC decays per decay tick. Default is 3. Modified amount by cells quality.
+#define APC_DECAY_AMOUNT 3
 ///How long it takes between each tick.
 #define APC_DECAY_TIME 1 MINUTES
-///Multiplier of how much an APC should decay from being over or undercharged.
-#define APC_DECAY_MULTIPLIER 2
-
+///The chance at which it decays
+#define APC_DECAY_CHANCE 50
 
 // the Area Power Controller (APC), formerly Power Distribution Unit (PDU)
 // one per area, needs wire connection to power network through a terminal
@@ -184,9 +183,8 @@
 	//Decay vars
 	var/decay_damage = APC_DECAY_AMOUNT
 	var/decay_time = APC_DECAY_TIME
-	var/decay_prob = 50 //Prob of APC decaying. Can't place a define on this for some reason.
+	var/decay_chance = APC_DECAY_CHANCE
 	var/next_decay_time = APC_DECAY_TIME //Default to APC_DECAY_TIME at world start
-	var/decay_multiplier = APC_DECAY_MULTIPLIER
 	var/internal_integrity //The actual internals of the APC, requires wires to repair.
 
 /obj/machinery/power/apc/unlocked
@@ -353,11 +351,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 
 	var/healthpercent = (internal_integrity/max_integrity) * 100
 	switch(healthpercent)
-		if(50 to 99)
-			. += "The wiring looks slightly burnt."
-		if(25 to 50)
+		if(33 to 66)
+			. += "The wiring looks slightly corroded."
+		if(15 to 33)
 			. += "The wiring appears heavily burnt."
-		if(0 to 25)
+		if(0 to 15)
 			. += span_warning("The wiring is practically melted!")
 
 /obj/machinery/power/apc/examine_more(mob/user)
@@ -1464,19 +1462,20 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 		queue_icon_update()
 
 	// apply APC decaying after everything
-	if(prob(decay_prob) && world.time > next_decay_time)
-		if(internal_integrity > (max_integrity * integrity_failure))
-			if(internal_integrity < max_integrity * (integrity_failure * 3)) // at 75% integrity do sparks
-				do_sparks(2, FALSE, src)
+	if(prob(decay_chance)) //Don't call this code if we roll the chance.
+		return
+	if(istype(get_area(src), /area/ship/)) //Only applies to ship areas specifically.
+		if(world.time > next_decay_time)
 
-			internal_integrity -= (decay_damage / cell.quality) //Worse qualities make the damage higher.
+			if(internal_integrity > (max_integrity * integrity_failure))
+				if(internal_integrity < max_integrity * (integrity_failure * 3)) // at 75% integrity do sparks
+					do_sparks(2, FALSE, src)
+				internal_integrity -= (decay_damage / cell.quality) //Worse qualities make the damage higher.
 
-		else if(atom_integrity > (max_integrity * integrity_failure)) //If the APC wires are toasted, start corroding the APC itself.
-			do_sparks(4, FALSE, src) //Worse sparks! Gotta make sure this gets repaired!
-
-			atom_integrity -= (decay_damage / cell.quality) //Worse qualities make the damage higher.
-
-		next_decay_time = world.time + decay_time
+			else if(atom_integrity > (max_integrity * integrity_failure)) //If the APC wires are toasted, start corroding the APC itself.
+				do_sparks(4, FALSE, src) //Worse sparks! Gotta make sure this gets repaired!
+				atom_integrity -= (decay_damage / cell.quality) //Worse qualities make the damage higher.
+			next_decay_time = world.time + decay_time
 
 /**
  * Returns the new status value for an APC channel.
