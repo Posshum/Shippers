@@ -97,7 +97,7 @@
 #define UPOVERLAY_ENVIRON_SHIFT (8)
 
 //Maintenence Decay: Handles how much an APC decays overtime. Scales with power consumption and battery types.
-///How much the APC decays per decay tick. Default is 3. Modified amount by cells quality.
+///How much the APC decays per decay tick. Default is 3. Modified amount by cells quality and power consumption.
 #define APC_DECAY_AMOUNT 3
 ///How long it takes between each tick.
 #define APC_DECAY_TIME 1 MINUTES
@@ -629,18 +629,17 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	else if (W.GetID())
 		togglelock(user)
 	else if (istype(W, /obj/item/stack/cable_coil) && opened)
-		var/turf/host_turf = get_turf(src)
-		if (!host_turf)
-			CRASH("attackby on APC when it's not on a turf")
-		if (host_turf.intact)
-			to_chat(user, span_warning("You must remove the floor plating in front of the APC first!"))
-			return
 		var/obj/item/stack/cable_coil/C = W
-		if(internal_integrity < max_integrity)
+		if(internal_integrity < floor(max_integrity / 1.11)) //Repair first if it's damaged too much. 1.11 = 180 max integ
+			if (C.get_amount() < 3 || !C)
+				to_chat(user, span_warning("You need three lengths of cable to repair the APC!"))
+				return
+			user.visible_message(span_notice("[user.name] repairs some cables in the APC frame."), \
+								span_notice("You start repairing cables in the APC frame..."))
 			if(do_after(user, 20, target = src))
 				if (C.get_amount() < 3 || !C)
 					return
-				if (C.get_amount() >= 3 && !terminal && opened && has_electronics)
+				if (C.get_amount() >= 3 && terminal && opened && has_electronics)
 					var/turf/T = get_turf(src)
 					var/obj/structure/cable/N = T.get_cable_node()
 					if (prob(50) && electrocute_mob(usr, N, N, 1, TRUE))
@@ -649,6 +648,13 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 					C.use(3)
 					to_chat(user, span_notice("You repair the cables in the APC frame."))
 					internal_integrity = max_integrity
+			return
+		var/turf/host_turf = get_turf(src)
+		if (!host_turf)
+			CRASH("attackby on APC when it's not on a turf")
+		if (host_turf.intact)
+			to_chat(user, span_warning("You must remove the floor plating in front of the APC first!"))
+			return
 		else if (terminal)
 			to_chat(user, span_warning("This APC is already wired!"))
 			return
@@ -1462,19 +1468,25 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 		queue_icon_update()
 
 	// apply APC decaying after everything
-	if(prob(decay_chance)) //Don't call this code if we roll the chance.
+	if(lastused_total == 0) //No power drain, no reason to trigger decay.
 		return
 	if(istype(get_area(src), /area/ship/)) //Only applies to ship areas specifically.
 		if(world.time > next_decay_time)
 
-			if(internal_integrity > (max_integrity * integrity_failure))
+			if(internal_integrity > (max_integrity) && internal_integrity) //Only decay if it's health is positive.
 				if(internal_integrity < max_integrity * (integrity_failure * 3)) // at 75% integrity do sparks
 					do_sparks(2, FALSE, src)
-				internal_integrity -= (decay_damage / cell.quality) //Worse qualities make the damage higher.
+
+					//Per kilowatt, increase damage divided by cell quality.
+					//12kw = (3+12)/1      		NOTE: 1 is poor quality, the default Crappy cell in every APC.
+					// 15 / 1 = 15 damage per tick.
+					// It would take about 15 minutes for an default APC to break running at 12kw constantly.
+
+				internal_integrity -= ((decay_damage + (lastused_total / 1000)) / cell.quality) //Worse qualities make the damage higher.
 
 			else if(atom_integrity > (max_integrity * integrity_failure)) //If the APC wires are toasted, start corroding the APC itself.
 				do_sparks(4, FALSE, src) //Worse sparks! Gotta make sure this gets repaired!
-				atom_integrity -= (decay_damage / cell.quality) //Worse qualities make the damage higher.
+				atom_integrity -= ((decay_damage + (lastused_total / 1000)) / cell.quality) //Worse qualities make the damage higher.
 			next_decay_time = world.time + decay_time
 
 /**

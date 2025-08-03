@@ -3,12 +3,12 @@
 #define CELL_POWER_DRAIN (37.5 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 
 //Cell qualities, used for APC's primarily.
-#define CELL_QUALITY_GUN 0.25
-#define CELL_QUALITY_POOR 0.5
-#define CELL_QUALITY_NORMAL 1
-#define CELL_QUALITY_GOOD 1.25
-#define CELL_QUALITY_GREAT 1.5
-#define CELL_QUALITY_PERFECT 2
+#define CELL_QUALITY_GUN 0.66 //Increases APC damage by 33%, it's designed for guns not APC's
+#define CELL_QUALITY_POOR 1
+#define CELL_QUALITY_NORMAL 1.25 //Reduces APC damage by 25%
+#define CELL_QUALITY_GOOD 1.33 //33%
+#define CELL_QUALITY_GREAT 1.66 //66%
+#define CELL_QUALITY_PERFECT 2 // 100%, halves damage taken to APC's, doubling the time it takes for them to decay.
 
 /obj/item/stock_parts/cell
 	name = "power cell"
