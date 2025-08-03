@@ -1473,7 +1473,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	if(istype(get_area(src), /area/ship/)) //Only applies to ship areas specifically.
 		if(world.time > next_decay_time)
 
-			if(internal_integrity > (max_integrity))
+			if(internal_integrity > max_integrity)
 				if(internal_integrity < max_integrity * (integrity_failure * 3)) // at 75% integrity do sparks
 					do_sparks(2, FALSE, src)
 
