@@ -72,17 +72,15 @@
 	spark_system = new /datum/effect_system/spark_spread
 	spark_system.set_up(2, 1, src)
 	if(density)
+		set_opacity(1) //light update
 		flags_1 |= PREVENT_CLICK_UNDER_1
 	else
+		set_opacity(0) //light update
 		flags_1 &= ~PREVENT_CLICK_UNDER_1
 
 	//doors only block while dense though so we have to use the proc
 	real_explosion_block = explosion_block
 	explosion_block = EXPLOSION_BLOCK_PROC
-
-	//Update the lights after creation to ensure light doesn't flood through.
-	spawn(5)
-		update_light()
 
 /obj/machinery/door/proc/set_init_door_layer()
 	if(density)
