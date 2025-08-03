@@ -96,6 +96,15 @@
 /// Bit shift for the environment channel status of the APC.
 #define UPOVERLAY_ENVIRON_SHIFT (8)
 
+//Maintenence Decay: Handles how much an APC decays overtime. Scales with power consumption and battery types.
+///How much the APC decays per decay tick.
+#define APC_DECAY_AMOUNT 5
+///How long it takes between each tick.
+#define APC_DECAY_TIME 1 MINUTES
+///Multiplier of how much an APC should decay from being over or undercharged.
+#define APC_DECAY_MULTIPLIER 2
+
+
 // the Area Power Controller (APC), formerly Power Distribution Unit (PDU)
 // one per area, needs wire connection to power network through a terminal
 
@@ -130,7 +139,7 @@
 	var/areastring = null
 	var/obj/item/stock_parts/cell/cell
 	var/start_charge = 90				// initial cell charge %
-	var/cell_type = /obj/item/stock_parts/cell/upgraded		//Base cell has 2500 capacity. Enter the path of a different cell you want to use. cell determines charge rates, max capacity, ect. These can also be changed with other APC vars, but isn't recommended to minimize the risk of accidental usage of dirty editted APCs
+	var/cell_type = /obj/item/stock_parts/cell/crap 	//Base cell has 2500 capacity. Enter the path of a different cell you want to use. cell determines charge rates, max capacity, ect. These can also be changed with other APC vars, but isn't recommended to minimize the risk of accidental usage of dirty editted APCs
 	var/opened = APC_COVER_CLOSED
 	var/shorted = 0
 	var/lighting = APC_CHANNEL_AUTO_ON
@@ -171,6 +180,14 @@
 	var/update_overlay = -1
 	var/icon_update_needed = FALSE
 	var/obj/machinery/computer/apc_control/remote_control = null
+
+	//Decay vars
+	var/decay_damage = APC_DECAY_AMOUNT
+	var/decay_time = APC_DECAY_TIME
+	var/decay_prob = 50 //Prob of APC decaying. Can't place a define on this for some reason.
+	var/next_decay_time = APC_DECAY_TIME //Default to APC_DECAY_TIME at world start
+	var/decay_multiplier = APC_DECAY_MULTIPLIER
+	var/internal_integrity //The actual internals of the APC, requires wires to repair.
 
 /obj/machinery/power/apc/unlocked
 	locked = FALSE
@@ -218,6 +235,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	if (building)
 		setDir(ndir)
 	tdir = dir
+
+	internal_integrity = max_integrity //Set internal integ to max integ
 
 	switch(tdir)
 		if(NORTH)
@@ -331,6 +350,15 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 
 	if(issilicon(user))
 		. += span_notice("Ctrl-Click the APC to switch the breaker [ operating ? "off" : "on"].")
+
+	var/healthpercent = (internal_integrity/max_integrity) * 100
+	switch(healthpercent)
+		if(50 to 99)
+			. += "The wiring looks slightly burnt."
+		if(25 to 50)
+			. += "The wiring appears heavily burnt."
+		if(0 to 25)
+			. += span_warning("The wiring is practically melted!")
 
 /obj/machinery/power/apc/examine_more(mob/user)
 	. = ..()
@@ -604,19 +632,31 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 		togglelock(user)
 	else if (istype(W, /obj/item/stack/cable_coil) && opened)
 		var/turf/host_turf = get_turf(src)
-		if(!host_turf)
+		if (!host_turf)
 			CRASH("attackby on APC when it's not on a turf")
 		if (host_turf.intact)
 			to_chat(user, span_warning("You must remove the floor plating in front of the APC first!"))
 			return
+		var/obj/item/stack/cable_coil/C = W
+		if(internal_integrity < max_integrity)
+			if(do_after(user, 20, target = src))
+				if (C.get_amount() < 3 || !C)
+					return
+				if (C.get_amount() >= 3 && !terminal && opened && has_electronics)
+					var/turf/T = get_turf(src)
+					var/obj/structure/cable/N = T.get_cable_node()
+					if (prob(50) && electrocute_mob(usr, N, N, 1, TRUE))
+						do_sparks(5, TRUE, src)
+						return
+					C.use(3)
+					to_chat(user, span_notice("You repair the cables in the APC frame."))
+					internal_integrity = max_integrity
 		else if (terminal)
 			to_chat(user, span_warning("This APC is already wired!"))
 			return
 		else if (!has_electronics)
 			to_chat(user, span_warning("There is nothing to wire!"))
 			return
-
-		var/obj/item/stack/cable_coil/C = W
 		if(C.get_amount() < 10)
 			to_chat(user, span_warning("You need ten lengths of cable for APC!"))
 			return
@@ -1422,6 +1462,21 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 		update()
 	else if (last_ch != charging)
 		queue_icon_update()
+
+	// apply APC decaying after everything
+	if(prob(decay_prob) && world.time > next_decay_time)
+		if(internal_integrity > (max_integrity * integrity_failure))
+			if(internal_integrity < max_integrity * (integrity_failure * 3)) // at 75% integrity do sparks
+				do_sparks(2, FALSE, src)
+
+			internal_integrity -= (decay_damage / cell.quality) //Worse qualities make the damage higher.
+
+		else if(atom_integrity > (max_integrity * integrity_failure)) //If the APC wires are toasted, start corroding the APC itself.
+			do_sparks(4, FALSE, src) //Worse sparks! Gotta make sure this gets repaired!
+
+			atom_integrity -= (decay_damage / cell.quality) //Worse qualities make the damage higher.
+
+		next_decay_time = world.time + decay_time
 
 /**
  * Returns the new status value for an APC channel.

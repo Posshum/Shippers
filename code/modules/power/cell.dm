@@ -2,6 +2,14 @@
 #define CELL_POWER_GAIN (3    * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 #define CELL_POWER_DRAIN (37.5 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 
+//Cell qualities, used for APC's primarily.
+#define CELL_QUALITY_GUN 0.25
+#define CELL_QUALITY_POOR 0.5
+#define CELL_QUALITY_NORMAL 1
+#define CELL_QUALITY_GOOD 1.25
+#define CELL_QUALITY_GREAT 1.5
+#define CELL_QUALITY_PERFECT 2
+
 /obj/item/stock_parts/cell
 	name = "power cell"
 	desc = "A rechargeable electrochemical power cell."
@@ -25,6 +33,7 @@
 	var/self_recharge = 0 //does it self recharge, over time, or not?
 	var/ratingdesc = TRUE
 	var/grown_battery = FALSE // If it's a grown that acts as a battery, add a wire overlay to it.
+	var/quality = 0 //Determines the rate at which an APC will decay. Different from 'rating', as that handles performance.
 
 /obj/item/stock_parts/cell/get_cell()
 	return src
@@ -197,6 +206,7 @@
 	desc = "You can't top the plasma top." //TOTALLY TRADEMARK INFRINGEMENT
 	maxcharge = 500
 	custom_materials = list(/datum/material/glass=40)
+	quality = CELL_QUALITY_POOR
 
 /obj/item/stock_parts/cell/crap/empty/Initialize()
 	. = ..()
@@ -204,21 +214,24 @@
 	update_appearance()
 
 /obj/item/stock_parts/cell/upgraded
-	name = "upgraded power cell"
-	desc = "A power cell with a slightly higher capacity than normal!"
+	name = "power cell"
+	desc = "A regular power cell."
 	maxcharge = 2500
 	custom_materials = list(/datum/material/glass=50)
 	chargerate = 1000
+	quality = CELL_QUALITY_NORMAL
 
 /obj/item/stock_parts/cell/upgraded/plus
-	name = "upgraded power cell+"
+	name = "upgraded power cell"
 	desc = "A power cell with an even higher capacity than the base model!"
 	maxcharge = 5000
+	quality = CELL_QUALITY_GOOD
 
 /obj/item/stock_parts/cell/secborg
 	name = "security borg rechargeable D battery"
 	maxcharge = 6000	//6000 max charge / 1000 charge per shot = six shots
 	custom_materials = list(/datum/material/glass=40)
+	quality = CELL_QUALITY_GOOD
 
 /obj/item/stock_parts/cell/secborg/empty/Initialize()
 	. = ..()
@@ -229,17 +242,20 @@
 	name = "miniature energy gun power cell"
 	maxcharge = 600
 	rating = 0 //gun batteries now incompatible with RPED WS edit
+	quality = CELL_QUALITY_GUN
 
 /obj/item/stock_parts/cell/hos_gun
 	name = "X-01 multiphase energy gun power cell"
 	maxcharge = 1200
 	rating = 0 //gun batteries now incompatible with RPED WS edit
+	quality = CELL_QUALITY_GUN
 
 /obj/item/stock_parts/cell/pulse //200 pulse shots
 	name = "pulse rifle power cell"
 	maxcharge = 400000
 	chargerate = 1500
 	rating = 0 //gun batteries now incompatible with RPED WS edit
+	quality = CELL_QUALITY_GUN
 
 /obj/item/stock_parts/cell/pulse/carbine //25 pulse shots
 	name = "pulse carbine power cell"
@@ -257,6 +273,7 @@
 	maxcharge = 10000
 	custom_materials = list(/datum/material/glass=60)
 	chargerate = 1500
+	quality = CELL_QUALITY_GOOD
 
 /obj/item/stock_parts/cell/high/plus
 	name = "high-capacity power cell+"
@@ -265,6 +282,7 @@
 	maxcharge = 15000
 	chargerate = 2250
 	rating = 2
+	quality = CELL_QUALITY_GOOD
 
 /obj/item/stock_parts/cell/high/empty/Initialize()
 	. = ..()
@@ -278,6 +296,7 @@
 	custom_materials = list(/datum/material/glass=300)
 	chargerate = 2000
 	rating = 3
+	quality = CELL_QUALITY_GREAT
 
 /obj/item/stock_parts/cell/super/empty/Initialize()
 	. = ..()
@@ -291,6 +310,7 @@
 	custom_materials = list(/datum/material/glass=400)
 	chargerate = 3000
 	rating = 4
+	quality = CELL_QUALITY_GREAT
 
 /obj/item/stock_parts/cell/hyper/empty/Initialize()
 	. = ..()
@@ -305,6 +325,7 @@
 	custom_materials = list(/datum/material/glass=600)
 	chargerate = 4000
 	rating = 5
+	quality = CELL_QUALITY_PERFECT
 
 /obj/item/stock_parts/cell/bluespace/empty/Initialize()
 	. = ..()
@@ -318,6 +339,7 @@
 	custom_materials = list(/datum/material/glass=1000)
 	rating = 100
 	chargerate = 30000
+	quality = CELL_QUALITY_PERFECT
 
 /obj/item/stock_parts/cell/infinite/use()
 	return 1
@@ -329,6 +351,7 @@
 	icon_state = "cell"
 	maxcharge = 50000
 	ratingdesc = FALSE
+	quality = CELL_QUALITY_GREAT
 
 /obj/item/stock_parts/cell/infinite/abductor/ComponentInitialize()
 	. = ..()
@@ -343,12 +366,14 @@
 	maxcharge = 300
 	custom_materials = null
 	grown_battery = TRUE //it has the overlays for wires
+	quality = CELL_QUALITY_POOR
 
 /obj/item/stock_parts/cell/emproof
 	name = "\improper EMP-proof cell"
 	desc = "An EMP-proof cell."
 	maxcharge = 500
 	rating = 3
+	quality = CELL_QUALITY_PERFECT //EMP proof cell, great at preventing corrosion, can't last much longer outside of that.
 
 /obj/item/stock_parts/cell/emproof/empty/Initialize()
 	. = ..()
@@ -367,6 +392,7 @@
 	desc = "A high powered capacitor that can provide huge amounts of energy in an instant."
 	maxcharge = 50000
 	chargerate = 5000	//Extremely energy intensive
+	quality = CELL_QUALITY_GUN
 
 /obj/item/stock_parts/cell/beam_rifle/corrupt()
 	return
@@ -383,6 +409,7 @@
 	maxcharge = 120 //Emergency lights use 0.2 W per tick, meaning ~10 minutes of emergency power from a cell
 	custom_materials = list(/datum/material/glass = 20)
 	w_class = WEIGHT_CLASS_TINY
+	quality = CELL_QUALITY_POOR
 
 /obj/item/stock_parts/cell/emergency_light/Initialize()
 	. = ..()
@@ -399,6 +426,7 @@
 	custom_materials = list(/datum/material/glass=60)
 	chargerate = 1500
 	rating = 0 //Makes it incompatible with RPED
+	quality = CELL_QUALITY_GUN
 
 /obj/item/stock_parts/cell/gun/empty
 
