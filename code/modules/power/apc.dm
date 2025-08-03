@@ -1481,7 +1481,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 					//12kw = (3+12)/1      		NOTE: 1 is poor quality, the default Crappy cell in every APC.
 					// 15 / 1 = 15 damage per tick.
 					// It would take about 15 minutes for an default APC to break running at 12kw constantly.
-					internal_integrity -= ((decay_damage + (lastused_total / 1000)) / cell.quality) //Worse qualities make the damage higher.
+				internal_integrity -= ((decay_damage + (lastused_total / 1000)) / cell.quality) //Worse qualities make the damage higher.
 
 			else if(atom_integrity > (max_integrity * integrity_failure)) //If the APC wires are toasted, start corroding the APC itself.
 				do_sparks(4, FALSE, src) //Worse sparks! Gotta make sure this gets repaired!
