@@ -1473,7 +1473,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	if(istype(get_area(src), /area/ship/)) //Only applies to ship areas specifically.
 		if(world.time > next_decay_time)
 
-			if(internal_integrity > (max_integrity) && internal_integrity) //Only decay if it's health is positive.
+			if(internal_integrity > (max_integrity))
 				if(internal_integrity < max_integrity * (integrity_failure * 3)) // at 75% integrity do sparks
 					do_sparks(2, FALSE, src)
 
@@ -1481,12 +1481,13 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 					//12kw = (3+12)/1      		NOTE: 1 is poor quality, the default Crappy cell in every APC.
 					// 15 / 1 = 15 damage per tick.
 					// It would take about 15 minutes for an default APC to break running at 12kw constantly.
-
-				internal_integrity -= ((decay_damage + (lastused_total / 1000)) / cell.quality) //Worse qualities make the damage higher.
+				if(internal_integrity > 0)
+					internal_integrity -= ((decay_damage + (lastused_total / 1000)) / cell.quality) //Worse qualities make the damage higher.
 
 			else if(atom_integrity > (max_integrity * integrity_failure)) //If the APC wires are toasted, start corroding the APC itself.
 				do_sparks(4, FALSE, src) //Worse sparks! Gotta make sure this gets repaired!
-				atom_integrity -= ((decay_damage + (lastused_total / 1000)) / cell.quality) //Worse qualities make the damage higher.
+				if(atom_integrity > 0)
+					atom_integrity -= ((decay_damage + (lastused_total / 1000)) / cell.quality) //Worse qualities make the damage higher.
 			next_decay_time = world.time + decay_time
 
 /**
