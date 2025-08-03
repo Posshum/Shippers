@@ -81,6 +81,8 @@
 	//doors only block while dense though so we have to use the proc
 	real_explosion_block = explosion_block
 	explosion_block = EXPLOSION_BLOCK_PROC
+	spawn(5)
+		update_light()
 
 /obj/machinery/door/proc/set_init_door_layer()
 	if(density)
