@@ -62,13 +62,6 @@
 	if(red_alert_access && GLOB.security_level >= SEC_LEVEL_RED)
 		return TRUE
 	return ..()
-/obj/machinery/door/LateInitialize()
-	. = ..()
-	if(density)
-		set_opacity(1) //light update
-	else
-		set_opacity(0) //light update
-	update_light()
 
 /obj/machinery/door/Initialize()
 	. = ..()
@@ -86,7 +79,6 @@
 	//doors only block while dense though so we have to use the proc
 	real_explosion_block = explosion_block
 	explosion_block = EXPLOSION_BLOCK_PROC
-	return INITIALIZE_HINT_LATELOAD //To update lights. It bugged me a lot that they aren't accurate at round start.
 
 /obj/machinery/door/proc/set_init_door_layer()
 	if(density)
