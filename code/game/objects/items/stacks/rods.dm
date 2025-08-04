@@ -89,3 +89,9 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 
 /obj/item/stack/rods/fifty
 	amount = 50
+
+/obj/item/stack/rods/random
+	//Randomize when created.
+/obj/item/stack/rods/random/Initialize(mapload, new_amount, merge)
+	. = ..()
+	amount = rand(1,15)

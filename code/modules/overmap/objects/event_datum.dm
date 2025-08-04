@@ -545,18 +545,21 @@
 			M.playsound_local(M, 'sound/effects/bamf.ogg', 100)
 
 GLOBAL_LIST_INIT(overmap_event_pick_list, list(
-	/datum/overmap/event/wormhole = 10,
 	/datum/overmap/event/nebula = 60,
+	/datum/overmap/event/meteor/dust = 50,
 	/datum/overmap/event/electric/minor = 45,
-	/datum/overmap/event/electric = 40,
-	/datum/overmap/event/electric/major = 35,
 	/datum/overmap/event/meteor/minor = 45,
-	/datum/overmap/event/meteor = 40,
-	/datum/overmap/event/meteor/major = 35,
 	/datum/overmap/event/meteor/carp/minor = 45,
+	/datum/overmap/event/electric = 40,
+	/datum/overmap/event/meteor = 40,
+	/datum/overmap/event/electric/major = 35,
+	/datum/overmap/event/meteor/major = 35,
 	/datum/overmap/event/meteor/carp = 35,
 	/datum/overmap/event/meteor/carp/major = 20,
-	/datum/overmap/event/meteor/dust = 50,
+	/datum/overmap/event/meteor/debris/minor =  20,
+	/datum/overmap/event/meteor/debris = 15,
+	/datum/overmap/event/meteor/debris/major = 10,
+	/datum/overmap/event/wormhole = 10,
 	/datum/overmap/event/anomaly = 10
 ))
 
@@ -642,8 +645,8 @@ GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	blocks_sight = FALSE
 
 	meteor_types = list(
-		/obj/effect/meteor/dust=12,
-		/obj/effect/meteor/medium=4,
+		/obj/effect/meteor/dust=3,
+		/obj/effect/meteor/medium=1,
 	)
 
 	safe_speed = 5
@@ -658,7 +661,63 @@ GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	mountain_height_override = 0.5
 
 	meteor_types = list(
-		/obj/effect/meteor/medium=50,
-		/obj/effect/meteor/big=25,
-		/obj/effect/meteor/flaming=10,
+		/obj/effect/meteor/medium=6,
+		/obj/effect/meteor/big=2,
+		/obj/effect/meteor/flaming=1,
 	)
+
+///METEOR STORMS - explodes your ship if you go too fast
+/datum/overmap/event/meteor
+	name = "asteroid field (moderate)"
+	desc = "An area of space rich with asteroids, going fast through here could prove dangerous"
+	base_icon_state = "meteor_medium_"
+	default_color = "#a08444"
+	chance_to_affect = 15
+	spread_chance = 50
+	chain_rate = 4
+	interference_power = 15
+
+	empty_space_mapgen = /datum/map_generator/planet_generator/asteroid
+
+	var/safe_speed = 3
+	var/list/meteor_types = list(
+		/obj/effect/meteor/dust=3,
+		/obj/effect/meteor/medium=8,
+		/obj/effect/meteor/big=1,
+		/obj/effect/meteor/irradiated=3
+	)
+	var/primary_ores = list(\
+		/obj/item/stack/ore/plasma,
+		/obj/item/stack/ore/iron,
+		)
+
+/datum/overmap/event/meteor/alter_token_appearance()
+	icon_suffix = "[rand(1, 4)]"
+	..()
+
+	var/orestext
+	if(primary_ores)
+		orestext += span_boldnotice("\nInitial scans show a high concentration of the following ores:\n")
+		for(var/obj/ore as anything in primary_ores)
+			var/hex = ORES_TO_COLORS_LIST[ore]
+			orestext += "<font color='[hex]'>	- [ore.name]\n</font>"
+		desc += orestext
+
+		token.desc += span_notice("\nYou could land within the [src] if you were to [span_bold("Dock to Empty Space")] while flying over...\n")
+
+	if(safe_speed)
+		token.desc += span_notice("\nYou can safely navigate through this if your ship is travelling under [span_bold("[safe_speed] Gm/s")].")
+
+	if(current_overmap.override_object_colors)
+		token.color = current_overmap.hazard_primary_color
+	current_overmap.post_edit_token_state(src)
+
+/datum/overmap/event/meteor/apply_effect()
+	for(var/datum/overmap/ship/controlled/Ship in get_nearby_overmap_objects())
+		if(Ship.get_speed() > safe_speed)
+			var/how_fast =  (Ship.get_speed() - safe_speed)
+			if(prob(chance_to_affect + how_fast))
+				affect_ship(Ship)
+
+/datum/overmap/event/meteor/affect_ship(datum/overmap/ship/controlled/Ship)
+	spawn_meteor(meteor_types, Ship.shuttle_port.get_virtual_level(), 0, Ship.shuttle_port)

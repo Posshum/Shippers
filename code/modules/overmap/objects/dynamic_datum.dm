@@ -605,3 +605,10 @@
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_DARK_MODERATE_ORANGE
+
+/area/overmap_encounter/planetoid/debrifield
+	name = "\improper Debris Field"
+	sound_environment = SOUND_ENVIRONMENT_QUARRY
+	ambience_index = AMBIENCE_SPACE
+	light_range = 0
+	light_power = 0
