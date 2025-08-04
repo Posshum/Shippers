@@ -351,11 +351,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 
 	var/healthpercent = (internal_integrity/max_integrity) * 100
 	switch(healthpercent)
-		if(33 to 66)
+		if(50 to 75)
 			. += "The wiring looks slightly corroded."
-		if(15 to 33)
+		if(25 to 50)
 			. += "The wiring appears heavily burnt."
-		if(0 to 15)
+		if(0 to 25)
 			. += span_warning("The wiring is practically melted!")
 
 /obj/machinery/power/apc/examine_more(mob/user)
@@ -1474,7 +1474,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 		if(world.time > next_decay_time)
 
 			if(internal_integrity > 0)
-				if(internal_integrity < max_integrity * (integrity_failure * 3)) // at 75% integrity do sparks
+				if(internal_integrity < max_integrity * (integrity_failure * 2)) // at 50% integrity do sparks
 					do_sparks(2, FALSE, src)
 
 					//Per kilowatt, increase damage divided by cell quality.
