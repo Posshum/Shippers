@@ -144,8 +144,8 @@
 		/obj/effect/spawner/random/waste/hivebot/part/heavy = 2,
 		/obj/effect/spawner/random/waste/hivebot/part/superheavy =1,
 		/obj/effect/spawner/random/waste/hivebot/beacon =1,
-		/obj/effect/spawner/random/waste/mechwreck = 0.3,
-		/obj/effect/spawner/random/waste/mechwreck/rare = 0.3,
+		/obj/effect/spawner/random/waste/mechwreck = 1,
+		/obj/effect/spawner/random/waste/mechwreck/rare = 1,
 		/obj/effect/spawner/random/waste/radiation/more_rads = 1
 	)
 
@@ -159,7 +159,7 @@
 		/mob/living/simple_animal/hostile/carp/megacarp = 10
 	)
 
-	flora_spawn_chance = 44
+	flora_spawn_chance = 33
 	feature_spawn_chance = 33
 	mob_spawn_chance = 7
 
