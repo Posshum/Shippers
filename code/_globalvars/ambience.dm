@@ -19,6 +19,9 @@ GLOBAL_LIST_INIT(generic_ambience,list(
 	'sound/ambience/ambigen17.ogg',
 	'sound/ambience/ambigen18.ogg',
 	'sound/ambience/ambigen19.ogg',
+	'sound/ambience/ambigen20.ogg',
+	'sound/ambience/ambigen21.ogg',
+	'sound/ambience/ambigen22.ogg',
 ))
 
 GLOBAL_LIST_INIT(holy_ambience,list(
@@ -131,6 +134,7 @@ GLOBAL_LIST_INIT(spooky_ambience,list(
 	'sound/ambience/ambiodd.ogg',
 	'sound/ambience/ambiruin6.ogg',
 	'sound/ambience/ambiruin7.ogg',
+	'sound/ambience/ambiscary.ogg',
 ))
 
 GLOBAL_LIST_INIT(creepy_ambience,list(
