@@ -144,8 +144,8 @@
 		/obj/effect/spawner/random/waste/hivebot/part/heavy = 2,
 		/obj/effect/spawner/random/waste/hivebot/part/superheavy =1,
 		/obj/effect/spawner/random/waste/hivebot/beacon =1,
-		/obj/effect/spawner/random/waste/mechwreck = 1,
-		/obj/effect/spawner/random/waste/mechwreck/rare = 1,
+		/obj/effect/spawner/random/waste/mechwreck = 0.3,
+		/obj/effect/spawner/random/waste/mechwreck/rare = 0.3,
 		/obj/effect/spawner/random/waste/radiation/more_rads = 1
 	)
 
