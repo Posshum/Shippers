@@ -840,7 +840,7 @@ SUBSYSTEM_DEF(overmap)
  */
 /datum/overmap_star_system/proc/get_unused_overmap_square_in_radius(radius, thing_to_not_have = /datum/overmap, tries = MAX_OVERMAP_PLACEMENT_ATTEMPTS, force = FALSE)
 	if(!radius)
-		radius = "[rand(3, length(radius_positions) / 2)]"
+		radius = "[rand(12, length(radius_positions) / 2)]"
 	if(isnum(radius))
 		radius = "[radius]"
 

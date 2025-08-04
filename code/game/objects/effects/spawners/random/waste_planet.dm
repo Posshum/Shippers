@@ -44,9 +44,10 @@
 
 /obj/effect/spawner/random/waste/radiation/more_rads
 	loot = list(
-		/obj/structure/hazard/radioactive = 3,
-		/obj/structure/hazard/radioactive/stack = 12,
-		/obj/structure/hazard/radioactive/waste = 12
+		/obj/structure/hazard/radioactive/supermatter = 1,
+		/obj/structure/hazard/radioactive = 6,
+		/obj/structure/hazard/radioactive/stack = 24,
+		/obj/structure/hazard/radioactive/waste = 24,
 	)
 
 /obj/effect/spawner/random/waste/atmos_can
@@ -78,12 +79,10 @@
 
 /obj/effect/spawner/random/waste/girder
 	loot = list(
-		/obj/structure/girder/wasteworld,
-		/obj/structure/girder/wasteworld,
-		/obj/structure/girder/wasteworld,
-		/obj/structure/girder,
-		/obj/structure/girder/displaced,
-		/obj/structure/girder/reinforced
+		/obj/structure/girder/wasteworld = 3,
+		/obj/structure/girder = 1,
+		/obj/structure/girder/displaced = 1,
+		/obj/structure/girder/reinforced = 1
 	)
 
 /obj/effect/spawner/random/waste/hivebot
