@@ -625,7 +625,7 @@ GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 	interference_power = 25
 	var/blocks_sight = TRUE
 
-	empty_space_mapgen = /datum/map_generator/planet_generator/asteroid
+	empty_space_mapgen = /datum/map_generator/planet_generator/ship_debri
 
 /datum/overmap/event/meteor/debris/alter_token_appearance()
 	. = ..()
