@@ -130,7 +130,7 @@ SUBSYSTEM_DEF(jukeboxes)
 				if((get_area(M) in areas) || (M in hearerscache))
 					inrange = TRUE
 
-			M.playsound_local(currentturf, null, distance_multiplier = 2, jukebox.volume, channel = jukeinfo[2], S = song_played, envwet = (inrange ? -250 : 0), envdry = (inrange ? 0 : -10000), atom = jukebox)
+			M.playsound_local(currentturf, null, jukebox.volume, channel = jukeinfo[2], S = song_played, envwet = (inrange ? -250 : 0), envdry = (inrange ? 0 : -10000), distance_multiplier = 2, atom = jukebox)
 
 			if(MC_TICK_CHECK)
 				return
