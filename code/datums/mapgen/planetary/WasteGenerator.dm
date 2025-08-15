@@ -96,8 +96,8 @@
 	flora_spawn_list = list(
 
 		//mech spawners
-		/obj/effect/spawner/random/waste/mechwreck = 100,
-		/obj/effect/spawner/random/waste/mechwreck/rare = 20,
+		/obj/effect/spawner/random/waste/mechwreck = 15,
+		/obj/effect/spawner/random/waste/mechwreck/rare = 5,
 
 		//decals and fluff structures
 		/obj/effect/spawner/random/trash/decal = 1800,
@@ -137,14 +137,16 @@
 
 	mob_spawn_list = list(
 		//hivebots, they're finally difficult.
-		/mob/living/basic/hivebot/strong = 20,
-		/mob/living/basic/hivebot/ranged = 40,
-		/mob/living/basic/hivebot/rapid = 30,
+		/mob/living/basic/hivebot = 40,
+		/mob/living/basic/hivebot/ranged = 30,
+		/mob/living/basic/hivebot/mechanic = 25,
+		/mob/living/basic/hivebot/rapid = 15,
+		/mob/living/basic/hivebot/strong = 10,
 		//bots, are hostile
 		/mob/living/simple_animal/bot/firebot/rockplanet = 15,
-		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
 		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
 		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
+		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
 	)
 
 	flora_spawn_chance = 25
@@ -183,7 +185,7 @@
 
 /datum/biome/waste/clearing/mushroom
 	flora_spawn_list = list(
-		/obj/effect/spawner/random/waste/mechwreck = 100,
+		/obj/effect/spawner/random/waste/mechwreck = 1,
 		/obj/effect/spawner/random/trash/decal = 900,
 		/obj/effect/spawner/random/waste/radiation = 300,
 		/obj/effect/spawner/random/waste/radiation/more_rads = 120,
@@ -232,8 +234,8 @@
 	)
 
 	flora_spawn_list = list( //there are no plants here
-		/obj/effect/spawner/random/waste/mechwreck = 200,
-		/obj/effect/spawner/random/waste/mechwreck/rare = 50,
+		/obj/effect/spawner/random/waste/mechwreck = 10,
+		/obj/effect/spawner/random/waste/mechwreck/rare = 1,
 		/obj/effect/spawner/random/trash/decal = 900,
 		/obj/effect/spawner/random/waste/radiation = 80,
 		/obj/effect/spawner/random/waste/radiation/more_rads = 20,
@@ -258,9 +260,10 @@
 	)
 	mob_spawn_list = list( //nor organics, more biased towards hivebots though
 		/mob/living/basic/hivebot = 40,
+		/mob/living/basic/hivebot/ranged = 15,
+		/mob/living/basic/hivebot/mechanic = 15,
 		/mob/living/basic/hivebot/strong = 10,
-		/mob/living/basic/hivebot/ranged = 20,
-		/mob/living/basic/hivebot/rapid = 20,
+		/mob/living/basic/hivebot/rapid = 10,
 		/mob/living/simple_animal/bot/firebot/rockplanet = 15,
 		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
 		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
@@ -294,8 +297,8 @@
 	)
 
 	flora_spawn_list = list(
-		/obj/effect/spawner/random/waste/mechwreck = 100,
-		/obj/effect/spawner/random/waste/mechwreck/rare = 20,
+		/obj/effect/spawner/random/waste/mechwreck = 25,
+		/obj/effect/spawner/random/waste/mechwreck/rare = 5,
 		/obj/effect/spawner/random/trash/decal = 1800,
 		/obj/effect/spawner/random/waste/radiation = 80,
 		/obj/effect/spawner/random/waste/radiation/more_rads = 10,
@@ -325,14 +328,17 @@
 		/obj/effect/spawner/random/anomaly/waste/cave = 1,
 	)
 	mob_spawn_list = list(
-		/mob/living/basic/hivebot = 50,
-		/mob/living/basic/hivebot/strong = 20,
-		/mob/living/basic/hivebot/ranged = 40,
-		/mob/living/basic/hivebot/rapid = 30,
+		//hivebots, they're finally difficult.
+		/mob/living/basic/hivebot = 40,
+		/mob/living/basic/hivebot/ranged = 30,
+		/mob/living/basic/hivebot/mechanic = 25,
+		/mob/living/basic/hivebot/rapid = 15,
+		/mob/living/basic/hivebot/strong = 10,
+		//bots, are hostile
 		/mob/living/simple_animal/bot/firebot/rockplanet = 15,
-		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
 		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
 		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
+		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
 	)
 
 	flora_spawn_chance = 30
@@ -393,8 +399,8 @@
 		/turf/closed/wall/rust/wasteplanet = 10
 	)
 	flora_spawn_list = list(
-		/obj/effect/spawner/random/waste/mechwreck = 40,
-		/obj/effect/spawner/random/waste/mechwreck/rare = 10,
+		/obj/effect/spawner/random/waste/mechwreck = 20,
+		/obj/effect/spawner/random/waste/mechwreck/rare = 5,
 		/obj/effect/spawner/random/trash/decal = 180,
 		/obj/effect/spawner/random/waste/radiation = 32,
 		/obj/effect/spawner/random/waste/radiation/more_rads = 4,
@@ -414,13 +420,17 @@
 		/obj/effect/spawner/random/mine = 8,
 	)
 	mob_spawn_list = list(
-		/mob/living/basic/hivebot/strong = 20,
-		/mob/living/basic/hivebot/ranged = 50,
-		/mob/living/basic/hivebot/rapid = 50,
+		//hivebots, they're finally difficult.
+		/mob/living/basic/hivebot = 40,
+		/mob/living/basic/hivebot/ranged = 30,
+		/mob/living/basic/hivebot/mechanic = 25,
+		/mob/living/basic/hivebot/rapid = 15,
+		/mob/living/basic/hivebot/strong = 10,
+		//bots, are hostile
 		/mob/living/simple_animal/bot/firebot/rockplanet = 15,
-		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
 		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
 		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
+		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
 		/obj/structure/spawner/hivebot = 20
 	)
 
@@ -441,11 +451,12 @@
 		/obj/structure/foamedmetal = 100,
 	)
 	mob_spawn_list = list( //Whoops! All hivebots!
-		/mob/living/basic/hivebot/strong = 20,
-		/mob/living/basic/hivebot/ranged = 40,
-		/mob/living/basic/hivebot/rapid = 20,
 		/mob/living/basic/hivebot = 40,
-		/mob/living/basic/hivebot/core = 10
+		/mob/living/basic/hivebot/ranged = 25,
+		/mob/living/basic/hivebot/mechanic = 25,
+		/mob/living/basic/hivebot/rapid = 15,
+		/mob/living/basic/hivebot/strong = 10,
+		/mob/living/basic/hivebot/core = 1,
 	)
 	mob_spawn_chance = 15
 	feature_spawn_list = list(
@@ -466,7 +477,7 @@
 	)
 
 	flora_spawn_list = list(
-		/obj/effect/spawner/random/waste/mechwreck = 20,
+		/obj/effect/spawner/random/waste/mechwreck = 5,
 		/obj/effect/spawner/random/trash/decal = 90,
 		/obj/effect/spawner/random/waste/radiation = 16,
 		/obj/structure/reagent_dispensers/watertank = 20,
@@ -481,15 +492,17 @@
 		/obj/effect/spawner/random/waste/salvageable = 40,
 	)
 	mob_spawn_list = list(
-		/mob/living/basic/hivebot = 80,
-		/mob/living/basic/hivebot/strong = 80,
-		/mob/living/basic/hivebot/ranged = 50,
-		/mob/living/basic/hivebot/rapid = 50,
+		//hivebots, they're finally difficult.
+		/mob/living/basic/hivebot = 40,
+		/mob/living/basic/hivebot/ranged = 30,
+		/mob/living/basic/hivebot/mechanic = 25,
+		/mob/living/basic/hivebot/rapid = 15,
+		/mob/living/basic/hivebot/strong = 10,
+		//bots, are hostile
 		/mob/living/simple_animal/bot/firebot/rockplanet = 15,
-		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
 		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
 		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
-		/obj/structure/spawner/hivebot = 25
+		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
 	)
 
 	flora_spawn_chance = 30

@@ -175,8 +175,6 @@ GLOBAL_LIST_INIT(beach_ambience,list(
 	'sound/ambience/seag1.ogg',
 	'sound/ambience/seag2.ogg',
 	'sound/ambience/seag2.ogg',
-	'sound/ambience/ambiodd.ogg',
-	'sound/ambience/ambinice.ogg',
 ))
 GLOBAL_LIST_INIT(desert_ambience,list(
 	'sound/ambience/wind/desert0.ogg',

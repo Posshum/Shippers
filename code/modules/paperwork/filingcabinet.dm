@@ -68,7 +68,9 @@
 			return
 		to_chat(user, span_notice("You put [P] in [src]."))
 		icon_state = "[initial(icon_state)]-open"
-		sleep(5)
+		playsound(src, 'sound/machines/washing_machine/washing_machine_door_open.ogg', 44, FALSE, -14, ignore_walls = FALSE)
+		sleep(rand(12,15))
+		playsound(src, 'sound/machines/washing_machine/washing_machine_door_close.ogg', 44, FALSE, -14, ignore_walls = FALSE)
 		icon_state = initial(icon_state)
 		updateUsrDialog()
 	else if(user.a_intent != INTENT_HARM)
@@ -119,6 +121,9 @@
 			usr.put_in_hands(P)
 			updateUsrDialog()
 			icon_state = "[initial(icon_state)]-open"
+			playsound(src, 'sound/machines/washing_machine/washing_machine_door_open.ogg', 44, FALSE, -14, ignore_walls = FALSE)
+			sleep(rand(12,15))
+			playsound(src, 'sound/machines/washing_machine/washing_machine_door_close.ogg', 44, FALSE, -14, ignore_walls = FALSE)
 			addtimer(VARSET_CALLBACK(src, icon_state, initial(icon_state)), 5)
 
 

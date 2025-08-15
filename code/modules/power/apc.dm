@@ -97,11 +97,11 @@
 #define UPOVERLAY_ENVIRON_SHIFT (8)
 
 //Maintenence Decay: Handles how much an APC decays overtime. Scales with power consumption and battery types.
-///How much the APC decays per decay tick. Default is 3. Modified amount by cells quality and power consumption.
-#define APC_DECAY_AMOUNT 3
-///How long it takes between each tick. Default is 2 minutes. Gives most APC's an average of ~30 min by default before starting to need repairs.
+///How much the APC decays per decay tick. Default is 1. Modified amount by cells quality and active power consumption.
+#define APC_DECAY_AMOUNT 1
+///How long it takes between each tick. Default is 2 minutes.
 #define APC_DECAY_TIME 2 MINUTES
-///The chance at which it decays
+///The chance at which it decays. Here so that there is some RNG involved with how soon an APC decays.
 #define APC_DECAY_CHANCE 50
 
 // the Area Power Controller (APC), formerly Power Distribution Unit (PDU)

@@ -60,9 +60,9 @@
 		if(SANITY_UNSTABLE to SANITY_DISTURBED)
 			msg += "[span_warning("I'm feeling a little bit unhinged...")]\n"
 		if(SANITY_CRAZY to SANITY_UNSTABLE)
-			msg += "[span_boldwarning("I'm freaking out!!")]\n"
+			msg += "[span_boldwarning("I'm freaking out!!!")]\n"
 		if(SANITY_INSANE to SANITY_CRAZY)
-			msg += "[span_boldwarning("AHAHAHAHAHAHAHAHAHAH!!")]\n"
+			msg += "[span_boldwarning("I CAN'T TAKE THIS ANYMORE!!!")]\n"
 
 	msg += span_notice("My current mood: ") //Short term
 	switch(mood_level)
@@ -210,10 +210,12 @@
 		if(SANITY_INSANE to SANITY_CRAZY)
 			setInsanityEffect(MAJOR_INSANITY_PEN)
 			master.add_movespeed_modifier(/datum/movespeed_modifier/sanity/insane)
+			master.hallucination = min(master.hallucination + 25, 100) //You're literally going insane. Who knows whats real anymore.
 			sanity_level = 6
 		if(SANITY_CRAZY to SANITY_UNSTABLE)
 			setInsanityEffect(MINOR_INSANITY_PEN)
 			master.add_movespeed_modifier(/datum/movespeed_modifier/sanity/crazy)
+			master.hallucination = 0
 			sanity_level = 5
 		if(SANITY_UNSTABLE to SANITY_DISTURBED)
 			setInsanityEffect(0)

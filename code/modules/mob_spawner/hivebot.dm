@@ -8,11 +8,11 @@
 	faction = list("hivebot")
 	max_integrity = 250
 	mob_types = list(
-		/mob/living/basic/hivebot = 40,
-		/mob/living/basic/hivebot/ranged = 40,
-		/mob/living/basic/hivebot/rapid = 10,
+		/mob/living/basic/hivebot = 25,
+		/mob/living/basic/hivebot/ranged = 15,
 		/mob/living/basic/hivebot/strong = 5,
 		/mob/living/basic/hivebot/mechanic = 5,
+		/mob/living/basic/hivebot/rapid = 1,
 		/mob/living/basic/hivebot/core = 1,
 	)
 	spawn_text = "emerges from within"

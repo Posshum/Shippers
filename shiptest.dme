@@ -3713,4 +3713,6 @@
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
 #include "code\datums\mapgen\planetary\DebriGenerator.dm"
+#include "code\controllers\subsystem\dynamicmusic.dm"
+#include "code\_globalvars\music.dm"
 // END_INCLUDE

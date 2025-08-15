@@ -214,12 +214,26 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, Toggle_Soundscape)()
 	else
 		to_chat(usr, "You will no longer hear ambient sounds.")
 		usr.stop_sound_channel(CHANNEL_AMBIENCE)
-		usr.stop_sound_channel(CHANNEL_BUZZ)
 	usr.client.update_ambience_pref()
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Ambience", "[usr.client.prefs.toggles & SOUND_AMBIENCE ? "Enabled" : "Disabled"]"))
 /datum/verbs/menu/Settings/Sound/Toggle_Soundscape/Get_checked(client/C)
 	return C.prefs.toggles & SOUND_AMBIENCE
 
+TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, Toggle_DynamicMusic)()
+	set name = "Hear/Silence Dynamic Music"
+	set category = "Preferences"
+	set desc = "Hear Dynamic Music Effects"
+	usr.client.prefs.toggles ^= SOUND_DYNAMIC_MUSIC
+	usr.client.prefs.save_preferences()
+	if(usr.client.prefs.toggles & SOUND_DYNAMIC_MUSIC)
+		to_chat(usr, "You will now hear dynamic music.")
+	else
+		to_chat(usr, "You will no longer hear dynamic music.")
+		usr.stop_sound_channel(CHANNEL_DYNAMIC_MUSIC)
+	usr.client.update_dynamic_music_pref()
+	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Dynamic Music", "[usr.client.prefs.toggles & SOUND_DYNAMIC_MUSIC ? "Enabled" : "Disabled"]"))
+/datum/verbs/menu/Settings/Sound/Toggle_DynamicMusic/Get_checked(client/C)
+	return C.prefs.toggles & SOUND_DYNAMIC_MUSIC
 
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_ship_ambience)()
 	set name = "Hear/Silence Ship Ambience"

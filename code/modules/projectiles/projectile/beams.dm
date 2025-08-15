@@ -112,7 +112,7 @@
 	damage = 20
 	armour_penetration = -10
 	var/tile_dropoff = 1
-	var/ap_dropoff = 5
+	var/ap_dropoff = 3
 	var/ap_dropoff_cutoff = -35
 
 /obj/projectile/beam/weak/shotgun/Range() //10% loss per tile = max range of 10, generally

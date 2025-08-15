@@ -19,7 +19,7 @@
 
 /obj/projectile/bullet/incendiary/shotgun/dragonsbreath
 	name = "dragonsbreath pellet"
-	damage = 8
+	damage = 6
 	armour_penetration = -35
 
 /obj/projectile/bullet/slug/stun
@@ -68,17 +68,18 @@
 	///How much stamina damage is subtracted per tile?
 	var/tile_dropoff_stamina = 1.5 //As above
 
-	var/ap_dropoff = 5
+	var/ap_dropoff = 3
 	var/ap_dropoff_cutoff = -35
 
 	icon_state = "pellet"
-	armour_penetration = -20
+	armour_penetration = -25
 	speed = BULLET_SPEED_SHOTGUN
 	bullet_identifier = "pellet"
 
 /obj/projectile/bullet/pellet/buckshot
 	name = "buckshot pellet"
-	damage = 13
+	damage = 8
+	tile_dropoff = 2
 
 /obj/projectile/bullet/pellet/rubbershot
 	name = "rubbershot pellet"

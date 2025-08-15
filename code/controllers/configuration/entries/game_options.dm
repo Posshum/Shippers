@@ -338,6 +338,10 @@
 	config_entry_value = 64
 	min_val = 0
 
+/datum/config_entry/number/roachcap
+	config_entry_value = 124
+	min_val = 0
+
 /datum/config_entry/flag/dynamic_config_enabled
 
 /datum/config_entry/number/respawn_timer

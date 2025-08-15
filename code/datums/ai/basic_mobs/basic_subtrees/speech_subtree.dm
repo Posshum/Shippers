@@ -36,7 +36,13 @@
 
 /datum/ai_planning_subtree/random_speech/cockroach
 	speech_chance = 5
-	emote_hear = list("chitters.")
+	emote_hear = list("chitters.", "creaks.")
+	emote_see = list("twitches its antennae.")
+
+/datum/ai_planning_subtree/random_speech/cockroach/glockroach
+	speech_chance = 10
+	emote_hear = list("chitters menacingly.", "creaks menacingly.")
+	emote_see = list("twitches its antennae angrily.", "waves its gun around.")
 
 /datum/ai_planning_subtree/random_speech/mouse
 	speech_chance = 1

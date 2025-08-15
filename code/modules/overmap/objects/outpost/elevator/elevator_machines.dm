@@ -57,8 +57,10 @@
 		if("Up")
 			// it just sets the flag. no backsies
 			my_floor.master.add_call_on_floor(my_floor, UP)
+			playsound(src, 'sound/machines/elevator_button.ogg', 33, TRUE, -13)
 		if("Down")
 			my_floor.master.add_call_on_floor(my_floor, DOWN)
+			playsound(src, 'sound/machines/elevator_button.ogg', 33, TRUE, -13)
 
 /obj/machinery/elevator_call_button/proc/check_menu(mob/user)
 	if(!my_floor)

@@ -63,6 +63,21 @@
 	///Used to decide what the maximum time between ambience is
 	var/max_ambience_cooldown = 60 SECONDS
 
+	//
+	var/music_index_alive = MUSIC_GENERIC
+	var/music_index_hurt = MUSIC_HURT
+	var/music_index_unconscious = MUSIC_UNCONSCIOUS
+	var/music_index_dead = MUSIC_DEAD
+	///A list of sounds to pick from every so often to play to clients.
+	var/list/music_track_alive
+	var/list/music_track_hurt
+	var/list/music_track_unconscious
+	var/list/music_track_dead
+	///Used to decide what the minimum time between tracks is
+	var/min_track_cooldown = 7 MINUTES
+	///Used to decide what the maximum time between tracks is
+	var/max_track_cooldown = 12 MINUTES
+
 	flags_1 = CAN_BE_DIRTY_1
 
 	var/list/firedoors
@@ -146,6 +161,16 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	icon_state = ""
 	if(!ambientsounds)
 		ambientsounds = GLOB.ambience_assoc[ambience_index]
+
+	if(!music_track_alive)
+		music_track_alive = GLOB.dynamicmusic_assoc[music_index_alive]
+	if(!music_track_hurt)
+		music_track_hurt = GLOB.dynamicmusic_assoc[music_index_hurt]
+	if(!music_track_unconscious)
+		music_track_unconscious = GLOB.dynamicmusic_assoc[music_index_unconscious]
+	if(!music_track_dead)
+		music_track_dead = GLOB.dynamicmusic_assoc[music_index_dead]
+
 
 	if(dynamic_lighting == DYNAMIC_LIGHTING_IFSTARLIGHT)
 		dynamic_lighting = CONFIG_GET(flag/starlight) ? DYNAMIC_LIGHTING_ENABLED : DYNAMIC_LIGHTING_DISABLED

@@ -7,6 +7,7 @@
 #define CHANNEL_HEARTBEAT 1015 //sound channel for heartbeats
 #define CHANNEL_AMBIENCE 1014
 #define CHANNEL_BUZZ 1013
+#define CHANNEL_DYNAMIC_MUSIC 1012
 
 ///Default range of a sound.
 #define SOUND_RANGE 17
@@ -19,11 +20,19 @@
 ///The default exponent of sound falloff
 #define SOUND_FALLOFF_EXPONENT 6
 
-#define CHANNEL_HIGHEST_AVAILABLE 1024
+//Highest availabl UNRESERVED channels for use with general sounds -> (Such as normal noises from objects, mobs, etc. Unreserved channels.)
+#define CHANNEL_HIGHEST_AVAILABLE 1011
 
 #define MAX_INSTRUMENT_CHANNELS (128 * 6)
 
 #define SOUND_MINIMUM_PRESSURE 10
+
+//Yeah same as ambience shut up
+#define MUSIC_GENERIC "generic"
+#define MUSIC_COMBAT "combat"
+#define MUSIC_HURT "hurt"
+#define MUSIC_UNCONSCIOUS "unconscious"
+#define MUSIC_DEAD "dead"
 
 #define AMBIENCE_GENERIC "generic"
 #define AMBIENCE_RARE "rare"

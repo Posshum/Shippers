@@ -15,6 +15,7 @@ SUBSYSTEM_DEF(mobs)
 
 	var/static/list/cubemonkeys = list()
 	var/static/list/cheeserats = list()
+	var/static/list/foodroaches = list()
 
 /datum/controller/subsystem/mobs/stat_entry(msg)
 	msg = "P:[length(GLOB.mob_living_list)]"

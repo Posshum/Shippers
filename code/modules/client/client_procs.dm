@@ -473,6 +473,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		to_chat(src, span_warning("Unable to access asset cache browser, if you are using a custom skin file, please allow DS to download the updated version, if you are not, then make a bug report. This is not a critical issue but can cause issues with resource downloading, as it is impossible to know when extra resources arrived to you."))
 
 	update_ambience_pref()
+	update_dynamic_music_pref()
 
 
 	//This is down here because of the browse() calls in tooltip/New()
@@ -548,6 +549,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	QDEL_NULL(void)
 	QDEL_NULL(tooltips)
 	SSambience.ambience_listening_clients -= src
+	SSdynamicmusic.music_listening_clients -= src
 	seen_messages = null
 	Master.UpdateTickRate()
 	..() //Even though we're going to be hard deleted there are still some things that want to know the destroy is happening
@@ -1153,6 +1155,14 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		SSambience.ambience_listening_clients[src] = world.time + 10 SECONDS //Just wait 10 seconds before the next one aight mate? cheers.
 	else
 		SSambience.ambience_listening_clients -= src
+
+/client/proc/update_dynamic_music_pref()
+	if(prefs.toggles & SOUND_DYNAMIC_MUSIC)
+		if(SSdynamicmusic.music_listening_clients[src] > world.time)
+			return // If already properly set we don't want to reset the timer.
+		SSdynamicmusic.music_listening_clients[src] = world.time + 10 SECONDS //Just wait 10 seconds before the next one aight mate? cheers.
+	else
+		SSdynamicmusic.music_listening_clients -= src
 
 /**
  * Handles incoming messages from the stat-panel TGUI.

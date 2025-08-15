@@ -15,6 +15,10 @@
 	var/lastattacker = null
 	var/lastattackerckey = null
 
+	//Handled in dynamic music to check if they are still in combat or not.
+	var/in_combat
+	var/combat_check_limit = 10 //After 10 seconds, return to normal.
+
 	//Health and life related vars
 	/// Maximum health that should be possible.
 	var/maxHealth = MAX_LIVING_HEALTH

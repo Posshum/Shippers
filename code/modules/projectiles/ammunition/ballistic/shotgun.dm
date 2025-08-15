@@ -23,7 +23,7 @@
 	icon_state = "buckshot"
 	projectile_type = /obj/projectile/bullet/pellet/buckshot
 	pellets = 8
-	variance = 25
+	variance = 22
 
 	wear_modifier = 1
 
@@ -40,7 +40,7 @@
 	icon_state = "rubber"
 	projectile_type = /obj/projectile/bullet/pellet/rubbershot
 	pellets = 8
-	variance = 25
+	variance = 22
 	custom_materials = list(/datum/material/iron=4000)
 
 	wear_modifier = 1
@@ -66,7 +66,7 @@
 	projectile_type = /obj/projectile/bullet/pellet/improvised
 	custom_materials = list(/datum/material/iron=250)
 	pellets = 10
-	variance = 25
+	variance = 33
 
 	wear_modifier = 1
 
@@ -76,7 +76,7 @@
 	icon_state = "bounty"
 	projectile_type = /obj/projectile/bullet/pellet/rubbershot/incapacitate
 	pellets = 12//double the pellets, but half the stun power of each, which makes this best for just dumping right in someone's face.
-	variance = 25
+	variance = 33
 	custom_materials = list(/datum/material/iron=4000)
 
 /obj/item/ammo_casing/shotgun/stunslug
@@ -127,7 +127,7 @@
 	icon_state = "dragonsbreath"
 	projectile_type = /obj/projectile/bullet/incendiary/shotgun/dragonsbreath
 	pellets = 8
-	variance = 45
+	variance = 44
 
 	wear_modifier = 1
 

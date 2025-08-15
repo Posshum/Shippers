@@ -32,8 +32,8 @@ EMOJIS
 ## To speed things up make the number negative, to slow things down, make the number positive.
 
 ## These modify the run/walk speed of all mobs before the mob-specific modifiers are applied.
-RUN_DELAY 1.5
-WALK_DELAY 3
+RUN_DELAY 1.78
+WALK_DELAY 3.78
 
 ## The variables below affect the movement of specific mob types. THIS AFFECTS ALL SUBTYPES OF THE TYPE YOU CHOOSE!
 ## Entries completely override all subtypes. Later entries have precedence over earlier entries.
@@ -488,6 +488,9 @@ MONKEYCAP 64
 
 ## A cap on how many mice can be bred via cheese wedges
 RATCAP 64
+
+## A cap on how many roaches can be alive at once from consuming food.
+ROACHCAP 124
 
 ## Enable the capitalist agenda on your server.
 ECONOMY

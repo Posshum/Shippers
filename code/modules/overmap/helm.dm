@@ -175,6 +175,7 @@
 	if(!current_ship.shipkey && istype(user) && Adjacent(user) && !viewer)
 		say("Generated new shipkey, do not lose it!")
 		var/key = new /obj/item/key/ship(get_turf(src), current_ship)
+		playsound(src, 'sound/effects/key_acquired.ogg', 44, TRUE, -10)
 		user.put_in_hands(key)
 		return
 
