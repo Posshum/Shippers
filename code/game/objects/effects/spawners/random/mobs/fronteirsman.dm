@@ -104,15 +104,16 @@
 	)
 
 /obj/effect/spawner/random/mobs/frontiersman/very_strong/internals/chance_50
-	icon_state = "frontiersman_50"
+	icon_state = "frontiersman_verystrong_internals_50"
 	spawn_loot_chance = 50
 
 /obj/effect/spawner/random/mobs/frontiersman/very_strong/internals/chance_25
-	icon_state = "frontiersman_25"
+	icon_state = "frontiersman_verystrong_internals_25"
 	spawn_loot_chance = 25
 
 /obj/effect/spawner/random/mobs/frontiersman/impossible
 	name = "frontiersman impossible spawner"
+	icon_state = "frontiersman_impossible_100"
 	loot = list(
 		/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy,
 		/mob/living/simple_animal/hostile/human/frontier/ranged/officer,
@@ -120,15 +121,16 @@
 	)
 
 /obj/effect/spawner/random/mobs/frontiersman/impossible/chance_50
-	icon_state = "frontiersman_50"
+	icon_state = "frontiersman_impossible_50"
 	spawn_loot_chance = 50
 
 /obj/effect/spawner/random/mobs/frontiersman/impossible/chance_25
-	icon_state = "frontiersman_25"
+	icon_state = "frontiersman_impossible_25"
 	spawn_loot_chance = 25
 
 /obj/effect/spawner/random/mobs/frontiersman/impossible/internals
 	name = "frontiersman impossible internals spawner"
+	icon_state = "frontiersman_impossible_internals_100"
 	loot = list(
 		/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/heavy/internals,
 		/mob/living/simple_animal/hostile/human/frontier/ranged/officer/internals,
@@ -136,9 +138,9 @@
 	)
 
 /obj/effect/spawner/random/mobs/frontiersman/impossible/internals/chance_50
-	icon_state = "frontiersman_50"
+	icon_state = "frontiersman_impossible_internals_50"
 	spawn_loot_chance = 50
 
 /obj/effect/spawner/random/mobs/frontiersman/impossible/internals/chance_25
-	icon_state = "frontiersman_25"
+	icon_state = "frontiersman_impossible_internals_25"
 	spawn_loot_chance = 25

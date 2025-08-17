@@ -41,6 +41,7 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/treasure_cove)
 "cR" = (
+/obj/effect/spawner/random/mobs/rodent/rat/chance_25,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/beach/treasure_cove)
 "cU" = (
@@ -266,7 +267,7 @@
 /turf/open/water/beach,
 /area/ruin/unpowered)
 "km" = (
-/mob/living/basic/cockroach,
+/obj/effect/spawner/random/mobs/rodent/cockroach,
 /turf/open/floor/wood{
 	icon_state = "wood-broken4"
 	},
@@ -294,7 +295,7 @@
 /area/ruin/unpowered)
 "lL" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/basic/cockroach,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_50,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/beach/treasure_cove)
 "mG" = (
@@ -314,6 +315,7 @@
 "mN" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/treasure_cove)
 "mV" = (
@@ -382,7 +384,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/neutered,
+/obj/effect/spawner/random/mobs/frontiersman/strong,
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
 "oR" = (
@@ -558,7 +560,7 @@
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
 "sC" = (
-/mob/living/basic/mouse/rat,
+/obj/effect/spawner/random/mobs/rodent/rat,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/beach/treasure_cove)
 "sQ" = (
@@ -934,12 +936,12 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/frontier,
+/obj/effect/spawner/random/mobs/frontiersman/basic,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/beach/treasure_cove)
 "EU" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/frontier,
+/obj/effect/spawner/random/mobs/rodent/rat/chance_25,
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/ruin/beach/treasure_cove)
 "FL" = (
@@ -967,6 +969,7 @@
 	pixel_y = 4
 	},
 /obj/effect/spawner/random/decoration/glowstick,
+/obj/effect/spawner/random/mobs/frontiersman/very_strong/chance_25,
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
 "GC" = (
@@ -996,6 +999,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/mobs/frontiersman/basic,
 /turf/open/floor/wood{
 	icon_state = "wood-broken"
 	},
@@ -1114,6 +1118,7 @@
 /obj/structure/railing/wood{
 	layer = 3.1
 	},
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/plating{
 	icon_state = "platingdmg2"
 	},
@@ -1277,6 +1282,14 @@
 /mob/living/basic/mouse/rat,
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/unpowered)
+"Sz" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/mobs/rodent/rat/chance_25,
+/turf/open/floor/wood,
+/area/ruin/beach/treasure_cove)
 "SD" = (
 /turf/open/water/beach/deep,
 /area/ruin/unpowered)
@@ -1284,12 +1297,12 @@
 /obj/structure/chair/wood{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/officer/neutured,
 /obj/effect/landmark/mission_poi/main/kill{
 	already_spawned = 1;
 	type_to_spawn = /mob/living/simple_animal/hostile/human/frontier/ranged/officer/neutured;
 	mission_index = 1
 	},
+/obj/effect/spawner/random/mobs/frontiersman/very_strong,
 /turf/open/floor/carpet/red,
 /area/ruin/beach/treasure_cove)
 "SX" = (
@@ -1315,6 +1328,10 @@
 	},
 /turf/open/water/beach,
 /area/ruin/unpowered)
+"Ts" = (
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
+/turf/open/floor/concrete/slab_1,
+/area/ruin/beach/treasure_cove)
 "Ty" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1386,6 +1403,7 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/south,
+/obj/effect/spawner/random/mobs/frontiersman/strong/chance_25,
 /turf/open/floor/wood,
 /area/ruin/beach/treasure_cove)
 "VF" = (
@@ -1408,6 +1426,7 @@
 /obj/structure/sign/poster/contraband/punch_shit{
 	pixel_x = 32
 	},
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_50,
 /turf/open/floor/wood/walnut,
 /area/ruin/beach/treasure_cove)
 "Wa" = (
@@ -1430,7 +1449,7 @@
 /obj/structure/sign/poster/contraband/lusty_xenomorph{
 	pixel_y = 32
 	},
-/mob/living/basic/cockroach,
+/obj/effect/spawner/random/mobs/rodent/cockroach,
 /turf/open/floor/plating/rust,
 /area/ruin/beach/treasure_cove)
 "Xp" = (
@@ -1502,6 +1521,7 @@
 /obj/structure/bed{
 	icon_state = "dirty_mattress"
 	},
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_50,
 /turf/open/floor/wood/walnut,
 /area/ruin/beach/treasure_cove)
 "ZO" = (
@@ -1980,7 +2000,7 @@ pz
 JQ
 pz
 Wa
-vb
+Ts
 qN
 pz
 rf
@@ -2254,7 +2274,7 @@ ss
 pk
 sC
 Qh
-xX
+Sz
 nj
 TN
 TN

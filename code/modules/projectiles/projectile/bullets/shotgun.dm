@@ -78,7 +78,7 @@
 
 /obj/projectile/bullet/pellet/buckshot
 	name = "buckshot pellet"
-	damage = 10
+	damage = 11
 	tile_dropoff = 1.25
 
 /obj/projectile/bullet/pellet/rubbershot
@@ -117,13 +117,13 @@
 // Mech Scattershot
 
 /obj/projectile/bullet/pellet/scattershot
-	damage = 20
+	damage = 21
 	armour_penetration = -20
-	tile_dropoff = 1.5
+	tile_dropoff = 1.33
 
 /obj/projectile/bullet/pellet/buckshot/twobore
 	name = "two-bore pellet"
-	damage = 30
+	damage = 38
 	armour_penetration = -25
 	tile_dropoff = 3
 	bullet_identifier = "massive pellet"
