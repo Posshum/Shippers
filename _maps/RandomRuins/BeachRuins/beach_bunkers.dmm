@@ -27,6 +27,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/mobs/rodent/rat/chance_25,
 /turf/open/floor/plating/dirt/beach/lit,
 /area/ruin/beach/bunker/side_two)
 "ar" = (
@@ -108,13 +109,7 @@
 /turf/open/floor/concrete/slab_2,
 /area/ruin/beach/bunker/living)
 "bf" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin{
-	environment_smash = 0;
-	wander = 0;
-	stop_automated_movement = 1;
-	aggro_vision_range = 14;
-	vision_range = 14
-	},
+/obj/effect/spawner/random/mobs/frontiersman/strong,
 /turf/open/floor/plating/dirt/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "bj" = (
@@ -324,6 +319,7 @@
 	icon_state = "5-9"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/wood,
 /area/ruin/beach/bunker/living)
 "eF" = (
@@ -371,6 +367,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
+/obj/effect/spawner/random/mobs/frontiersman/strong,
 /turf/open/floor/carpet,
 /area/ruin/beach/bunker)
 "fQ" = (
@@ -592,6 +589,7 @@
 	pixel_y = -5;
 	pixel_x = -3
 	},
+/obj/effect/spawner/random/mobs/rodent/rat/multiple,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/bunker/side_one)
 "iq" = (
@@ -624,6 +622,7 @@
 	pixel_y = -5;
 	pixel_x = -3
 	},
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/plating/dirt/beach,
 /area/overmap_encounter/planetoid/cave/explored)
 "iH" = (
@@ -720,6 +719,7 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/north,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/wood,
 /area/ruin/beach/bunker/office)
 "jQ" = (
@@ -776,6 +776,7 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/wood,
 /area/ruin/beach/bunker)
 "kw" = (
@@ -785,6 +786,7 @@
 	pixel_y = 14
 	},
 /obj/item/radio/intercom/directional/south,
+/obj/effect/spawner/random/mobs/frontiersman/basic/chance_25,
 /turf/open/floor/wood,
 /area/ruin/beach/bunker/living)
 "kF" = (
@@ -946,6 +948,10 @@
 	},
 /turf/open/floor/plating/dirt/beach/lit,
 /area/ruin/beach/bunker/side_two)
+"lS" = (
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
+/turf/open/floor/wood,
+/area/ruin/beach/bunker/office)
 "mj" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -1042,6 +1048,7 @@
 /area/ruin/beach/bunker/living)
 "mW" = (
 /obj/structure/chair/comfy/olive/old/directional/north,
+/obj/effect/spawner/random/mobs/frontiersman/strong,
 /turf/open/floor/wood,
 /area/ruin/beach/bunker/office)
 "na" = (
@@ -1053,6 +1060,7 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "nh" = (
 /obj/structure/chair/plastic,
+/obj/effect/spawner/random/mobs/frontiersman/basic/chance_25,
 /turf/open/floor/plating/dirt/beach,
 /area/overmap_encounter/planetoid/cave/explored)
 "nm" = (
@@ -1111,7 +1119,7 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/bunker/side_one)
 "nT" = (
-/mob/living/basic/mouse/rat,
+/obj/effect/spawner/random/mobs/rodent/rat/chance_50,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/bunker/side_two)
 "nU" = (
@@ -1143,6 +1151,7 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/carpet,
 /area/ruin/beach/bunker)
 "om" = (
@@ -1169,6 +1178,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/mobs/frontiersman/basic/chance_25,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/bunker/living)
 "oq" = (
@@ -1298,6 +1308,11 @@
 /obj/structure/flora/tree/dead/barren,
 /turf/open/floor/plating/grass/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"qq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/random/mobs/rodent/rat/chance_25,
+/turf/open/floor/concrete/pavement/beachplanet,
+/area/ruin/beach/bunker/side_one)
 "qy" = (
 /obj/effect/turf_decal/road,
 /obj/structure/cable{
@@ -1319,6 +1334,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/directional/north,
 /obj/structure/chair/handrail,
+/obj/effect/spawner/random/mobs/frontiersman/basic/chance_25,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/bunker/office)
 "qI" = (
@@ -1340,6 +1356,7 @@
 /obj/structure/rack,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/light/small/directional/south,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/beach/bunker/side_one)
 "qY" = (
@@ -1363,7 +1380,6 @@
 /turf/open/floor/concrete/reinforced,
 /area/ruin/beach/bunker/side_two)
 "re" = (
-/mob/living/basic/mouse/rat,
 /obj/item/reagent_containers/food/drinks/bottle/moonshine{
 	pixel_y = 3;
 	pixel_x = -8
@@ -1403,7 +1419,6 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/bunker/office)
 "rq" = (
-/mob/living/basic/mouse/rat,
 /obj/item/paper/crumpled{
 	pixel_y = -6;
 	pixel_x = 7
@@ -1480,6 +1495,14 @@
 	icon_state = "wood-broken6"
 	},
 /area/ruin/beach/bunker)
+"sB" = (
+/obj/item/food/cheese/wedge{
+	pixel_y = 19;
+	pixel_x = -8
+	},
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "sE" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 8;
@@ -1523,6 +1546,7 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "tA" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/bunker/side_two)
 "tJ" = (
@@ -1573,6 +1597,17 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/beach/bunker/side_one)
+"uh" = (
+/obj/item/paper/crumpled{
+	pixel_y = 6;
+	pixel_x = 12
+	},
+/obj/item/paper/crumpled{
+	pixel_y = 14;
+	pixel_x = -6
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "ui" = (
 /obj/structure/crate_shelf,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -1608,10 +1643,16 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "uF" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/wood{
 	icon_state = "wood-broken"
 	},
 /area/ruin/beach/bunker/office)
+"uN" = (
+/obj/effect/turf_decal/industrial/warning/full,
+/obj/effect/spawner/random/mobs/frontiersman/basic/chance_25,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "uO" = (
 /obj/structure/closet/cabinet,
 /obj/item/food/deadmouse{
@@ -1686,6 +1727,21 @@
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"vA" = (
+/obj/item/paper/crumpled{
+	pixel_y = 6;
+	pixel_x = 12
+	},
+/obj/item/paper/crumpled{
+	pixel_y = 1;
+	pixel_x = -6
+	},
+/obj/effect/decal/cleanable/garbage{
+	pixel_y = 4;
+	pixel_x = -10
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "vF" = (
 /obj/structure/closet/cabinet,
 /obj/structure/cable{
@@ -1751,6 +1807,7 @@
 "wk" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/beach/bunker/side_one)
 "wv" = (
@@ -1810,6 +1867,7 @@
 /area/overmap_encounter/planetoid/cave/explored)
 "wX" = (
 /obj/structure/chair/comfy/olive/old/directional/north,
+/obj/effect/spawner/random/mobs/frontiersman/strong/chance_25,
 /turf/open/floor/carpet,
 /area/ruin/beach/bunker/office)
 "wZ" = (
@@ -1817,13 +1875,6 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
-"xf" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin{
-	environment_smash = 0;
-	wander = 0
-	},
-/turf/open/floor/plating/dirt/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "xn" = (
 /obj/effect/turf_decal/road,
@@ -1849,6 +1900,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet,
 /area/ruin/beach/bunker/office)
+"xE" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/mobs/rodent/rat/chance_25,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/beach/bunker/side_one)
 "xO" = (
 /obj/structure/closet/crate/secure/gear,
 /obj/item/storage/belt/security/military/frontiersmen{
@@ -1933,6 +1989,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/concrete/slab_2,
 /area/ruin/beach/bunker/living)
 "yx" = (
@@ -1986,6 +2043,7 @@
 "zw" = (
 /obj/effect/spawner/bunk_bed,
 /obj/machinery/light/small/directional/south,
+/obj/effect/spawner/random/mobs/frontiersman/basic/chance_25,
 /turf/open/floor/wood{
 	icon_state = "wood-broken5"
 	},
@@ -2011,14 +2069,12 @@
 /area/ruin/beach/bunker)
 "zI" = (
 /obj/effect/turf_decal/road,
-/mob/living/simple_animal/hostile/human/frontier/ranged/officer/rifle{
-	aggro_vision_range = 14
-	},
 /obj/effect/landmark/mission_poi/main/kill{
 	already_spawned = 1;
 	type_to_spawn = /mob/living/simple_animal/hostile/human/frontier/ranged/officer/rifle;
 	mission_index = 2
 	},
+/obj/effect/spawner/random/mobs/frontiersman/very_strong,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "zJ" = (
@@ -2180,6 +2236,10 @@
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"Bw" = (
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "BA" = (
 /obj/structure/cable{
 	icon_state = "4-5"
@@ -2251,6 +2311,7 @@
 	pixel_y = -5;
 	pixel_x = -8
 	},
+/obj/effect/spawner/random/mobs/rodent/rat/chance_25,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/bunker/living)
 "Ca" = (
@@ -2260,6 +2321,7 @@
 	},
 /obj/item/bedsheet/black,
 /obj/item/radio/intercom/directional/north,
+/obj/effect/spawner/random/mobs/frontiersman/basic/chance_25,
 /turf/open/floor/wood,
 /area/ruin/beach/bunker/living)
 "Cc" = (
@@ -2269,6 +2331,7 @@
 	widenet = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/bunker/living)
 "Ci" = (
@@ -2321,6 +2384,11 @@
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"Ct" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
+/turf/open/floor/wood,
+/area/ruin/beach/bunker/office)
 "Cu" = (
 /obj/structure/cable{
 	icon_state = "2-5"
@@ -2380,6 +2448,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"Dq" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/mobs/rodent/rat/chance_25,
+/turf/open/floor/concrete/slab_2,
+/area/ruin/beach/bunker)
 "DC" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
@@ -2449,6 +2524,17 @@
 	},
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"En" = (
+/obj/item/paper/crumpled{
+	pixel_y = -17;
+	pixel_x = 3
+	},
+/obj/item/paper/crumpled{
+	pixel_y = -4;
+	pixel_x = -9
+	},
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Eo" = (
 /obj/structure/closet/crate/secure/gear,
 /obj/item/clothing/head/helmet/bulletproof/x11/frontier{
@@ -2478,10 +2564,6 @@
 	},
 /turf/open/floor/plating/dirt/beach,
 /area/overmap_encounter/planetoid/cave/explored)
-"Et" = (
-/mob/living/simple_animal/hostile/human/frontier,
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "Ew" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 4
@@ -2542,7 +2624,7 @@
 	icon_state = "4-5"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/frontier/ranged,
+/obj/effect/spawner/random/mobs/rodent/rat/chance_25,
 /turf/open/floor/concrete/slab_2,
 /area/ruin/beach/bunker/side_one)
 "ES" = (
@@ -2566,6 +2648,27 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/beach/bunker/side_one)
+"Fo" = (
+/obj/item/food/cheese/wedge{
+	pixel_y = 10;
+	pixel_x = 6
+	},
+/obj/item/paper/crumpled{
+	pixel_y = 6;
+	pixel_x = 12
+	},
+/obj/item/paper/crumpled{
+	pixel_y = 1;
+	pixel_x = -6
+	},
+/obj/item/paper/crumpled{
+	pixel_y = -4;
+	pixel_x = 9
+	},
+/obj/effect/spawner/random/mobs/rodent/rat/multiple,
+/obj/effect/spawner/random/mobs/rodent/rat,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
 "Fq" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -2665,10 +2768,10 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/concrete/slab_2,
 /area/ruin/beach/bunker)
 "Gu" = (
-/mob/living/basic/mouse/rat,
 /obj/effect/turf_decal/steeldecal/steel_decals3,
 /obj/item/paper/crumpled{
 	pixel_y = 8;
@@ -2682,6 +2785,7 @@
 	pixel_y = 5;
 	pixel_x = 3
 	},
+/obj/effect/spawner/random/mobs/rodent/rat/multiple,
 /turf/open/floor/plating/dirt/beach,
 /area/overmap_encounter/planetoid/cave/explored)
 "GO" = (
@@ -2736,6 +2840,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 6
 	},
+/obj/effect/spawner/random/mobs/frontiersman/strong,
 /turf/open/floor/concrete/slab_2,
 /area/ruin/beach/bunker/living)
 "HK" = (
@@ -2871,6 +2976,11 @@
 	},
 /turf/open/floor/plating/dirt/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
+"Jt" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/mobs/rodent/rat/chance_25,
+/turf/open/floor/concrete/slab_4,
+/area/ruin/beach/bunker/side_two)
 "JX" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -2886,6 +2996,7 @@
 	pixel_x = 6
 	},
 /obj/effect/decal/cleanable/blood/gibs/limb,
+/obj/effect/spawner/random/mobs/rodent/rat/multiple,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/bunker/side_one)
 "Kg" = (
@@ -2917,6 +3028,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/mobs/frontiersman/strong/chance_25,
 /turf/open/floor/carpet,
 /area/ruin/beach/bunker)
 "KU" = (
@@ -2975,8 +3087,8 @@
 /turf/open/floor/plating/dirt/beach/lit,
 /area/overmap_encounter/planetoid/cave/explored)
 "LN" = (
-/mob/living/basic/mouse/rat,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/mobs/rodent/rat/chance_50,
 /turf/open/floor/concrete/slab_4,
 /area/ruin/beach/bunker/side_two)
 "LS" = (
@@ -3075,7 +3187,6 @@
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor3"
 	},
-/mob/living/simple_animal/hostile/human/frontier,
 /turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Nw" = (
@@ -3197,6 +3308,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/mobs/rodent/rat/chance_25,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/bunker/living)
 "OF" = (
@@ -3231,10 +3343,6 @@
 /obj/structure/fence,
 /turf/open/floor/plating/dirt/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"OZ" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged,
-/turf/open/floor/concrete/pavement/beachplanet/lit,
-/area/overmap_encounter/planetoid/beachplanet/explored)
 "Pb" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3252,6 +3360,7 @@
 "Ph" = (
 /obj/structure/chair/sofa/olive/old/right/directional/west,
 /obj/item/radio/intercom/directional/east,
+/obj/effect/spawner/random/mobs/frontiersman/basic/chance_25,
 /turf/open/floor/wood,
 /area/ruin/beach/bunker)
 "Pm" = (
@@ -3329,6 +3438,7 @@
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/light/small/directional/north,
 /obj/item/storage/bottles/moonshine/sealed,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/beach/bunker/side_one)
 "PW" = (
@@ -3358,13 +3468,6 @@
 	},
 /turf/open/floor/carpet,
 /area/ruin/beach/bunker)
-"Qx" = (
-/mob/living/simple_animal/hostile/human/frontier{
-	name = "Frontiersman Adjunct"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood,
-/area/ruin/beach/bunker/office)
 "Qz" = (
 /obj/item/food/deadmouse{
 	pixel_y = -3;
@@ -3495,15 +3598,8 @@
 /turf/open/floor/plating/dirt/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "RO" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin{
-	environment_smash = 0;
-	wander = 0;
-	stop_automated_movement = 1;
-	aggro_vision_range = 14;
-	vision_range = 14;
-	retreat_distance = 0
-	},
 /obj/structure/chair/plastic,
+/obj/effect/spawner/random/mobs/frontiersman/strong,
 /turf/open/floor/plating/dirt/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "RT" = (
@@ -3537,6 +3633,7 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Sj" = (
 /obj/structure/chair/plastic,
+/obj/effect/spawner/random/mobs/frontiersman/basic/chance_25,
 /turf/open/floor/plating/dirt/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Sp" = (
@@ -3598,6 +3695,7 @@
 "Tb" = (
 /obj/structure/chair/sofa/olive/old/directional/north,
 /obj/effect/turf_decal/siding/wood,
+/obj/effect/spawner/random/mobs/frontiersman/basic/chance_25,
 /turf/open/floor/carpet,
 /area/ruin/beach/bunker)
 "Tx" = (
@@ -3680,7 +3778,6 @@
 /turf/open/floor/concrete/reinforced,
 /area/ruin/beach/bunker/side_one)
 "US" = (
-/mob/living/basic/mouse/rat,
 /obj/item/food/deadmouse{
 	pixel_y = 5
 	},
@@ -3771,11 +3868,8 @@
 /turf/open/floor/concrete/slab_1,
 /area/ruin/beach/bunker/living)
 "Wd" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin{
-	environment_smash = 0;
-	wander = 0
-	},
-/turf/open/floor/plating/grass/beach/lit,
+/obj/effect/spawner/random/mobs/frontiersman/basic/chance_50,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "Wk" = (
 /obj/machinery/shower{
@@ -3877,7 +3971,7 @@
 /area/ruin/beach/bunker/office)
 "Xq" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/basic/mouse/rat,
+/obj/effect/spawner/random/mobs/rodent/rat/multiple,
 /turf/open/floor/concrete/slab_2,
 /area/ruin/beach/bunker/side_two)
 "Xv" = (
@@ -3900,7 +3994,7 @@
 /obj/structure/chair/plastic{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/frontier,
+/obj/effect/spawner/random/mobs/frontiersman/basic,
 /turf/open/floor/plating/dirt/beach,
 /area/overmap_encounter/planetoid/cave/explored)
 "XH" = (
@@ -3925,6 +4019,7 @@
 	pixel_y = -17;
 	pixel_x = 12
 	},
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/plating/dirt/beach,
 /area/overmap_encounter/planetoid/cave/explored)
 "XP" = (
@@ -3946,7 +4041,7 @@
 /obj/structure/chair/plastic{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/frontier,
+/obj/effect/spawner/random/mobs/frontiersman/basic,
 /turf/open/floor/plating/dirt/beach,
 /area/overmap_encounter/planetoid/cave/explored)
 "XZ" = (
@@ -4006,12 +4101,6 @@
 	},
 /turf/open/floor/plating/grass/beach/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
-"Zq" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/pounder{
-	weapon_drop_chance = 20
-	},
-/turf/open/floor/concrete/slab_2,
-/area/ruin/beach/bunker)
 "Zs" = (
 /obj/structure/cable{
 	icon_state = "6-8"
@@ -4035,6 +4124,7 @@
 	icon_state = "0-10"
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/wood{
 	icon_state = "wood-broken4"
 	},
@@ -4048,6 +4138,7 @@
 	},
 /obj/machinery/airalarm/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/wood{
 	icon_state = "wood-broken4"
 	},
@@ -4060,6 +4151,14 @@
 	icon_state = "2-4"
 	},
 /turf/open/floor/plating/grass/beach/lit,
+/area/overmap_encounter/planetoid/beachplanet/explored)
+"ZM" = (
+/obj/item/food/cheese/wedge{
+	pixel_y = 10;
+	pixel_x = 6
+	},
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
+/turf/open/floor/concrete/pavement/beachplanet/lit,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "ZR" = (
 /obj/structure/rack,
@@ -4935,7 +5034,7 @@ in
 wk
 rt
 yq
-CL
+qq
 yq
 rt
 bW
@@ -5035,7 +5134,7 @@ bW
 rr
 rt
 Ps
-oq
+xE
 oq
 Bm
 El
@@ -5240,7 +5339,7 @@ yA
 yA
 yA
 YB
-rf
+uN
 Sc
 Sc
 YB
@@ -5266,10 +5365,10 @@ rr
 rr
 WB
 cO
-Qx
+Ct
 xw
 gi
-BC
+lS
 Wq
 rr
 YB
@@ -5456,7 +5555,7 @@ HQ
 Nn
 HQ
 zp
-HQ
+Wd
 HQ
 HQ
 HQ
@@ -5479,7 +5578,7 @@ HQ
 QU
 HQ
 HQ
-HQ
+ZM
 HQ
 HQ
 HQ
@@ -5497,7 +5596,7 @@ bW
 um
 tv
 kr
-Zq
+no
 no
 kF
 ki
@@ -5537,9 +5636,9 @@ xn
 Sq
 aX
 HQ
-HQ
-HQ
-HQ
+En
+Fo
+uh
 HQ
 HQ
 YB
@@ -5556,7 +5655,7 @@ bW
 um
 IF
 TF
-aR
+Dq
 aR
 Cu
 BV
@@ -5596,9 +5695,9 @@ Re
 jX
 QU
 HQ
-HQ
-HQ
-HQ
+Bw
+vA
+sB
 HQ
 HQ
 YB
@@ -5631,12 +5730,12 @@ UI
 yQ
 mN
 HQ
-Et
+HQ
 HQ
 UI
 HQ
 xp
-HQ
+Wd
 HQ
 YB
 gF
@@ -5651,7 +5750,7 @@ HQ
 YB
 YB
 HQ
-OZ
+HQ
 HQ
 QU
 HQ
@@ -5896,7 +5995,7 @@ YB
 Pm
 Pm
 Pm
-rf
+uN
 YB
 YB
 db
@@ -6048,7 +6147,7 @@ UI
 HQ
 Ry
 XH
-XH
+Jt
 LN
 ac
 sS
@@ -6594,7 +6693,7 @@ OF
 OF
 YB
 Tx
-YB
+bf
 Km
 yA
 YB
@@ -6604,7 +6703,7 @@ HQ
 YB
 Km
 yA
-xf
+bf
 Tx
 Tx
 YB
@@ -6654,7 +6753,7 @@ OF
 YB
 Tx
 Tx
-Wd
+yA
 yA
 YB
 HQ

@@ -15,6 +15,11 @@
 	var/mob/living/basic/rodent_type = /mob/living/basic/mouse
 	var/spawncount = 1
 
+/datum/round_event/ship/rodent_infestation/setup()
+	. = ..()
+	spawncount = rand(2,4) //Spawn at random 2-4 of these little shits.
+
+
 /datum/round_event/ship/rodent_infestation/start()
 	var/list/vents = list()
 	if(!length(target_ship.shuttle_port.shuttle_areas))

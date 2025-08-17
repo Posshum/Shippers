@@ -3733,4 +3733,7 @@
 #include "code\datums\mapgen\planetary\DebriGenerator.dm"
 #include "code\controllers\subsystem\dynamicmusic.dm"
 #include "code\_globalvars\music.dm"
+#include "code\game\objects\effects\spawners\random\mobs\fronteirsman.dm"
+#include "code\game\objects\effects\spawners\random\mobs\mobs.dm"
+#include "code\game\objects\effects\spawners\random\mobs\rodents.dm"
 // END_INCLUDE

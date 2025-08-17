@@ -78,8 +78,8 @@
 
 /obj/projectile/bullet/pellet/buckshot
 	name = "buckshot pellet"
-	damage = 8
-	tile_dropoff = 2
+	damage = 10
+	tile_dropoff = 1.25
 
 /obj/projectile/bullet/pellet/rubbershot
 	name = "rubbershot pellet"
@@ -110,15 +110,16 @@
 		qdel(src)
 
 /obj/projectile/bullet/pellet/improvised
-	damage = 6
+	damage = 8
 	armour_penetration = -60
 	tile_dropoff = 0.6
 
 // Mech Scattershot
 
 /obj/projectile/bullet/pellet/scattershot
-	damage = 24
+	damage = 20
 	armour_penetration = -20
+	tile_dropoff = 1.5
 
 /obj/projectile/bullet/pellet/buckshot/twobore
 	name = "two-bore pellet"
