@@ -3736,4 +3736,5 @@
 #include "code\game\objects\effects\spawners\random\mobs\fronteirsman.dm"
 #include "code\game\objects\effects\spawners\random\mobs\mobs.dm"
 #include "code\game\objects\effects\spawners\random\mobs\rodents.dm"
+#include "code\game\objects\effects\spawners\random\mobs\hivebots.dm"
 // END_INCLUDE
