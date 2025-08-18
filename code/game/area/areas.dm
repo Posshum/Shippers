@@ -68,11 +68,13 @@
 	var/music_index_hurt = MUSIC_HURT
 	var/music_index_unconscious = MUSIC_UNCONSCIOUS
 	var/music_index_dead = MUSIC_DEAD
+	var/music_index_combat = MUSIC_COMBAT
 	///A list of sounds to pick from every so often to play to clients.
 	var/list/music_track_alive
 	var/list/music_track_hurt
 	var/list/music_track_unconscious
 	var/list/music_track_dead
+	var/list/music_track_combat
 	///Used to decide what the minimum time between tracks is
 	var/min_track_cooldown = 7 MINUTES
 	///Used to decide what the maximum time between tracks is
@@ -170,7 +172,8 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		music_track_unconscious = GLOB.dynamicmusic_assoc[music_index_unconscious]
 	if(!music_track_dead)
 		music_track_dead = GLOB.dynamicmusic_assoc[music_index_dead]
-
+	if(!music_track_combat)
+		music_track_combat = GLOB.dynamicmusic_assoc[music_index_combat]
 
 	if(dynamic_lighting == DYNAMIC_LIGHTING_IFSTARLIGHT)
 		dynamic_lighting = CONFIG_GET(flag/starlight) ? DYNAMIC_LIGHTING_ENABLED : DYNAMIC_LIGHTING_DISABLED

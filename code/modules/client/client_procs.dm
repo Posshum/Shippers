@@ -474,6 +474,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 	update_ambience_pref()
 	update_dynamic_music_pref()
+	update_combat_music_pref()
 
 
 	//This is down here because of the browse() calls in tooltip/New()
@@ -550,6 +551,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	QDEL_NULL(tooltips)
 	SSambience.ambience_listening_clients -= src
 	SSdynamicmusic.music_listening_clients -= src
+	SSdynamicmusic.combat_listening_clients -= src
 	seen_messages = null
 	Master.UpdateTickRate()
 	..() //Even though we're going to be hard deleted there are still some things that want to know the destroy is happening
@@ -1163,6 +1165,14 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		SSdynamicmusic.music_listening_clients[src] = world.time + 10 SECONDS //Just wait 10 seconds before the next one aight mate? cheers.
 	else
 		SSdynamicmusic.music_listening_clients -= src
+
+/client/proc/update_combat_music_pref()
+	if(prefs.toggles & SOUND_COMBAT_MUSIC)
+		if(SSdynamicmusic.combat_listening_clients[src] > world.time)
+			return // If already properly set we don't want to reset the timer.
+		SSdynamicmusic.combat_listening_clients[src] = world.time + 10 SECONDS //Just wait 10 seconds before the next one aight mate? cheers.
+	else
+		SSdynamicmusic.combat_listening_clients -= src
 
 /**
  * Handles incoming messages from the stat-panel TGUI.

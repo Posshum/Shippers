@@ -1665,6 +1665,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	H.send_item_attack_message(I, user, hit_area, affecting)
 	var/attack_direction = get_dir(user, H)
+
 	apply_damage(I.force , I.damtype, def_zone, armor_block, H, wound_bonus = Iwound_bonus, bare_wound_bonus = I.bare_wound_bonus, sharpness = I.get_sharpness(), attack_direction = attack_direction)
 
 	if(!I.force)
@@ -1731,6 +1732,12 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	hit_percent = (hit_percent * (100-H.physiology.damage_resistance))/100
 	if(!damage || (!forced && hit_percent <= 0))
 		return 0
+	//Don't send if no damage occured. Prevents playing music when you accidentally tap yourself with an item.
+	SEND_SIGNAL(H, COMSIG_MOB_ENTER_COMBAT)
+	if(usr)
+		SEND_SIGNAL(usr, COMSIG_MOB_ENTER_COMBAT)
+
+	H.wince()
 
 	var/obj/item/bodypart/BP = null
 	if(!spread_damage)

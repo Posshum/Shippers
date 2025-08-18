@@ -4,6 +4,8 @@
 /mob/living/proc/Life(seconds_per_tick = SSMOBS_DT, times_fired)
 	set waitfor = FALSE
 	set invisibility = 0
+	if(projectile_combat_check_cd > 0)
+		projectile_combat_check_cd--
 
 	SEND_SIGNAL(src, COMSIG_LIVING_LIFE, seconds_per_tick, times_fired)
 

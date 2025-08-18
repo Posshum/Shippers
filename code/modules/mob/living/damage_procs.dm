@@ -23,6 +23,13 @@
 	var/hit_percent = (100-blocked)/100
 	if(!damage || (!forced && hit_percent <= 0) || !(flags_1 & INITIALIZED_1))
 		return FALSE
+	//Don't send if no damage occured. Prevents playing music when you accidentally tap yourself with an item.
+	SEND_SIGNAL(src, COMSIG_MOB_ENTER_COMBAT)
+	if(usr)
+		SEND_SIGNAL(usr, COMSIG_MOB_ENTER_COMBAT)
+
+	wince()
+
 	var/damage_amount =  forced ? damage : damage * hit_percent
 	switch(damagetype)
 		if(BRUTE)

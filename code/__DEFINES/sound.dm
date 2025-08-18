@@ -8,6 +8,7 @@
 #define CHANNEL_AMBIENCE 1014
 #define CHANNEL_BUZZ 1013
 #define CHANNEL_DYNAMIC_MUSIC 1012
+#define CHANNEL_COMBAT_MUSIC 1011
 
 ///Default range of a sound.
 #define SOUND_RANGE 17
@@ -20,8 +21,8 @@
 ///The default exponent of sound falloff
 #define SOUND_FALLOFF_EXPONENT 6
 
-//Highest availabl UNRESERVED channels for use with general sounds -> (Such as normal noises from objects, mobs, etc. Unreserved channels.)
-#define CHANNEL_HIGHEST_AVAILABLE 1011
+//Highest available UNRESERVED channels for use with general sounds -> (Such as normal noises from objects, mobs, etc. Unreserved channels.)
+#define CHANNEL_HIGHEST_AVAILABLE 1010
 
 #define MAX_INSTRUMENT_CHANNELS (128 * 6)
 
@@ -30,6 +31,7 @@
 //Yeah same as ambience shut up
 #define MUSIC_GENERIC "generic"
 #define MUSIC_COMBAT "combat"
+#define MUSIC_RISERS "risers"
 #define MUSIC_HURT "hurt"
 #define MUSIC_UNCONSCIOUS "unconscious"
 #define MUSIC_DEAD "dead"

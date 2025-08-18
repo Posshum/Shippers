@@ -30,6 +30,9 @@
 	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_EYESCLOSED), PROC_REF(on_eyesclosed_trait_gain))
 	RegisterSignal(src, SIGNAL_REMOVETRAIT(TRAIT_EYESCLOSED), PROC_REF(on_eyesclosed_trait_loss))
 
+	RegisterSignal(src, COMSIG_MOB_ENTER_COMBAT, PROC_REF(enter_combat_mode))
+	RegisterSignal(src, COMSIG_MOB_EXIT_COMBAT, PROC_REF(exit_combat_mode))
+
 	RegisterSignals(src, list(
 		SIGNAL_ADDTRAIT(TRAIT_CRITICAL_CONDITION),
 		SIGNAL_REMOVETRAIT(TRAIT_CRITICAL_CONDITION),
@@ -181,3 +184,34 @@
 		throw_alert("succumb", /atom/movable/screen/alert/succumb)
 	else
 		clear_alert("succumb")
+
+/**
+ * Called when combat happens between two mobs.
+ *
+ * Functions primarily for combat music, can also be used to trigger events that only occur on combat.
+ */
+/mob/living/proc/enter_combat_mode()
+	SIGNAL_HANDLER
+	if(usr) //Have to use usr sorry fix it if you can I'm too tired on this.
+		usr.in_combat = TRUE
+	in_combat = TRUE
+	if(combat_timer_id != null && projectile_combat_check_cd <= 0) //If an active timer exists, delete the old timer and extend it again to another 15 seconds so songs continue to loop whilst combat is happening.
+		projectile_combat_check_cd = 1 //Procs on life() in /mob/living to prevent shotguns from bloating up the deltimers + other unecessary spam.
+		deltimer(combat_timer_id) //Wipe the old one
+		combat_timer_id = null
+		//Make a new timer to reset
+		combat_timer_id = addtimer(CALLBACK(src, PROC_REF(exit_combat_mode)), 15 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE)
+		return
+	else //If we don't have one? Make one.
+		combat_timer_id = addtimer(CALLBACK(src, PROC_REF(exit_combat_mode)), 5 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE) //5 Seconds, just in case you or a friend accidentally whacked you.
+		SEND_SOUND(src, sound('sound/effects/combat_mode_stinger_start.ogg', volume = 50))
+
+/mob/living/proc/exit_combat_mode()
+	if(usr)
+		usr.in_combat = FALSE
+	in_combat = FALSE
+	wince_check = TRUE
+	SEND_SOUND(src, sound('sound/effects/combat_mode_stinger_end.ogg', volume = 50))
+	if(combat_timer_id != null) //Del it early if this signal is called if it didnt already finish.
+		deltimer(combat_timer_id)
+		combat_timer_id = null

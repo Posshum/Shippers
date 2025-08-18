@@ -42,6 +42,7 @@
 	mob_type_ignore_stat_typecache = typecacheof(mob_type_ignore_stat_typecache)
 
 /datum/emote/proc/run_emote(mob/user, params, type_override, intentional = FALSE)
+	SIGNAL_HANDLER_DOES_SLEEP
 	. = TRUE
 	if(!can_run_emote(user, TRUE, intentional))
 		return FALSE

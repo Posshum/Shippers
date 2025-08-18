@@ -1499,6 +1499,13 @@
 	. = stat
 	stat = new_stat
 
+/mob/proc/enter_combat()
+	SEND_SIGNAL(src, COMSIG_MOB_ENTER_COMBAT)
+
+/mob/proc/exit_combat()
+	SEND_SIGNAL(src, COMSIG_MOB_EXIT_COMBAT)
+
+
 /// Used for typing indicator, relevant on /living level
 /mob/proc/set_typing_indicator(state)
 	return
@@ -1560,3 +1567,11 @@
 		client.movingmob.client_mobs_in_contents -= src
 		UNSETEMPTY(client.movingmob.client_mobs_in_contents)
 		client.movingmob = null
+
+//Winces the mob. Makes them make a simple emote reaction through say proc.
+	//Using SAY to appease the SIGNAL_HANDLERS gods... Since I can't input the emote procs in signal chains.
+/mob/proc/wince()
+	if(client.prefs.toggles & COMBAT_FEAR)
+		if(wince_check)
+			say(pick("*gasp", "*scream", "*tremble"))
+			wince_check = FALSE // Only play once.

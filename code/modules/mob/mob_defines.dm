@@ -23,6 +23,11 @@
 
 	bad_type = /mob
 
+	var/in_combat = FALSE
+	var/projectile_combat_check_cd = 0 //A cooldown tied to life() on projectiles so shotguns don't freak the fuck out when you get them on every tick and lag up the server.
+	var/wince_check = TRUE //Make a gasp to act as a forced shock when you enter combat... Or some type of emote. Resets after combat mode fades.
+	var/combat_timer_id = null //The timer ID for combat music so that we can modify it.
+
 	var/lighting_alpha = LIGHTING_PLANE_ALPHA_VISIBLE
 	var/datum/mind/mind
 	var/static/next_mob_id = 0

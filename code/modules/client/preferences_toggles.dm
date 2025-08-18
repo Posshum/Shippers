@@ -235,6 +235,22 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, Toggle_DynamicMusic)()
 /datum/verbs/menu/Settings/Sound/Toggle_DynamicMusic/Get_checked(client/C)
 	return C.prefs.toggles & SOUND_DYNAMIC_MUSIC
 
+TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, Toggle_CombatMusic)()
+	set name = "Hear/Silence Combat Music"
+	set category = "Preferences"
+	set desc = "Hear Combat Music Effects"
+	usr.client.prefs.toggles ^= SOUND_COMBAT_MUSIC
+	usr.client.prefs.save_preferences()
+	if(usr.client.prefs.toggles & SOUND_COMBAT_MUSIC)
+		to_chat(usr, "You will now hear dynamic combat music.")
+	else
+		to_chat(usr, "You will no longer hear dynamic combat music.")
+		usr.stop_sound_channel(CHANNEL_DYNAMIC_MUSIC)
+	usr.client.update_combat_music_pref()
+	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Dynamic Music", "[usr.client.prefs.toggles & SOUND_COMBAT_MUSIC ? "Enabled" : "Disabled"]"))
+/datum/verbs/menu/Settings/Sound/Toggle_CombatMusic/Get_checked(client/C)
+	return C.prefs.toggles & SOUND_COMBAT_MUSIC
+
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_ship_ambience)()
 	set name = "Hear/Silence Ship Ambience"
 	set category = "Preferences"
@@ -408,6 +424,15 @@ GLOBAL_LIST_INIT(ghost_orbits, list(GHOST_ORBIT_CIRCLE,GHOST_ORBIT_TRIANGLE,GHOS
 		if(isobserver(mob))
 			var/mob/dead/observer/O = mob
 			O.update_sight()
+
+/client/verb/toggle_combat_wincing()
+	set name = "Toggle Combat Wincing"
+	set category = "Preferences"
+	set desc = "Toggle between reacting automatically to combat or not."
+	prefs.toggles ^= COMBAT_FEAR
+	to_chat(src, "[(prefs.toggles & COMBAT_FEAR) ? "You will now react when combat happens." : "You will no longer react when combat happens."]")
+	prefs.save_preferences()
+	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Combat Fear", "[prefs.toggles & COMBAT_FEAR ? "Enabled" : "Disabled"]"))
 
 /client/verb/toggle_intent_style()
 	set name = "Toggle Intent Selection Style"

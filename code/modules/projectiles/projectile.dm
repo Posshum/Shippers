@@ -244,6 +244,7 @@
 	if(isliving(target))
 		var/mob/living/L = target
 		hit_limb = L.check_limb_hit(def_zone)
+		SEND_SIGNAL(firer, COMSIG_MOB_ENTER_COMBAT) //If we landed the shot, enter combat mode!!!
 	SEND_SIGNAL(src, COMSIG_PROJECTILE_SELF_ON_HIT, firer, target, Angle, hit_limb)
 
 	if(QDELETED(src)) // in case one of the above signals deleted the projectile for whatever reason

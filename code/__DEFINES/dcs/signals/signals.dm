@@ -433,6 +433,10 @@
 #define COMSIG_MOB_DEATH "mob_death"
 ///from base of mob/set_stat(): (new_stat)
 #define COMSIG_MOB_STATCHANGE "mob_statchange"
+///from base of mob/enter_combat(): ()
+#define COMSIG_MOB_ENTER_COMBAT "mob_enter_combat"
+///from base of mob/exit_combat(): ()
+#define COMSIG_MOB_EXIT_COMBAT "mob_exit_combat"
 ///from base of mob/clickon(): (atom/A, params)
 #define COMSIG_MOB_CLICKON "mob_clickon"
 ///from base of mob/MiddleClickOn(): (atom/A)

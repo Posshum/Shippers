@@ -1,11 +1,11 @@
 //This is the lowest supported version, anything below this is completely obsolete and the entire savefile will be wiped.
-#define SAVEFILE_VERSION_MIN 33
+#define SAVEFILE_VERSION_MIN 35
 
 //This is the current version, anything below this will attempt to update (if it's not obsolete)
 //	You do not need to raise this if you are adding new values that have sane defaults.
 //	Only raise this value when changing the meaning/format/name/layout of an existing value
 //	where you would want the updater procs below to run
-#define SAVEFILE_VERSION_MAX 42
+#define SAVEFILE_VERSION_MAX 44
 
 /*
 SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Carn
@@ -42,9 +42,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 //if your savefile is 3 months out of date, then 'tough shit'.
 
 /datum/preferences/proc/update_preferences(current_version, savefile/S)
-	if(current_version < 33)
-		toggles |= SOUND_ENDOFROUND
-
 	if(current_version < 34)
 		auto_fit_viewport = TRUE
 
@@ -93,6 +90,14 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			toggles &= ~FAST_MC_REFRESH
 
 		toggles |= SOUND_RADIO
+
+	if(current_version < 43)
+		//Added 2 new prefs
+		toggles |= SOUND_DYNAMIC_MUSIC
+		toggles |= SOUND_COMBAT_MUSIC
+
+	if(current_version < 44)
+		toggles |= COMBAT_FEAR
 
 /datum/preferences/proc/update_character(current_version, savefile/S)
 	if(current_version < 39)
