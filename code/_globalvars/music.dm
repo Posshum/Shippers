@@ -8,6 +8,9 @@ GLOBAL_LIST_INIT(generic_music,list(
 
 GLOBAL_LIST_INIT(combat_music,list(
 	'sound/music/musiccombat1.ogg',
+	'sound/music/musiccombat2.ogg',
+	'sound/music/musiccombat3.ogg',
+	'sound/music/musiccombat4.ogg',
 ))
 
 GLOBAL_LIST_INIT(hurt_music,list(

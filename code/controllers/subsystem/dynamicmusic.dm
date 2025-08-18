@@ -11,7 +11,6 @@ SUBSYSTEM_DEF(dynamicmusic)
 	var/list/combat_listening_clients = list() //For when shit gets real...
 
 	var/list/active_listening_clients = list()
-	var/list/active_combat_listening_clients = list()
 
 
 /datum/controller/subsystem/dynamicmusic/fire(resumed)
@@ -26,9 +25,9 @@ SUBSYSTEM_DEF(dynamicmusic)
 			continue //No client to play to, or not in-game yet, don't bother.
 
 		var/mob/living/client_mob = client_iterator?.mob
-		if(client_mob.in_combat) //We aren't actively in combat... Reset everything back to defaults.
-			music_listening_clients[client_iterator] = null
-			active_listening_clients[client_iterator] = null
+		if(client_mob.in_combat && music_listening_clients[client_iterator] > world.time) //We aren't actively in combat... Reset everything back to defaults and set a bonus timer to music.
+			music_listening_clients[client_iterator] = world.time + rand(1 MINUTES, 3 MINUTES)
+				//Just music listening clients, active_listening_clients not as important for ambience.
 			return
 
 		var/list/sounds_list = client_iterator.SoundQuery()
@@ -60,10 +59,9 @@ SUBSYSTEM_DEF(dynamicmusic)
 			continue //No client to play to, or not in-game yet, don't bother.
 
 		var/mob/living/client_mob = client_iterator?.mob
-		if(!client_mob.in_combat) //We aren't actively in combat... Reset everything back to defaults.
+		if(!client_mob.in_combat) //We aren't actively in combat... Reset everything back to 0 ASAP
 			client_mob.stop_sound_channel(CHANNEL_COMBAT_MUSIC)
 			combat_listening_clients[client_iterator] = null
-			active_combat_listening_clients[client_iterator] = null
 			return
 
 		var/list/sounds_list = client_iterator.SoundQuery()
@@ -85,7 +83,6 @@ SUBSYSTEM_DEF(dynamicmusic)
 
 		var/area/current_area = get_area(client_iterator.mob)
 		combat_listening_clients[client_iterator] = world.time + current_area.play_music(client_mob, combat_mode = TRUE)
-		active_combat_listening_clients[client_iterator] = world.time + current_area.play_music(client_mob, time_only = TRUE, combat_mode = TRUE)
 
 ///Attempts to play a soundtrack to a mob.
 
@@ -117,6 +114,10 @@ SUBSYSTEM_DEF(dynamicmusic)
 	var/sound_length = ceil(SSsound_cache.get_sound_length(new_sound.file))
 	if(time_only)
 		return	sound_length
+
+	if(combat_mode)
+		SEND_SOUND(M, new_sound)
+		return sound_length //Return the track's length so we can keep looping random music tracks for as long as we are fighting.
 
 	SEND_SOUND(M, new_sound)
 

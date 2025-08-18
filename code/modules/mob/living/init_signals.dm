@@ -195,8 +195,10 @@
 	if(usr) //Have to use usr sorry fix it if you can I'm too tired on this.
 		usr.in_combat = TRUE
 	in_combat = TRUE
-	if(combat_timer_id != null && projectile_combat_check_cd <= 0) //If an active timer exists, delete the old timer and extend it again to another 15 seconds so songs continue to loop whilst combat is happening.
-		projectile_combat_check_cd = 1 //Procs on life() in /mob/living to prevent shotguns from bloating up the deltimers + other unecessary spam.
+	if(combat_timer_id != null && combat_check_cd >= 0) //If an active timer exists, delete the old timer and extend it again to another 15 seconds so songs continue to loop whilst combat is happening.
+		if(usr)
+			usr.combat_check_cd = 3
+		combat_check_cd = 3 //Procs on life() in /mob/living to prevent shotguns from bloating up the deltimers + other unecessary spam.
 		deltimer(combat_timer_id) //Wipe the old one
 		combat_timer_id = null
 		//Make a new timer to reset
@@ -211,7 +213,7 @@
 		usr.in_combat = FALSE
 	in_combat = FALSE
 	wince_check = TRUE
-	SEND_SOUND(src, sound('sound/effects/combat_mode_stinger_end.ogg', volume = 50))
+	SEND_SOUND(src, sound('sound/effects/combat_mode_stinger_end.ogg', volume = 75)) //Louder because this is a bit quieter than the bassy BOOM as the stinger start.
 	if(combat_timer_id != null) //Del it early if this signal is called if it didnt already finish.
 		deltimer(combat_timer_id)
 		combat_timer_id = null
