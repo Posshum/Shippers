@@ -10,7 +10,7 @@
 	custom_materials = list(/datum/material/iron = 500)
 
 	///Because a war zone is not a fun zone. Gives jani more shit to clean as well.
-	var/beauty = -5
+	var/beauty = -25
 
 	/// Instance of the projectile to be shot, or null if there is no loaded projectile.
 	var/obj/projectile/BB = null

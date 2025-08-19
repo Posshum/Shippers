@@ -1919,6 +1919,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	//tempature is no longer comfy, throw alert
 	if(body_temp > max_temp_comfortable && !HAS_TRAIT(H, TRAIT_RESISTHEAT))
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "cold")
+		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "too_chilly")
 		if(body_temp > bodytemp_heat_damage_limit)
 			var/burn_damage = calculate_burn_damage(H)
 			if(burn_damage > 2)
@@ -1929,8 +1930,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			if(body_temp < (bodytemp_heat_damage_limit - 3))
 				H.throw_alert("tempfeel", /atom/movable/screen/alert/hot, 1)
 			else
+				SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "too_warm", /datum/mood_event/too_warm)
 				H.throw_alert("tempfeel", /atom/movable/screen/alert/warm)
 	else if (body_temp < min_temp_comfortable && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
+		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "too_warm")
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
 		if(body_temp < bodytemp_cold_damage_limit -7)
 			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 3)
@@ -1940,6 +1943,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			H.throw_alert("tempfeel", /atom/movable/screen/alert/cold, 1)
 		else
 			H.throw_alert("tempfeel", /atom/movable/screen/alert/chilly)
+			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "too_chilly", /datum/mood_event/too_chilly)
 	else
 		H.clear_alert("tempfeel")
 
@@ -1985,12 +1989,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		// Apply the damage to all body parts
 		H.apply_damage(burn_damage, BURN, spread_damage = TRUE)
 
-	else if(body_temp > bodytemp_heat_damage_limit / 0.75 && !HAS_TRAIT(H, TRAIT_RESISTHEAT)) //Quarter of the limit since we are going up instead of down.
-		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
-		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "too_chilly")
-		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "cold")
-		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "too_warm", /datum/mood_event/too_warm)
-
 	// Body temperature is too cold, and we do not have resist traits
 	else if(body_temp < bodytemp_cold_damage_limit && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
 		// clear any hot moods and apply cold mood
@@ -2022,12 +2020,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				H.apply_damage(COLD_DAMAGE_LEVEL_1 * coldmod * H.physiology.cold_mod, BURN)
 				if(prob(10))
 					H.emote("shiver")
-
-	else if(body_temp < bodytemp_cold_damage_limit / 2 && !HAS_TRAIT(H, TRAIT_RESISTCOLD)) //Half the limit.
-		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "too_warm")
-		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
-		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "cold")
-		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "too_chilly", /datum/mood_event/too_chilly)
 
 	// We are not to hot or cold, remove status and moods
 	else
