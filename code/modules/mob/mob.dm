@@ -1576,5 +1576,5 @@
 		return
 	if(client.prefs.toggles & COMBAT_FEAR)
 		if(wince_check)
-			say(pick("*gasp", "*scream", "*tremble"))
+			say(pick("*scream")) //Need to add more audible emotes... For now, only scream.
 			wince_check = FALSE // Only play once.
