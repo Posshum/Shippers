@@ -211,38 +211,31 @@
 			setInsanityEffect(MAJOR_INSANITY_PEN)
 			master.add_movespeed_modifier(/datum/movespeed_modifier/sanity/insane)
 			master.hallucination = min(master.hallucination + 25, 100) //You're literally going insane. Who knows whats real anymore.
-			var/list/sounds_list = master.client.SoundQuery()
-			for(var/sound/S in sounds_list)
-				if(!S.channel == CHANNEL_BUZZ)
-					SEND_SOUND(master, sound('sound/health/mood/insanity.ogg', channel = CHANNEL_BUZZ, repeat = TRUE))
-				else
-					break
+			if(!master.insane_audio.is_playing)
+				master.insane_audio.volume = 75 //Don't ruin their eardrums...
+				master.insane_audio.start()
 			sanity_level = 6
 		if(SANITY_CRAZY to SANITY_UNSTABLE)
 			setInsanityEffect(MINOR_INSANITY_PEN)
 			master.add_movespeed_modifier(/datum/movespeed_modifier/sanity/crazy)
-			var/list/sounds_list = master.client.SoundQuery()
-			for(var/sound/S in sounds_list)
-				if(!S.channel == CHANNEL_BUZZ)
-					SEND_SOUND(master, sound('sound/health/mood/insanity.ogg', channel = CHANNEL_BUZZ, repeat = TRUE, volume = 50)) //Play at half volume here.
-				else
-					break
 			master.hallucination = 0
+			if(!master.insane_audio.is_playing)
+				master.insane_audio.volume = 33
+				master.insane_audio.start()
 			sanity_level = 5
 		if(SANITY_UNSTABLE to SANITY_DISTURBED)
 			setInsanityEffect(0)
 			master.add_movespeed_modifier(/datum/movespeed_modifier/sanity/disturbed)
-			var/list/sounds_list = master.client.SoundQuery()
-			for(var/sound/S in sounds_list)
-				if(!S.channel == CHANNEL_BUZZ)
-					SEND_SOUND(master, sound('sound/health/mood/insanity.ogg', channel = CHANNEL_BUZZ, repeat = TRUE, volume = 25)) //Play at quarter volume here.
-				else
-					break
+			if(!master.insane_audio.is_playing)
+				master.insane_audio.volume = 10
+				master.insane_audio.start()
 			sanity_level = 4
 		if(SANITY_DISTURBED to SANITY_NEUTRAL)
 			setInsanityEffect(0)
 			master.remove_movespeed_modifier(MOVESPEED_ID_SANITY)
-			master.stop_sound_channel(CHANNEL_BUZZ) //Should always stop the buzz. Hopefully.
+			if(master.insane_audio.is_playing)
+				master.insane_audio.stop()
+				master.insane_audio.volume = 0
 			sanity_level = 3
 		if(SANITY_NEUTRAL+1 to SANITY_GREAT+1) //shitty hack but +1 to prevent it from responding to super small differences
 			setInsanityEffect(0)

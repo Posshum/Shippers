@@ -3737,4 +3737,5 @@
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
+#include "code\datums\looping_sounds\mob_sounds.dm"
 // END_INCLUDE

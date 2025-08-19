@@ -193,5 +193,8 @@
 	/// Lazy list of FOV traits that will apply a FOV view when handled.
 	var/list/fov_traits
 
+	//Soundloop for insanity
+	var/datum/looping_sound/insanity/insane_audio
+
 	/// World time of the last time this mob heard a radio crackle, to reduce spamminess.
 	COOLDOWN_DECLARE(radio_crackle_cooldown)

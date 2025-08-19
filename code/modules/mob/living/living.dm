@@ -19,6 +19,9 @@
 	AddElement(/datum/element/connect_loc, loc_connections)
 	update_fov()
 
+	//For sanity ambient loop when you are hella stressed mechanically. Helps increase tension with players and indirectly make them feel on edge irl.
+	insane_audio = new(list(src), FALSE)
+
 /mob/living/prepare_huds()
 	..()
 	prepare_data_huds()

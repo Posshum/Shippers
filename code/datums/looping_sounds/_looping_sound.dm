@@ -35,6 +35,8 @@
 	var/timerid
 	var/falloff_distance
 	var/ignore_walls
+	///Boolean check if sound is actively playing or not
+	var/is_playing = FALSE
 
 	/// Common cache of the mid sounds lists
 	var/static/mid_sounds_cache = list()
@@ -66,6 +68,7 @@
 	if(timerid)
 		return
 	on_start()
+	is_playing = TRUE
 
 /datum/looping_sound/proc/stop(atom/remove_thing)
 	if(remove_thing)
@@ -75,6 +78,7 @@
 	on_stop()
 	deltimer(timerid, SSsound_loops)
 	timerid = null
+	is_playing = FALSE
 
 /datum/looping_sound/proc/sound_loop(starttime)
 	if(max_loops && world.time >= starttime + mid_length * max_loops)
