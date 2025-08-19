@@ -9,6 +9,9 @@
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = 500)
 
+	///Because a war zone is not a fun zone. Gives jani more shit to clean as well.
+	var/beauty = -5
+
 	/// Instance of the projectile to be shot, or null if there is no loaded projectile.
 	var/obj/projectile/BB = null
 	/// The projectile type to create in Initialize(), populating the BB variable with a projectile.
@@ -166,6 +169,7 @@
 	if(auto_rotate)
 		transform = transform.Turn(round(45 * rand(0, 32) / 2))
 	update_appearance()
+	AddElement(/datum/element/beauty, beauty)
 
 /obj/item/ammo_casing/Destroy()
 	. = ..()

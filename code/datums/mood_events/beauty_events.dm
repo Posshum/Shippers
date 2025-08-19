@@ -7,7 +7,7 @@
 	mood_change = -5
 
 /datum/mood_event/normalroom
-	description = span_nicegreen("This room looks as it should be.") //Default mood for rooms.
+	description = ("This room looks as it should be.") //Default mood for rooms. No fancy effect...
 	mood_change = 0
 
 /datum/mood_event/decentroom

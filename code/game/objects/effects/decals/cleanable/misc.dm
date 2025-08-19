@@ -239,7 +239,7 @@
 	icon = 'icons/effects/confetti_and_decor.dmi'
 	icon_state = "confetti"
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT //the confetti itself might be annoying enough
-	beauty = 5 //Its... someones birthday! Yay!
+	beauty = -25 //Its... someones birthday! Yay..? You ruined my workplace...
 
 /obj/effect/decal/cleanable/plastic
 	name = "plastic shreds"

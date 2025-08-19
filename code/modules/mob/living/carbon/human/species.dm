@@ -1733,8 +1733,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(!damage || (!forced && hit_percent <= 0))
 		return 0
 	//Don't send if no damage occured. Prevents playing music when you accidentally tap yourself with an item.
-	SEND_SIGNAL(H, COMSIG_MOB_ENTER_COMBAT)
-	if(usr)
+	if(!H.on_fire)
+		SEND_SIGNAL(H, COMSIG_MOB_ENTER_COMBAT)
+	if(usr && !H.on_fire)
 		SEND_SIGNAL(usr, COMSIG_MOB_ENTER_COMBAT)
 
 	H.wince()

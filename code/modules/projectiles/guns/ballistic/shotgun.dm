@@ -44,7 +44,7 @@
 
 	gunslinger_recoil_bonus = -1
 
-	min_recoil = 0.1
+	min_recoil = 0.02 //Each pellet counts as a 'recoil'
 	wear_rate = 0
 
 	//in an ideal world this would be a component but I don't wanna untangle all the sleeps doors pull

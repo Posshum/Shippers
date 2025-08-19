@@ -447,7 +447,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/candor/factory)
 
 		spread = 8
 		spread_unwielded = 15
-		recoil = 3 //or not
+		recoil = 2 //or not
 		recoil_unwielded = 5
 		item_state = "dshotgun_sawn"
 		mob_overlay_state = item_state
@@ -469,7 +469,7 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel)
 
 	spread = 8
 	spread_unwielded = 15
-	recoil = 3 //or not
+	recoil = 2 //or not
 	recoil_unwielded = 5
 	item_state = "dshotgun_sawn"
 	default_ammo_type = /obj/item/ammo_box/magazine/internal/shot/dual/lethal
@@ -545,8 +545,8 @@ EMPTY_GUN_HELPER(shotgun/doublebarrel/presawn)
 
 		spread = 18
 		spread_unwielded = 25
-		recoil = 5 //your punishment for sawing off an short shotgun
-		recoil_unwielded = 8
+		recoil = 3.5 //your punishment for sawing off an short shotgun
+		recoil_unwielded = 5
 		item_state = "illestren_factory_sawn" // i couldnt care about making another sprite, looks close enough
 		mob_overlay_state = item_state
 
@@ -599,7 +599,7 @@ EMPTY_GUN_HELPER(shotgun/brimstone)
 
 		spread = 8
 		spread_unwielded = 15
-		recoil = 3 //or not
+		recoil = 2.5 //or not
 		recoil_unwielded = 5
 		item_state = "dshotgun_sawn" // ditto
 		mob_overlay_state = item_state
@@ -677,7 +677,7 @@ EMPTY_GUN_HELPER(shotgun/flamingarrow/conflagration)
 	)
 	w_class = WEIGHT_CLASS_BULKY
 	force = 20 //heavy ass elephant gun, why wouldnt it be
-	recoil = 4
+	recoil = 3
 	pb_knockback = 12
 	fire_sound = 'sound/weapons/gun/shotgun/quadfire.ogg'
 	rack_sound = 'sound/weapons/gun/shotgun/quadrack.ogg'
