@@ -36,7 +36,7 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals/neutered,
+/obj/effect/spawner/random/mobs/frontiersman/very_strong/internals,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/residential)
 "ao" = (
@@ -292,6 +292,7 @@
 /area/ruin/powered/icemoon/lodge/residential)
 "ev" = (
 /obj/item/trash/boritos,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "ey" = (
@@ -299,7 +300,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame/neuter,
+/obj/effect/spawner/random/mobs/frontiersman/very_strong/internals,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/gear_room)
 "eC" = (
@@ -350,7 +351,7 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/internals,
+/obj/effect/spawner/random/mobs/frontiersman/basic/internals,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "fn" = (
@@ -362,7 +363,7 @@
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/residential)
 "fu" = (
-/mob/living/simple_animal/hostile/human/frontier/internals,
+/obj/effect/spawner/random/mobs/frontiersman/basic/internals,
 /turf/open/floor/ship/dirt/dark,
 /area/ruin/powered/icemoon/lodge/residential)
 "fw" = (
@@ -456,6 +457,18 @@
 	},
 /turf/open/floor/concrete/slab_3/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
+"gW" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/spent/pistol_brass,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
+/turf/open/floor/wood/maple,
+/area/ruin/powered/icemoon/lodge/cellar)
 "hj" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/icemoon{
@@ -468,12 +481,8 @@
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "hz" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered{
-	check_friendly_fire = 1;
-	retreat_distance = 3;
-	minimum_distance = 2
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/random/mobs/frontiersman/very_strong/internals,
 /turf/open/floor/carpet,
 /area/ruin/powered/icemoon/lodge/residential)
 "hI" = (
@@ -1141,6 +1150,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/ammo_casing/spent/pistol_brass,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/cellar)
 "qY" = (
@@ -1209,12 +1219,14 @@
 	},
 /obj/item/trash/popcorn,
 /obj/effect/decal/cleanable/blood/old,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/concrete/slab_3/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "rW" = (
 /obj/structure/chair/wood/wings{
 	dir = 4
 	},
+/obj/effect/spawner/random/mobs/frontiersman/basic/internals/chance_25,
 /turf/open/floor/carpet/black,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "rZ" = (
@@ -1367,6 +1379,11 @@
 /obj/effect/turf_decal/spline/fancy/wood,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/montagne_office)
+"tv" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
+/turf/open/floor/wood/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
 "tx" = (
 /turf/open/floor/plasteel/stairs/wood/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -1375,6 +1392,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "tD" = (
@@ -1415,14 +1433,10 @@
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/residential)
 "tW" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered{
-	minimum_distance = 2;
-	retreat_distance = 2;
-	check_friendly_fire = 1
-	},
 /obj/effect/turf_decal/weather/snow{
 	dir = 1
 	},
+/obj/effect/spawner/random/mobs/frontiersman/strong,
 /turf/open/floor/concrete/slab_3/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "tX" = (
@@ -1623,7 +1637,7 @@
 /obj/structure/chair/stool{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/frontier/internals,
+/obj/effect/spawner/random/mobs/frontiersman/basic/internals,
 /turf/open/floor/carpet/black,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "wD" = (
@@ -1648,6 +1662,7 @@
 /obj/item/ammo_casing/spent/pistol_brass,
 /obj/item/ammo_casing/spent/pistol_brass,
 /obj/item/ammo_casing/spent/pistol_brass,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/cellar)
 "wT" = (
@@ -1661,10 +1676,7 @@
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/cellar)
 "wU" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered{
-	retreat_distance = null;
-	minimum_distance = 1
-	},
+/obj/effect/spawner/random/mobs/frontiersman/very_strong/internals,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/residential)
 "xb" = (
@@ -1717,11 +1729,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered{
-	minimum_distance = 2;
-	retreat_distance = 2;
-	check_friendly_fire = 1
-	},
+/obj/effect/spawner/random/mobs/frontiersman/basic/internals,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "yi" = (
@@ -1753,6 +1761,7 @@
 	pixel_y = 11;
 	pixel_x = -6
 	},
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_50,
 /turf/open/floor/grass/ship/jungle,
 /area/ruin/powered/icemoon/lodge/residential)
 "yp" = (
@@ -1788,6 +1797,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/random/mobs/frontiersman/basic/internals/chance_25,
 /turf/open/floor/carpet/black,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "yQ" = (
@@ -1854,6 +1864,7 @@
 	},
 /obj/effect/turf_decal/siding/wood,
 /obj/item/ammo_casing/spent/pistol_brass,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/cellar)
 "Aq" = (
@@ -1936,6 +1947,7 @@
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/effect/gibspawner/human/bodypartless,
 /obj/effect/mob_spawn/human/corpse/frontier,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/cellar)
 "Bf" = (
@@ -1953,15 +1965,19 @@
 "Bx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered{
-	check_friendly_fire = 1;
-	retreat_distance = 3;
-	minimum_distance = 2
-	},
+/obj/effect/spawner/random/mobs/frontiersman/very_strong/internals,
 /turf/open/floor/wood/maple{
 	icon_state = "wood-broken5"
 	},
 /area/ruin/powered/icemoon/lodge/gear_room)
+"BD" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
+/turf/open/floor/wood/maple,
+/area/ruin/powered/icemoon/lodge/mainhall)
 "BL" = (
 /obj/structure/table/wood/fancy,
 /obj/item/gem/amber{
@@ -2159,6 +2175,7 @@
 	},
 /obj/effect/turf_decal/siding/wood/corner,
 /obj/item/ammo_casing/spent/pistol_brass,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/cellar)
 "Fy" = (
@@ -2166,6 +2183,7 @@
 	dir = 8
 	},
 /obj/item/trash/candy,
+/obj/effect/spawner/random/mobs/frontiersman/basic/internals/chance_25,
 /turf/open/floor/carpet/black,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "FI" = (
@@ -2208,6 +2226,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
+/obj/effect/spawner/random/mobs/frontiersman/basic/chance_25,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "Gn" = (
@@ -2367,11 +2386,8 @@
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "Ix" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals/neutered{
-	check_friendly_fire = 1;
-	minimum_distance = 3
-	},
 /obj/effect/turf_decal/weather/snow,
+/obj/effect/spawner/random/mobs/frontiersman/strong,
 /turf/open/floor/concrete/slab_3/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "II" = (
@@ -2404,6 +2420,7 @@
 /obj/item/ammo_casing/spent/pistol_brass,
 /obj/item/ammo_casing/spent/pistol_brass,
 /obj/item/ammo_casing/spent/pistol_brass,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/cellar)
 "Jq" = (
@@ -2418,6 +2435,7 @@
 	pixel_x = -2
 	},
 /obj/item/storage/toolbox/mechanical,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/gear_room)
 "JP" = (
@@ -2432,9 +2450,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals/neutered{
-	minimum_distance = 2
-	},
+/obj/effect/spawner/random/mobs/frontiersman/very_strong/internals,
 /turf/open/floor/wood/ebony,
 /area/ruin/powered/icemoon/lodge/residential)
 "Kc" = (
@@ -2457,11 +2473,7 @@
 	},
 /area/ruin/powered/icemoon/lodge/mainhall)
 "Kn" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/internals/neutered{
-	minimum_distance = 2;
-	retreat_distance = 2;
-	check_friendly_fire = 1
-	},
+/obj/effect/spawner/random/mobs/frontiersman/basic/internals,
 /turf/open/floor/grass/ship/jungle,
 /area/ruin/powered/icemoon/lodge/residential)
 "Ks" = (
@@ -2561,6 +2573,7 @@
 /obj/structure/chair/plastic{
 	dir = 4
 	},
+/obj/effect/spawner/random/mobs/frontiersman/basic/internals/chance_25,
 /turf/open/floor/carpet/black,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "LZ" = (
@@ -2638,7 +2651,7 @@
 "Ni" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame/neuter,
+/obj/effect/spawner/random/mobs/frontiersman/very_strong/internals,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/gear_room)
 "Nl" = (
@@ -2673,7 +2686,7 @@
 /obj/item/ammo_casing/a8_50r{
 	projectile_type = null
 	},
-/mob/living/simple_animal/hostile/human/frontier/internals,
+/obj/effect/spawner/random/mobs/frontiersman/basic/internals,
 /turf/open/floor/concrete/slab_3/icemoon,
 /area/overmap_encounter/planetoid/cave/explored)
 "NH" = (
@@ -2683,7 +2696,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/neutered,
+/obj/effect/spawner/random/mobs/frontiersman/basic,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "NL" = (
@@ -2842,11 +2855,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered{
-	check_friendly_fire = 1;
-	retreat_distance = 3;
-	minimum_distance = 2
-	},
+/obj/effect/spawner/random/mobs/frontiersman/very_strong/internals,
 /turf/open/floor/carpet/black,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "PH" = (
@@ -2877,6 +2886,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/wood/maple,
 /area/ruin/powered/icemoon/lodge/cellar)
 "Qz" = (
@@ -2895,10 +2905,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered{
-	retreat_distance = null;
-	minimum_distance = 1
-	},
+/obj/effect/spawner/random/mobs/frontiersman/very_strong/internals,
 /turf/open/floor/wood/maple{
 	icon_state = "wood-broken4"
 	},
@@ -3143,6 +3150,7 @@
 	pixel_x = -12;
 	pixel_y = 2
 	},
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/wood/mahogany,
 /area/ruin/powered/icemoon/lodge/mainhall)
 "Vz" = (
@@ -3191,7 +3199,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/glass,
-/mob/living/simple_animal/hostile/human/frontier/ranged/surgeon/internals/neuter,
+/obj/effect/spawner/random/mobs/frontiersman/strong/internals,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/icemoon/lodge/residential)
 "Wk" = (
@@ -3356,7 +3364,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/frontier/internals,
+/obj/effect/spawner/random/mobs/frontiersman/basic/internals,
 /turf/open/floor/wood/maple{
 	icon_state = "wood-broken3"
 	},
@@ -4650,7 +4658,7 @@ Kh
 tL
 Yd
 CG
-CG
+BD
 Ek
 uM
 Uz
@@ -4910,7 +4918,7 @@ je
 Rt
 Ws
 Kg
-GD
+tv
 GD
 kG
 ca
@@ -5314,7 +5322,7 @@ AX
 Ez
 sO
 pG
-WZ
+gW
 nd
 gr
 Yj

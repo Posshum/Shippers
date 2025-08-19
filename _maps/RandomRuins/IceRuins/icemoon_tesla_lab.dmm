@@ -553,6 +553,7 @@
 /obj/item/food/pizza/vegetable{
 	pixel_x = -2
 	},
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/icemoon/tesla_lab/lobby)
 "cn" = (
@@ -1292,6 +1293,7 @@
 	pixel_x = -5
 	},
 /obj/machinery/light/small/directional/west,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/plastic,
 /area/ruin/icemoon/tesla_lab/lab_halls)
 "fa" = (
@@ -1560,9 +1562,7 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ruin/icemoon/tesla_lab/haymaker)
 "gf" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals{
-	minimum_distance = 1
-	},
+/obj/effect/spawner/random/mobs/frontiersman/very_strong/internals,
 /turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/cave/explored)
 "gg" = (
@@ -1619,6 +1619,7 @@
 	pixel_x = -3;
 	pixel_y = -5
 	},
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/icemoon/tesla_lab/lobby)
 "gw" = (
@@ -1844,6 +1845,7 @@
 	pixel_y = 14;
 	pixel_x = -4
 	},
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/icemoon/tesla_lab/lobby)
 "hs" = (
@@ -2183,6 +2185,7 @@
 /area/ruin/icemoon/tesla_lab/lab_a)
 "iN" = (
 /obj/effect/gibspawner/human/bodypartless,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/plastic,
 /area/ruin/icemoon/tesla_lab/dorms)
 "iT" = (
@@ -2293,6 +2296,7 @@
 /obj/effect/turf_decal/steeldecal/steel_decals_central7,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable/yellow,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/icemoon/tesla_lab/dorms)
 "jn" = (
@@ -2345,7 +2349,7 @@
 /obj/structure/chair/handrail{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals/neutered,
+/obj/effect/spawner/random/mobs/frontiersman/very_strong/internals,
 /turf/open/floor/plasteel,
 /area/ruin/icemoon/tesla_lab/haymaker)
 "jH" = (
@@ -2887,6 +2891,7 @@
 	dir = 9
 	},
 /obj/effect/mapping_helpers/turf/burnt,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/plasteel/dark/tesla_lab,
 /area/ruin/icemoon/tesla_lab/lab_a)
 "lT" = (
@@ -3138,7 +3143,7 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/icemoon/tesla_lab/cargo)
 "mQ" = (
-/mob/living/simple_animal/hostile/human/frontier/internals,
+/obj/effect/spawner/random/mobs/frontiersman/basic,
 /turf/open/floor/concrete/slab_1,
 /area/ruin/icemoon/tesla_lab/turrets)
 "mS" = (
@@ -3458,7 +3463,7 @@
 /obj/structure/chair{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/frontier,
+/obj/effect/spawner/random/mobs/frontiersman/basic,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/icemoon/tesla_lab/lobby)
 "oj" = (
@@ -3500,6 +3505,7 @@
 	pixel_y = 7;
 	pixel_x = 3
 	},
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
 "or" = (
@@ -3991,6 +3997,10 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/icemoon/tesla_lab/engineering)
+"qA" = (
+/obj/effect/spawner/random/mobs/frontiersman/basic,
+/turf/open/floor/plating/asteroid/icerock/lit,
+/area/overmap_encounter/planetoid/ice/explored)
 "qC" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -4245,6 +4255,7 @@
 /obj/item/food/meat/steak/chicken,
 /obj/item/food/meat/steak/chicken,
 /obj/item/food/meat/steak/chicken,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/icemoon/tesla_lab/lobby)
 "rw" = (
@@ -4793,6 +4804,7 @@
 	pixel_y = -3;
 	pixel_x = -5
 	},
+/obj/effect/spawner/random/mobs/rodent/cockroach,
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/armory)
 "tM" = (
@@ -5107,6 +5119,7 @@
 	pixel_y = 4;
 	pixel_x = 4
 	},
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/icemoon/tesla_lab/lobby)
 "uO" = (
@@ -5587,7 +5600,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/frontier,
+/obj/effect/spawner/random/mobs/frontiersman/basic,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/icemoon/tesla_lab/lobby)
 "wD" = (
@@ -6075,7 +6088,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/blood/squirt,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered,
+/obj/effect/spawner/random/mobs/frontiersman/very_strong/internals,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
 "yz" = (
@@ -6610,7 +6623,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals/neutered,
+/obj/effect/spawner/random/mobs/frontiersman/very_strong/internals,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/engineering)
 "AD" = (
@@ -7148,6 +7161,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/engine/hull/interior,
 /area/ruin/icemoon/tesla_lab/engineering)
 "CN" = (
@@ -7880,11 +7894,11 @@
 /turf/open/floor/engine/hull/interior,
 /area/ruin/icemoon/tesla_lab/containment)
 "FJ" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame,
 /obj/structure/catwalk/over,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/effect/spawner/random/mobs/frontiersman/very_strong/internals,
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/engineering)
 "FL" = (
@@ -8784,8 +8798,8 @@
 	pixel_x = 9;
 	pixel_y = 5
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/flame,
 /obj/machinery/airalarm/directional/south,
+/obj/effect/spawner/random/mobs/frontiersman/very_strong/internals,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/central_hall)
 "Ja" = (
@@ -8826,6 +8840,7 @@
 	pixel_x = 2;
 	pixel_y = 4
 	},
+/obj/effect/spawner/random/mobs/rodent/cockroach,
 /turf/open/floor/plating,
 /area/ruin/icemoon/tesla_lab/armory)
 "Jn" = (
@@ -9220,6 +9235,7 @@
 	pixel_x = 6
 	},
 /obj/effect/decal/cleanable/chem_pile,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/plasteel/dark/tesla_lab,
 /area/ruin/icemoon/tesla_lab/lab_a)
 "KR" = (
@@ -9306,9 +9322,7 @@
 /turf/open/floor/wood,
 /area/ruin/icemoon/tesla_lab/lobby)
 "Ln" = (
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals{
-	minimum_distance = 1
-	},
+/obj/effect/spawner/random/mobs/frontiersman/very_strong/internals,
 /turf/open/floor/plating/asteroid/icerock,
 /area/overmap_encounter/planetoid/ice/explored)
 "Lp" = (
@@ -10133,7 +10147,7 @@
 	pixel_y = 8;
 	pixel_x = -5
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals,
+/obj/effect/spawner/random/mobs/frontiersman/very_strong/internals,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/cargo_hall)
 "Pd" = (
@@ -10194,14 +10208,12 @@
 /obj/effect/turf_decal/trimline/transparent/blue/corner{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals{
-	minimum_distance = 1
-	},
 /obj/item/storage/toolbox/mechanical{
 	pixel_y = 8;
 	pixel_x = 6
 	},
 /obj/effect/spawner/random/trash/grime,
+/obj/effect/spawner/random/mobs/frontiersman/very_strong/internals,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/lab_halls)
 "Pm" = (
@@ -10320,6 +10332,7 @@
 	pixel_y = 4;
 	pixel_x = 5
 	},
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/icemoon/tesla_lab/lobby)
 "PE" = (
@@ -10372,6 +10385,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/plastic,
 /area/ruin/icemoon/tesla_lab/dorms)
 "PP" = (
@@ -10630,6 +10644,7 @@
 /obj/effect/spawner/random/trash/food_packaging{
 	pixel_x = 8
 	},
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/icemoon/tesla_lab/dorms)
 "QX" = (
@@ -10726,7 +10741,7 @@
 	},
 /obj/item/stack/cable_coil/cut/random,
 /obj/machinery/light/directional/north,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals/neutered,
+/obj/effect/spawner/random/mobs/frontiersman/very_strong/internals,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/cargo_hall)
 "Rs" = (
@@ -10938,7 +10953,7 @@
 /obj/effect/turf_decal/industrial/stand_clear/white{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals,
+/obj/effect/spawner/random/mobs/frontiersman/very_strong/internals,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/cargo)
 "RW" = (
@@ -11433,7 +11448,7 @@
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/mosin/internals/neutered,
+/obj/effect/spawner/random/mobs/frontiersman/strong/internals,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/icemoon/tesla_lab/lab_halls)
 "TH" = (
@@ -11794,6 +11809,7 @@
 /obj/item/reagent_containers/food/drinks/soda_cans/tonic,
 /obj/item/reagent_containers/food/drinks/soda_cans/vimukti,
 /obj/item/reagent_containers/food/drinks/soda_cans/vimukti,
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/icemoon/tesla_lab/lobby)
 "Vn" = (
@@ -11992,14 +12008,12 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
 	},
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals{
-	minimum_distance = 1
-	},
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 8
 	},
 /obj/item/ammo_casing/spent/rifle_brass,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/random/mobs/frontiersman/very_strong/internals,
 /turf/open/floor/plasteel/tech,
 /area/ruin/icemoon/tesla_lab/cargo)
 "Wz" = (
@@ -12183,6 +12197,7 @@
 	pixel_y = 9;
 	pixel_x = -2
 	},
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/icemoon/tesla_lab/lobby)
 "Xx" = (
@@ -12523,8 +12538,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/decal/cleanable/shreds,
 /obj/structure/flippedtable,
-/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/rifle/internals,
 /obj/machinery/light/directional/west,
+/obj/effect/spawner/random/mobs/frontiersman/very_strong/internals,
 /turf/open/floor/plasteel/dark,
 /area/ruin/icemoon/tesla_lab/central_hall)
 "YT" = (
@@ -12797,6 +12812,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/effect/spawner/random/mobs/rodent/cockroach/chance_25,
 /turf/open/floor/plasteel/dark/tesla_lab,
 /area/ruin/icemoon/tesla_lab/lab_a)
 "ZW" = (
@@ -15814,9 +15830,9 @@ Xl
 Fv
 nW
 gZ
-cM
+qA
 Qb
-mQ
+RC
 RC
 cM
 TM

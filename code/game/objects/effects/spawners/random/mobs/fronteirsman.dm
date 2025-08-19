@@ -59,6 +59,7 @@
 
 /obj/effect/spawner/random/mobs/frontiersman/strong/internals
 	name = "frontiersman strong internals spawner"
+	icon_state = "frontiersman_strong_internals_100"
 	loot = list(
 		/mob/living/simple_animal/hostile/human/frontier/ranged/wasp/internals,
 		/mob/living/simple_animal/hostile/human/frontier/ranged/pounder/internals,
@@ -95,6 +96,7 @@
 
 /obj/effect/spawner/random/mobs/frontiersman/very_strong/internals
 	name = "frontiersman very strong internals spawner"
+	icon_state = "frontiersman_verystrong_internals_100"
 	loot = list(
 		/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/internals,
 		/mob/living/simple_animal/hostile/human/frontier/ranged/trooper/wasp/internals,
