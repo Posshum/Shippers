@@ -5,7 +5,7 @@
 //	You do not need to raise this if you are adding new values that have sane defaults.
 //	Only raise this value when changing the meaning/format/name/layout of an existing value
 //	where you would want the updater procs below to run
-#define SAVEFILE_VERSION_MAX 44
+#define SAVEFILE_VERSION_MAX 45
 
 /*
 SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Carn
@@ -42,9 +42,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 //if your savefile is 3 months out of date, then 'tough shit'.
 
 /datum/preferences/proc/update_preferences(current_version, savefile/S)
-	if(current_version < 34)
-		auto_fit_viewport = TRUE
-
 	if(current_version < 35) //makes old keybinds compatible with #52040, sets the new default
 		var/newkey = FALSE
 		for(var/list/key in key_bindings)
@@ -98,6 +95,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	if(current_version < 44)
 		toggles |= COMBAT_FEAR
+
+	if(current_version < 45)
+		master_vol = initial(master_vol)
+		ambient_vol = initial(ambient_vol)
+		dynamic_music_vol = initial(dynamic_music_vol)
+		combat_music_vol = initial(combat_music_vol)
 
 /datum/preferences/proc/update_character(current_version, savefile/S)
 	if(current_version < 39)
@@ -230,6 +233,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["tgui_input"], tgui_input)
 	READ_FILE(S["large_tgui_buttons"], large_tgui_buttons)
 	READ_FILE(S["swapped_tgui_buttons"], swapped_tgui_buttons)
+	READ_FILE(S["master_vol"], master_vol)
+	READ_FILE(S["ambient_vol"], ambient_vol)
+	READ_FILE(S["dynamic_music_vol"], dynamic_music_vol)
+	READ_FILE(S["combat_music_vol"], combat_music_vol)
 
 	READ_FILE(S["show_credits"], show_credits)
 
@@ -383,6 +390,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["large_tgui_buttons"], large_tgui_buttons)
 	WRITE_FILE(S["swapped_tgui_buttons"], swapped_tgui_buttons)
 	WRITE_FILE(S["tgui_input"], tgui_input)
+	WRITE_FILE(S["master_vol"], master_vol)
+	WRITE_FILE(S["ambient_vol"], ambient_vol)
+	WRITE_FILE(S["dynamic_music_vol"], dynamic_music_vol)
+	WRITE_FILE(S["combat_music_vol"], combat_music_vol)
 	return TRUE
 
 /datum/preferences/proc/load_character(slot)

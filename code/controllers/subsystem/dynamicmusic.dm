@@ -21,7 +21,7 @@ SUBSYSTEM_DEF(dynamicmusic)
 	for(var/client/client_iterator as anything in music_listening_clients)
 
 		//Check to see if the client exists and isn't held by a new player
-		if(isnull(client_iterator) || isnewplayer(client_iterator.mob))
+		if(isnull(client_iterator) || isnewplayer(client_iterator.mob) || !client_iterator.prefs.dynamic_music_vol)
 			continue //No client to play to, or not in-game yet, don't bother.
 
 		var/mob/living/client_mob = client_iterator?.mob
@@ -55,8 +55,8 @@ SUBSYSTEM_DEF(dynamicmusic)
 	for(var/client/client_iterator as anything in combat_listening_clients)
 
 		//Check to see if the client exists and isn't held by a new player
-		if(isnull(client_iterator) || isnewplayer(client_iterator.mob))
-			continue //No client to play to, or not in-game yet, don't bother.
+		if(isnull(client_iterator) || isnewplayer(client_iterator.mob) || !client_iterator.prefs.combat_music_vol) //If ambient_vol = false/negative don't play
+			continue //No client to play to, or not in-game yet, or vol pref too low don't bother.
 
 		var/mob/living/client_mob = client_iterator?.mob
 		if(!client_mob.in_combat) //We aren't actively in combat... Reset everything back to 0 ASAP
@@ -107,9 +107,9 @@ SUBSYSTEM_DEF(dynamicmusic)
 
 	//Load the sound to ready it, and FIRE!
 	if(!combat_mode)
-		new_sound = sound(new_sound, repeat = 0, wait = 0, volume = 85, channel = CHANNEL_DYNAMIC_MUSIC)
+		new_sound = sound(new_sound, repeat = 0, wait = 0, volume = M.client.prefs.dynamic_music_vol, channel = CHANNEL_DYNAMIC_MUSIC)
 	else
-		new_sound = sound(new_sound, repeat = 0, wait = 0, volume = 95, channel = CHANNEL_COMBAT_MUSIC) //10 points louder than dynamic.
+		new_sound = sound(new_sound, repeat = 0, wait = 0, volume = M.client.prefs.combat_music_vol, channel = CHANNEL_COMBAT_MUSIC) //10 points louder than dynamic.
 	//Must always load after to ensure we get the correct song.
 	var/sound_length = ceil(SSsound_cache.get_sound_length(new_sound.file))
 	if(time_only)

@@ -210,9 +210,9 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, Toggle_Soundscape)()
 	usr.client.prefs.toggles ^= SOUND_AMBIENCE
 	usr.client.prefs.save_preferences()
 	if(usr.client.prefs.toggles & SOUND_AMBIENCE)
-		to_chat(usr, "You will now hear ambient sounds.")
+		to_chat(usr, "You will now hear random ambient sounds.")
 	else
-		to_chat(usr, "You will no longer hear ambient sounds.")
+		to_chat(usr, "You will no longer hear random ambient sounds.")
 		usr.stop_sound_channel(CHANNEL_AMBIENCE)
 	usr.client.update_ambience_pref()
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Ambience", "[usr.client.prefs.toggles & SOUND_AMBIENCE ? "Enabled" : "Disabled"]"))
@@ -592,3 +592,61 @@ GLOBAL_LIST_INIT(ghost_orbits, list(GHOST_ORBIT_CIRCLE,GHOST_ORBIT_TRIANGLE,GHOS
 	prefs.whois_visible = !prefs.whois_visible
 	to_chat(src, span_notice("You are [(prefs.whois_visible ? "now" : "no longer")] visible to WhoIs topic calls."))
 	prefs.save_preferences()
+
+/client/verb/set_master_vol()
+	set name = "♪ Adjust Master Vol ♪"
+	set desc = "Adjusts your master volume. NOTE: CONTROLS EVERY GAMEPLAY SOUND."
+	set category = "Preferences"
+
+	var/vol = input(usr, "Default ([initial(prefs.master_vol)]) || Current Master Volume ♪: [prefs.master_vol]",, 100) as null|num
+	if(!vol)
+		if(vol != 0)
+			return
+	vol = min(vol, 100)
+	prefs.master_vol = vol
+	prefs.save_preferences()
+	mob.update_sound_channel_volume(CHANNEL_LOBBYMUSIC, prefs.master_vol)
+	mob.update_sound_channel_volume(CHANNEL_ADMIN, prefs.master_vol)
+	mob.update_sound_channel_volume(CHANNEL_HEARTBEAT, prefs.master_vol)
+
+/client/verb/set_ambient_vol()
+	set name = "♪ Adjust Ambient Vol ♪"
+	set desc = "Adjusts your ambient volume. NOTE: THIS DOES NOT MODIFY GAMEPLAY AUDIO, ONLY RANDOM AUDIO THAT PLAYS OCCASIONALLY."
+	set category = "Preferences"
+
+	var/vol = input(usr, "Default ([initial(prefs.ambient_vol)]) || Current Ambient Volume ♪: [prefs.ambient_vol]",, 100) as null|num
+	if(!vol)
+		if(vol != 0)
+			return
+	vol = min(vol, 100)
+	prefs.ambient_vol = vol
+	prefs.save_preferences()
+	mob.update_sound_channel_volume(CHANNEL_AMBIENCE, prefs.ambient_vol)
+
+/client/verb/set_dynamic_vol()
+	set name = "♪ Adjust Dynamic Music Vol ♪"
+	set desc = "Adjusts your dynamic music volume. NOTE: THIS DOES NOT MODIFY COMBAT MUSIC."
+	set category = "Preferences"
+
+	var/vol = input(usr, "Default ([initial(prefs.dynamic_music_vol)]) || Current Ambient Volume ♪: [prefs.dynamic_music_vol]",, 100) as null|num
+	if(!vol)
+		if(vol != 0)
+			return
+	vol = min(vol, 100)
+	prefs.dynamic_music_vol = vol
+	prefs.save_preferences()
+	mob.update_sound_channel_volume(CHANNEL_DYNAMIC_MUSIC, prefs.dynamic_music_vol)
+
+/client/verb/set_combat_vol()
+	set name = "♪ Adjust Combat Music Vol ♪"
+	set desc = "Adjusts your combat music volume."
+	set category = "Preferences"
+
+	var/vol = input(usr, "Default ([initial(prefs.combat_music_vol)]) || Current Ambient Volume ♪: [prefs.combat_music_vol]",, 100) as null|num
+	if(!vol)
+		if(vol != 0)
+			return
+	vol = min(vol, 100)
+	prefs.combat_music_vol = vol
+	prefs.save_preferences()
+	mob.update_sound_channel_volume(CHANNEL_COMBAT_MUSIC, prefs.combat_music_vol)

@@ -36,7 +36,7 @@ SUBSYSTEM_DEF(jukeboxes)
 		if(!(M?.client.prefs.toggles & SOUND_INSTRUMENTS))
 			continue
 
-		M.playsound_local(M, null, 100, channel = youvegotafreejukebox[2], S = song_to_init, distance_multiplier = 2)
+		M.playsound_local(M, null, 100, channel = youvegotafreejukebox[2], S = song_to_init, distance_multiplier = 0.5)
 	return activejukeboxes.len
 
 /datum/controller/subsystem/jukeboxes/Recover()
@@ -130,7 +130,7 @@ SUBSYSTEM_DEF(jukeboxes)
 				if((get_area(M) in areas) || (M in hearerscache))
 					inrange = TRUE
 
-			M.playsound_local(currentturf, null, jukebox.volume, channel = jukeinfo[2], S = song_played, envwet = (inrange ? -250 : 0), envdry = (inrange ? 0 : -10000), distance_multiplier = 2, atom = jukebox)
+			M.playsound_local(currentturf, null, jukebox.volume, channel = jukeinfo[2], S = song_played, envwet = (inrange ? -250 : 0), envdry = (inrange ? 0 : -10000), distance_multiplier = 0.5, atom = jukebox)
 
 			if(MC_TICK_CHECK)
 				return

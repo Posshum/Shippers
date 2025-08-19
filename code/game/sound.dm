@@ -130,8 +130,14 @@ distance_multiplier - Can be used to multiply the distance at which the sound is
 
 	S.wait = 0 //No queue
 	S.channel = channel || SSsounds.random_available_channel()
-	S.volume = vol
 	S.atom = atom
+
+	var/vol2use = vol
+	if(client.prefs)
+		vol2use = vol * (client.prefs.master_vol * 0.01)
+	vol2use = min(vol2use, 100)
+
+	S.volume = vol2use
 
 	if(vary)
 		if(frequency)
@@ -214,6 +220,35 @@ distance_multiplier - Can be used to multiply the distance at which the sound is
 	var/sound/S = sound(null, FALSE, FALSE, channel, volume)
 	S.status = SOUND_UPDATE
 	SEND_SOUND(src, S)
+
+/mob/proc/update_sound_channel_volume(chan, vol)
+	if(vol)
+		for(var/sound/S in client.SoundQuery())
+			if(S.channel == chan)
+				unmute_sound_channel(chan)
+				S.volume = vol
+				S.status |= SOUND_UPDATE
+				SEND_SOUND(src, S)
+				S.status &= ~SOUND_UPDATE
+	else
+		mute_sound_channel(chan)
+
+/mob/proc/unmute_sound_channel(chan)
+	if(!client)
+		return
+	for(var/sound/S in client.SoundQuery())
+		if(S.channel == chan)
+			S.status |= SOUND_UPDATE
+			S.status &= ~SOUND_MUTE
+			SEND_SOUND(src, S)
+			S.status &= ~SOUND_UPDATE
+
+/mob/proc/mute_sound_channel(chan)
+	for(var/sound/S in client.SoundQuery())
+		if(S.channel == chan)
+			S.status |= SOUND_MUTE | SOUND_UPDATE
+			SEND_SOUND(src, S)
+			S.status &= ~SOUND_UPDATE
 
 /client/proc/playtitlemusic(vol = 85)
 	set waitfor = FALSE

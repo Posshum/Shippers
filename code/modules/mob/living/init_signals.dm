@@ -202,10 +202,10 @@
 		deltimer(combat_timer_id) //Wipe the old one
 		combat_timer_id = null
 		//Make a new timer to reset
-		combat_timer_id = addtimer(CALLBACK(src, PROC_REF(exit_combat_mode)), 15 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE)
+		combat_timer_id = addtimer(CALLBACK(src, PROC_REF(exit_combat_mode)), 30 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE)
 		return
 	else //If we don't have one? Make one.
-		combat_timer_id = addtimer(CALLBACK(src, PROC_REF(exit_combat_mode)), 5 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE) //5 Seconds, just in case you or a friend accidentally whacked you.
+		combat_timer_id = addtimer(CALLBACK(src, PROC_REF(exit_combat_mode)), 15 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE) //5 Seconds, just in case you or a friend accidentally whacked you.
 		SEND_SOUND(src, sound('sound/effects/combat_mode_stinger_start.ogg', volume = 50))
 
 /mob/living/proc/exit_combat_mode()

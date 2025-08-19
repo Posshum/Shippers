@@ -12,7 +12,7 @@ SUBSYSTEM_DEF(ambience)
 	for(var/client/client_iterator as anything in ambience_listening_clients)
 
 		//Check to see if the client exists and isn't held by a new player
-		if(isnull(client_iterator) || isnewplayer(client_iterator.mob))
+		if(isnull(client_iterator) || isnewplayer(client_iterator.mob) || !client_iterator.prefs.ambient_vol)
 			continue //No client to play to, or not in-game yet, don't bother.
 
 		if(ambience_listening_clients[client_iterator] > world.time)
@@ -22,9 +22,9 @@ SUBSYSTEM_DEF(ambience)
 		var/mob/client_mob = client_iterator?.mob
 			//Play it quieter if we are actively listening to a song...
 		if(SSdynamicmusic.active_listening_clients[client_iterator] > world.time)
-			ambience_listening_clients[client_iterator] = world.time + current_area.play_ambience(client_mob, vol = 5)
+			ambience_listening_clients[client_iterator] = world.time + current_area.play_ambience(client_mob, client_iterator.prefs.ambient_vol / 3) //Cut the volume by a third instead
 		else
-			ambience_listening_clients[client_iterator] = world.time + current_area.play_ambience(client_mob, vol = 25)
+			ambience_listening_clients[client_iterator] = world.time + current_area.play_ambience(client_mob, client_iterator.prefs.ambient_vol)
 
 ///Attempts to play an ambient sound to a mob, returning the cooldown in deciseconds
 /area/proc/play_ambience(mob/M, sound/override_sound, vol)
