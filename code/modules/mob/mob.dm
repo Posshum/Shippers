@@ -1571,6 +1571,9 @@
 //Winces the mob. Makes them make a simple emote reaction through say proc.
 	//Using SAY to appease the SIGNAL_HANDLERS gods... Since I can't input the emote procs in signal chains.
 /mob/proc/wince()
+	if(stat == DEAD)
+		//Don't send this to dchat... That just looks embarassing...
+		return
 	if(client.prefs.toggles & COMBAT_FEAR)
 		if(wince_check)
 			say(pick("*gasp", "*scream", "*tremble"))
