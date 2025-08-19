@@ -197,15 +197,15 @@
 	in_combat = TRUE
 	if(combat_timer_id != null && combat_check_cd >= 0) //If an active timer exists, delete the old timer and extend it again to another 15 seconds so songs continue to loop whilst combat is happening.
 		if(usr)
-			usr.combat_check_cd = 3
-		combat_check_cd = 3 //Procs on life() in /mob/living to prevent shotguns from bloating up the deltimers + other unecessary spam.
+			usr.combat_check_cd = 1
+		combat_check_cd = 1 //Procs on life() in /mob/living to prevent shotguns from bloating up the deltimers + other unecessary spam.
 		deltimer(combat_timer_id) //Wipe the old one
 		combat_timer_id = null
 		//Make a new timer to reset
-		combat_timer_id = addtimer(CALLBACK(src, PROC_REF(exit_combat_mode)), 30 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE)
+		combat_timer_id = addtimer(CALLBACK(src, PROC_REF(exit_combat_mode)), 25 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE) //25 seconds, some fights can extend for a good while.
 		return
 	else //If we don't have one? Make one.
-		combat_timer_id = addtimer(CALLBACK(src, PROC_REF(exit_combat_mode)), 15 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE) //5 Seconds, just in case you or a friend accidentally whacked you.
+		combat_timer_id = addtimer(CALLBACK(src, PROC_REF(exit_combat_mode)), 5 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE) //5 Seconds, just in case you or a friend accidentally whacked you.
 		SEND_SOUND(src, sound('sound/effects/combat_mode_stinger_start.ogg', volume = 50))
 
 /mob/living/proc/exit_combat_mode()
