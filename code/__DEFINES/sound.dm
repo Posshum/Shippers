@@ -6,7 +6,7 @@
 #define CHANNEL_JUKEBOX_START 1016 //The gap between this and CHANNEL_JUKEBOX determines the amount of free jukebox channels. This currently allows 6 jukebox channels to exist.
 #define CHANNEL_HEARTBEAT 1015 //sound channel for heartbeats
 #define CHANNEL_AMBIENCE 1014
-#define CHANNEL_BUZZ 1013
+#define CHANNEL_BUZZ 1013 //Used for insanity now instead of ship buzz.
 #define CHANNEL_DYNAMIC_MUSIC 1012
 #define CHANNEL_COMBAT_MUSIC 1011
 

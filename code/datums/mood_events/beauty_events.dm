@@ -1,10 +1,14 @@
 /datum/mood_event/horridroom
 	description = span_boldwarning("This room looks terrible!")
-	mood_change = -5
+	mood_change = -10
 
 /datum/mood_event/badroom
 	description = span_warning("This room looks really bad.")
-	mood_change = -3
+	mood_change = -5
+
+/datum/mood_event/normalroom
+	description = span_nicegreen("This room looks as it should be.") //Default mood for rooms.
+	mood_change = 0
 
 /datum/mood_event/decentroom
 	description = span_nicegreen("This room looks alright.")

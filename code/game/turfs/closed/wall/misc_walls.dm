@@ -51,6 +51,7 @@
 	hardness = 45
 	max_integrity = 300
 	min_dam = 5
+	beauty
 
 /turf/closed/wall/rust/yesdiag
 	icon_state = "rusty_wall-255"

@@ -1357,6 +1357,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 				qdel(src)
 				if(QDELETED(source_item))
 					broken_glass.on_accidental_consumption(victim, user)
+					new /obj/effect/decal/cleanable/glass(loc) //Also some tiny glass shards for the janitor to have to clean up.
 			else //33% chance to just "crack" it (play a sound) and leave it in the bread
 				playsound(victim, "shatter", 15, TRUE)
 			discover_after = FALSE

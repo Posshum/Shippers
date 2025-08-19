@@ -1945,6 +1945,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	// Body temperature is too hot, and we do not have resist traits
 	if(body_temp > bodytemp_heat_damage_limit && !HAS_TRAIT(H, TRAIT_RESISTHEAT))
 		// Clear cold mood and apply hot mood
+		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "too_warm")
+		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "too_chilly")
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "cold")
 		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "hot", /datum/mood_event/hot)
 
@@ -1982,10 +1984,18 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		// Apply the damage to all body parts
 		H.apply_damage(burn_damage, BURN, spread_damage = TRUE)
 
+	else if(body_temp > bodytemp_heat_damage_limit / 0.75 && !HAS_TRAIT(H, TRAIT_RESISTHEAT)) //Quarter of the limit since we are going up instead of down.
+		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
+		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "too_chilly")
+		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "cold")
+		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "too_warm", /datum/mood_event/too_warm)
+
 	// Body temperature is too cold, and we do not have resist traits
 	else if(body_temp < bodytemp_cold_damage_limit && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
 		// clear any hot moods and apply cold mood
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
+		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "too_chilly")
+		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "too_warm")
 		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "cold", /datum/mood_event/cold)
 		// Apply cold slow down
 		H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/cold, multiplicative_slowdown = ((bodytemp_cold_damage_limit - H.bodytemperature) / COLD_SLOWDOWN_FACTOR))
@@ -2012,12 +2022,20 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				if(prob(10))
 					H.emote("shiver")
 
+	else if(body_temp < bodytemp_cold_damage_limit / 2 && !HAS_TRAIT(H, TRAIT_RESISTCOLD)) //Half the limit.
+		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "too_warm")
+		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
+		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "cold")
+		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "too_chilly", /datum/mood_event/too_chilly)
+
 	// We are not to hot or cold, remove status and moods
 	else
 		H.clear_alert("temp")
 		H.remove_movespeed_modifier(/datum/movespeed_modifier/cold)
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "cold")
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
+		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "too_warm")
+		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "too_chilly")
 
 /datum/species/proc/calculate_burn_damage(mob/living/carbon/human/current_human)
 	var/burn_damage = 0

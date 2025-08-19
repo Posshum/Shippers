@@ -856,11 +856,13 @@
 			return
 		if(health <= hardcrit_threshold && !HAS_TRAIT(src, TRAIT_NOHARDCRIT))
 			set_stat(HARD_CRIT)
+			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "dying", /datum/mood_event/deaths_door)
 		else if(HAS_TRAIT(src, TRAIT_KNOCKEDOUT))
 			set_stat(UNCONSCIOUS)
 		else if(health <= crit_threshold && !HAS_TRAIT(src, TRAIT_NOSOFTCRIT))
 			set_stat(SOFT_CRIT)
 		else
+			SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "dying")
 			set_stat(CONSCIOUS)
 	update_damage_hud()
 	update_health_hud()

@@ -163,6 +163,7 @@
 /obj/effect/decal/cleanable/vomit/old
 	name = "crusty dried vomit"
 	desc = "You try not to look at the chunks, and fail."
+	beauty = -250 //WHY IS IT CRUSTY!!!
 
 /obj/effect/decal/cleanable/vomit/old/Initialize(mapload, list/datum/disease/diseases)
 	. = ..()
@@ -174,6 +175,7 @@
 	gender = NEUTER
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "ash"
+	beauty = -50
 
 /obj/effect/decal/cleanable/shreds
 	name = "shreds"
@@ -181,6 +183,7 @@
 	icon_state = "shreds"
 	gender = PLURAL
 	mergeable_decal = FALSE
+	beauty = -150 //Its so sad seeing such fine clothing go to waste...
 
 /obj/effect/decal/cleanable/shreds/ex_act(severity, target)
 	if(severity == 1) //so shreds created during an explosion aren't deleted by the explosion.
@@ -200,6 +203,7 @@
 	icon_state = "plasma_old"
 	gender = NEUTER
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	beauty = 15 //I mean, it's pretty, right?
 
 /obj/effect/decal/cleanable/glitter/pink
 	name = "pink glitter"
@@ -219,6 +223,7 @@
 	icon_state = "flour"
 	icon = 'icons/effects/tomatodecal.dmi'
 	color = "#2D2D2D"
+	beauty = -50 //Terrifying.
 
 /obj/effect/decal/cleanable/insectguts
 	name = "insect guts"
@@ -226,6 +231,7 @@
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "xfloor1"
 	random_icon_states = list("xfloor1", "xfloor2", "xfloor3", "xfloor4", "xfloor5", "xfloor6", "xfloor7")
+	beauty = -200 //EW EW EW INSECT GUTS!!!
 
 /obj/effect/decal/cleanable/confetti
 	name = "confetti"
@@ -233,6 +239,7 @@
 	icon = 'icons/effects/confetti_and_decor.dmi'
 	icon_state = "confetti"
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT //the confetti itself might be annoying enough
+	beauty = 5 //Its... someones birthday! Yay!
 
 /obj/effect/decal/cleanable/plastic
 	name = "plastic shreds"
@@ -240,12 +247,14 @@
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "shards"
 	color = "#c6f4ff"
+	beauty = -75 //Sad, unusable plastic.
 
 /obj/effect/decal/cleanable/wrapping
 	name = "wrapping shreds"
 	desc = "Torn pieces of cardboard and paper, left over from a package."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "paper_shreds"
+	beauty = -75 //Sad, shredded cardboard...
 
 /obj/effect/decal/cleanable/sprayweb
 	name = "silly string"
@@ -253,6 +262,7 @@
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "stickyweb1"
 	random_icon_states = list("stickyweb1", "stickyweb2")
+	beauty = 15
 
 /obj/effect/decal/cleanable/garbage
 	name = "decomposing garbage"
@@ -268,6 +278,7 @@
 	icon = 'icons/mob/robots.dmi'
 	icon_state = "floor1"
 	random_icon_states = list("floor1", "floor2", "floor3", "floor4", "floor5", "floor6", "floor7")
+	beauty = -100 //Okay who spilt this shit.
 
 /obj/effect/decal/cleanable/squid_ink/ComponentInitialize()
 	. = ..()

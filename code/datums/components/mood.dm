@@ -211,19 +211,38 @@
 			setInsanityEffect(MAJOR_INSANITY_PEN)
 			master.add_movespeed_modifier(/datum/movespeed_modifier/sanity/insane)
 			master.hallucination = min(master.hallucination + 25, 100) //You're literally going insane. Who knows whats real anymore.
+			var/list/sounds_list = master.client.SoundQuery()
+			for(var/sound/S in sounds_list)
+				if(!S.channel == CHANNEL_BUZZ)
+					SEND_SOUND(master, sound('sound/health/mood/insanity.ogg', channel = CHANNEL_BUZZ, repeat = TRUE))
+				else
+					break
 			sanity_level = 6
 		if(SANITY_CRAZY to SANITY_UNSTABLE)
 			setInsanityEffect(MINOR_INSANITY_PEN)
 			master.add_movespeed_modifier(/datum/movespeed_modifier/sanity/crazy)
+			var/list/sounds_list = master.client.SoundQuery()
+			for(var/sound/S in sounds_list)
+				if(!S.channel == CHANNEL_BUZZ)
+					SEND_SOUND(master, sound('sound/health/mood/insanity.ogg', channel = CHANNEL_BUZZ, repeat = TRUE, volume = 50)) //Play at half volume here.
+				else
+					break
 			master.hallucination = 0
 			sanity_level = 5
 		if(SANITY_UNSTABLE to SANITY_DISTURBED)
 			setInsanityEffect(0)
 			master.add_movespeed_modifier(/datum/movespeed_modifier/sanity/disturbed)
+			var/list/sounds_list = master.client.SoundQuery()
+			for(var/sound/S in sounds_list)
+				if(!S.channel == CHANNEL_BUZZ)
+					SEND_SOUND(master, sound('sound/health/mood/insanity.ogg', channel = CHANNEL_BUZZ, repeat = TRUE, volume = 25)) //Play at quarter volume here.
+				else
+					break
 			sanity_level = 4
 		if(SANITY_DISTURBED to SANITY_NEUTRAL)
 			setInsanityEffect(0)
 			master.remove_movespeed_modifier(MOVESPEED_ID_SANITY)
+			master.stop_sound_channel(CHANNEL_BUZZ) //Should always stop the buzz. Hopefully.
 			sanity_level = 3
 		if(SANITY_NEUTRAL+1 to SANITY_GREAT+1) //shitty hack but +1 to prevent it from responding to super small differences
 			setInsanityEffect(0)
@@ -367,8 +386,12 @@
 		clear_event(null, "area_beauty")
 		return FALSE
 	switch(A.beauty)
+		if(-INFINITY to BEAUTY_LEVEL_HORRID)
+			add_event(null, "area_beauty", /datum/mood_event/horridroom)
+		if(BEAUTY_LEVEL_HORRID to BEAUTY_LEVEL_BAD)
+			add_event(null, "area_beauty", /datum/mood_event/badroom)
 		if(BEAUTY_LEVEL_BAD to BEAUTY_LEVEL_DECENT)
-			clear_event(null, "area_beauty")
+			add_event(null, "area_beauty", /datum/mood_event/normalroom) //Default mid room.
 		if(BEAUTY_LEVEL_DECENT to BEAUTY_LEVEL_GOOD)
 			add_event(null, "area_beauty", /datum/mood_event/decentroom)
 		if(BEAUTY_LEVEL_GOOD to BEAUTY_LEVEL_GREAT)
@@ -383,7 +406,6 @@
 	if(!full_heal)
 		return
 	remove_temp_moods()
-	setSanity(initial(sanity), override = TRUE)
 
 ///Called when parent slips.
 /datum/component/mood/proc/on_slip(datum/source)

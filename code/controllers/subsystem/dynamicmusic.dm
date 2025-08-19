@@ -46,6 +46,10 @@ SUBSYSTEM_DEF(dynamicmusic)
 		if(combat_listening_clients[client_iterator] > world.time)
 			continue //We're listening to combat right now stfu.
 
+		if(music_listening_clients[client_iterator] == 101) //If default (i.e. exiting cryo) (101 appears to be a natural byond default)
+			music_listening_clients[client_iterator] = world.time + rand(30 SECONDS, 2.5 MINUTES) //So that when waking up they aren't always 100% bombarded with music.
+			continue
+
 		var/area/current_area = get_area(client_iterator.mob)
 		music_listening_clients[client_iterator] = world.time + current_area.play_music(client_mob)
 		active_listening_clients[client_iterator] = world.time + current_area.play_music(client_mob, time_only = TRUE)

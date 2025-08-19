@@ -15,9 +15,17 @@
 	mood_change = -1
 	timeout = 2 MINUTES
 
+/datum/mood_event/too_chilly
+	description = span_warning("It's a little chilly in here.")
+	mood_change = -3
+
 /datum/mood_event/cold
 	description = span_warning("It's way too cold in here.")
 	mood_change = -5
+
+/datum/mood_event/too_warm
+	description = span_warning("It's a little too warm in here.")
+	mood_change = -3
 
 /datum/mood_event/hot
 	description = span_warning("It's getting hot in here.")
@@ -176,7 +184,7 @@
 	timeout = 3 MINUTES
 
 /datum/mood_event/deaths_door
-	description = span_boldwarning("This is it... I'm really going to die.")
+	description = span_boldwarning("This is it... I'm going to die...")
 	mood_change = -20
 
 /datum/mood_event/gunpoint
@@ -223,11 +231,6 @@
 
 	mood_change *= people_laughing_at_you
 	return ..()
-
-//These are unused so far but I want to remember them to use them later
-/datum/mood_event/surgery
-	description = span_boldwarning("HE'S CUTTING ME OPEN!!")
-	mood_change = -8
 
 /datum/mood_event/nanite_sadness
 	description = span_warning_robot("+++++++HAPPINESS SUPPRESSION+++++++")
@@ -288,3 +291,8 @@
 	description = span_warning("Someone booped my nose... ACK!")
 	mood_change = -3
 	timeout = 4 MINUTES
+
+/datum/mood_event/recently_shot
+	description = span_warning("I'VE JUST BEEN SHOT!")
+	mood_change = -20 //It fucking hurts.
+	timeout = 3 MINUTES //Leaves some good trauma. Yummy.

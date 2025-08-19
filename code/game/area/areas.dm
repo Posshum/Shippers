@@ -620,7 +620,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 /* 	if(L.client?.prefs.toggles & SOUND_SHIP_AMBIENCE)
 		SEND_SOUND(L, sound('sound/ambience/shipambience.ogg', repeat = 1, wait = 0, volume = 35, channel = CHANNEL_BUZZ)) */
 
-///Divides total beauty in the room by roomsize to allow us to get an average beauty per tile.
+///Divides total beauty in the room by half roomsize to allow us to get an average beauty per tile / 2.
 /area/proc/update_beauty()
 	if(!areasize)
 		beauty = 0
@@ -628,7 +628,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	if(areasize >= beauty_threshold)
 		beauty = 0
 		return FALSE //Too big
-	beauty = totalbeauty / areasize
+	beauty = totalbeauty / (areasize / 2)
 
 
 /**

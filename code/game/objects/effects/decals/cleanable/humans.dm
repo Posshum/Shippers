@@ -42,6 +42,7 @@
 		name = dryname
 		desc = drydesc
 		bloodiness = 0
+		beauty = -150 //Why hasn't this been cleaned up???
 		var/temp_color = ReadHSV(RGBtoHSV(color || COLOR_WHITE))
 		color = HSVtoRGB(hsv(temp_color[1], temp_color[2], max(temp_color[3] - 100,min(temp_color[3],10))))
 		STOP_PROCESSING(SSobj, src)
@@ -57,6 +58,7 @@
 	desc = "Looks like it's been here a while.  Eew."
 	bloodiness = 0
 	icon_state = "floor1-old"
+	beauty = -150
 
 /obj/effect/decal/cleanable/blood/old/Initialize(mapload, list/datum/disease/diseases)
 	add_blood_DNA(list("Non-human DNA" = random_blood_type())) // Needs to happen before ..()
@@ -68,6 +70,7 @@
 	random_icon_states = list("gibbl1", "gibbl2", "gibbl3", "gibbl4", "gibbl5")
 	///Absorb the /squirt subtype when it exists on the turf
 	var/absorb_squirts = TRUE
+	beauty = -150 //URK!!! ITS EVERYWHERE!!!
 
 /obj/effect/decal/cleanable/blood/tracks
 	icon_state = "tracks"
@@ -95,6 +98,7 @@
 	turf_loc_check = FALSE
 	dryname = "rotting gibs"
 	drydesc = "They look bloody and gruesome while some terrible smell fills the air."
+	beauty = -200 //WHO'S BODY PARTS ARE THESE!?
 
 /obj/effect/decal/cleanable/blood/gibs/Initialize(mapload, list/datum/disease/diseases)
 	. = ..()
@@ -177,6 +181,7 @@
 	dryname = "drips of blood"
 	drydesc = "It's red."
 	var/move_on_init = TRUE
+	beauty = -25 //Not as unbearable as a whole ass torso being gibbed.
 
 /obj/effect/decal/cleanable/blood/drip/Initialize(mapload, list/datum/disease/diseases)
 	. = ..()
@@ -199,6 +204,7 @@
 	icon_state = "blood1"
 	random_icon_states = null
 	blood_state = BLOOD_STATE_HUMAN //the icon state to load images from
+	beauty = -25 //Disturbing, ominous...
 	var/entered_dirs = 0
 	var/exited_dirs = 0
 
@@ -294,6 +300,7 @@
 	pass_flags = PASSTABLE | PASSGRILLE
 	icon_state = "hitsplatter1"
 	random_icon_states = list("hitsplatter1", "hitsplatter2", "hitsplatter3")
+	beauty = -50 //Ouch! That looks brutal.
 	/// The turf we just came from, so we can back up when we hit a wall
 	var/turf/prev_loc
 	/// The cached info about the blood
@@ -398,6 +405,7 @@
 	name = "blood trail"
 	icon_state = "squirt"
 	random_icon_states = null
+	beauty = -25 //Horrifying...
 
 /obj/effect/decal/cleanable/blood/squirt/Initialize(mapload, direction, list/blood_dna)
 	. = ..()
@@ -415,3 +423,4 @@
 	turf_loc_check = FALSE
 	alpha = 180
 	absorb_squirts = FALSE
+	beauty = -50 //Seeing the blood on the window... looks scary.

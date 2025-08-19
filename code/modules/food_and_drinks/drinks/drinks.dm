@@ -143,8 +143,12 @@
 	smashed_bottle.name = "broken [name]"
 	if(prob(33))
 		var/obj/item/shard/new_shard = new(drop_location())
+		var/obj/effect/decal/cleanable/glass/new_shards = new(drop_location())
+		new_shards.pixel_x = rand(0, 6)
+		new_shards.pixel_y = rand(0, 6)
 		if(target)
 			target.Bumped(new_shard)
+			target.Bumped(new_shards)	//Also some tiny glass shards for the janitor to have to clean up.
 	playsound(src, "shatter", 70, TRUE)
 	transfer_fingerprints_to(smashed_bottle)
 	qdel(src)
