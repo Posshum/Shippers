@@ -4,6 +4,13 @@ GLOBAL_LIST_INIT(generic_music,list(
 	'sound/music/musicgen3.ogg',
 	'sound/music/musicgen4.ogg',
 	'sound/music/musicgen5.ogg',
+	'sound/music/musicgen6.ogg',
+	'sound/music/musicgen7.ogg',
+	'sound/music/musicgen8.ogg',
+	'sound/music/musicgen9.ogg',
+	'sound/music/musicgen10.ogg',
+	'sound/music/musicgen11.ogg',
+	'sound/music/musicgen12.ogg',
 ))
 
 GLOBAL_LIST_INIT(combat_music,list(

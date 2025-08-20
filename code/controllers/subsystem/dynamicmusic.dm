@@ -22,6 +22,7 @@ SUBSYSTEM_DEF(dynamicmusic)
 
 		//Check to see if the client exists and isn't held by a new player
 		if(isnull(client_iterator) || isnewplayer(client_iterator.mob) || !client_iterator.prefs.dynamic_music_vol)
+			music_listening_clients[client_iterator] = world.time + rand(30 SECONDS, 2.5 MINUTES) //Default it to the world.timer so that they can proper play music on a delay when they first spawn.
 			continue //No client to play to, or not in-game yet, don't bother.
 
 		var/mob/living/client_mob = client_iterator?.mob
@@ -45,10 +46,6 @@ SUBSYSTEM_DEF(dynamicmusic)
 
 		if(combat_listening_clients[client_iterator] > world.time)
 			continue //We're listening to combat right now stfu.
-
-		if(music_listening_clients[client_iterator] == 101) //If default (i.e. exiting cryo) (101 appears to be a natural byond default)
-			music_listening_clients[client_iterator] = world.time + rand(30 SECONDS, 2.5 MINUTES) //So that when waking up they aren't always 100% bombarded with music.
-			continue
 
 		var/area/current_area = get_area(client_iterator.mob)
 		music_listening_clients[client_iterator] = world.time + current_area.play_music(client_mob)
