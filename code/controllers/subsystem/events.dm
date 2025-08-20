@@ -15,7 +15,7 @@ SUBSYSTEM_DEF(events)
 	///The next world.time that a naturally occurring random event can be selected.
 	var/scheduled = 0
 	///The lower bound for how soon another random event can be scheduled.
-	var/frequency_lower = 10 MINUTES
+	var/frequency_lower = 5 MINUTES
 	///The upper bound for how soon another random event can be scheduled.
 	var/frequency_upper = 15 MINUTES
 	///Will wizard events be included in the event pool?
