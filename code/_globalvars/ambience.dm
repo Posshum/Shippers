@@ -193,7 +193,9 @@ GLOBAL_LIST_INIT(tundra_ambience,list(
 ))
 
 GLOBAL_LIST_INIT(rare_generic_ambience,list(
-	'sound/ambience/ambirare1.ogg',))
+	'sound/ambience/ambirare1.ogg',
+	'sound/ambience/ambirare2.ogg',
+))
 
 GLOBAL_LIST_INIT(bridge_ambience,list(
 	'sound/ambience/ambirare1.ogg',))
