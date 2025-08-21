@@ -1,4 +1,3 @@
-	//Copied and edited from hivebots yes I know.
 /mob/living/basic/rogue_drone
 	name = "rogue derelict drone"
 	desc = "A drone from unknown worlds, derelict across the stars with one final command. \"Assimilate.\""
