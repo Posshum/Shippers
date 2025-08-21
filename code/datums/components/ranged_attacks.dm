@@ -14,6 +14,8 @@
 	var/burst_intervals
 	/// Time to wait between shots
 	var/cooldown_time
+	/// The accuracy with each shot, leave 0 for no spread
+	var/spread
 	/// Tracks time between shots
 	COOLDOWN_DECLARE(fire_cooldown)
 
@@ -24,6 +26,7 @@
 	burst_shots,
 	burst_intervals = 0.2 SECONDS,
 	cooldown_time = 3 SECONDS,
+	spread = 0
 )
 	. = ..()
 	if(!isbasicmob(parent))
@@ -33,6 +36,7 @@
 	src.projectile_sound = projectile_sound
 	src.projectile_type = projectile_type
 	src.cooldown_time = cooldown_time
+	src.spread = spread
 
 	if (casing_type && projectile_type)
 		CRASH("Set both casing type and projectile type in [parent]'s ranged attacks component! uhoh! stinky!")
@@ -73,5 +77,5 @@
 		P.yo = target.y - startloc.y
 		P.xo = target.x - startloc.x
 		P.original = target
-		P.preparePixelProjectile(target, firer)
+		P.preparePixelProjectile(target, firer, spread = spread)
 		P.fire()

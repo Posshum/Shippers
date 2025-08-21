@@ -6,6 +6,7 @@
 #define FACTION_TURRET "turret"
 #define FACTION_MINING "mining"
 #define FACTION_HIVEBOT "hivebot"
+#define FACTION_ROGUE_DRONE "rogue_drone"
 
 //"Antag" factions
 // anything with these factions should be hostile to the average player.

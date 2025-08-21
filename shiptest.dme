@@ -818,6 +818,7 @@
 #include "code\datums\looping_sounds\_looping_sound.dm"
 #include "code\datums\looping_sounds\item_sounds.dm"
 #include "code\datums\looping_sounds\machinery_sounds.dm"
+#include "code\datums\looping_sounds\mob_sounds.dm"
 #include "code\datums\looping_sounds\weather.dm"
 #include "code\datums\mapgen\_biome.dm"
 #include "code\datums\mapgen\_MapGenerator.dm"
@@ -3737,5 +3738,8 @@
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
-#include "code\datums\looping_sounds\mob_sounds.dm"
+#include "code\modules\mob\living\basic\space_fauna\rogue_drone\_rogue_drone.dm"
+#include "code\modules\mob\living\basic\space_fauna\rogue_drone\rogue_drone_ai_behaviour.dm"
+#include "code\modules\mob\living\basic\space_fauna\rogue_drone\rogue_drone_ai_subtrees.dm"
+#include "code\game\objects\effects\spawners\random\mobs\rogue_drones.dm"
 // END_INCLUDE
