@@ -188,17 +188,25 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(language)
 		var/datum/language/lang_used = GLOB.language_datum_instances[language]
 		spans |= lang_used.spans
-		bubble_type ||= lang_used.bubble_override
+		if(lang_used.bubble_override) //One extra check.
+			bubble_type ||= lang_used.bubble_override
+		else if(!bubble_type) //Fallback to default if we have no bubble type.
+			bubble_type = "default"
 		if(lang_used.use_tone_indicators)
 			if(tone_indicator)
 				remove_tone_indicator()
-			if(findtext(message, "?"))
+			if(findtext(message, "!") && findtext(message, "?")) //For those shocked moments...
+				tone_indicator = mutable_appearance('icons/mob/talk.dmi', "[bubble_type]3", plane = RUNECHAT_PLANE)
+			else if(findtext(message, "?"))
 				tone_indicator = mutable_appearance('icons/mob/talk.dmi', "[bubble_type]1", plane = RUNECHAT_PLANE)
 			else if(findtext(message, "!"))
 				tone_indicator = mutable_appearance('icons/mob/talk.dmi', "[bubble_type]2", plane = RUNECHAT_PLANE)
+			else
+				tone_indicator = mutable_appearance('icons/mob/talk.dmi', "[bubble_type]0", plane = RUNECHAT_PLANE)
 			if(!isnull(tone_indicator))
+				tone_indicator.appearance_flags = RESET_COLOR | RESET_TRANSFORM | TILE_BOUND | PIXEL_SCALE
 				add_overlay(tone_indicator)
-				addtimer(CALLBACK(src, PROC_REF(remove_tone_indicator)), 2.5 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
+				addtimer(CALLBACK(src, PROC_REF(remove_tone_indicator)), 3.5 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
 
 	if(message_mods[MODE_SING])
 		var/randomnote = pick("\u2669", "\u266A", "\u266B")

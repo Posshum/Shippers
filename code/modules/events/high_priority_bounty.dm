@@ -2,7 +2,7 @@
 	name = "High Priority Bounty"
 	typepath = /datum/round_event/high_priority_bounty
 	max_occurrences = INFINITY
-	weight = 20
+	weight = 10
 	earliest_start = 5 MINUTES
 
 /datum/round_event_control/high_priority_bountyy/can_spawn_event(players_amt, gamemode)

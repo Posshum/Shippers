@@ -212,7 +212,7 @@
 			master.add_movespeed_modifier(/datum/movespeed_modifier/sanity/insane)
 			master.hallucination = min(master.hallucination + 25, 100) //You're literally going insane. Who knows whats real anymore.
 			if(!master.insane_audio.is_playing)
-				master.insane_audio.volume = 75 //Don't ruin their eardrums...
+				master.insane_audio.volume = 95 //Don't ruin their eardrums...
 				master.insane_audio.start()
 			sanity_level = 6
 		if(SANITY_CRAZY to SANITY_UNSTABLE)
@@ -220,14 +220,14 @@
 			master.add_movespeed_modifier(/datum/movespeed_modifier/sanity/crazy)
 			master.hallucination = 0
 			if(!master.insane_audio.is_playing)
-				master.insane_audio.volume = 33
+				master.insane_audio.volume = 80
 				master.insane_audio.start()
 			sanity_level = 5
 		if(SANITY_UNSTABLE to SANITY_DISTURBED)
 			setInsanityEffect(0)
 			master.add_movespeed_modifier(/datum/movespeed_modifier/sanity/disturbed)
 			if(!master.insane_audio.is_playing)
-				master.insane_audio.volume = 10
+				master.insane_audio.volume = 70
 				master.insane_audio.start()
 			sanity_level = 4
 		if(SANITY_DISTURBED to SANITY_NEUTRAL)

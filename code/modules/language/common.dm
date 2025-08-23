@@ -13,6 +13,8 @@
 		/datum/language/kalixcian_common = 20,
 	)
 
+	use_tone_indicators = TRUE //Has a default, why isn't it being used!?
+
 
 //Syllable Lists
 /*

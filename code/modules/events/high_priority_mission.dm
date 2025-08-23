@@ -2,7 +2,7 @@
 	name = "High Priority Mission"
 	typepath = /datum/round_event/high_priority_mission
 	max_occurrences = INFINITY
-	weight = 20
+	weight = 10
 	earliest_start = 5 MINUTES
 
 /datum/round_event_control/high_priority_missiony/can_spawn_event(players_amt, gamemode)
