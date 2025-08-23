@@ -215,6 +215,7 @@
 #define SCREWYHUD_HEALTHY 3
 
 //Threshold levels for beauty for humans
+#define BEAUTY_LEVEL_HORRENDOUS -100
 #define BEAUTY_LEVEL_HORRID -66
 #define BEAUTY_LEVEL_BAD -33
 #define BEAUTY_LEVEL_DECENT 33

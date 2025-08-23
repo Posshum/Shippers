@@ -379,6 +379,8 @@
 		clear_event(null, "area_beauty")
 		return FALSE
 	switch(A.beauty)
+		if(-INFINITY to BEAUTY_LEVEL_HORRENDOUS)
+			add_event(null, "area_beauty", /datum/mood_event/absolutely_disgusting_room) //How the fuck did you let it get THIS bad!?
 		if(-INFINITY to BEAUTY_LEVEL_HORRID)
 			add_event(null, "area_beauty", /datum/mood_event/horridroom)
 		if(BEAUTY_LEVEL_HORRID to BEAUTY_LEVEL_BAD)
