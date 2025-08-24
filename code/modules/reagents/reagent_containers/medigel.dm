@@ -48,17 +48,20 @@
 	if(M == user)
 		M.visible_message(span_notice("[user] attempts to [apply_method] [src] on [user.p_them()]self."))
 		if(self_delay)
-			if(!do_after(user, self_delay, M))
+			var/skillcheck = user.mind.get_skill_modifier(/datum/skill/healing, SKILL_SPEED_MODIFIER)
+			if(!do_after(user, self_delay * skillcheck, M))
 				return
 			if(!reagents || !reagents.total_volume)
 				return
 		to_chat(M, span_notice("You [apply_method] yourself with [src]."))
+		user.mind.adjust_experience(/datum/skill/healing, MEDICAL_SKILL_EASY)
 
 	else
 		log_combat(user, M, "attempted to apply", src, reagents.log_list())
 		M.visible_message(span_danger("[user] attempts to [apply_method] [src] on [M]."), \
 							span_userdanger("[user] attempts to [apply_method] [src] on you."))
-		if(!do_after(user, target = M))
+		var/skillcheck = user.mind.get_skill_modifier(/datum/skill/healing, SKILL_SPEED_MODIFIER)
+		if(!do_after(user, 3 * skillcheck, target = M))
 			return
 		if(!reagents || !reagents.total_volume)
 			return
@@ -71,6 +74,7 @@
 	else
 		log_combat(user, M, "applied", src, reagents.log_list())
 		playsound(src, 'sound/effects/spray.ogg', 30, TRUE, -6)
+		user.mind.adjust_experience(/datum/skill/healing, MEDICAL_SKILL_EASY)
 		reagents.trans_to(M, amount_per_transfer_from_this, transfered_by = user, method = apply_type)
 	return
 

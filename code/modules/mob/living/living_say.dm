@@ -206,7 +206,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 			if(!isnull(tone_indicator))
 				tone_indicator.appearance_flags = RESET_COLOR | RESET_TRANSFORM | TILE_BOUND | PIXEL_SCALE
 				add_overlay(tone_indicator)
-				addtimer(CALLBACK(src, PROC_REF(remove_tone_indicator)), 3.5 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
+				addtimer(CALLBACK(src, PROC_REF(remove_tone_indicator)), 4.5 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
 
 	if(message_mods[MODE_SING])
 		var/randomnote = pick("\u2669", "\u266A", "\u266B")

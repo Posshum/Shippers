@@ -34,17 +34,21 @@
 	if(M == user)
 		M.visible_message(span_notice("[user] attempts to [apply_method] [src]."))
 		if(self_delay)
-			if(!do_after(user, self_delay, M))
+			var/skillcheck = user.mind.get_skill_modifier(/datum/skill/healing, SKILL_SPEED_MODIFIER)
+			if(!do_after(user, self_delay * skillcheck, M))
 				return FALSE
 		to_chat(M, span_notice("You [apply_method] [src]."))
+		user.mind.adjust_experience(/datum/skill/healing, MEDICAL_SKILL_EASY)
 
 	else
 		M.visible_message(span_danger("[user] attempts to force [M] to [apply_method] [src]."), \
 							span_userdanger("[user] attempts to force you to [apply_method] [src]."))
-		if(!do_after(user, target = M))
+		var/skillcheck = user.mind.get_skill_modifier(/datum/skill/healing, SKILL_SPEED_MODIFIER)
+		if(!do_after(user, 3 * skillcheck, target = M))
 			return FALSE
 		M.visible_message(span_danger("[user] forces [M] to [apply_method] [src]."), \
 							span_userdanger("[user] forces you to [apply_method] [src]."))
+		user.mind.adjust_experience(/datum/skill/healing, MEDICAL_SKILL_EASY)
 
 	if(icon_state == "pill4" && prob(5)) //you take the red pill - you stay in Wonderland, and I show you how deep the rabbit hole goes
 		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), M, span_notice("[pick(strings(REDPILL_FILE, "redpill_questions"))]")), 50)

@@ -25,3 +25,6 @@
 	satchel = /obj/item/storage/backpack/satchel/med
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
 
+/datum/outfit/job/psychologist/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	H.mind.set_level(/datum/skill/healing, 3)

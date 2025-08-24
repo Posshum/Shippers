@@ -43,6 +43,7 @@
 
 /// In which we print the message that we're starting to heal someone, then we try healing them. Does the do_after whether or not it can actually succeed on a targeted mob
 /obj/item/stack/medical/proc/try_heal(mob/living/patient, mob/user, silent = FALSE)
+	var/skillcheck = user.mind.get_skill_modifier(/datum/skill/healing, SKILL_SPEED_MODIFIER)
 	if(!patient.can_inject(user, TRUE))
 		return
 
@@ -53,7 +54,7 @@
 				span_notice("[user] starts to apply [src] on [user.p_them()]self..."),
 				span_notice("You begin applying [src] on yourself..."),
 			)
-		if(!do_after(user, self_delay, patient, extra_checks = CALLBACK(patient, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
+		if(!do_after(user, self_delay * skillcheck, patient, extra_checks = CALLBACK(patient, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
 			return
 
 	else if(other_delay)
@@ -63,12 +64,13 @@
 				span_notice("[user] starts to apply [src] on [patient]."),
 				span_notice("You begin applying [src] on [patient]..."),
 			)
-		if(!do_after(user, other_delay, patient, extra_checks = CALLBACK(patient, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
+		if(!do_after(user, other_delay * skillcheck, patient, extra_checks = CALLBACK(patient, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
 			return
 
 	if(heal(patient, user))
 		playsound(src, islist(apply_sounds) ? pick(apply_sounds) : apply_sounds, 25)
 		log_combat(user, patient, "healed", src.name)
+		user.mind.adjust_experience(/datum/skill/healing, MEDICAL_SKILL_EASY)
 		use(1)
 		if(repeating && amount > 0)
 			try_heal(patient, user, TRUE)
@@ -188,14 +190,15 @@
 		span_warning("[user] begins wrapping the wounds on [M]'s [limb.name] with [src]..."),
 		span_warning("You begin wrapping the wounds on [user == M ? "your" : "[M]'s"] [limb.name] with [src]..."),
 	)
-
-	if(!do_after(user, (user == M ? self_delay : other_delay), target=M))
+	var/skillcheck = user.mind.get_skill_modifier(/datum/skill/healing, SKILL_SPEED_MODIFIER)
+	if(!do_after(user, (user == M ? self_delay * skillcheck : other_delay * skillcheck), target=M))
 		return
 
 	user.visible_message(
 		span_green("[user] applies [src] to [M]'s [limb.name]."),
 		span_green("You bandage the wounds on [user == M ? "your" : "[M]'s"] [limb.name]."),
 	)
+	user.mind.adjust_experience(/datum/skill/healing, MEDICAL_SKILL_EASY)
 	limb.apply_gauze(src)
 
 /obj/item/stack/medical/gauze/attackby(obj/item/I, mob/user, params)
@@ -449,14 +452,15 @@
 		span_warning("[user] begins fastening [M]'s [limb.name] with [src]..."),
 		span_warning("You begin to fasten [user == M ? "your" : "[M]'s"] [limb.name] with [src]..."),
 	)
-
-	if(!do_after(user, (user == M ? self_delay : other_delay), target = M))
+	var/skillcheck = user.mind.get_skill_modifier(/datum/skill/healing, SKILL_SPEED_MODIFIER)
+	if(!do_after(user, (user == M ? self_delay * skillcheck : other_delay * skillcheck), target = M))
 		return
 
 	user.visible_message(
 		span_green("[user] applies [src] to [M]'s [limb.name]."),
 		span_green("You splint [user == M ? "your" : "[M]'s"] [limb.name]."),
 	)
+	user.mind.adjust_experience(/datum/skill/healing, MEDICAL_SKILL_EASY)
 	limb.apply_splint(src)
 
 /obj/item/stack/medical/splint/twelve

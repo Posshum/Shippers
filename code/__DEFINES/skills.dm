@@ -39,3 +39,7 @@
 #define MEDICAL_SKILL_MEDIUM (MEDICAL_SKILL_EASY*5)
 #define MEDICAL_SKILL_ORGAN_FIX (MEDICAL_SKILL_MEDIUM*1.75)
 #define MEDICAL_SKILL_ADVANCED (MEDICAL_SKILL_MEDIUM*2.5)
+
+#define RELOADING_SKILL_XP 2.5 //Gives 2.5 XP per bullet loaded.
+#define TACTICAL_RELOAD_XP 10 //Gives 10 XP per tactical reload.
+#define TACTICAL_RELOAD_FAILURE_XP -25 //How could you fuck that up!?

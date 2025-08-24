@@ -130,8 +130,9 @@
 
 	if(istype(attacking_obj, /obj/item/ammo_box))
 		var/obj/item/ammo_box/attacking_box = attacking_obj
+		var/skillcheck = user.mind.get_skill_modifier(/datum/skill/reloading, SKILL_SPEED_MODIFIER)
 		for(var/obj/item/ammo_casing/casing_to_insert in attacking_box.stored_ammo)
-			if(!((instant_load && attacking_box.instant_load) || (stored_ammo.len >= max_ammo) || istype(attacking_obj, /obj/item/ammo_box/magazine/ammo_stack) && do_after(user, 0.5 SECONDS, attacking_box, timed_action_flags = IGNORE_USER_LOC_CHANGE)))
+			if(!((instant_load && attacking_box.instant_load) || (stored_ammo.len >= max_ammo) || istype(attacking_obj, /obj/item/ammo_box/magazine/ammo_stack) && do_after(user, 0.5 SECONDS * skillcheck, attacking_box, timed_action_flags = IGNORE_USER_LOC_CHANGE)))
 				break
 			var/did_load = give_round(casing_to_insert, replace_spent)
 			if(!did_load)
@@ -139,6 +140,7 @@
 			attacking_box.stored_ammo -= casing_to_insert
 			if(!silent)
 				playsound(get_turf(attacking_box), 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE) //src is nullspaced, which means internal magazines won't properly play sound, thus we use attacking_box
+			user?.mind.adjust_experience(/datum/skill/reloading, RELOADING_SKILL_XP)
 			num_loaded++
 			attacking_box.update_ammo_count()
 			update_ammo_count()
@@ -164,13 +166,15 @@
 	if(istype(target,/obj/item/storage/belt/bandolier))
 		to_load = target
 		var/datum/component/storage/storage_to_load = to_load.GetComponent(/datum/component/storage)
+		var/skillcheck = user.mind.get_skill_modifier(/datum/skill/reloading, SKILL_SPEED_MODIFIER)
 		for(var/obj/item/ammo_casing/casing_to_insert in stored_ammo)
-			if(!((to_load.contents.len >= storage_to_load.get_max_volume()) || do_after(user, 0.5 SECONDS, src)))
+			if(!((to_load.contents.len >= storage_to_load.get_max_volume()) || do_after(user, 0.5 SECONDS * skillcheck, src)))
 				break
 			if(!storage_to_load.can_be_inserted(casing_to_insert,TRUE,user))
 				break
 			storage_to_load.handle_item_insertion(casing_to_insert,TRUE,user)
 			stored_ammo -= casing_to_insert
+			user?.mind.adjust_experience(/datum/skill/reloading, RELOADING_SKILL_XP)
 			playsound(get_turf(src), 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE)
 			num_loaded++
 			update_ammo_count()

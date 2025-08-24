@@ -42,3 +42,7 @@
 	box = /obj/item/storage/box/survival/medical
 
 	chameleon_extras = list(/obj/item/gun/syringe, /obj/item/stamp/cmo)
+
+/datum/outfit/job/cmo/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	H.mind.set_level(/datum/skill/healing, 6)

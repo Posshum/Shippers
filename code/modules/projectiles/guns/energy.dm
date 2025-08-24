@@ -176,10 +176,13 @@
 	if(user)
 		to_chat(user, span_notice("You pull the cell out of \the [src]."))
 		if(tac_load && tac_reloads)
-			if(do_after(user, tactical_reload_delay, src, hidden = TRUE))
+			var/skillcheck = user.mind.get_skill_modifier(/datum/skill/reloading, SKILL_SPEED_MODIFIER)
+			if(do_after(user, tactical_reload_delay * skillcheck, src, hidden = TRUE))
 				if(insert_cell(user, tac_load))
+					user?.mind.adjust_experience(/datum/skill/reloading, TACTICAL_RELOAD_XP)
 					to_chat(user, span_notice("You perform a tactical reload on \the [src]."))
 				else
+					user?.mind.adjust_experience(/datum/skill/reloading, TACTICAL_RELOAD_FAILURE_XP)
 					to_chat(user, span_warning("You dropped the old cell, but the new one doesn't fit. How embarassing."))
 			else
 				to_chat(user, span_warning("Your reload was interupted!"))

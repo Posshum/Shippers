@@ -3745,4 +3745,5 @@
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
+#include "code\datums\skills\reloading.dm"
 // END_INCLUDE
