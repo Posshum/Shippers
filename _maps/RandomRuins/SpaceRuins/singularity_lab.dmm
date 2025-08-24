@@ -105,9 +105,20 @@
 "aw" = (
 /obj/structure/spacevine/dense,
 /obj/machinery/power/floodlight,
-/turf/open/floor/plating/dirt{
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
+/area/ruin/space/has_grav/singularitylab/civvie)
+"az" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/ruin/space/has_grav/singularitylab/civvie)
 "aD" = (
 /obj/structure/cable{
@@ -122,6 +133,12 @@
 /area/ruin/space/has_grav/singularitylab)
 "aJ" = (
 /obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_x = 32
+	},
+/obj/structure/spacevine/dense{
+	pixel_y = -32
+	},
 /mob/living/simple_animal/hostile/venus_human_trap,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/ruin/space/has_grav/singularitylab)
@@ -181,7 +198,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/structure/spacevine,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -225,7 +242,7 @@
 /area/ruin/space/has_grav/singularitylab)
 "bb" = (
 /obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -261,6 +278,16 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
+"bj" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 4
+	},
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "bk" = (
 /obj/structure/closet/secure_closet/freezer/kitchen,
 /turf/open/floor/plasteel/freezer,
@@ -400,9 +427,18 @@
 	},
 /turf/open/floor/plating/asteroid/smoothed,
 /area/ruin/space/has_grav/singularitylab)
+"bN" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/turf/open/floor/plating/asteroid/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/ruin/space/has_grav/singularitylab/civvie)
 "bQ" = (
 /obj/structure/salvageable/machine,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -446,6 +482,18 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/engineering)
+"cf" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/turf/open/floor/plating/asteroid/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/ruin/space/has_grav/singularitylab)
 "cg" = (
 /obj/structure/cable{
 	icon_state = "2-5"
@@ -489,6 +537,14 @@
 /obj/item/storage/case/surgery,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/space/has_grav/singularitylab/cargo)
+"cv" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_x = 32
+	},
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "cw" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -546,7 +602,7 @@
 	icon_state = "1-2"
 	},
 /obj/structure/spacevine,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -613,6 +669,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
+"cT" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "cU" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 5
@@ -691,6 +754,9 @@
 	icon_state = "1-2"
 	},
 /obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_x = -32
+	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/ruin/space/has_grav/singularitylab)
@@ -724,6 +790,9 @@
 /area/ruin/space/has_grav/singularitylab)
 "dr" = (
 /obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_x = -32
+	},
 /mob/living/simple_animal/hostile/human/zombie/kudzu{
 	zombiejob = "Assistant"
 	},
@@ -837,7 +906,7 @@
 "dT" = (
 /obj/structure/spacevine,
 /obj/structure/salvageable/machine,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -885,6 +954,16 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/singularitylab/engineering)
+"ec" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/turf/open/floor/plating/asteroid/smoothed,
+/area/ruin/space/has_grav/singularitylab)
 "eh" = (
 /obj/structure/spacevine,
 /obj/machinery/atmospherics/components/unary/outlet_injector/on,
@@ -1001,6 +1080,26 @@
 	},
 /turf/open/floor/plating/asteroid/smoothed,
 /area/ruin/space/has_grav/singularitylab)
+"eF" = (
+/obj/structure/transit_tube/horizontal,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/smoothed,
+/area/ruin/space/has_grav/singularitylab)
 "eH" = (
 /obj/structure/transit_tube/crossing,
 /obj/structure/cable{
@@ -1064,13 +1163,19 @@
 "eX" = (
 /obj/machinery/light/directional/south,
 /obj/structure/spacevine,
-/turf/open/floor/plating/dirt{
+/obj/structure/spacevine{
+	pixel_x = -32
+	},
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab)
 "fa" = (
 /obj/structure/spacevine/dense,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -1116,6 +1221,15 @@
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"fn" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/turf/open/floor/plating/asteroid/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/ruin/space/has_grav/singularitylab/civvie)
 "fo" = (
 /obj/structure/transit_tube/curved/flipped{
 	dir = 8
@@ -1143,7 +1257,7 @@
 "fs" = (
 /obj/structure/spacevine,
 /obj/structure/reagent_dispensers/watertank/high,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -1262,6 +1376,19 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/holofloor/wood,
 /area/ruin/space/has_grav/singularitylab/lab)
+"fW" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 6
+	},
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "fX" = (
 /obj/effect/turf_decal/siding/thinplating/corner{
 	dir = 1
@@ -1478,6 +1605,14 @@
 /obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/space/has_grav/singularitylab/cargo)
+"gR" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "ha" = (
 /obj/effect/turf_decal/siding/thinplating/corner{
 	dir = 8
@@ -1510,6 +1645,9 @@
 	icon_state = "4-8"
 	},
 /obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_y = -32
+	},
 /mob/living/simple_animal/hostile/venus_human_trap,
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1592,6 +1730,16 @@
 	},
 /turf/open/floor/plating,
 /area/space/nearstation)
+"hv" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_y = 32
+	},
+/obj/structure/spacevine/dense{
+	pixel_x = 32
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "hy" = (
 /obj/structure/cable{
 	icon_state = "4-10"
@@ -1701,6 +1849,19 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"hW" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 9
+	},
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/obj/structure/spacevine{
+	pixel_x = -32
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab)
 "hY" = (
 /obj/machinery/door/poddoor{
 	id = "singlabcargo2"
@@ -1899,6 +2060,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
+"iJ" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_x = -32
+	},
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "iK" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
@@ -1932,6 +2101,9 @@
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/ruin/space/has_grav/singularitylab)
 "iW" = (
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
 /obj/structure/spacevine,
 /obj/machinery/light/directional/north,
 /obj/structure/flora/ausbushes/stalkybush,
@@ -1940,6 +2112,9 @@
 "iZ" = (
 /obj/structure/cable,
 /obj/structure/spacevine,
+/obj/structure/spacevine/dense{
+	pixel_y = -32
+	},
 /obj/machinery/power/shieldwallgen/atmos{
 	dir = 1
 	},
@@ -1988,11 +2163,17 @@
 /obj/structure/spacevine{
 	pixel_y = -32
 	},
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab)
 "jq" = (
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/obj/structure/spacevine{
+	pixel_x = -32
+	},
 /obj/structure/spacevine,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
@@ -2052,7 +2233,7 @@
 	icon_state = "5-9"
 	},
 /obj/structure/spacevine,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -2102,6 +2283,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
+"jK" = (
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "jL" = (
 /obj/effect/turf_decal/siding/thinplating,
 /obj/effect/turf_decal/siding/thinplating{
@@ -2196,6 +2383,9 @@
 	icon_state = "4-8"
 	},
 /obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_y = -32
+	},
 /obj/effect/decal/cleanable/blood/old,
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
@@ -2247,6 +2437,16 @@
 /area/ruin/space/has_grav/singularitylab/civvie)
 "ku" = (
 /obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_x = 32;
+	pixel_y = 32
+	},
+/obj/structure/spacevine/dense{
+	pixel_x = 32
+	},
+/obj/structure/spacevine/dense{
+	pixel_y = 32
+	},
 /obj/machinery/portable_atmospherics/scrubber/huge,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
@@ -2771,6 +2971,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/spacevine/dense{
+	pixel_y = -32
+	},
 /obj/structure/spacevine,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
@@ -3071,6 +3274,13 @@
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/ruin/space/has_grav/singularitylab)
+"np" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/turf/open/floor/plating/asteroid/smoothed,
+/area/ruin/space/has_grav/singularitylab)
 "nr" = (
 /obj/structure/spacevine,
 /turf/open/floor/plating/asteroid/smoothed,
@@ -3265,7 +3475,7 @@
 /obj/structure/spacevine{
 	pixel_x = -32
 	},
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -3281,6 +3491,15 @@
 	},
 /turf/closed/wall,
 /area/ruin/space/has_grav/singularitylab)
+"on" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = -32
+	},
+/turf/open/floor/plating/asteroid/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/ruin/space/has_grav/singularitylab/civvie)
 "oq" = (
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced{
@@ -3370,6 +3589,34 @@
 /obj/machinery/ore_silo,
 /turf/open/floor/pod,
 /area/ruin/space/has_grav/singularitylab/cargo)
+"oF" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab/civvie)
+"oG" = (
+/obj/structure/flippedtable,
+/obj/structure/spacevine/dense{
+	pixel_x = -31;
+	pixel_y = 32
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/space/has_grav/singularitylab)
+"oH" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = -32
+	},
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "oJ" = (
 /obj/structure/bed,
 /obj/item/bedsheet/cosmos,
@@ -3386,6 +3633,13 @@
 	},
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ruin/space/has_grav/singularitylab/lab)
+"oM" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/turf/open/floor/plating/asteroid/smoothed/airless,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "oR" = (
 /obj/machinery/power/rad_collector/anchored,
 /obj/structure/cable/yellow{
@@ -3443,6 +3697,14 @@
 	network = list("sl12")
 	},
 /turf/open/floor/plating/asteroid/smoothed,
+/area/ruin/space/has_grav/singularitylab)
+"pd" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_x = 32
+	},
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/ruin/space/has_grav/singularitylab)
 "pe" = (
 /obj/machinery/light/directional/north,
@@ -3622,6 +3884,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
 /obj/structure/spacevine,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -3699,7 +3964,10 @@
 	dir = 5
 	},
 /obj/structure/spacevine/dense,
-/turf/open/floor/plating/dirt{
+/obj/structure/spacevine/dense{
+	pixel_x = -32
+	},
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -3726,6 +3994,9 @@
 /area/ruin/space/has_grav/singularitylab)
 "qn" = (
 /obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_y = 32
+	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/ruin/space/has_grav/singularitylab)
@@ -3745,6 +4016,16 @@
 /obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"qs" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine{
+	pixel_x = -32
+	},
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/turf/open/floor/plating/asteroid/smoothed/airless,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "qt" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/soda_cans/comet_trail{
@@ -3757,6 +4038,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/singularitylab/engineering)
 "qu" = (
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
 /obj/structure/spacevine,
 /obj/machinery/vending/wardrobe/chef_wardrobe,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
@@ -3784,6 +4068,9 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
 "qC" = (
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
 /obj/structure/spacevine,
 /obj/machinery/vending/dinnerware,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
@@ -3797,6 +4084,16 @@
 /area/ruin/space/has_grav/singularitylab)
 "qG" = (
 /obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_x = -32
+	},
+/obj/structure/spacevine/dense{
+	pixel_y = -32
+	},
+/obj/structure/spacevine/dense{
+	pixel_x = -32;
+	pixel_y = -32
+	},
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -4071,10 +4368,17 @@
 "rY" = (
 /obj/structure/spacevine/dense,
 /obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
+"rZ" = (
+/obj/structure/spacevine{
+	pixel_x = -32
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/asteroid/smoothed,
+/area/ruin/space/has_grav/singularitylab)
 "sc" = (
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/effect/turf_decal/industrial/warning,
@@ -4127,6 +4431,14 @@
 	},
 /turf/open/floor/engine/hull,
 /area/space/nearstation)
+"sp" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab)
 "sr" = (
 /obj/structure/closet/wall/directional/west,
 /obj/item/reagent_containers/food/drinks/flask,
@@ -4147,6 +4459,9 @@
 	icon_state = "1-6"
 	},
 /obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_x = -32
+	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/ruin/space/has_grav/singularitylab)
@@ -4305,11 +4620,30 @@
 "tq" = (
 /turf/template_noop,
 /area/template_noop)
+"tr" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/turf/open/floor/engine,
+/area/ruin/space/has_grav/singularitylab)
 "ts" = (
 /obj/structure/spacevine/dense,
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
 /mob/living/simple_animal/hostile/venus_human_trap,
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab/civvie)
+"tv" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/turf/open/floor/plating/asteroid/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
 /area/ruin/space/has_grav/singularitylab/civvie)
 "tx" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -4330,8 +4664,27 @@
 /obj/structure/spacevine,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"tE" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 9
+	},
+/turf/open/floor/plating/asteroid/smoothed,
+/area/ruin/space/has_grav/singularitylab)
 "tI" = (
 /obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_x = 32
+	},
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 4
 	},
@@ -4377,7 +4730,7 @@
 /area/ruin/space/has_grav/singularitylab/engineering)
 "ua" = (
 /obj/structure/spacevine,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -4424,6 +4777,20 @@
 "un" = (
 /turf/open/floor/plasteel/freezer,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"up" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_y = -32
+	},
+/obj/structure/spacevine/dense{
+	pixel_x = 32;
+	pixel_y = -32
+	},
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab)
 "us" = (
 /obj/structure/transit_tube,
 /obj/structure/cable{
@@ -4447,6 +4814,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab)
+"uv" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = -32
+	},
+/turf/open/floor/plating/asteroid/smoothed/airless,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "uw" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 6
@@ -4489,6 +4863,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/singularitylab/reactor)
+"uE" = (
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/asteroid/smoothed,
+/area/ruin/space/has_grav/singularitylab)
 "uF" = (
 /obj/effect/turf_decal/siding/thinplating,
 /obj/effect/turf_decal/siding/thinplating/corner{
@@ -4524,6 +4905,15 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
+"uN" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = -32
+	},
+/turf/open/floor/plating/asteroid/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/ruin/space/has_grav/singularitylab)
 "uO" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/structure/table,
@@ -4628,6 +5018,21 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"vi" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_y = 32
+	},
+/obj/structure/spacevine/dense{
+	pixel_x = -32;
+	pixel_y = 32
+	},
+/obj/structure/spacevine/dense{
+	pixel_x = -32
+	},
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab)
 "vk" = (
 /obj/effect/turf_decal/techfloor,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -4740,6 +5145,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"vL" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine{
+	pixel_x = -32
+	},
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab)
 "vO" = (
 /obj/effect/turf_decal/siding/yellow/corner{
 	dir = 1
@@ -4789,6 +5202,15 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plating/asteroid/smoothed,
 /area/ruin/space/has_grav/singularitylab)
+"wh" = (
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/asteroid/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/ruin/space/has_grav/singularitylab/civvie)
 "wk" = (
 /obj/structure/cable{
 	icon_state = "5-6"
@@ -4834,7 +5256,7 @@
 /area/ruin/space/has_grav/singularitylab)
 "wr" = (
 /obj/item/pickaxe/rusted,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -4898,7 +5320,7 @@
 "wM" = (
 /obj/structure/spacevine,
 /mob/living/simple_animal/hostile/venus_human_trap,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -4908,7 +5330,7 @@
 	},
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -4949,6 +5371,9 @@
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab)
 "wY" = (
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
 /obj/structure/spacevine,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 9
@@ -5071,6 +5496,15 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab/lab)
+"xz" = (
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/asteroid/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/ruin/space/has_grav/singularitylab/civvie)
 "xA" = (
 /obj/machinery/airalarm/directional/north,
 /obj/item/radio/intercom/directional/west,
@@ -5081,9 +5515,12 @@
 /turf/open/floor/plasteel/grimy,
 /area/ruin/space/has_grav/singularitylab/lab)
 "xB" = (
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
 /obj/structure/spacevine,
 /obj/machinery/light/directional/north,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -5128,7 +5565,7 @@
 "xJ" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -5268,7 +5705,7 @@
 /turf/open/floor/plating/asteroid/smoothed,
 /area/ruin/space/has_grav/singularitylab)
 "yh" = (
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -5630,6 +6067,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
+"zx" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = -32
+	},
+/turf/open/floor/engine,
+/area/ruin/space/has_grav/singularitylab)
 "zy" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 8
@@ -5752,6 +6196,7 @@
 /obj/machinery/door/airlock/maintenance{
 	name = "Kitchen Exit"
 	},
+/obj/structure/spacevine,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/civvie)
 "zV" = (
@@ -5767,7 +6212,10 @@
 /area/ruin/space/has_grav/singularitylab/civvie)
 "zY" = (
 /obj/structure/spacevine/dense,
-/turf/open/floor/plating/dirt{
+/obj/structure/spacevine/dense{
+	pixel_x = -32
+	},
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -5844,6 +6292,9 @@
 /area/space/nearstation)
 "As" = (
 /obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
 /obj/structure/spacevine/dense,
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -5892,6 +6343,9 @@
 	anchored = 1
 	},
 /obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/singularitylab)
 "AB" = (
@@ -5899,6 +6353,9 @@
 	icon_state = "1-2"
 	},
 /obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_x = -32
+	},
 /mob/living/simple_animal/hostile/venus_human_trap,
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
@@ -5923,8 +6380,11 @@
 /area/ruin/space/has_grav/singularitylab/lab)
 "AG" = (
 /obj/structure/spacevine/dense,
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
 /obj/structure/extinguisher_cabinet/directional/north,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -5938,6 +6398,9 @@
 /obj/effect/turf_decal/siding/thinplating,
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/spacevine{
+	pixel_y = -32
 	},
 /obj/structure/spacevine,
 /turf/open/floor/plasteel,
@@ -5965,6 +6428,15 @@
 /obj/effect/turf_decal/corner/opaque/green/border,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"AQ" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/turf/open/floor/plating/asteroid/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/ruin/space/has_grav/singularitylab)
 "AR" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 5
@@ -6022,6 +6494,12 @@
 "Ba" = (
 /obj/item/pickaxe/rusted,
 /obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -6030,7 +6508,7 @@
 	dir = 5
 	},
 /obj/structure/spacevine,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -6046,7 +6524,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/structure/spacevine,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -6066,6 +6544,14 @@
 /obj/structure/spacevine,
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab)
+"Bi" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_x = -32
+	},
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "Bk" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Secure Weapon Storage"
@@ -6316,6 +6802,22 @@
 	},
 /turf/open/floor/plating/asteroid/smoothed,
 /area/ruin/space/has_grav/singularitylab)
+"Ck" = (
+/obj/structure/spacevine{
+	pixel_x = -32
+	},
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/obj/structure/spacevine,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 6
+	},
+/turf/open/floor/plating/asteroid/smoothed,
+/area/ruin/space/has_grav/singularitylab)
 "Cl" = (
 /obj/structure/cable{
 	icon_state = "6-8"
@@ -6403,6 +6905,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/engineering)
+"CJ" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_x = -32
+	},
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab)
 "CN" = (
 /obj/effect/turf_decal/siding/yellow{
 	dir = 4
@@ -6437,6 +6947,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
+"CU" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/turf/open/floor/plating/asteroid/smoothed/airless,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "CV" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1
@@ -6513,6 +7030,22 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab)
+"Dg" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_y = 32
+	},
+/obj/structure/spacevine/dense{
+	pixel_x = -32
+	},
+/obj/structure/spacevine/dense{
+	pixel_x = -31;
+	pixel_y = 32
+	},
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/ruin/space/has_grav/singularitylab)
 "Di" = (
 /obj/structure/spacevine,
@@ -6626,6 +7159,9 @@
 /obj/structure/cable{
 	icon_state = "4-10"
 	},
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
 /obj/structure/spacevine,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
@@ -6666,6 +7202,9 @@
 	dir = 6
 	},
 /obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
 "DM" = (
@@ -6768,6 +7307,32 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/singularitylab/engineering)
+"Ek" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/turf/open/floor/plating/asteroid/smoothed/airless,
+/area/ruin/space/has_grav/singularitylab/civvie)
+"El" = (
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/obj/structure/spacevine,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 9
+	},
+/turf/open/floor/plating/asteroid/smoothed,
+/area/ruin/space/has_grav/singularitylab)
 "Eo" = (
 /obj/machinery/light/directional/west,
 /obj/effect/turf_decal/corner/transparent/orange{
@@ -6801,6 +7366,9 @@
 /area/ruin/space/has_grav/singularitylab)
 "Et" = (
 /obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
 /obj/machinery/air_sensor/atmos/oxygen_tank,
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab)
@@ -6885,7 +7453,7 @@
 /area/ruin/space/has_grav/singularitylab/engineering)
 "EL" = (
 /obj/machinery/light/small/directional/south,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -6946,7 +7514,7 @@
 /obj/structure/spacevine/dense{
 	pixel_y = 32
 	},
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -7099,7 +7667,7 @@
 /obj/structure/spacevine{
 	pixel_y = 32
 	},
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -7201,7 +7769,7 @@
 "FP" = (
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -7215,7 +7783,7 @@
 "FR" = (
 /obj/structure/spacevine,
 /obj/machinery/light/small/directional/south,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -7284,10 +7852,23 @@
 	icon_state = "2-4"
 	},
 /obj/structure/spacevine,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab)
+"Gh" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "Gi" = (
 /obj/machinery/door/airlock/external{
 	dir = 4;
@@ -7405,6 +7986,25 @@
 /obj/effect/decal/cleanable/insectguts,
 /turf/open/floor/plating/asteroid/smoothed,
 /area/ruin/space/has_grav/singularitylab)
+"GK" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_y = 32
+	},
+/obj/structure/spacevine/dense{
+	pixel_x = 32
+	},
+/obj/structure/spacevine/dense{
+	pixel_y = -32
+	},
+/obj/structure/spacevine/dense{
+	pixel_x = 32;
+	pixel_y = 32
+	},
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab)
 "GL" = (
 /obj/machinery/particle_accelerator/control_box,
 /turf/open/floor/engine,
@@ -7487,7 +8087,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/structure/spacevine/dense,
-/turf/open/floor/plating/dirt{
+/obj/structure/spacevine/dense{
+	pixel_x = 32
+	},
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -7596,6 +8199,18 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
+"Hr" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_x = -32
+	},
+/obj/structure/spacevine/dense{
+	pixel_x = -32;
+	pixel_y = -32
+	},
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab)
 "Hx" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plating/asteroid/smoothed/airless,
@@ -7643,6 +8258,18 @@
 	pixel_y = -32
 	},
 /turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab)
+"HK" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_y = 32
+	},
+/obj/structure/spacevine/dense{
+	pixel_y = -32
+	},
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/ruin/space/has_grav/singularitylab)
 "HL" = (
 /obj/effect/turf_decal/siding/thinplating,
@@ -7723,6 +8350,18 @@
 	},
 /turf/open/floor/plating/asteroid/smoothed,
 /area/ruin/space/has_grav/singularitylab)
+"HX" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_y = -32
+	},
+/obj/structure/spacevine/dense{
+	pixel_x = 32;
+	pixel_y = -32
+	},
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab)
 "HY" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 5
@@ -7782,7 +8421,7 @@
 "Ik" = (
 /obj/machinery/hydroponics/constructable,
 /obj/structure/spacevine/dense,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -7931,6 +8570,18 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
+"IP" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = -32
+	},
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/turf/open/floor/plating/asteroid/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/ruin/space/has_grav/singularitylab/civvie)
 "IQ" = (
 /obj/machinery/smartfridge,
 /turf/closed/wall,
@@ -7952,6 +8603,13 @@
 /obj/item/book/manual/chef_recipes,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"IY" = (
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/asteroid/smoothed,
+/area/ruin/space/has_grav/singularitylab)
 "Ja" = (
 /obj/structure/table,
 /obj/item/storage/backpack/duffelbag/engineering,
@@ -8031,6 +8689,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
+/obj/structure/spacevine,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plasteel/tech,
@@ -8071,6 +8730,18 @@
 /obj/effect/turf_decal/corner/opaque/green/three_quarters,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"Jx" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/turf/open/floor/plating/asteroid/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/ruin/space/has_grav/singularitylab/civvie)
 "Jy" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -8084,12 +8755,22 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab/cargo)
+"JA" = (
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/asteroid/smoothed,
+/area/ruin/space/has_grav/singularitylab)
 "JC" = (
 /obj/effect/turf_decal/siding/thinplating,
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
 /obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
 "JD" = (
@@ -8099,6 +8780,15 @@
 /obj/structure/spacevine,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
+"JI" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/turf/open/floor/plating/asteroid/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/ruin/space/has_grav/singularitylab/civvie)
 "JJ" = (
 /obj/item/gun/energy/e_gun/smg{
 	dry_fire_sound = 'sound/items/ding.ogg';
@@ -8135,7 +8825,7 @@
 "JL" = (
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/insectguts,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -8177,7 +8867,7 @@
 "JQ" = (
 /obj/structure/spacevine/dense,
 /obj/structure/salvageable/machine,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -8267,6 +8957,17 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"Kh" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_y = 32
+	},
+/obj/structure/spacevine/dense{
+	pixel_x = -31;
+	pixel_y = 32
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab)
 "Ki" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/turf_decal/box,
@@ -8284,6 +8985,15 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"Kk" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine{
+	pixel_x = -32
+	},
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab)
 "Kn" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 4
@@ -8293,6 +9003,17 @@
 	},
 /turf/open/floor/holofloor/wood,
 /area/ruin/space/has_grav/singularitylab/lab)
+"Ko" = (
+/obj/machinery/light/directional/north,
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = -32
+	},
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/turf/open/floor/plating/asteroid/smoothed,
+/area/ruin/space/has_grav/singularitylab)
 "Kq" = (
 /obj/machinery/conveyor{
 	dir = 8;
@@ -8356,7 +9077,7 @@
 "KC" = (
 /obj/machinery/hydroponics/constructable,
 /obj/structure/spacevine,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -8487,6 +9208,17 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/civvie)
+"KY" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_x = -32
+	},
+/obj/structure/spacevine/dense{
+	pixel_x = 32
+	},
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/ruin/space/has_grav/singularitylab/civvie)
 "KZ" = (
 /obj/structure/cable{
@@ -8665,14 +9397,14 @@
 /obj/structure/spacevine{
 	pixel_x = 32
 	},
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab)
 "LP" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/structure/spacevine/dense,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -8735,6 +9467,15 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/space/has_grav/singularitylab/cargo)
+"Mg" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/turf/open/floor/plating/asteroid/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/ruin/space/has_grav/singularitylab/civvie)
 "Mh" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
@@ -8797,6 +9538,15 @@
 /obj/structure/spacevine,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"Ms" = (
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/asteroid/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/ruin/space/has_grav/singularitylab/civvie)
 "Mu" = (
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 6
@@ -8813,6 +9563,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/engineering)
+"Mx" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "MA" = (
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
@@ -8943,6 +9701,9 @@
 	icon_state = "5-8"
 	},
 /obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 4
 	},
@@ -8979,6 +9740,9 @@
 /area/ruin/space/has_grav/singularitylab/cargo)
 "Ni" = (
 /obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab)
@@ -9054,11 +9818,28 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"Ny" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_y = 32
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "NB" = (
 /turf/closed/wall{
 	desc = "A huge chunk of metal holding the roof of the asteroid at bay";
 	name = "structural support"
 	},
+/area/ruin/space/has_grav/singularitylab)
+"NC" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/ruin/space/has_grav/singularitylab)
 "NE" = (
 /obj/structure/cable{
@@ -9113,6 +9894,13 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab)
+"NM" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine{
+	pixel_x = -32
+	},
+/turf/open/floor/plating/asteroid/smoothed/airless,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "NP" = (
 /obj/effect/turf_decal/corner/opaque/white/full,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -9331,7 +10119,7 @@
 	icon_state = ""
 	},
 /obj/structure/spacevine,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -9363,6 +10151,9 @@
 	icon_state = "4-8"
 	},
 /obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
 /obj/effect/decal/cleanable/ash,
 /obj/effect/decal/cleanable/ash,
 /obj/effect/decal/cleanable/blood/tracks{
@@ -9447,6 +10238,20 @@
 "OV" = (
 /obj/structure/lattice/catwalk,
 /turf/open/floor/plating,
+/area/ruin/space/has_grav/singularitylab)
+"OW" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/turf/open/floor/engine,
+/area/ruin/space/has_grav/singularitylab)
+"OX" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/ruin/space/has_grav/singularitylab)
 "Pa" = (
 /turf/open/floor/plasteel,
@@ -9582,6 +10387,21 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/singularitylab)
+"Px" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/obj/structure/spacevine{
+	pixel_x = -32
+	},
+/obj/structure/spacevine/dense{
+	pixel_x = -31;
+	pixel_y = 32
+	},
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/engine,
+/area/ruin/space/has_grav/singularitylab)
 "Pz" = (
 /obj/effect/turf_decal/box,
 /obj/structure/closet/crate,
@@ -9663,6 +10483,9 @@
 /area/ruin/space/has_grav/singularitylab)
 "PL" = (
 /obj/structure/spacevine/dense,
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
 /obj/structure/closet/emcloset,
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
@@ -9763,7 +10586,7 @@
 	icon_state = ""
 	},
 /obj/structure/spacevine,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -9783,6 +10606,18 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
+"Ql" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine{
+	pixel_x = -32
+	},
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "Qo" = (
 /turf/open/floor/plating/asteroid/smoothed,
 /area/ruin/space/has_grav)
@@ -9875,6 +10710,9 @@
 /area/ruin/space/has_grav/singularitylab/engineering)
 "QF" = (
 /obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_x = 32
+	},
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
@@ -9885,7 +10723,7 @@
 /obj/structure/sign/nanotrasen{
 	pixel_y = 32
 	},
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -9946,6 +10784,16 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/engineering)
+"QY" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_x = -32
+	},
+/obj/structure/spacevine/dense{
+	pixel_y = -32
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab)
 "QZ" = (
 /obj/structure/railing{
 	dir = 8
@@ -10154,6 +11002,26 @@
 /obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"RL" = (
+/obj/structure/transit_tube/horizontal,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/obj/structure/spacevine,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/smoothed,
+/area/ruin/space/has_grav/singularitylab)
 "RP" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -10221,6 +11089,16 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/space/has_grav/singularitylab/engineering)
+"Sd" = (
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 6
+	},
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "Se" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/cable{
@@ -10458,6 +11336,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plating/asteroid/smoothed,
 /area/ruin/space/has_grav/singularitylab)
+"Tb" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_x = -32
+	},
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab)
 "Td" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
@@ -10570,7 +11456,7 @@
 	icon_state = "0-8"
 	},
 /obj/structure/spacevine,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -10694,7 +11580,7 @@
 	dir = 4
 	},
 /obj/structure/spacevine/dense,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -10727,6 +11613,16 @@
 /obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
+"TS" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/turf/open/floor/plating/asteroid/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/ruin/space/has_grav/singularitylab/civvie)
 "TT" = (
 /obj/structure/closet/secure_closet/freezer/meat,
 /turf/open/floor/plasteel/freezer,
@@ -10780,12 +11676,30 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab)
+"Ue" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_x = -32
+	},
+/obj/structure/spacevine/dense{
+	pixel_y = 32
+	},
+/obj/structure/spacevine/dense{
+	pixel_x = -32;
+	pixel_y = 32
+	},
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab)
 "Ui" = (
 /obj/effect/turf_decal/siding/thinplating,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
@@ -10844,6 +11758,23 @@
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/ruin/space/has_grav/singularitylab/civvie)
+"Ur" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_y = 32
+	},
+/obj/structure/spacevine/dense{
+	pixel_x = 32
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab)
+"Ut" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "Ux" = (
 /obj/structure/spacevine/dense,
 /obj/structure/flora/ausbushes/fullgrass,
@@ -10880,6 +11811,21 @@
 	},
 /turf/open/floor/plating,
 /area/space/nearstation)
+"UG" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_x = -32
+	},
+/obj/structure/spacevine/dense{
+	pixel_y = -32
+	},
+/obj/structure/spacevine/dense{
+	pixel_x = -32;
+	pixel_y = -32
+	},
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab)
 "UH" = (
 /obj/structure/spacevine/dense,
 /obj/machinery/atmospherics/pipe/simple/general/visible{
@@ -10887,6 +11833,34 @@
 	},
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab)
+"UI" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine/dense{
+	pixel_y = -32
+	},
+/turf/open/floor/engine,
+/area/ruin/space/has_grav/singularitylab)
+"UJ" = (
+/obj/structure/spacevine/dense{
+	pixel_y = 32
+	},
+/obj/structure/spacevine/dense,
+/turf/open/floor/plating/asteroid/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
+/area/ruin/space/has_grav/singularitylab/civvie)
+"UK" = (
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/obj/structure/spacevine{
+	pixel_x = -32
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating/asteroid/dirt{
+	baseturfs = /turf/open/floor/plating/asteroid
+	},
 /area/ruin/space/has_grav/singularitylab)
 "UL" = (
 /obj/structure/sign/poster/retro/lasergun{
@@ -10954,6 +11928,18 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plating/asteroid/smoothed,
 /area/ruin/space/has_grav/singularitylab)
+"UW" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_x = 32
+	},
+/obj/structure/spacevine/dense{
+	pixel_x = 32;
+	pixel_y = 32
+	},
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab)
 "UY" = (
 /obj/structure/spacevine/dense,
 /obj/structure/spacevine/dense{
@@ -10961,6 +11947,14 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab)
+"Vb" = (
+/obj/structure/spacevine/dense{
+	pixel_x = -32
+	},
+/obj/structure/spacevine/dense,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "Vc" = (
 /obj/structure/spacevine/dense,
 /obj/machinery/atmospherics/pipe/simple/general/visible{
@@ -11034,6 +12028,9 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/civvie)
 "Vn" = (
+/obj/machinery/the_singularitygen{
+	anchored = 1
+	},
 /obj/effect/landmark/mission_poi/main{
 	already_spawned = 1;
 	type_to_spawn = /obj/machinery/the_singularitygen
@@ -11185,6 +12182,17 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
+"VT" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine{
+	pixel_x = -32
+	},
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "VU" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/corner/opaque/white/full,
@@ -11250,6 +12258,9 @@
 /obj/structure/cable{
 	icon_state = "2-5"
 	},
+/obj/structure/spacevine{
+	pixel_x = -32
+	},
 /obj/structure/spacevine,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
@@ -11285,6 +12296,20 @@
 /obj/structure/cable/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/reactor)
+"Wc" = (
+/obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/turf/open/floor/plating/asteroid/smoothed,
+/area/ruin/space/has_grav/singularitylab)
+"We" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
+/turf/open/floor/plating/asteroid/smoothed/airless,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "Wh" = (
 /obj/structure/spacevine,
 /obj/machinery/atmospherics/pipe/simple/general/visible{
@@ -11488,7 +12513,7 @@
 /area/ruin/space/has_grav/singularitylab)
 "WO" = (
 /obj/machinery/hydroponics/constructable,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -11497,6 +12522,9 @@
 	dir = 6
 	},
 /obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/civvie)
 "WQ" = (
@@ -11504,7 +12532,7 @@
 	dir = 10
 	},
 /obj/structure/spacevine,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -11527,6 +12555,14 @@
 	},
 /turf/open/floor/holofloor/wood,
 /area/ruin/space/has_grav/singularitylab/lab)
+"WT" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_y = -32
+	},
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab)
 "WW" = (
 /obj/structure/transit_tube/curved/flipped{
 	dir = 1
@@ -11554,7 +12590,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/singularitylab/reactor)
 "Xe" = (
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
 /obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_x = 32;
+	pixel_y = 32
+	},
 /obj/structure/spacevine/dense{
 	pixel_x = 32
 	},
@@ -11678,6 +12721,12 @@
 /area/ruin/space/has_grav/singularitylab/lab)
 "XE" = (
 /obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab)
@@ -11793,7 +12842,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /obj/structure/spacevine,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab)
@@ -11816,11 +12865,37 @@
 /obj/structure/chair,
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ruin/space/has_grav/singularitylab/lab)
+"Yp" = (
+/obj/structure/transit_tube/curved/flipped{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
+/obj/structure/spacevine{
+	pixel_y = -32
+	},
+/obj/structure/spacevine,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/smoothed,
+/area/ruin/space/has_grav/singularitylab)
 "Yt" = (
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
 /obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_x = -32
+	},
+/obj/structure/spacevine/dense{
+	pixel_x = -32;
+	pixel_y = 32
+	},
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/ruin/space/has_grav/singularitylab)
@@ -11909,11 +12984,24 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/spacevine{
+	pixel_x = -32
+	},
+/obj/structure/spacevine{
+	pixel_x = 32
+	},
 /obj/structure/spacevine,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plating/asteroid/smoothed,
 /area/ruin/space/has_grav/singularitylab)
+"YK" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_x = 32
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab/civvie)
 "YL" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
@@ -11965,11 +13053,21 @@
 /area/ruin/space/has_grav/singularitylab/engineering)
 "Za" = (
 /obj/structure/spacevine/dense,
+/obj/structure/spacevine/dense{
+	pixel_x = 32
+	},
 /obj/machinery/portable_atmospherics/scrubber/huge,
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/ruin/space/has_grav/singularitylab)
 "Zc" = (
 /turf/closed/wall,
+/area/ruin/space/has_grav/singularitylab)
+"Ze" = (
+/obj/structure/spacevine,
+/turf/closed/wall{
+	desc = "A huge chunk of metal holding the roof of the asteroid at bay";
+	name = "structural support"
+	},
 /area/ruin/space/has_grav/singularitylab)
 "Zg" = (
 /obj/structure/lattice/catwalk,
@@ -12049,7 +13147,7 @@
 /area/ruin/space/has_grav/singularitylab/engineering)
 "Zu" = (
 /obj/structure/spacevine,
-/turf/open/floor/plating/dirt{
+/turf/open/floor/plating/asteroid/dirt{
 	baseturfs = /turf/open/floor/plating/asteroid
 	},
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -12116,6 +13214,9 @@
 	dir = 1
 	},
 /obj/structure/spacevine,
+/obj/structure/spacevine{
+	pixel_y = 32
+	},
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab)
@@ -12194,6 +13295,13 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 4
+	},
+/turf/open/floor/plating/asteroid/dirt/grass/jungle,
+/area/ruin/space/has_grav/singularitylab/civvie)
+"ZU" = (
+/obj/structure/spacevine/dense,
+/obj/structure/spacevine{
+	pixel_x = 32
 	},
 /turf/open/floor/plating/asteroid/dirt/grass/jungle,
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -12727,7 +13835,7 @@ Yt
 AB
 dh
 st
-fD
+Hr
 id
 id
 id
@@ -12799,14 +13907,14 @@ id
 id
 id
 id
-fD
+Ue
 AS
 fD
-qn
-qn
+pd
+pd
 SY
-qn
-fD
+Tb
+UG
 id
 id
 id
@@ -12878,12 +13986,12 @@ id
 id
 qn
 Id
-qn
+WT
 id
 id
-qn
+UW
 nz
-fD
+HX
 id
 id
 id
@@ -13027,12 +14135,12 @@ id
 id
 id
 Zc
-Ni
-Bh
-Bh
+Px
+zx
+zx
 Bh
 Or
-Bh
+UI
 Zc
 Zc
 Zc
@@ -13104,7 +14212,7 @@ id
 id
 id
 Zc
-Bh
+tr
 KU
 SC
 jj
@@ -13119,7 +14227,7 @@ Zc
 id
 id
 id
-SC
+Dg
 qG
 id
 id
@@ -13181,7 +14289,7 @@ Ke
 Ke
 id
 Zc
-Bh
+tr
 SC
 KU
 VW
@@ -13195,9 +14303,9 @@ rw
 Zc
 id
 id
-Dj
+Kh
 mL
-qG
+up
 id
 id
 id
@@ -13271,7 +14379,7 @@ Oh
 ac
 Zc
 Zc
-RJ
+oG
 UU
 fw
 NB
@@ -13490,8 +14598,8 @@ kP
 Ke
 Zc
 XE
-Bh
-Bh
+OW
+OW
 Et
 hf
 nT
@@ -13656,7 +14764,7 @@ sH
 Ss
 Zc
 id
-fD
+vi
 fD
 wW
 lJ
@@ -13733,7 +14841,7 @@ Zc
 Zc
 Zc
 id
-SC
+HK
 id
 NB
 OM
@@ -13810,10 +14918,10 @@ id
 id
 id
 id
-SC
+GK
 id
 id
-pS
+eF
 id
 tk
 Xg
@@ -13890,7 +14998,7 @@ id
 id
 id
 id
-pS
+eF
 id
 iV
 kd
@@ -13915,10 +15023,10 @@ PV
 JD
 nr
 ua
-ua
-ua
-fD
-Ux
+uN
+uN
+vL
+Kk
 id
 id
 id
@@ -14043,7 +15151,7 @@ id
 id
 id
 NB
-nr
+rZ
 Na
 id
 ST
@@ -14101,7 +15209,7 @@ id
 id
 id
 id
-nr
+rZ
 VZ
 DC
 YH
@@ -14121,7 +15229,7 @@ YH
 YH
 DC
 wx
-wY
+tE
 id
 vg
 gI
@@ -14177,7 +15285,7 @@ id
 id
 id
 id
-jq
+Ck
 ys
 wY
 NB
@@ -14188,7 +15296,7 @@ NB
 Yu
 Pu
 kk
-NB
+Ze
 id
 id
 id
@@ -14197,7 +15305,7 @@ id
 id
 id
 NB
-nr
+ec
 id
 id
 vg
@@ -14255,7 +15363,7 @@ id
 id
 id
 DG
-nr
+uE
 id
 id
 id
@@ -14276,7 +15384,7 @@ id
 id
 id
 id
-UU
+hW
 xH
 Wv
 BX
@@ -14308,7 +15416,7 @@ uF
 kU
 kU
 kU
-ua
+jp
 id
 id
 id
@@ -14339,10 +15447,10 @@ id
 BM
 Bc
 WH
-aa
+YK
 FV
 aa
-dK
+KY
 WH
 Bc
 Bc
@@ -14370,8 +15478,8 @@ ow
 zN
 yi
 LO
-ua
-ua
+AQ
+AQ
 ua
 ua
 Dj
@@ -14386,7 +15494,7 @@ kU
 GJ
 kU
 ua
-ua
+UK
 id
 id
 id
@@ -14424,7 +15532,7 @@ ty
 ty
 ty
 ty
-fa
+EU
 id
 id
 id
@@ -14449,13 +15557,13 @@ pE
 pE
 pE
 pE
-ua
-ua
+AQ
+AQ
 Dj
-Dj
+OX
 fD
-fD
-ua
+sp
+AQ
 ua
 kn
 dn
@@ -14464,7 +15572,7 @@ kU
 ua
 ua
 ua
-ua
+uN
 kU
 as
 NB
@@ -14485,7 +15593,7 @@ id
 id
 id
 id
-pS
+RL
 id
 id
 Bc
@@ -14503,7 +15611,7 @@ Qx
 ty
 EU
 dr
-dK
+iJ
 fa
 Zu
 Zu
@@ -14528,12 +15636,12 @@ cE
 pE
 id
 id
-Dj
+NC
 id
-ua
+cf
 id
 id
-nr
+Wc
 Cl
 kH
 ua
@@ -14562,7 +15670,7 @@ Ke
 id
 id
 id
-pS
+RL
 id
 id
 Bc
@@ -14578,7 +15686,7 @@ FU
 Ns
 Mo
 ty
-Zu
+fn
 dK
 fh
 Zu
@@ -14586,8 +15694,8 @@ Zu
 lg
 pG
 DK
-ua
-ua
+uN
+uN
 id
 id
 id
@@ -14639,7 +15747,7 @@ Ke
 id
 id
 id
-pS
+RL
 id
 id
 Bc
@@ -14655,17 +15763,17 @@ yw
 ty
 SZ
 ty
-Zu
+fn
 Zu
 Zu
 PF
 kt
 GU
-WP
+fW
 id
 ua
 Dj
-Dj
+QY
 id
 id
 id
@@ -14716,7 +15824,7 @@ Ke
 id
 id
 id
-pS
+RL
 id
 id
 Bc
@@ -14731,17 +15839,17 @@ bf
 Sp
 Bc
 WH
-Zu
+on
 Zu
 lg
 ae
 hQ
-Vj
-WP
+bj
+fW
 id
 id
 id
-Dj
+Ur
 aJ
 id
 id
@@ -14793,7 +15901,7 @@ Ke
 id
 id
 id
-pS
+RL
 id
 id
 Bc
@@ -14808,11 +15916,11 @@ Bc
 Bc
 Bc
 WH
-WH
+oM
 WH
 Nn
 dQ
-WP
+fW
 id
 id
 id
@@ -14843,7 +15951,7 @@ id
 id
 id
 id
-ua
+LO
 ua
 NT
 ba
@@ -14870,7 +15978,7 @@ Ke
 id
 id
 id
-pS
+RL
 id
 id
 Bc
@@ -14921,7 +16029,7 @@ id
 id
 id
 id
-ua
+LO
 OC
 CP
 Rw
@@ -14947,7 +16055,7 @@ id
 id
 id
 id
-pS
+RL
 id
 id
 Bc
@@ -14999,7 +16107,7 @@ id
 id
 id
 id
-ua
+Fw
 ua
 Dj
 JZ
@@ -15076,7 +16184,7 @@ id
 id
 id
 id
-ua
+Fw
 Qe
 Qe
 dY
@@ -15100,8 +16208,8 @@ Ke
 id
 id
 id
-nr
-Na
+JA
+Yp
 id
 id
 id
@@ -15178,7 +16286,7 @@ id
 id
 jq
 Ta
-wY
+El
 id
 id
 Zu
@@ -15254,11 +16362,11 @@ Ke
 id
 id
 DG
-nr
+IY
 id
 id
 id
-Zu
+wh
 Zu
 Zu
 Bc
@@ -15334,7 +16442,7 @@ bl
 NB
 id
 id
-SM
+az
 SM
 Zu
 Zu
@@ -15407,7 +16515,7 @@ Ke
 id
 id
 id
-pS
+eF
 id
 id
 As
@@ -15484,9 +16592,9 @@ Ke
 id
 id
 id
-pS
+eF
 id
-SM
+az
 XB
 Kg
 iw
@@ -15561,20 +16669,20 @@ Ke
 id
 id
 id
-pS
+eF
 id
-Zu
+wh
 Pp
 ZS
 Up
 vz
 Zu
-Zu
-Zu
-Zu
+JI
+JI
+JI
 bt
-Zu
-Up
+JI
+cv
 QF
 ts
 Zu
@@ -15638,14 +16746,14 @@ Ke
 Ke
 id
 id
-pS
+eF
 id
 fa
 Nn
 tL
 Zu
 aa
-aa
+Ut
 ty
 ty
 ty
@@ -15715,14 +16823,14 @@ tq
 Ke
 id
 id
-pS
+eF
 id
 Zu
 Zy
 nm
 Zu
 aa
-Up
+Mx
 Aw
 Jk
 mn
@@ -15792,14 +16900,14 @@ tq
 Ke
 id
 id
-pS
+eF
 id
 Zu
 Nn
 tL
 Zu
 wV
-QF
+oF
 ty
 gO
 ty
@@ -15876,7 +16984,7 @@ Au
 nm
 Zu
 aa
-Up
+Mx
 ty
 ty
 ty
@@ -15953,7 +17061,7 @@ GE
 HL
 Zu
 aa
-Zu
+Ms
 Aw
 Jk
 mn
@@ -16030,7 +17138,7 @@ zR
 pN
 Zu
 aa
-Zu
+Ms
 ty
 gO
 ty
@@ -16107,7 +17215,7 @@ nC
 kZ
 Zu
 Zu
-Zu
+Ms
 ty
 ty
 ty
@@ -16254,7 +17362,7 @@ tq
 tq
 Ke
 id
-pS
+RL
 id
 WH
 Nn
@@ -16331,7 +17439,7 @@ tq
 tq
 Ke
 id
-pS
+RL
 id
 WH
 Zy
@@ -16408,7 +17516,7 @@ tq
 tq
 Ke
 id
-pS
+RL
 id
 WH
 Nn
@@ -16485,7 +17593,7 @@ tq
 tq
 Ke
 id
-pS
+RL
 id
 WH
 HA
@@ -16562,7 +17670,7 @@ id
 Ke
 Ke
 id
-pS
+RL
 id
 Bc
 Bc
@@ -16639,7 +17747,7 @@ tq
 Ke
 id
 id
-pS
+RL
 id
 id
 Bc
@@ -16651,10 +17759,10 @@ Bc
 Bc
 WH
 xL
-VG
-VG
-VG
-WH
+Vb
+Bi
+Bi
+uv
 Bc
 jt
 id
@@ -16716,7 +17824,7 @@ tq
 Ke
 id
 id
-pS
+RL
 id
 id
 id
@@ -16793,7 +17901,7 @@ tq
 Ke
 id
 id
-pS
+RL
 id
 id
 Bc
@@ -16810,7 +17918,7 @@ gF
 gF
 gF
 fX
-WP
+Sd
 id
 id
 id
@@ -16963,7 +18071,7 @@ nG
 VG
 VG
 Zu
-Zu
+bN
 id
 id
 id
@@ -17041,7 +18149,7 @@ aa
 aa
 Zu
 Zu
-Zu
+IP
 id
 id
 id
@@ -17119,7 +18227,7 @@ Zu
 Kb
 xJ
 Zu
-vz
+oH
 id
 id
 id
@@ -17197,7 +18305,7 @@ lH
 cZ
 wM
 lx
-Nx
+Ql
 id
 id
 id
@@ -17275,7 +18383,7 @@ Zu
 Zu
 vz
 mj
-Up
+VT
 id
 id
 id
@@ -17433,7 +18541,7 @@ zm
 PM
 ty
 ty
-fK
+jK
 bx
 id
 id
@@ -17954,9 +19062,9 @@ Bc
 Bc
 Zu
 Zu
-Zu
-aa
-fa
+JI
+ZU
+xz
 Yh
 vz
 vz
@@ -17971,7 +19079,7 @@ ty
 un
 bk
 ty
-Up
+gR
 lx
 id
 id
@@ -18030,7 +19138,7 @@ id
 Bc
 WH
 WH
-Zu
+bN
 ty
 ty
 ty
@@ -18048,7 +19156,7 @@ ty
 un
 IX
 ty
-fa
+Mg
 WH
 id
 id
@@ -18107,7 +19215,7 @@ id
 WH
 WH
 WH
-xJ
+TS
 ty
 ai
 Vm
@@ -18120,12 +19228,12 @@ Zu
 fa
 fa
 fa
-fa
+tv
 ty
 un
 Fg
 ty
-zX
+CU
 WH
 id
 id
@@ -18181,10 +19289,10 @@ id
 ZV
 id
 id
-WH
+Ek
 WH
 Zu
-Zu
+bN
 ty
 vK
 Vw
@@ -18202,7 +19310,7 @@ ty
 ty
 ty
 ty
-zX
+CU
 id
 id
 id
@@ -18259,9 +19367,9 @@ ZV
 id
 id
 id
+fn
 Zu
-Zu
-Zu
+Ms
 ty
 hT
 Vw
@@ -18276,9 +19384,9 @@ zA
 Zu
 fa
 fa
-zX
-zX
-zX
+NM
+qs
+We
 zX
 id
 id
@@ -18336,9 +19444,9 @@ ZV
 id
 id
 id
+hv
 aa
-aa
-Zu
+Ms
 ty
 sM
 LY
@@ -18352,7 +19460,7 @@ lx
 fs
 Zu
 fa
-fa
+tv
 id
 id
 id
@@ -18414,8 +19522,8 @@ id
 id
 id
 id
-aa
-Zu
+Ny
+Ms
 ty
 ty
 ty
@@ -18428,7 +19536,7 @@ lx
 Zu
 Zu
 lx
-Zu
+Jx
 id
 id
 id
@@ -18491,12 +19599,12 @@ NB
 id
 id
 id
+UJ
 fa
-fa
 Zu
-Zu
-Zu
-Zu
+on
+on
+on
 Zu
 yh
 KC
@@ -18577,10 +19685,10 @@ id
 id
 yh
 yh
-Zu
-Zu
-vz
-vz
+JI
+JI
+cT
+Gh
 id
 id
 id
@@ -19914,11 +21022,11 @@ kU
 kU
 MB
 NB
-WX
-ua
-fD
-fD
-ua
+Ko
+uN
+CJ
+CJ
+uN
 eX
 NB
 id
@@ -20223,9 +21331,9 @@ id
 id
 NB
 WX
-nr
+np
 AA
-nr
+np
 nr
 MB
 NB
