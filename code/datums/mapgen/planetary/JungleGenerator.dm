@@ -110,8 +110,8 @@
 		/obj/structure/vein/jungle/classtwo/rare = 2,
 		/obj/structure/vein/jungle/classthree = 2,
 		/obj/structure/vein/jungle/classthree/rare = 1,
-		/obj/effect/greeble_spawner/grass_patch_spawner/dark_jungle = 20,
-		/obj/effect/greeble_spawner/grass_patch_spawner/yellow_jungle = 50,
+		/obj/effect/greeble_spawner/turf_patch_spawner/dark_jungle = 20,
+		/obj/effect/greeble_spawner/turf_patch_spawner/yellow_jungle = 50,
 	)
 
 /datum/biome/jungle/dense

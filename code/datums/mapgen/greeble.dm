@@ -1,17 +1,6 @@
 //GREEBLES
 
-/obj/effect/spawner/random/greeble/random_ruin_greeble
-	name = "random planet greeble chance"
-	loot = list(
-			/obj/effect/greeble_spawner/moon/crater1 = 5,
-			/obj/effect/greeble_spawner/moon/crater2 = 5,
-			/obj/effect/greeble_spawner/moon/crater3 = 5,
-			/obj/effect/greeble_spawner/moon/crater4 = 5,
-			/obj/effect/greeble_spawner/moon/crater5 = 5,
-			/obj/effect/greeble_spawner/moon/crater6 = 5,
-		)
-
-/obj/effect/spawner/random/greeble/random_ruin_greeble/spawn_loot(lootcount_override)
+/obj/effect/spawner/random/greeble/spawn_loot(lootcount_override)
 	var/lootspawn = pick_weight_recursive(loot)
 	if(!can_spawn(lootspawn))
 		return
@@ -103,8 +92,8 @@
 	return SHELTER_DEPLOY_ALLOWED
 
 
-/obj/effect/greeble_spawner/grass_patch_spawner
-	name = "grass patch spawner"
+/obj/effect/greeble_spawner/turf_patch_spawner
+	name = "turf patch spawner"
 	///what turf are we spreading
 	var/turf/open/floor/turf_to_spread
 	///do we only spread on the same turf we spawned on, or do we spread to any turf? Might smoothen out biome transitions?
@@ -123,7 +112,7 @@
 	var/terminate_chance_add = 6
 
 
-/obj/effect/greeble_spawner/grass_patch_spawner/start_load()
+/obj/effect/greeble_spawner/turf_patch_spawner/start_load()
 	var/current_turfs_spawned = 0
 	var/turf/open/current_turf = get_turf(src)
 	var/turf/open/initial_turf_type
@@ -193,7 +182,7 @@
 		current_turf = get_step(current_turf, next_dir)
 		chance_to_terminate += terminate_chance_add
 
-/obj/effect/greeble_spawner/grass_patch_spawner/dark_jungle
+/obj/effect/greeble_spawner/turf_patch_spawner/dark_jungle
 	name = "dark jungle grass patch spawner"
 	turf_to_spread = /turf/open/floor/plating/asteroid/dirt/grass/jungle/dark
 	big_brush = TRUE
@@ -204,7 +193,7 @@
 	chance_to_terminate = 0
 	terminate_chance_add = 3
 
-/obj/effect/greeble_spawner/grass_patch_spawner/yellow_jungle
+/obj/effect/greeble_spawner/turf_patch_spawner/yellow_jungle
 	name = "yellow jungle grass patch spawner"
 	turf_to_spread = /turf/open/floor/plating/asteroid/dirt/grass/jungle/yellow
 	big_brush = FALSE
@@ -214,7 +203,7 @@
 	chance_to_terminate = 5
 	terminate_chance_add = 8
 
-/obj/effect/greeble_spawner/grass_patch_spawner/dark_beach
+/obj/effect/greeble_spawner/turf_patch_spawner/dark_beach
 	name = "dark grass patch spawner"
 	turf_to_spread = /turf/open/floor/plating/asteroid/dirt/grass/dark/beach
 	big_brush = TRUE
@@ -225,6 +214,6 @@
 	chance_to_terminate = 0
 	terminate_chance_add = 5
 
-/obj/effect/greeble_spawner/grass_patch_spawner/dark_jungle/thin
+/obj/effect/greeble_spawner/turf_patch_spawner/dark_jungle/thin
 	big_brush = FALSE
 	patch_direction_locked = TRUE

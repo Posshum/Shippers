@@ -116,7 +116,7 @@
 
 	feature_spawn_chance = 0.8
 	feature_spawn_list = list(
-		/obj/effect/greeble_spawner/grass_patch_spawner/dark_beach = 1,
+		/obj/effect/greeble_spawner/turf_patch_spawner/dark_beach = 1,
 	)
 
 /datum/biome/grass/dense
@@ -128,9 +128,14 @@
 		/mob/living/simple_animal/hostile/poison/bees = 3,
 	)
 	mob_spawn_chance = 2
-	feature_spawn_chance = 0.1
 
 	feature_spawn_chance = 1.2
+
+	feature_spawn_list = list(
+		/obj/effect/greeble_spawner/turf_patch_spawner/dark_beach = 1,
+		/obj/effect/spawner/random/greeble/pond = 2,
+	)
+
 
 /datum/biome/beach
 	open_turf_types = list(/turf/open/floor/plating/asteroid/sand/lit = 1)
