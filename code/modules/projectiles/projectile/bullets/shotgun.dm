@@ -68,11 +68,11 @@
 	///How much stamina damage is subtracted per tile?
 	var/tile_dropoff_stamina = 1.5 //As above
 
-	var/ap_dropoff = 3
-	var/ap_dropoff_cutoff = -35
+	var/ap_dropoff = 5
+	var/ap_dropoff_cutoff = -25
 
 	icon_state = "pellet"
-	armour_penetration = -25
+	armour_penetration = -10
 	speed = BULLET_SPEED_SHOTGUN
 	bullet_identifier = "pellet"
 

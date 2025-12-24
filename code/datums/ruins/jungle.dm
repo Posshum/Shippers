@@ -21,7 +21,6 @@
 	value = 1500
 	mission_limit = 1
 	mission_reward = list(
-		/obj/item/gun/energy/e_gun/old,
 		/obj/item/gun/energy/laser/retro,
 	)
 	faction = /datum/faction/nt
@@ -88,13 +87,6 @@
 	mission_limit = 1
 	setpiece_item = /obj/item/folder/documents/syndicate/red
 	value = 1500
-
-/datum/map_template/ruin/jungle/medtech
-	name = "MedTech facility"
-	id = "medtech-facility"
-	description = "A MedTech pharmaceutical manufacturing plant where something went terribly wrong."
-	suffix = "jungle_medtech_outbreak.dmm"
-	ruin_tags = list(RUIN_TAG_MEDIUM_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_LIVEABLE)
 
 /datum/map_template/ruin/jungle/cavecrew
 	name = "Frontiersmen Cave"

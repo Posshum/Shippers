@@ -424,13 +424,6 @@
 	prefix = "CSSV"
 	name_categories = list("GENERAL", "SPACE")
 
-/datum/map_template/shuttle/subshuttles/haste
-	file_name = "inteq_haste"
-	name = "Haste-class Ambulance"
-	faction = /datum/faction/inteq
-	token_icon_state = "ship_tiny_generic"
-	prefix = "IRMV"
-
 /datum/map_template/shuttle/subshuttles/nail
 	file_name = "pgf_nail"
 	name = "Nail-class Boarding Vessel"
@@ -493,3 +486,10 @@
 	faction = /datum/faction/srm
 	token_icon_state = "ship_tiny_generic"
 	prefix = "SRSV"
+
+/datum/map_template/shuttle/subshuttles/karst
+	file_name = "ngr_karst"
+	name = "Karst-class Drop Pod"
+	faction = /datum/faction/syndicate/ngr
+	token_icon_state = "ship_tiny_generic"
+	prefix = "NGRV"

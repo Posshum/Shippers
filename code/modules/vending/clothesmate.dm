@@ -7,6 +7,9 @@
 	product_slogans = "Dress for success!;Prepare to look swagalicious!;Look at all this swag!;Why leave style up to fate? Use the ClothesMate!"
 	vend_reply = "Thank you for using the ClothesMate!"
 	products = list(
+		/obj/item/storage/backpack = 4,
+		/obj/item/storage/backpack/satchel = 4,
+		/obj/item/storage/backpack/duffelbag = 4,
 		/obj/item/clothing/head/beanie = 3,
 		/obj/item/clothing/head/soft = 3,
 		/obj/item/clothing/head/beanie/black = 3,
@@ -21,6 +24,10 @@
 		/obj/item/clothing/head/flap = 3,
 		/obj/item/clothing/head/sunhat = 3,
 		/obj/item/clothing/head/hairbow = 3,
+		/obj/item/clothing/head/headband = 3,
+		/obj/item/clothing/head/ribbon = 3,
+		/obj/item/clothing/gloves/armwarmer = 2,
+		/obj/item/clothing/gloves/armwarmer/striped = 2,
 		/obj/item/clothing/gloves/fingerless = 2,
 		/obj/item/clothing/neck/scarf/pink = 3,
 		/obj/item/clothing/neck/scarf/red = 3,
@@ -75,6 +82,7 @@
 		/obj/item/clothing/suit/toggle/windbreaker = 3,
 		/obj/item/clothing/suit/toggle/pufferjacket = 3,
 		/obj/item/clothing/suit/toggle/puffervest = 3,
+		/obj/item/clothing/suit/jacket/leather/coat = 3,
 		/obj/item/clothing/suit/jacket/letterman = 2,
 		/obj/item/clothing/suit/jacket/letterman_red = 2,
 		/obj/item/clothing/glasses/regular = 2,
@@ -103,6 +111,7 @@
 		/obj/item/clothing/shoes/laceup = 2,
 		/obj/item/clothing/shoes/sandal = 2,
 		/obj/item/clothing/shoes/jackboots = 2,
+		/obj/item/clothing/shoes/heels = 4,
 		/obj/item/clothing/suit/jacket/miljacket = 1,
 		/obj/item/clothing/suit/apron/purple_bartender = 2,
 		/obj/item/clothing/under/rank/civilian/bartender/purple = 2,
@@ -119,7 +128,6 @@
 		/obj/item/clothing/under/suit/checkered = 1,
 		/obj/item/clothing/suit/jacket/leather = 1,
 		/obj/item/clothing/suit/jacket/letterman_nanotrasen = 1,
-		/obj/item/storage/box/maid = 2,
 		/obj/item/instrument/piano_synth/headphones/spacepods = 1)
 	refill_canister = /obj/item/vending_refill/clothing
 	default_price = 10

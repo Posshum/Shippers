@@ -44,7 +44,7 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/lavaland
 	ruin_type = RUINTYPE_LAVA
-	interference_power = 5
+	interference_power = 0
 
 	primary_ores = list(
 		/obj/item/stack/ore/iron,
@@ -181,6 +181,23 @@
 	planet = DYNAMIC_WORLD_SPACERUIN
 	icon_state = "signal_strange"
 	color = null
+	mapgen = /datum/map_generator/planet_generator/asteroid
+	default_baseturf = /turf/open/space
+	weather_controller_type = null
+	ruin_type = RUINTYPE_SPACE
+#ifndef RUIN_PLACEMENT_TEST
+	selfloop = TRUE
+#endif
+
+// empty space if you need to run a space ruin the old way or just need an empty clearing for whatever reason
+
+/datum/planet_type/space
+	name = "weak energy signal"
+	desc = "A very weak energy signal originating from space."
+	planet = DYNAMIC_WORLD_SPACE_NO_RUIN
+	icon_state = "signal_strange"
+	color = null
+	weight = 0
 	mapgen = /datum/map_generator/single_turf/space
 	default_baseturf = /turf/open/space
 	weather_controller_type = null
@@ -201,7 +218,7 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/chlorine
 	ruin_type = RUINTYPE_WASTE
-	interference_power = 5
+	interference_power = 0
 	primary_ores = list(\
 		/obj/item/stack/ore/iron,
 		/obj/item/stack/ore/plasma,
@@ -304,6 +321,7 @@
 	weight = 3
 
 	mapgen = /datum/map_generator/planet_generator/moon
+	ruin_type = RUINTYPE_MOON
 	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/floor/plating/asteroid/moon/lit
 	weather_controller_type = null

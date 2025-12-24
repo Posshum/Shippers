@@ -45,6 +45,7 @@
 #define DYNAMIC_WORLD_ASTEROID "asteroid"
 #define DYNAMIC_WORLD_MINOR_PLANET "minor"
 #define DYNAMIC_WORLD_SPACERUIN "space"
+#define DYNAMIC_WORLD_SPACE_NO_RUIN "empty space"
 #define DYNAMIC_WORLD_GAS_GIANT "gas giant"
 #define DYNAMIC_WORLD_PLASMA_GIANT "plasma giant"
 
@@ -80,7 +81,7 @@
 #define BURN_STOP -1
 
 // The filepath used to store the admin-controlled next round outpost map override.
-#define OUTPOST_OVERRIDE_FILEPATH "data/outpost_override.json"
+#define SAFEZONE_OVERRIDE_FILEPATH "data/safezone_override.json"
 
 // Converts ores to colors, meant for examining planets on the overmap
 #define ORES_TO_COLORS_LIST list(\

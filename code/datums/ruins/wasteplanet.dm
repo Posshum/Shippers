@@ -88,3 +88,17 @@
 	mission_limit = 1
 	registered_type = /mob/living/simple_animal/hostile/human/frontier/ranged/trooper/skm/internals/neutered
 
+/datum/map_template/ruin/wasteplanet/facility
+	name = "Salvage Facility"
+	description = "A salvage collection & processing facility which was abandoned by its sole proprietor, following a corporate dissolution."
+	id = "wasteplanet_facility"
+	suffix = "wasteplanet_facility.dmm"
+	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
+
+/datum/map_template/ruin/wasteplanet/recycling
+	name = "Recycling Facility"
+	description = "A rusty salvaging and recycling base made to supply some unsavory people."
+	id = "wasteplanet_recyclebay"
+	suffix = "wasteplanet_recyclebay.dmm"
+	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MEDIUM_LOOT, RUIN_TAG_SHELTER, RUIN_TAG_HAZARDOUS)
+
