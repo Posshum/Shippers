@@ -394,8 +394,8 @@
 
 /datum/config_entry/number/overmap_encounter_size
 	max_val = 255
-	config_entry_value = 127
-	min_val = 127
+	config_entry_value = 254
+	min_val = 254
 
 /datum/config_entry/number/max_dynamic_missions
 	config_entry_value = 0.66

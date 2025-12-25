@@ -127,7 +127,7 @@ require only minor tweaks.
 //Only used for unit testing at the moment, technically splits it into 16 but I didn't like the word for that
 #define ALLOCATION_OCTODRANT 3
 
-#define QUADRANT_MAP_SIZE 127
+#define QUADRANT_MAP_SIZE 254
 #define OCTODRANT_MAP_SIZE 63
 
 #define QUADRANT_SIZE_BORDER 3
