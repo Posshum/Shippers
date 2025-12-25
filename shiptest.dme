@@ -855,6 +855,7 @@
 #include "code\datums\mapgen\planetary\SnowGenerator.dm"
 #include "code\datums\mapgen\planetary\WasteGenerator.dm"
 #include "code\datums\mapgen\planetary\waterGenerator.dm"
+#include "code\datums\mapgen\planetary\greebles\generic_greebles.dm"
 #include "code\datums\mapgen\single_biome\_SingleBiome.dm"
 #include "code\datums\mapgen\single_biome\Gas_Giant.dm"
 #include "code\datums\mapgen\single_biome\ReebeGenerator.dm"
@@ -916,6 +917,7 @@
 #include "code\datums\skills\gaming.dm"
 #include "code\datums\skills\medical.dm"
 #include "code\datums\skills\mining.dm"
+#include "code\datums\skills\reloading.dm"
 #include "code\datums\status_effects\_status_effect_helpers.dm"
 #include "code\datums\status_effects\buffs.dm"
 #include "code\datums\status_effects\debuffs.dm"
@@ -3799,6 +3801,4 @@
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
-#include "code\datums\skills\reloading.dm"
-#include "code\datums\mapgen\planetary\greebles\generic_greebles.dm"
 // END_INCLUDE

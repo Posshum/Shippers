@@ -135,26 +135,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 /obj/machinery/washing_machine/examine(mob/user)
 	. = ..()
 	if(!busy)
-		. += span_notice("<b>Right-click</b> it to start a wash cycle.")
-
-/obj/machinery/washing_machine/AltClick(mob/user)
-	if(!user.canUseTopic(src, !issilicon(user)))
-		return
-	if(busy)
-		return
-	if(state_open)
-		to_chat(user, span_warning("Close the door first!"))
-		return
-	if(bloody_mess)
-		to_chat(user, span_warning("\The [src] must be cleaned up first!"))
-		return
-	busy = TRUE
-	update_appearance()
-	addtimer(CALLBACK(src, PROC_REF(wash_cycle)), 5 MINUTES + (1 MINUTES * contents.len))
-	to_chat(user, span_warning("\The [src] locks, sealing itself as it begins a cycle."))
-	soundloop.start()
-
-	START_PROCESSING(SSfastprocess, src)
+		. += span_notice("<b>Right-Click</b> it to start a wash cycle.")
 
 /obj/machinery/washing_machine/process(seconds_per_tick)
 	if(!busy)
@@ -347,7 +328,6 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	. = ..()
 	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
 		return
-
 	if(!user.canUseTopic(src, !issilicon(user)))
 		return SECONDARY_ATTACK_CONTINUE_CHAIN
 	if(busy)
@@ -361,7 +341,9 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		return SECONDARY_ATTACK_CONTINUE_CHAIN
 	busy = TRUE
 	update_appearance()
-	addtimer(CALLBACK(src, PROC_REF(wash_cycle)), 20 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(wash_cycle)), 5 MINUTES + (1 MINUTES * contents.len))
+	to_chat(user, span_warning("\The [src] locks, sealing itself as it begins a cycle."))
+	soundloop.start()
 	START_PROCESSING(SSfastprocess, src)
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 

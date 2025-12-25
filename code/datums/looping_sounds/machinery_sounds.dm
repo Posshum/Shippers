@@ -50,17 +50,17 @@
 	end_sound = 'sound/machines/oven/oven_loop_end.ogg'
 	volume = 100
 	falloff_exponent = 4
-	
+
 /datum/looping_sound/computer
 	start_sound = 'sound/machines/computer/computer_start.ogg'
 	start_length = 1 SECONDS
 	//I want the weight to work but its kind of rough balancing it lololol
-	mid_sounds = list('sound/machines/computer/computer_mid1.ogg'=200,
-		'sound/machines/computer/computer_mid2.ogg'=10,
-		'sound/machines/computer/computer_mid3.ogg'=1,
-		'sound/machines/computer/computer_mid4.ogg'=3,
-		'sound/machines/computer/computer_mid5.ogg'=15,
-		'sound/machines/computer/computer_mid6.ogg'=5)
+	mid_sounds = list('sound/machines/computer/computer_mid1.ogg',
+		'sound/machines/computer/computer_mid2.ogg',
+		'sound/machines/computer/computer_mid3.ogg',
+		'sound/machines/computer/computer_mid4.ogg',
+		'sound/machines/computer/computer_mid5.ogg',
+		'sound/machines/computer/computer_mid6.ogg')
 	mid_length = 0.9 SECONDS
 	end_sound = 'sound/machines/computer/computer_end.ogg'
 	volume = 2

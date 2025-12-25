@@ -20,22 +20,26 @@
 	open = round(rand(0, 1))
 	update_appearance()
 
-/obj/structure/toilet/AltClick(mob/user)
-	if(!user.canUseTopic(src, !issilicon(user)))
+/obj/structure/toilet/attack_hand_secondary(mob/user)
+	. = ..()
+	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
 		return
+	if(!user.canUseTopic(src, !issilicon(user)))
+		return SECONDARY_ATTACK_CONTINUE_CHAIN
 	if(busy)
 		to_chat(user, span_warning("The [src] is still flushing. Relax."))
-		return
+		return SECONDARY_ATTACK_CONTINUE_CHAIN
 	if(!open)
 		to_chat(user, span_warning("Close the lid first!"))
-		return
+		return SECONDARY_ATTACK_CONTINUE_CHAIN
 	if(w_items > WEIGHT_CLASS_HUGE)
 		to_chat(user, span_warning("The cistern is clogged!"))
-		return
+		return SECONDARY_ATTACK_CONTINUE_CHAIN
 	busy = TRUE
 	addtimer(CALLBACK(src, PROC_REF(flushing)), 10 SECONDS)
 	to_chat(user, span_warning("You flush the [src]."))
 	playsound(src, 'sound/machines/toilet_flush.ogg', 50, TRUE, -10)
+	return SECONDARY_ATTACK_CONTINUE_CHAIN
 
 
 /obj/structure/toilet/proc/flushing()
