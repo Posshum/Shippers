@@ -328,7 +328,8 @@
 	else
 		flick("autolathe_o", src) //plays metal insertion animation
 
-		use_power(min(active_power_usage, amount_inserted))
+	playsound(src, 'sound/machines/lathe/lathe_material_insert.ogg', 50, TRUE, -8)
+	use_power(min(active_power_usage, amount_inserted))
 
 /obj/machinery/autolathe/proc/make_item(power, list/materials_used, list/picked_materials, multiplier, coeff, is_stack, mob/user)
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)

@@ -170,6 +170,9 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	/// restocks venders every hour if this is true
 	var/restock_hourly = FALSE
 
+	/// silly soundloop variables
+	var/datum/looping_sound/vending_machine/soundloop
+
 /**
 	* Initialize the vending machine
 	*
@@ -181,6 +184,11 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 		circuit = null
 		build_inv = TRUE
 	. = ..()
+
+	soundloop = new(list(src), FALSE)
+	//So some vending machines can return this early as to not run the loop.
+	handle_soundloop()
+
 	wires = new /datum/wires/vending(src)
 	if(build_inv) //non-constructable vending machine
 		build_inventory(products, product_records)
@@ -201,6 +209,9 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	Radio.listening = 0
 	if(istype(get_area(src.loc), /area/outpost) || istype(get_area(src.loc), /area/ruin))
 		all_items_free = FALSE
+
+/obj/machinery/vending/proc/handle_soundloop()
+	soundloop.start()
 
 /obj/machinery/vending/Destroy()
 	QDEL_NULL(wires)
@@ -229,6 +240,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	if(!refill_canister) //the non constructable vendors drop metal instead of a machine frame.
 		if(!(flags_1 & NODECONSTRUCT_1))
 			new /obj/item/stack/sheet/metal(loc, 3)
+		soundloop.stop()
 		qdel(src)
 	else
 		..()
@@ -877,6 +889,9 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	. = ..()
 	if(powered())
 		START_PROCESSING(SSmachines, src)
+		soundloop.start()
+	else
+		soundloop.stop()
 
 //Somebody cut an important wire and now we're following a new definition of "pitch."
 /**

@@ -97,13 +97,15 @@ SUBSYSTEM_DEF(dynamicmusic)
 	//Handle dynamics from this point onwards.
 	var/mob/living/music_target = M
 	if(!combat_mode)
-		if(music_target.health) //Observer fix to stop runtimes.
-			if(music_target.stat >= CONSCIOUS && music_target.health < music_target.maxHealth * 0.66) //under 66% maxHP
-				new_sound = override_sound || pick(music_track_hurt)
-			else if(music_target.stat <= CONSCIOUS && music_target.health < music_target.maxHealth * 0.33) //under 33% maxHP
-				new_sound = override_sound || pick(music_track_unconscious)
-			else if(music_target.stat == DEAD)
-				new_sound = override_sound || pick(music_track_dead)
+		//Currently observing / assume we are dead. Play the dead music track.
+		if(istype(music_target, /mob/dead/observer))
+			new_sound = override_sound || pick(music_track_dead)
+		else if(music_target.stat >= CONSCIOUS && music_target.health < music_target.maxHealth * 0.66) //under 66% maxHP
+			new_sound = override_sound || pick(music_track_hurt)
+		else if(music_target.stat <= CONSCIOUS && music_target.health < music_target.maxHealth * 0.33) //under 33% maxHP
+			new_sound = override_sound || pick(music_track_unconscious)
+		else if(music_target.stat == DEAD)
+			new_sound = override_sound || pick(music_track_dead)
 	else
 		new_sound = override_sound || pick(music_track_combat)
 

@@ -208,6 +208,9 @@
 	var/crashing = FALSE
 	var/obj/structure/cable/attached // the attached cable
 
+	//Soundlooping datum!
+	var/datum/looping_sound/holofield_generator/soundloop
+
 /obj/machinery/power/shieldwallgen/xenobiologyaccess		//use in xenobiology containment
 	name = "xenobiology shield wall generator"
 	desc = "A shield generator meant for use in xenobiology."
@@ -219,6 +222,8 @@
 /obj/machinery/power/shieldwallgen/Initialize()
 	. = ..()
 	wires = new /datum/wires/shieldwallgen(src)
+
+	soundloop = new(list(src), FALSE)
 	if(anchored)
 		connect_to_network()
 
@@ -269,6 +274,7 @@
 	log_game("[src] deactivated due to lack of power at [AREACOORD(src)]")
 	active = FALSE
 	crashing = FALSE
+	soundloop.stop()
 	for(var/direction in GLOB.cardinals)
 		cleanup_field(direction)
 
@@ -311,6 +317,7 @@
 	for(var/i in 1 to steps) //creates each field tile
 		turf = get_step(turf, opposite_direction)
 		new/obj/machinery/shieldwall(turf, src, generator)
+	soundloop.start()
 	return TRUE
 
 /// cleans up fields in the specified direction if they belong to this generator
@@ -548,6 +555,7 @@
 	for(var/i in 1 to steps+2) //creates each field tile
 		new /obj/machinery/shieldwall/atmos(turf, src, generator)
 		turf = get_step(turf, opposite_direction)
+	soundloop.start()
 	return TRUE
 
 /obj/machinery/power/shieldwallgen/atmos/cleanup_field(direction)

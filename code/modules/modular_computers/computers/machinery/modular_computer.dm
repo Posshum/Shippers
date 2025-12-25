@@ -26,11 +26,13 @@
 	var/base_idle_power_usage = 10						// Power usage when the computer is idle and screen is off (currently only applies to laptops)
 
 	var/obj/item/modular_computer/processor/cpu = null				// CPU that handles most logic while this type only handles power and other specific things.
+	var/datum/looping_sound/computer/soundloop
 
 /obj/machinery/modular_computer/Initialize()
 	. = ..()
 	cpu = new(src)
 	cpu.physical = src
+	soundloop = new(list(src), FALSE)
 
 /obj/machinery/modular_computer/Destroy()
 	QDEL_NULL(cpu)
@@ -67,12 +69,15 @@
 	if(!cpu?.enabled)
 		if (!(machine_stat & NOPOWER) && (cpu && cpu.use_power()))
 			. += screen_icon_screensaver
+			soundloop.start()
 	else
 		. += cpu.active_program?.program_icon_state || screen_icon_state_menu
+		soundloop.start()
 
 	if(cpu && cpu.atom_integrity <= cpu.integrity_failure * cpu.max_integrity)
 		. += "bsod"
 		. += "computer_broken"
+		soundloop.start()
 
 /obj/machinery/modular_computer/AltClick(mob/user)
 	if(cpu)
@@ -101,12 +106,14 @@
 		if(cpu)
 			cpu.shutdown_computer(0)
 	set_machine_stat(machine_stat | NOPOWER)
+	soundloop.stop()
 	update_appearance()
 
 // Modular computers can have battery in them, we handle power in previous proc, so prevent this from messing it up for us.
 /obj/machinery/modular_computer/power_change()
 	if(cpu && cpu.use_power()) // If MC_CPU still has a power source, PC wouldn't go offline.
 		set_machine_stat(machine_stat & ~NOPOWER)
+		soundloop.stop()
 		update_appearance()
 		return
 	. = ..()

@@ -143,3 +143,27 @@
 	mid_length = 7 SECONDS
 	volume = 25
 	ignore_walls = FALSE
+
+/datum/looping_sound/vending_machine
+	mid_sounds = list('sound/machines/vending/vending_mid1.ogg','sound/machines/vending/vending_mid2.ogg','sound/machines/vending/vending_mid3.ogg')
+	mid_length = 1.05 SECONDS
+	volume = 5 //Gotta make sure they aren't TOO annoying... It's meant to be ambient!
+	ignore_walls = FALSE
+	extra_range = -10
+
+/datum/looping_sound/conveyor_belt
+	mid_sounds = list('sound/machines/conveyor/conveyor_mid1.ogg', 'sound/machines/conveyor/conveyor_mid2.ogg', 'sound/machines/conveyor/conveyor_mid3.ogg')
+	mid_length = 1 SECONDS
+	volume = 6 //These stack!
+	ignore_walls = FALSE
+
+/datum/looping_sound/holofield_generator
+	start_sound = 'sound/machines/holofield/holofield_start.ogg'
+	start_length = 1 SECONDS
+	mid_sounds = list('sound/machines/holofield/holofield_mid1.ogg','sound/machines/holofield/holofield_mid2.ogg',
+	'sound/machines/holofield/holofield_mid3.ogg','sound/machines/holofield/holofield_mid4.ogg',
+	'sound/machines/holofield/holofield_mid5.ogg','sound/machines/holofield/holofield_mid6.ogg',)
+	mid_length = 1 SECONDS
+	end_sound = 'sound/machines/holofield/holofield_end.ogg'
+	volume = 66
+	ignore_walls = TRUE

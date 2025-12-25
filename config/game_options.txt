@@ -514,6 +514,8 @@ OVERMAP_SIZE 32
 OVERMAP_GENERATOR_TYPE solar_system
 
 ## Size of overmap encounters, vertical and width with a 3 tile border. Make sure blank.dmm adjusted to the size you desire as well.
+## Reason being, is that byond doesn't handle map creation in-game like a normal map SDMM map like many are used to. The biggest map that the game has is the biggest map
+## that the game is capable of loading, and every new map created will load with the same size as the largest map provided. So do edit this sparingly.
 OVERMAP_ENCOUNTER_SIZE 254
 
 ## Max dynamic mission count active per ship

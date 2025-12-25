@@ -13,6 +13,13 @@
 	///This can be a list OR a soundfile OR null. Determines whatever sound gets played.
 	var/footstep_sounds
 
+	//Saved for future reference.
+
+	///This can be a list OR a soundfile OR null. Same as the normal sounds. Just shufflin'.
+	//var/shuffle_sounds
+	///Stores the last direction to utilize shuffling noises.
+	//var/last_dir
+
 /datum/component/footstep/Initialize(footstep_type_ = FOOTSTEP_MOB_BAREFOOT, volume_ = 0.5, e_range_ = -8)
 	if(!isliving(parent))
 		return COMPONENT_INCOMPATIBLE
@@ -27,14 +34,19 @@
 			return
 		if(FOOTSTEP_MOB_CLAW)
 			footstep_sounds = GLOB.clawfootstep
+			//shuffle_sounds = GLOB.clawshuffle
 		if(FOOTSTEP_MOB_BAREFOOT)
 			footstep_sounds = GLOB.barefootstep
+			//shuffle_sounds = GLOB.bareshuffle
 		if(FOOTSTEP_MOB_HEAVY)
 			footstep_sounds = GLOB.heavyfootstep
+			//shuffle_sounds = GLOB.heavyshuffle
 		if(FOOTSTEP_MOB_SHOE)
 			footstep_sounds = GLOB.footstep
+			//shuffle_sounds = GLOB.shoeshuffle
 		if(FOOTSTEP_MOB_SLIME)
 			footstep_sounds = 'sound/effects/footstep/slime1.ogg'
+			//shuffle_sounds = 'sound/effects/footstep/water1.ogg'
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(play_simplestep)) //Note that this doesn't get called for humans.
 
 ///Prepares a footstep. Determines if it should get played. Returns the turf it should get played on. Note that it is always a /turf/open

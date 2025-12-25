@@ -23,6 +23,8 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 	var/verted = 1		// Inverts the direction the conveyor belt moves.
 	var/conveying = FALSE
 
+	var/datum/looping_sound/conveyor_belt/soundloop
+
 /obj/machinery/conveyor/auto/outpost
 	id = "outpost-conveyor"
 	desc = "A sturdy conveyor belt. It is well-fastened to the floor and cannot be pried up."
@@ -53,10 +55,13 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 		operating = TRUE
 		update_appearance()
 		begin_processing()                                              //WS Edit - Auto Conveyor Fix (Issue #331)
+		soundloop.start() //Always on as mentioned.
 
 // create a conveyor
 /obj/machinery/conveyor/Initialize(mapload, newdir, newid)
 	. = ..()
+	soundloop = new(list(src), FALSE)
+
 	if(newdir)
 		setDir(newdir)
 	if(newid)
@@ -125,6 +130,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 	if(machine_stat & BROKEN || !operable || machine_stat & NOPOWER)
 		operating = FALSE
 		update_appearance()
+		soundloop.stop()
 		return FALSE
 	return TRUE
 
@@ -290,8 +296,10 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 		C.update_move_direction()
 		C.update_appearance()
 		if(C.operating)
+			C.soundloop.start()
 			C.begin_processing()
 		else
+			C.soundloop.stop()
 			C.end_processing()
 		CHECK_TICK
 
