@@ -557,6 +557,7 @@
 	)
 	var/random_color = TRUE //if the key uses random coloring (logic stolen from screwdriver.dm)
 	slot_flags = ITEM_SLOT_NECK
+	pickup_sound = 'sound/misc/key_pickup.ogg'
 
 /obj/item/key/ship/Initialize(mapload, datum/overmap/ship/controlled/master_ship)
 	. = ..()
@@ -585,6 +586,9 @@
 /obj/item/key/ship/attack_self(mob/user)
 	if(!master_ship || !Adjacent(user))
 		return ..()
+
+	playsound(user, pickup_sound, 100, TRUE, -8)
+	visible_message("[user] jingles \the [src.name].")
 
 	master_ship.attempt_key_usage(user, src, src) // hello I am a helm console I promise
 	return TRUE

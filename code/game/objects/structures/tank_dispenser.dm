@@ -93,12 +93,14 @@
 			if(tank && Adjacent(usr))
 				usr.put_in_hands(tank)
 				plasmatanks--
+				playsound(usr, 'sound/machines/tankdispenser/canister_retrieval.ogg', 44, TRUE, -10)
 			. = TRUE
 		if("oxygen")
 			var/obj/item/tank/internals/oxygen/tank = locate() in src
 			if(tank && Adjacent(usr))
 				usr.put_in_hands(tank)
 				oxygentanks--
+				playsound(usr, 'sound/machines/tankdispenser/canister_retrieval.ogg', 44, TRUE, -10)
 			. = TRUE
 	update_appearance()
 
