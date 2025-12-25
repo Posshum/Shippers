@@ -514,7 +514,7 @@ OVERMAP_SIZE 32
 OVERMAP_GENERATOR_TYPE solar_system
 
 ## Size of overmap encounters, vertical and width with a 3 tile border
-OVERMAP_ENCOUNTER_SIZE 254
+OVERMAP_ENCOUNTER_SIZE 127
 
 ## Max dynamic mission count active per ship
 MAX_DYNAMIC_MISSIONS 0.66

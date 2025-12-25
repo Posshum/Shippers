@@ -1566,7 +1566,7 @@
 	if(stat == DEAD)
 		//Don't send this to dchat... That just looks embarassing...
 		return
-	if(client.prefs.toggles & COMBAT_FEAR)
+	if(client?.prefs.toggles & COMBAT_FEAR)
 		if(wince_check)
 			say(pick("*scream")) //Need to add more audible emotes... For now, only scream.
 			wince_check = FALSE // Only play once.
