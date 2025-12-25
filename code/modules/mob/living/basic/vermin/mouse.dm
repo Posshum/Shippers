@@ -108,6 +108,9 @@
 		return TRUE
 
 	if(istype(attack_target, /obj/structure/cable))
+		var/turf/T = get_turf(attack_target)
+		if(T.intact) //Turf check! Nerf these nasty rodents invading our lovely ships!
+			return
 		try_bite_cable(attack_target)
 		return TRUE
 

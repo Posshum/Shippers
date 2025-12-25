@@ -17,7 +17,7 @@
 
 /datum/round_event/ship/rodent_infestation/setup()
 	. = ..()
-	spawncount = rand(2,4) //Spawn at random 2-4 of these little shits.
+	spawncount = rand(1,3)
 
 
 /datum/round_event/ship/rodent_infestation/start()

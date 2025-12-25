@@ -20,6 +20,11 @@
 	open = round(rand(0, 1))
 	update_appearance()
 
+/obj/machinery/washing_machine/examine(mob/user)
+	. = ..()
+	if(!busy)
+		. += span_notice("<b>Right-Click</b> it to start a wash cycle.")
+
 /obj/structure/toilet/attack_hand_secondary(mob/user)
 	. = ..()
 	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
@@ -29,7 +34,7 @@
 	if(busy)
 		to_chat(user, span_warning("The [src] is still flushing. Relax."))
 		return SECONDARY_ATTACK_CONTINUE_CHAIN
-	if(!open)
+	if(open)
 		to_chat(user, span_warning("Close the lid first!"))
 		return SECONDARY_ATTACK_CONTINUE_CHAIN
 	if(w_items > WEIGHT_CLASS_HUGE)

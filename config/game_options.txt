@@ -32,8 +32,8 @@ EMOJIS
 ## To speed things up make the number negative, to slow things down, make the number positive.
 
 ## These modify the run/walk speed of all mobs before the mob-specific modifiers are applied.
-RUN_DELAY 1.78
-WALK_DELAY 3.78
+RUN_DELAY 2.25
+WALK_DELAY 3.5
 
 ## The variables below affect the movement of specific mob types. THIS AFFECTS ALL SUBTYPES OF THE TYPE YOU CHOOSE!
 ## Entries completely override all subtypes. Later entries have precedence over earlier entries.
@@ -514,7 +514,7 @@ OVERMAP_SIZE 32
 OVERMAP_GENERATOR_TYPE solar_system
 
 ## Size of overmap encounters, vertical and width with a 3 tile border
-OVERMAP_ENCOUNTER_SIZE 127
+OVERMAP_ENCOUNTER_SIZE 254
 
 ## Max dynamic mission count active per ship
 MAX_DYNAMIC_MISSIONS 0.66
