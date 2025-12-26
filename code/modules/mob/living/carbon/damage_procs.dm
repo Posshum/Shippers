@@ -9,8 +9,6 @@
 	if(usr && !on_fire)
 		SEND_SIGNAL(usr, COMSIG_MOB_ENTER_COMBAT)
 
-	wince()
-
 	var/obj/item/bodypart/BP = null
 	if(!spread_damage)
 		if(isbodypart(def_zone)) //we specified a bodypart object

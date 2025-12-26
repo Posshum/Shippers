@@ -1750,8 +1750,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(usr && !H.on_fire)
 		SEND_SIGNAL(usr, COMSIG_MOB_ENTER_COMBAT)
 
-	H.wince()
-
 	var/obj/item/bodypart/BP = null
 	if(!spread_damage)
 		if(isbodypart(def_zone))

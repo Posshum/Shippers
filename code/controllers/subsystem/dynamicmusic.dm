@@ -125,4 +125,5 @@ SUBSYSTEM_DEF(dynamicmusic)
 
 	SEND_SOUND(M, new_sound)
 
+	//Adjust min_track_cooldown in areas.dm in order to change the cooldown duration between each song. Don't be spammy with it, now! Silence is good!
 	return rand(min_track_cooldown + sound_length, max_track_cooldown + sound_length)

@@ -29,8 +29,6 @@
 	if(usr && !on_fire)
 		SEND_SIGNAL(usr, COMSIG_MOB_ENTER_COMBAT)
 
-	wince()
-
 	var/damage_amount =  forced ? damage : damage * hit_percent
 	switch(damagetype)
 		if(BRUTE)

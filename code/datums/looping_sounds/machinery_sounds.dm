@@ -167,3 +167,15 @@
 	end_sound = 'sound/machines/holofield/holofield_end.ogg'
 	volume = 66
 	ignore_walls = TRUE
+
+/datum/looping_sound/telecomms
+	start_sound = 'sound/machines/tcomms/telecomms_start.ogg'
+	start_length = 1 SECONDS
+	mid_sounds = list('sound/machines/tcomms/telecomms_mid1.ogg','sound/machines/tcomms/telecomms_mid2.ogg','sound/machines/tcomms/telecomms_mid3.ogg',
+	'sound/machines/tcomms/telecomms_mid4.ogg','sound/machines/tcomms/telecomms_mid5.ogg','sound/machines/tcomms/telecomms_mid6.ogg',
+	'sound/machines/tcomms/telecomms_mid7.ogg','sound/machines/tcomms/telecomms_mid8.ogg','sound/machines/tcomms/telecomms_mid9.ogg',
+	'sound/machines/tcomms/telecomms_mid10.ogg',)
+	mid_length = 1 SECONDS
+	end_sound = 'sound/machines/tcomms/telecomms_end.ogg'
+	volume = 15 //Loud equipment...
+	ignore_walls = FALSE

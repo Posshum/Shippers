@@ -1560,6 +1560,8 @@
 		UNSETEMPTY(client.movingmob.client_mobs_in_contents)
 		client.movingmob = null
 
+/* Deprecated.
+
 //Winces the mob. Makes them make a simple emote reaction through say proc.
 	//Using SAY to appease the SIGNAL_HANDLERS gods... Since I can't input the emote procs in signal chains.
 /mob/proc/wince()
@@ -1570,3 +1572,4 @@
 		if(wince_check)
 			say(pick("*scream")) //Need to add more audible emotes... For now, only scream.
 			wince_check = FALSE // Only play once.
+			 */

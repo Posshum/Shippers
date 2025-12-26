@@ -76,9 +76,9 @@
 	var/list/music_track_dead
 	var/list/music_track_combat
 	///Used to decide what the minimum time between tracks is
-	var/min_track_cooldown = 7 MINUTES
+	var/min_track_cooldown = 12 MINUTES
 	///Used to decide what the maximum time between tracks is
-	var/max_track_cooldown = 12 MINUTES
+	var/max_track_cooldown = 18 MINUTES
 
 	flags_1 = CAN_BE_DIRTY_1
 

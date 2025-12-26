@@ -184,7 +184,7 @@
 		throw_alert("succumb", /atom/movable/screen/alert/succumb)
 	else
 		clear_alert("succumb")
-		
+
 ///From [element/movetype_handler/on_movement_type_trait_gain()]
 /mob/living/proc/on_movement_type_flag_enabled(datum/source, trait)
 	SIGNAL_HANDLER
@@ -222,7 +222,7 @@
 	if(usr)
 		usr.in_combat = FALSE
 	in_combat = FALSE
-	wince_check = TRUE
+	//wince_check = TRUE
 	SEND_SOUND(src, sound('sound/effects/combat_mode_stinger_end.ogg', volume = 75)) //Louder because this is a bit quieter than the bassy BOOM as the stinger start.
 	if(combat_timer_id != null) //Del it early if this signal is called if it didnt already finish.
 		deltimer(combat_timer_id)
