@@ -179,3 +179,15 @@
 	end_sound = 'sound/machines/tcomms/telecomms_end.ogg'
 	volume = 15 //Loud equipment...
 	ignore_walls = FALSE
+
+/datum/looping_sound/recycler
+	mid_sounds = list('sound/machines/recycler/recycler_mid1.ogg')
+	mid_length = 1 SECONDS
+	volume = 22
+	ignore_walls = FALSE
+
+/datum/looping_sound/furnace
+	mid_sounds = list('sound/machines/furnace/furnace_mid1.ogg')
+	mid_length = 1 SECONDS
+	volume = 22
+	ignore_walls = FALSE
