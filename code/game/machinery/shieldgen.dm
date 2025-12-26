@@ -295,6 +295,8 @@
 	if(!direction)
 		return
 
+	soundloop.start()
+
 	var/turf/turf = loc
 	var/obj/machinery/power/shieldwallgen/generator
 	var/steps = 0
@@ -317,11 +319,13 @@
 	for(var/i in 1 to steps) //creates each field tile
 		turf = get_step(turf, opposite_direction)
 		new/obj/machinery/shieldwall(turf, src, generator)
-	soundloop.start()
 	return TRUE
 
 /// cleans up fields in the specified direction if they belong to this generator
 /obj/machinery/power/shieldwallgen/proc/cleanup_field(direction)
+
+	soundloop.stop()
+
 	var/obj/machinery/shieldwall/field
 	var/obj/machinery/power/shieldwallgen/generator
 	var/turf/turf = loc
@@ -533,6 +537,8 @@
 	if(direction != dir)
 		return
 
+	soundloop.start()
+
 	var/turf/turf = loc
 	var/obj/machinery/power/shieldwallgen/generator
 	var/steps = 0
@@ -555,10 +561,12 @@
 	for(var/i in 1 to steps+2) //creates each field tile
 		new /obj/machinery/shieldwall/atmos(turf, src, generator)
 		turf = get_step(turf, opposite_direction)
-	soundloop.start()
 	return TRUE
 
 /obj/machinery/power/shieldwallgen/atmos/cleanup_field(direction)
+
+	soundloop.stop()
+
 	var/obj/machinery/shieldwall/field
 	var/obj/machinery/power/shieldwallgen/generator
 	var/turf/turf = loc
@@ -574,6 +582,7 @@
 			qdel(field)
 
 		turf = get_step(turf, direction)
+
 
 //////////////Containment Field START
 /obj/machinery/shieldwall
