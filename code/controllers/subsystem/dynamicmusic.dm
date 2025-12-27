@@ -14,7 +14,7 @@ SUBSYSTEM_DEF(dynamicmusic)
 
 
 /datum/controller/subsystem/dynamicmusic/fire(resumed)
-	fire_combat_music()
+	//fire_combat_music() //Disable for now until further rework.
 	fire_dynamic_music()
 
 /datum/controller/subsystem/dynamicmusic/proc/fire_dynamic_music()

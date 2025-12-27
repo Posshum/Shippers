@@ -10,7 +10,7 @@ GLOBAL_LIST_INIT(premade_news_stories, list(\
 	name = "News Report"
 	typepath = /datum/round_event/news_report
 	weight = 15
-	max_occurrences = 4 //Tied to how many possible stories there are.
+	max_occurrences = 5 //Tied to how many possible stories there are.
 	min_players = 0
 	earliest_start = 0 MINUTES
 

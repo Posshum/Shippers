@@ -191,3 +191,4 @@
 	mid_length = 1 SECONDS
 	volume = 22
 	ignore_walls = FALSE
+
