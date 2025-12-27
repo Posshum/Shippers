@@ -171,10 +171,9 @@ GLOBAL_LIST_INIT(reebe_ambience,list(
 	'sound/ambience/ambireebe3.ogg',
 ))
 GLOBAL_LIST_INIT(beach_ambience,list(
-	'sound/ambience/shore.ogg',
 	'sound/ambience/seag1.ogg',
 	'sound/ambience/seag2.ogg',
-	'sound/ambience/seag2.ogg',
+	'sound/ambience/seag3.ogg',
 ))
 GLOBAL_LIST_INIT(desert_ambience,list(
 	'sound/ambience/wind/desert0.ogg',
