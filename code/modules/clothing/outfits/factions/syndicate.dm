@@ -166,9 +166,9 @@
 	. = ..()
 
 	var/obj/item/card/id/W = H.get_idcard()
-	if(H.age < AGE_MINOR)
-		W.registered_age = AGE_MINOR
-		to_chat(H, span_notice("You're not technically old enough to access or serve alcohol, but your ID has been discreetly modified to display your age as [AGE_MINOR]. Try to keep that a secret!"))
+	if(H.age < AGE_DRINKING)
+		W.registered_age = AGE_DRINKING
+		to_chat(H, span_notice("You're not technically old enough to access or serve alcohol, but your ID has been discreetly modified to display your age as [AGE_DRINKING]. Try to keep that a secret!"))
 
 /datum/outfit/job/syndicate/bartender/suns
 	name = "Syndicate - Student Mixologist (SUNS)"
@@ -246,6 +246,7 @@
 /datum/outfit/job/syndicate/captain/gorlex
 	name = "Syndicate - Captain (Hardliner)"
 	uniform = /obj/item/clothing/under/syndicate/hardliners/officer
+	ears = /obj/item/radio/headset/syndicate/alt/captain/cybersun
 
 	head = /obj/item/clothing/head/hardliners/peaked
 	suit = /obj/item/clothing/suit/toggle/armor/vest/hardliners
@@ -255,6 +256,7 @@
 	name = "Syndicate - Captain (New Gorlex Republic)"
 	faction = FACTION_NGR
 
+	ears = /obj/item/radio/headset/syndicate/alt/captain/ngr
 	uniform = /obj/item/clothing/under/syndicate/ngr/officer
 	head = /obj/item/clothing/head/ngr/peaked
 	suit = /obj/item/clothing/suit/armor/ngr/captain
@@ -272,6 +274,7 @@
 /datum/outfit/job/syndicate/captain/cybersun
 	name = "Syndicate - Captain (Cybersun)"
 
+	ears = /obj/item/radio/headset/syndicate/alt/captain/cybersun
 	uniform = /obj/item/clothing/under/syndicate/cybersun/officer
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/cybersun
 	head = /obj/item/clothing/head/HoS/cybersun
@@ -288,6 +291,7 @@
 	belt = /obj/item/storage/belt/sabre/suns/captain
 	mask = /obj/item/clothing/mask/breath/suns
 	neck = /obj/item/clothing/neck/cloak/suns/cap
+	ears = /obj/item/radio/headset/syndicate/alt/suns/command
 
 	backpack = /obj/item/storage/backpack
 	satchel  = /obj/item/storage/backpack/satchel
@@ -388,7 +392,7 @@
 	suit = /obj/item/clothing/suit/ngr
 	alt_suit = null
 	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/color/red/insulated
+	gloves = /obj/item/clothing/gloves/color/yellow
 
 
 //Chief Medical Officer

@@ -33,6 +33,8 @@
 	RegisterSignal(src, COMSIG_MOB_ENTER_COMBAT, PROC_REF(enter_combat_mode))
 	RegisterSignal(src, COMSIG_MOB_EXIT_COMBAT, PROC_REF(exit_combat_mode))
 
+	RegisterSignal(src, COMSIG_MOVABLE_EDIT_UNIQUE_IMMERSE_OVERLAY, PROC_REF(edit_immerse_overlay))
+
 	RegisterSignals(src, list(
 		SIGNAL_ADDTRAIT(TRAIT_CRITICAL_CONDITION),
 		SIGNAL_REMOVETRAIT(TRAIT_CRITICAL_CONDITION),
@@ -227,3 +229,8 @@
 	if(combat_timer_id != null) //Del it early if this signal is called if it didnt already finish.
 		deltimer(combat_timer_id)
 		combat_timer_id = null
+
+/mob/living/proc/edit_immerse_overlay(datum/source, atom/movable/immerse_mask/effect_relay)
+	SIGNAL_HANDLER
+	effect_relay.transform = effect_relay.transform.Scale(1 / current_size)
+	effect_relay.transform = effect_relay.transform.Turn(-lying_angle)

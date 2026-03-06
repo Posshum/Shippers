@@ -54,7 +54,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 	if(.)
 		operating = TRUE
 		update_appearance()
-		begin_processing()                                              //WS Edit - Auto Conveyor Fix (Issue #331)
+		begin_processing()
 		soundloop.start() //Always on as mentioned.
 
 // create a conveyor
@@ -62,6 +62,8 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 	. = ..()
 	soundloop = new(list(src), FALSE)
 
+	var/static/list/give_turf_traits = list(TRAIT_TURF_IGNORE_SLOWDOWN)
+	AddElement(/datum/element/give_turf_traits, give_turf_traits)
 	if(newdir)
 		setDir(newdir)
 	if(newid)

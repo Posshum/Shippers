@@ -12,15 +12,6 @@
 	name = "Singularity Lab"
 	description = "An overgrown facility, home to an inactive singularity and many plants"
 	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER)
-	ruin_mission_types = list(/datum/mission/ruin/oh_fuck)
-
-/datum/mission/ruin/oh_fuck
-	name = "Singularity Generator Signature"
-	desc = "There is a Singularity Generator Signature emitting from this location of space. This is incredibly dangerous. We are willing to pay top dollar to whoever can locate and secure this thing. God help us if a black hole opens up in the system."
-	author = "The Outpost"
-	value = 4000
-	mission_limit = 1
-	setpiece_item = /obj/machinery/the_singularitygen
 
 /datum/map_template/ruin/space/spacemall
 	id = "spacemall"
@@ -35,11 +26,6 @@
 	name = "Ramzi Scrapping Station"
 	description = "A Syndicate FOB dating back to the ICW, now home to the Ramzi Clique and their latest haul."
 	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER)
-	ruin_mission_types = list(
-		/datum/mission/ruin/pgf_captain,
-		/datum/mission/ruin/signaled/kill/foreman
-	)
-
 
 /datum/map_template/ruin/space/deepstorage
 	id = "VI deepstorage"
@@ -47,15 +33,6 @@
 	name = "Vigilitas Deepstorage"
 	description = "A Vigilitas blacksite for holding important and suspicious cargo."
 	ruin_tags = list(RUIN_TAG_BOSS_COMBAT, RUIN_TAG_MAJOR_LOOT, RUIN_TAG_SHELTER)
-
-/datum/mission/ruin/pgf_captain
-	name = "MIA Vessel Investigation"
-	desc = "The recovery beacon for a PFGN vessel that went missing on patrol has activated. Intellegence suggests they may have been assaulted by pirates. Recover the vessel captain's body and you will be compensated for your services."
-	author = "PGF Naval Command"
-	value = 1500
-	mission_limit = 1
-	faction = /datum/faction/pgf
-	setpiece_item = /mob/living/carbon/human
 
 /datum/map_template/ruin/space/onefull
 	id = "onehalftwo"
@@ -97,10 +74,3 @@
 	faction = /datum/faction/syndicate/ngr
 	value = 2000
 	mission_limit = 1
-
-/datum/map_template/ruin/space/straysattelite
-	id = "Stray Sattelite"
-	suffix = "stray_sattelite.dmm"
-	name = "Unknown Sattelite"
-	description = "A stray sattelite drifting in space. Appears to be of NT origin."
-	ruin_tags = list(RUIN_TAG_MINOR_LOOT, RUIN_TAG_NO_COMBAT, RUIN_TAG_INHOSPITABLE)
