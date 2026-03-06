@@ -54,7 +54,6 @@
 		/datum/faction/nt,
 		/datum/faction/syndicate/cybersun,
 	)
-	setpiece_item = /obj/item/documents/nanotrasen
 
 /datum/mission/ruin/fueling_papers/generate_mission_details()
 	. = ..()
