@@ -132,7 +132,17 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			pronouns = "It"
 		else
 			pronouns = "They"
-
+	if(current_version < 44)
+		for(var/datum/language/lang_type as anything in learned_languages)
+			switch(learned_languages[lang_type])
+				if("Unknown (0)")
+					learned_languages[lang_type] = LANGUAGE_UNKNOWN
+				if("Recognized (1)")
+					learned_languages[lang_type] = LANGUAGE_FAMILIAR
+				if("Familiar (2)")
+					learned_languages[lang_type] = LANGUAGE_CONVERSATIONAL
+				if("Fluent (3)")
+					learned_languages[lang_type] = LANGUAGE_FLUENT
 
 /// checks through keybindings for outdated unbound keys and updates them
 /datum/preferences/proc/check_keybindings()
