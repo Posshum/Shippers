@@ -22,7 +22,7 @@
 	var/list/mob_type_blacklist_typecache //Types that are NOT allowed to use that emote
 	var/list/mob_type_ignore_stat_typecache
 	var/stat_allowed = CONSCIOUS
-	var/sound //Sound to play when emote is called
+	var/sound = 'sound/vocal/emote.ogg' //Sound to play when emote is called
 	var/sound_volume = 50
 	var/vary = FALSE	//used for the honk borg emote
 	var/only_forced_audio = FALSE //can only code call this event instead of the player.
@@ -68,7 +68,7 @@
 
 	var/tmp_sound = get_sound(user)
 	if(tmp_sound && (!only_forced_audio || !intentional))
-		playsound(user, tmp_sound, 50, vary)
+		playsound(user, tmp_sound, 100, vary)
 
 	var/msg = select_message_type(user, intentional)
 	if(params && message_param)

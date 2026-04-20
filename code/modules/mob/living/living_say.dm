@@ -246,6 +246,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		if(pressure < ONE_ATMOSPHERE*0.4) //Thin air, let's italicise the message
 			spans |= SPAN_ITALICS
 
+	playsound(usr, 'sound/vocal/speak.ogg', 100, FALSE, -7)
 	send_speech(message, message_range, src, bubble_type, spans, language, message_mods)
 
 	if(succumbed)

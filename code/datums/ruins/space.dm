@@ -44,6 +44,8 @@
 		/datum/mission/ruin/fueling_papers,
 	)
 
+/datum/faction/nt //Temporary
+
 /datum/mission/ruin/fueling_papers
 	name = "Nanotrasen Asset Recovery Program"
 	desc = "Pre-war, this station was evacuated pending ACLF sabotage and could not be properly scuttled with budget limitations at the time. Nanotrasen would like some documents left behind at the site to be recovered, in exchange for a fair sum."
