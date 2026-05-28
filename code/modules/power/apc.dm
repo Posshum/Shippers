@@ -186,6 +186,7 @@
 	var/decay_chance = APC_DECAY_CHANCE
 	var/next_decay_time = APC_DECAY_TIME //Default to APC_DECAY_TIME at world start
 	var/internal_integrity //The actual internals of the APC, requires wires to repair.
+	var/quality
 
 /obj/machinery/power/apc/unlocked
 	locked = FALSE
