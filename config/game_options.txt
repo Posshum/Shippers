@@ -32,8 +32,8 @@ EMOJIS
 ## To speed things up make the number negative, to slow things down, make the number positive.
 
 ## These modify the run/walk speed of all mobs before the mob-specific modifiers are applied.
-RUN_DELAY 2.25
-WALK_DELAY 3.5
+RUN_DELAY 1.5
+WALK_DELAY 3
 
 ## The variables below affect the movement of specific mob types. THIS AFFECTS ALL SUBTYPES OF THE TYPE YOU CHOOSE!
 ## Entries completely override all subtypes. Later entries have precedence over earlier entries.
@@ -221,10 +221,10 @@ EVENTS_MIN_TIME_MUL 1
 EVENTS_MIN_PLAYERS_MUL 1
 
 ## The lower bound, in deciseconds, for how soon another random event can be scheduled.
-EVENTS_FREQUENCY_LOWER 3000
+EVENTS_FREQUENCY_LOWER 18000
 
 ## The upper bound, in deciseconds, for how soon another random event can be scheduled.
-EVENTS_FREQUENCY_UPPER 9000
+EVENTS_FREQUENCY_UPPER 36000
 
 
 ## AI ###
@@ -489,41 +489,29 @@ MONKEYCAP 64
 ## A cap on how many mice can be bred via cheese wedges
 RATCAP 64
 
-## A cap on how many roaches can be alive at once from consuming food.
-ROACHCAP 124
-
 ## Enable the capitalist agenda on your server.
 ECONOMY
 
 ## Overmap Settings ##
 
 ## Put max amount of different event clusters you want to spawn here
-MAX_OVERMAP_EVENT_CLUSTERS 12
+MAX_OVERMAP_EVENT_CLUSTERS 5
 
 ## Put the maximum amount of overmap events here
-MAX_OVERMAP_EVENTS 100
+MAX_OVERMAP_EVENTS 50
 
-## Put the maximum amount of dynamic (runtime loaded) overmap locations here
-MAX_OVERMAP_DYNAMIC_EVENTS 30
+## Put the maximum amount of dynamic (runtime loaded) overmap locations here. Distributed per overmap.
+MAX_OVERMAP_DYNAMIC_EVENTS 7
 
 ## Size of the overmap squared
-OVERMAP_SIZE 32
+OVERMAP_SIZE 20
 
 ## Which overmap generator to use
 ## Valid values are: "random", "solar_system"
 OVERMAP_GENERATOR_TYPE solar_system
 
-## Size of overmap encounters, vertical and width with a 3 tile border. Make sure blank.dmm adjusted to the size you desire as well.
-## Reason being, is that byond doesn't handle map creation in-game like a normal map SDMM map like many are used to. The biggest map that the game has is the biggest map
-## that the game is capable of loading, and every new map created will load with the same size as the largest map provided. So do edit this sparingly.
-OVERMAP_ENCOUNTER_SIZE 254
-
-## Max dynamic mission count active per ship
-MAX_DYNAMIC_MISSIONS 5
-
-## The time required before a ship is allowed to bluespace jump. -1 disables it entirely
-## In deciseconds, valid values are -1 to INFINITY
-BLUESPACE_JUMP_WAIT 12000
+## Size of overmap encounters, vertical and width with a 3 tile border
+OVERMAP_ENCOUNTER_SIZE 127
 
 ## Whether this server is an authentication server
 #AUTH_ONLY

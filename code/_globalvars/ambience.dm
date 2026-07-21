@@ -191,6 +191,16 @@ GLOBAL_LIST_INIT(tundra_ambience,list(
 	'sound/ambience/wind/spooky1.ogg',
 ))
 
+GLOBAL_LIST_INIT(waste_ambience,list(
+	'sound/ambience/ambidecay.ogg',
+	'sound/ambience/ambiharmo1.ogg',
+	'sound/ambience/ambiharmo2.ogg',
+	'sound/ambience/ambiwaste1.ogg',
+	'sound/ambience/ambiwaste2.ogg',
+	'sound/ambience/ambiwaste3.ogg',
+	'sound/ambience/ambiwaste4.ogg',
+))
+
 GLOBAL_LIST_INIT(rare_generic_ambience,list(
 	'sound/ambience/ambirare1.ogg',
 	'sound/ambience/ambirare2.ogg',
@@ -218,4 +228,5 @@ GLOBAL_LIST_INIT(ambience_assoc,list(
 	AMBIENCE_TUNDRA = GLOB.tundra_ambience,
 	AMBIENCE_BRIDGE = GLOB.bridge_ambience,
 	AMBIENCE_RARE = GLOB.rare_generic_ambience,
+	AMBIENCE_WASTE = GLOB.waste_ambience,
 ))

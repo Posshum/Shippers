@@ -123,8 +123,8 @@
 
 /obj/projectile/bullet/pellet/buckshot/twobore
 	name = "two-bore pellet"
-	damage = 38
-	armour_penetration = -25
+	damage = 30
+	armour_penetration = 5
 	tile_dropoff = 3
 	bullet_identifier = "massive pellet"
 

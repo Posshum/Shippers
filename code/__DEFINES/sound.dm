@@ -56,6 +56,7 @@
 #define AMBIENCE_BEACH "beach"
 #define AMBIENCE_DESERT "desert"
 #define AMBIENCE_TUNDRA "tundra"
+#define AMBIENCE_WASTE "waste"
 
 #define INTERACTION_SOUND_RANGE_MODIFIER -3
 #define EQUIP_SOUND_VOLUME 30

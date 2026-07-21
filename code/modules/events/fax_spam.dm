@@ -2,7 +2,7 @@
 	name = "Fax Spam"
 	typepath = /datum/round_event/fax_spam
 	weight = 10
-	max_occurrences = INFINITY
+	max_occurrences = 0
 	earliest_start = 5 MINUTES
 	requires_ship = TRUE
 

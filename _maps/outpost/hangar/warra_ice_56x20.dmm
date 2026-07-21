@@ -204,6 +204,15 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"fP" = (
+/obj/machinery/conveyor/auto/outpost{
+	dir = 8
+	},
+/obj/machinery/holosign/random{
+	pixel_y = 30
+	},
+/turf/open/floor/plasteel/tech/warra_outpost/lit,
+/area/hangar)
 "gQ" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 9
@@ -238,6 +247,9 @@
 	},
 /obj/structure/chair{
 	dir = 4
+	},
+/obj/structure/sign/departments/cargo/warra{
+	pixel_y = 29
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/hangar)
@@ -590,7 +602,7 @@
 /turf/open/floor/plasteel/tech,
 /area/hangar)
 "wL" = (
-/obj/structure/sign/departments/cargo,
+/obj/structure/sign/departments/cargo/warra,
 /turf/closed/indestructible/titanium/nodiagnonal,
 /area/hangar)
 "xj" = (
@@ -3991,7 +4003,7 @@ al
 al
 al
 ag
-wL
+ag
 jg
 kc
 wc
@@ -4075,7 +4087,7 @@ al
 al
 al
 ag
-UB
+fP
 kj
 Hr
 tZ

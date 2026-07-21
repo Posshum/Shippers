@@ -3,8 +3,8 @@
 	typepath = /datum/round_event/ship/lottery
 	weight = 2
 	earliest_start = 20 MINUTES
-	min_players = 0
-	max_occurrences = 1
+	min_players = 10
+	max_occurrences = 0
 
 /datum/round_event/ship/lottery
 	var/creds_won = 0

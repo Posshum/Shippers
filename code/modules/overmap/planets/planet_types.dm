@@ -3,7 +3,7 @@
 	var/name = "planet"
 	///The description we show on examine
 	var/desc = "A planet."
-	///The ID tag this planet uses. Depreciated
+	///The ID tag this planet uses.
 	var/planet = null
 	///The ID  tag for the set of ruins this planet uses
 	var/ruin_type = null
@@ -19,8 +19,6 @@
 	var/icon_state = "globe"
 	///The color we set the token to, note this is overridden by fancy overmaps
 	var/color = "#ffffff"
-	///Our weight when picking a new overmap object
-	var/weight = 1
 	///Do we not self destruct when a ship undocks with no players left behind?
 	var/preserve_level = FALSE
 	///The sound we play when we are landed on. Not recommended outside of stingers.
@@ -30,7 +28,10 @@
 	///Do we 'selfloop' like the overmap? Probably should only enable this on space levels
 	var/selfloop = FALSE
 	///How much of a radio message we mess up on nearby or on landed/orbitting ships
-	var/interference_power = 0
+	var/interference_power = -15
+
+	///what kind of veins spawn on this planet? Mostly a holder for drill missions.
+	var/vein_type = null
 
 
 /datum/planet_type/lava
@@ -44,13 +45,13 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/lavaland
 	ruin_type = RUINTYPE_LAVA
-	interference_power = 0
+
+	vein_type = /obj/structure/vein/lavaland
 
 	primary_ores = list(
 		/obj/item/stack/ore/iron,
 		/obj/item/stack/ore/plasma,
 		)
-	weight = 4
 
 
 /datum/planet_type/ice
@@ -65,11 +66,12 @@
 	weather_controller_type = /datum/weather_controller/snow_planet
 	ruin_type = RUINTYPE_ICE
 
+	vein_type = /obj/structure/vein/ice
+
 	primary_ores = list(\
 		/obj/item/stack/ore/iron,
 		/obj/item/stack/ore/gold,
 		)
-	weight = 4
 
 /datum/planet_type/jungle
 	name = "jungle planetoid"
@@ -82,11 +84,13 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/lush
 	ruin_type = RUINTYPE_JUNGLE
+
+	vein_type = /obj/structure/vein/jungle
+
 	primary_ores = list(\
 		/obj/item/stack/ore/gold,
 		/obj/item/stack/ore/diamond, //this isnt very common, but it's more common here than every other planet, so i list it here
 		)
-	weight = 4
 
 /datum/planet_type/rock
 	name = "rock planetoid"
@@ -99,10 +103,12 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/rockplanet
 	ruin_type = RUINTYPE_ROCK
+
+	vein_type = /obj/structure/vein/rockplanet
+
 	primary_ores = list(\
 		/obj/item/stack/ore/iron,
 		)
-	weight = 4
 
 /datum/planet_type/sand
 	name = "salty sand planetoid"
@@ -115,11 +121,13 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/desert
 	ruin_type = RUINTYPE_SAND
+
+	vein_type = /obj/structure/vein/sand
+
 	primary_ores = list(\
 		/obj/item/stack/ore/iron,
 		/obj/item/stack/ore/titanium,
 		)
-	weight = 4
 
 
 /datum/planet_type/beach
@@ -137,7 +145,6 @@
 		/obj/item/stack/ore/iron,
 		/obj/item/stack/ore/plasma,
 		)
-	weight = 4
 
 /datum/planet_type/reebe
 	name = "???"
@@ -149,7 +156,6 @@
 	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/chasm/reebe_void
 	weather_controller_type = null
-	weight = 1
 	ruin_type = RUINTYPE_YELLOW
 	interference_power = 20
 
@@ -166,7 +172,6 @@
 	default_baseturf = /turf/open/space
 	weather_controller_type = null
 	ruin_type = null // asteroid ruins when
-	weight = 3
 #ifndef RUIN_PLACEMENT_TEST
 	selfloop = TRUE
 #endif
@@ -197,7 +202,6 @@
 	planet = DYNAMIC_WORLD_SPACE_NO_RUIN
 	icon_state = "signal_strange"
 	color = null
-	weight = 0
 	mapgen = /datum/map_generator/single_turf/space
 	default_baseturf = /turf/open/space
 	weather_controller_type = null
@@ -205,7 +209,6 @@
 #ifndef RUIN_PLACEMENT_TEST
 	selfloop = TRUE
 #endif
-	weight = 3
 
 /datum/planet_type/waste
 	name = "waste disposal planetoid"
@@ -218,13 +221,11 @@
 	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/chlorine
 	ruin_type = RUINTYPE_WASTE
-	interference_power = 0
 	primary_ores = list(\
 		/obj/item/stack/ore/iron,
 		/obj/item/stack/ore/plasma,
 		/obj/item/stack/ore/uranium,
 		)
-	weight = 2
 
 
 /datum/planet_type/gas_giant
@@ -238,7 +239,6 @@
 	default_baseturf = /turf/open/chasm/gas_giant
 	weather_controller_type = null
 	ruin_type = null //it's a Gas Giant. Not Cloud fuckin City
-	weight = 2
 	preserve_level = TRUE
 	interference_power = 10
 
@@ -250,7 +250,6 @@
 	mapgen = /datum/map_generator/single_biome/plasma_giant
 	gravity = GAS_GIANT_GRAVITY
 	default_baseturf = /turf/open/chasm/gas_giant/plasma
-	weight = 1
 	icon_state = "giant"
 	preserve_level = TRUE
 	interference_power = 10
@@ -261,7 +260,6 @@
 	planet = DYNAMIC_WORLD_WATERPLANET
 	icon_state = "water"
 	color = LIGHT_COLOR_DARK_BLUE
-	weight = 2
 
 	//ruin_type = RUINTYPE_WATER
 	mapgen = /datum/map_generator/planet_generator/waterplanet
@@ -280,8 +278,6 @@
 	planet = DYNAMIC_WORLD_DESERT
 	icon_state = "desert"
 	color = "#f3c282"
-	weight = 2
-
 	//ruin_type = RUINTYPE_DESERT
 	mapgen = /datum/map_generator/planet_generator/desert
 	gravity = STANDARD_GRAVITY
@@ -297,7 +293,6 @@
 	planet = DYNAMIC_WORLD_SHROUDED
 	icon_state = "shrouded"
 	color = "#783ca4"
-	weight = 1
 
 	//ruin_type = RUINTYPE_SHROUDED
 	mapgen = /datum/map_generator/planet_generator/shrouded
@@ -318,13 +313,15 @@
 	planet = DYNAMIC_WORLD_MOON
 	icon_state = "moon"
 	color = "#d1c3c3"
-	weight = 3
+	interference_power = -5
 
 	mapgen = /datum/map_generator/planet_generator/moon
 	ruin_type = RUINTYPE_MOON
 	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/floor/plating/asteroid/moon/lit
 	weather_controller_type = null
+
+	vein_type = /obj/structure/vein/moon
 
 	primary_ores = list(\
 		/obj/item/stack/ore/iron,
@@ -337,7 +334,6 @@
 	planet = DYNAMIC_WORLD_BATTLEFIELD
 	icon_state = "battlefield"
 	color = "#b32048"
-	weight = 1
 
 	ruin_type = RUINTYPE_BATTLEFIELD // minor 'planets' have no ruins
 	mapgen = /datum/map_generator/planet_generator/battlefield
@@ -358,7 +354,6 @@
 	default_baseturf = /turf/open/floor/white/lit
 	weather_controller_type = null
 	ruin_type = null
-	weight = 0
 
 /turf/open/floor/white/lit
 	light_range = 2
@@ -381,7 +376,6 @@
 	default_baseturf = /turf/open/floor/plating/asteroid/snow/lit
 	weather_controller_type = /datum/weather_controller/snow_planet/severe
 	ruin_type = null
-	weight = 2
 
 /datum/map_generator/single_turf/snowball
 	turf_type = /turf/open/floor/plating/asteroid/snow/lit
@@ -397,7 +391,6 @@
 	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/floor/plating/asteroid/whitesands/lit
 	weather_controller_type = /datum/weather_controller/rockplanet/severe
-	weight = 2
 
 /datum/map_generator/single_turf/dustball
 	turf_type = /turf/open/floor/plating/asteroid/whitesands/lit
@@ -414,7 +407,6 @@
 	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/floor/plating/asteroid/desert/lit
 	weather_controller_type = /datum/weather_controller/rockplanet/severe
-	weight = 1
 
 /datum/map_generator/single_turf/duneball
 	turf_type = /turf/open/floor/plating/asteroid/desert/lit
@@ -430,7 +422,6 @@
 	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/floor/plating/asteroid/desert/lit
 	weather_controller_type = /datum/weather_controller/waterplanet/severe
-	weight = 1
 
 /datum/map_generator/single_turf/waterball
 	turf_type = /turf/open/water/stormy_planet_lit
