@@ -186,7 +186,6 @@
 	var/decay_chance = APC_DECAY_CHANCE
 	var/next_decay_time = APC_DECAY_TIME //Default to APC_DECAY_TIME at world start
 	var/internal_integrity //The actual internals of the APC, requires wires to repair.
-	var/quality
 
 /obj/machinery/power/apc/unlocked
 	locked = FALSE
@@ -1472,7 +1471,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	else if (last_ch != charging)
 		queue_icon_update()
 
-	// apply APC decaying after everything
+	// Poss Edit - APC Decaying
 	if(lastused_total == 0) //No power drain, no reason to trigger decay.
 		return
 	if(istype(get_area(src), /area/ship/)) //Only applies to ship areas specifically.
@@ -1486,12 +1485,12 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 					//12kw = (3+12)/1      		NOTE: 1 is poor quality, the default Crappy cell in every APC.
 					// 15 / 1 = 15 damage per tick.
 					// It would take about 15 minutes for an default APC to break running at 12kw constantly.
-				internal_integrity -= ((decay_damage + (lastused_total / 1000)) / cell.quality) //Worse qualities make the damage higher.
+				internal_integrity -= ((decay_damage + (lastused_total / 1000)) / max(1, cell.rating)) //Worse ratings make the damage higher.
 
 			else if(atom_integrity > (max_integrity * integrity_failure)) //If the APC wires are toasted, start corroding the APC itself.
 				do_sparks(4, FALSE, src) //Worse sparks! Gotta make sure this gets repaired!
 				if(atom_integrity > 0)
-					atom_integrity -= ((decay_damage + (lastused_total / 1000)) / cell.quality) //Worse qualities make the damage higher.
+					atom_integrity -= ((decay_damage + (lastused_total / 1000)) /  max(1, cell.rating)) //Worse ratings make the damage higher.
 			next_decay_time = world.time + decay_time
 
 /**
