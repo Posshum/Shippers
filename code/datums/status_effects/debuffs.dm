@@ -119,6 +119,7 @@
 	id = "sleeping"
 	alert_type = /atom/movable/screen/alert/status_effect/asleep
 	needs_update_stat = TRUE
+	tick_interval = 2 SECONDS //Poss Edit - Make sure that sleeping heals the players when they are asleep so they can recover from some minor events.
 	var/mob/living/carbon/carbon_owner
 	var/mob/living/carbon/human/human_owner
 
