@@ -3864,3 +3864,4 @@
 // END_INCLUDE
 
 //Poss Modular, do NOT include upstream.
+#include "poss_modular\game\objects\structures\flora.dm"

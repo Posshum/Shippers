@@ -181,7 +181,7 @@
 	'sound/machines/tcomms/telecomms_mid10.ogg',)
 	mid_length = 1 SECONDS
 	end_sound = 'sound/machines/tcomms/telecomms_end.ogg'
-	volume = 15 //Loud equipment...
+	volume = 18 //Loud equipment...
 	ignore_walls = FALSE
 
 /datum/looping_sound/recycler
