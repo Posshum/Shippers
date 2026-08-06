@@ -257,10 +257,19 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct/small, 28)
 	///wallmount trait
 	var/is_wallmounted = TRUE
 
+	//Possy Addition - Rare Buzzing
+	var/is_bulb_loose = FALSE //False by default, RNG dependant on initialize or on rare occasion when updating the light.
+	var/datum/looping_sound/light_buzz/soundloop
+
 /obj/machinery/light/Initialize(mapload)
 	. = ..()
+	soundloop = new(list(src), FALSE)
 	if(is_wallmounted)
 		ADD_TRAIT(src, TRAIT_WALLMOUNTED, type)
+	if(prob(1)) //1% chance at roundstart to be loose.
+		is_bulb_loose = TRUE
+	if(is_bulb_loose && on)
+		soundloop.start()
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light, 32)
 
@@ -373,6 +382,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 	if(A)
 		on = FALSE
 //		A.update_lights()
+	QDEL_NULL(soundloop)
 	QDEL_NULL(cell)
 	return ..()
 
@@ -403,6 +413,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 			on = FALSE
 	emergency_mode = FALSE
 	if(on)
+		//Possy Rare Bulb Noise
+		if(prob(0.01)) //0.01% chance to become loose during gameplay.
+			is_bulb_loose = TRUE
+		if(is_bulb_loose && !soundloop.is_playing)
+			soundloop.start()
 		var/BR = brightness
 		var/PO = bulb_power
 		var/CO = bulb_colour
@@ -435,6 +450,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 		START_PROCESSING(SSmachines, src)
 	else
 		set_light(0)
+		soundloop.stop()
 	update_appearance()
 
 	if(on != on_gs)
@@ -498,6 +514,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 			. += "The [fitting] has been smashed."
 	if(cell)
 		. += "Its backup power charge meter reads [round((cell.charge / cell.maxcharge) * 100, 0.1)]%."
+	if(is_bulb_loose) //Possy Edit - Loose Lightbulb
+		. += "The lightbulb seems loose."
 
 
 
@@ -527,6 +545,10 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 					to_chat(user, span_notice("You replace [L]."))
 				else
 					to_chat(user, span_notice("You insert [L]."))
+				if(is_bulb_loose) //Possy Edit - Buzzing Light
+					is_bulb_loose = FALSE
+					to_chat(user, span_notice("The buzzing stops."))
+					soundloop.stop()
 				status = L.status
 				switchcount = L.switchcount
 				rigged = L.rigged

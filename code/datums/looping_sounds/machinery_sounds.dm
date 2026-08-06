@@ -196,3 +196,13 @@
 	volume = 22
 	ignore_walls = FALSE
 
+/datum/looping_sound/light_buzz
+	start_sound = list('poss_modular/sounds/machinery/light_buzz/light_buzz_start.ogg')
+	mid_sounds = list('poss_modular/sounds/machinery/light_buzz/light_buzz_mid.ogg')
+	end_sound =  list('poss_modular/sounds/machinery/light_buzz/light_buzz_end.ogg')
+	start_length = 2.1 SECONDS
+	mid_length = 0.4 SECONDS
+	volume = 10 //Light is loose, fix it! Or not, it's cool either way.
+	extra_range = -9
+	ignore_walls = FALSE
+

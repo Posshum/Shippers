@@ -63,7 +63,7 @@
 	///Used to decide what the maximum time between ambience is
 	var/max_ambience_cooldown = 60 SECONDS
 
-	//
+	//Possy Addition - Dynamic Music based on area and index to customize the mood of different locations.
 	var/music_index_alive = MUSIC_GENERIC
 	var/music_index_hurt = MUSIC_HURT
 	var/music_index_unconscious = MUSIC_UNCONSCIOUS

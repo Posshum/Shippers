@@ -24,6 +24,8 @@ GLOBAL_LIST_INIT(hurt_music,list(
 	'sound/music/musichurt1.ogg',
 	'sound/music/musichurt2.ogg',
 	'sound/music/musichurt3.ogg',
+	'sound/music/musichurt4.ogg',
+	'sound/music/musichurt5.ogg',
 ))
 
 GLOBAL_LIST_INIT(unconscious_music,list(
@@ -31,6 +33,7 @@ GLOBAL_LIST_INIT(unconscious_music,list(
 	'sound/music/musicuncon2.ogg',
 	'sound/music/musicuncon3.ogg',
 	'sound/music/musicuncon4.ogg',
+	'sound/music/musicuncon5.ogg',
 ))
 
 GLOBAL_LIST_INIT(dead_music,list(

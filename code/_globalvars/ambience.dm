@@ -1,5 +1,6 @@
 //Ambience types
 
+//Possy Note - A lot of ambience has been added and tweaked overtime here, be careful when merging!
 GLOBAL_LIST_INIT(generic_ambience,list(
 	'sound/ambience/ambigen1.ogg',
 	'sound/ambience/ambigen2.ogg',
@@ -37,6 +38,7 @@ GLOBAL_LIST_INIT(holy_ambience,list(
 GLOBAL_LIST_INIT(danger_ambience,list(
 	'sound/ambience/ambidanger.ogg',
 	'sound/ambience/ambidanger2.ogg',
+	'sound/ambience/ambidanger3.ogg',
 ))
 
 GLOBAL_LIST_INIT(ruins_ambience,list(
@@ -209,6 +211,10 @@ GLOBAL_LIST_INIT(rare_generic_ambience,list(
 GLOBAL_LIST_INIT(bridge_ambience,list(
 	'sound/ambience/ambirare1.ogg',))
 
+GLOBAL_LIST_INIT(hangar_ambience,list(
+	'sound/ambience/ambihangar1.ogg',
+	))
+
 GLOBAL_LIST_INIT(ambience_assoc,list(
 	AMBIENCE_AWAY = GLOB.away_ambience,
 	AMBIENCE_DANGER = GLOB.danger_ambience,
@@ -229,4 +235,5 @@ GLOBAL_LIST_INIT(ambience_assoc,list(
 	AMBIENCE_BRIDGE = GLOB.bridge_ambience,
 	AMBIENCE_RARE = GLOB.rare_generic_ambience,
 	AMBIENCE_WASTE = GLOB.waste_ambience,
+	AMBIENCE_HANGAR = GLOB.hangar_ambience,
 ))

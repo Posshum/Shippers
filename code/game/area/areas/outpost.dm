@@ -265,6 +265,9 @@
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	has_gravity = STANDARD_GRAVITY
+	ambience_index = AMBIENCE_HANGAR //Possy Hangar Ambience addition, shorter time to make sure hangar isn't as quiet.
+	min_ambience_cooldown = 90 //At least 1:30 min between each noise.
+	max_ambience_cooldown = 120
 
 	power_equip = TRUE // provided begrudgingly, mostly for mappers
 	power_light = TRUE

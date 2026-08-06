@@ -37,6 +37,10 @@
 
 	var/previous_icon_state
 
+	//Possy Addition - Advertiser jingles when swapping to a new ad.
+	var/list/advert_jingles = list('poss_modular/sounds/machinery/holosign/advert_jingle_1.ogg', 'poss_modular/sounds/machinery/holosign/advert_jingle_2.ogg',
+	'poss_modular/sounds/machinery/holosign/advert_jingle_3.ogg')
+
 /obj/machinery/holosign/Initialize()
 	. = ..()
 	if(random_type)
@@ -84,6 +88,8 @@
 	desc_add = selected::desc_add
 	overlay_state = selected::icon_state
 	light_color = selected::light_color
+	//Possy Addition - Advert Jingle when swapping to a new advert.
+	playsound(src, pick(advert_jingles), 15, FALSE, -2)
 	update_light()
 	update_appearance()
 

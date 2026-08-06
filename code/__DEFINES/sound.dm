@@ -38,6 +38,7 @@
 
 #define AMBIENCE_GENERIC "generic"
 #define AMBIENCE_RARE "rare"
+#define AMBIENCE_HANGAR "hangar"
 
 #define AMBIENCE_HOLY "holy"
 #define AMBIENCE_DANGER "danger"
