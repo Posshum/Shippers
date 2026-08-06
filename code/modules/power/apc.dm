@@ -832,6 +832,10 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 24)
 		if(allowed(usr) && !wires.is_cut(WIRE_IDSCAN) && !malfhack)
 			locked = !locked
 			to_chat(user, span_notice("You [ locked ? "lock" : "unlock"] the APC interface."))
+			if(locked)//Possy Edit - Add lock and unlock sounds.
+				playsound(src, 'poss_modular/sounds/machinery/ID_LOCK.ogg', 33, FALSE, -2)
+			else
+				playsound(src, 'poss_modular/sounds/machinery/ID_UNLOCK.ogg', 33, FALSE, -2)
 			update_appearance()
 			updateUsrDialog()
 		else
