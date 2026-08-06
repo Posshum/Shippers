@@ -24,7 +24,7 @@
 
 //Trees can be destroyed if they are pushed too hard.
 /obj/structure/flora/proc/wobble(power, atom/movable/wobbler = null)
-	var/wobble_amount = clamp(rand(1, power * 7.5), 0, 100) / 25 //Very little animation.
+	var/wobble_amount = clamp(rand(1, power * 20), 0, 100) / 15 //Very little animation.
 	var/wobble_dir = wobbler ? get_dir(src, wobbler) : pick(GLOB.alldirs)
 	var/wobble_x = 0
 	var/wobble_y = 0

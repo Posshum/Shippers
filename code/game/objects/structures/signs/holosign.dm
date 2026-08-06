@@ -52,6 +52,8 @@
 	AddElement(/datum/element/beauty, 300)
 
 /obj/machinery/holosign/proc/do_switch_advert()
+	//Possy Addition - Advert Jingle when swapping to a new advert.
+	playsound(src, pick(advert_jingles), 23, FALSE, ignore_walls = FALSE)
 	change_to_poster(/obj/machinery/holosign/switchadvert)
 	addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/machinery/holosign, randomise)), 2 SECONDS)
 
@@ -88,8 +90,6 @@
 	desc_add = selected::desc_add
 	overlay_state = selected::icon_state
 	light_color = selected::light_color
-	//Possy Addition - Advert Jingle when swapping to a new advert.
-	playsound(src, pick(advert_jingles), 15, FALSE, -2)
 	update_light()
 	update_appearance()
 

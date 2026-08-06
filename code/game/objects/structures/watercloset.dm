@@ -103,6 +103,10 @@
 			w_items -= I.w_class
 	else
 		open = !open
+		if(open) //Possy Add - Lid Noises.
+			playsound(src, 'poss_modular/sounds/machinery/toilet/toilet_lid_open.ogg', 15, FALSE, -8, ignore_walls = FALSE)
+		else
+			playsound(src, 'poss_modular/sounds/machinery/toilet/toilet_lid_close.ogg', 15, FALSE, -8, ignore_walls = FALSE)
 		update_appearance()
 
 

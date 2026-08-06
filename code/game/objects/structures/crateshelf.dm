@@ -148,6 +148,7 @@
 		if(ismob(user))
 			balloon_alert(user, "shelf full!")
 		return FALSE
+	playsound(src, 'poss_modular/sounds/machinery/foley/crateshelf/crate_load.ogg', 10, FALSE, -9) //Possy Addition
 	if(!user || do_after(user, use_delay, target = crate)) // Skip do_after if called with no mob
 		if(shelf_contents[next_free] != null)
 			return FALSE // Something has been added to the shelf while we were waiting, abort!
@@ -171,6 +172,7 @@
 	if(!unload_turf.Enter(crate, no_side_effects = TRUE)) // If moving the crate from the shelf to the desired turf would bump, don't do it! Thanks Kapu1178 for the help here. - Generic DM
 		unload_turf.balloon_alert(user, "no room!")
 		return FALSE
+	playsound(src, 'poss_modular/sounds/machinery/foley/crateshelf/crate_unloading.ogg', 10, FALSE, -9) //Possy Addition
 	if(do_after(user, use_delay, target = crate))
 		if(!shelf_contents.Find(crate))
 			return FALSE // If something has happened to the crate while we were waiting, abort!
