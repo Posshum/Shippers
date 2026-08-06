@@ -1,0 +1,6 @@
+This .txt is a personal biography of sorts or whatever, some insight to the project and how I feel about SS13 in 6 years that I have been invested in it.
+
+This folder is effectively all of my personal changes that I made to this fork of Shiptest. In the future, this may be renamed, and the purpose of this .txt
+is to serve as historical evidence of my works, starting at 5:00PM of 8/5/2026.
+
+I hope you enjoy, whoever you are, if you somehow find this!

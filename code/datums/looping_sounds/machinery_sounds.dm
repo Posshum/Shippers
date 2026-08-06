@@ -171,8 +171,12 @@
 /datum/looping_sound/telecomms
 	start_sound = 'sound/machines/tcomms/telecomms_start.ogg'
 	start_length = 1 SECONDS
-	mid_sounds = list('sound/machines/tcomms/telecomms_mid1.ogg','sound/machines/tcomms/telecomms_mid2.ogg','sound/machines/tcomms/telecomms_mid3.ogg',
-	'sound/machines/tcomms/telecomms_mid4.ogg','sound/machines/tcomms/telecomms_mid5.ogg','sound/machines/tcomms/telecomms_mid6.ogg',
+	mid_sounds = list(
+	//'sound/machines/tcomms/telecomms_mid1.ogg',
+	//'sound/machines/tcomms/telecomms_mid2.ogg',
+	//'sound/machines/tcomms/telecomms_mid3.ogg', Keep these 4 out to help reduce on the "Scree, Scree, Scree" effect of Tcomms, it does get annoying.
+	//'sound/machines/tcomms/telecomms_mid4.ogg',
+	'sound/machines/tcomms/telecomms_mid5.ogg','sound/machines/tcomms/telecomms_mid6.ogg',
 	'sound/machines/tcomms/telecomms_mid7.ogg','sound/machines/tcomms/telecomms_mid8.ogg','sound/machines/tcomms/telecomms_mid9.ogg',
 	'sound/machines/tcomms/telecomms_mid10.ogg',)
 	mid_length = 1 SECONDS
