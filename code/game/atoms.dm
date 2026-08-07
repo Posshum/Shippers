@@ -1388,6 +1388,14 @@
 
 ///Welder act
 /atom/proc/welder_act(mob/living/user, obj/item/I, list/modifiers)
+	if(user.is_blind()) //Possy Edit - If you are blind, and are welding, you may burn your hand. Sparks, excess heat, keeping the target welding atom stable, etc.
+		if(prob(66)) // 1/3 chance to not hurt you, some grace for those in primitive scenarios.
+			to_chat(user, span_warning("You burn your hand a little while welding."))
+			if(ishuman(user))
+				var/mob/living/carbon/human/H = user
+				var/obj/item/bodypart/affecting = H.get_bodypart("[(user.active_hand_index % 2 == 0) ? "r" : "l" ]_arm")
+				if(affecting && affecting.receive_damage(0, 5))		// 5 burn damage, just like lightbulbs.
+					H.update_damage_overlays()
 	return SEND_SIGNAL(src, COMSIG_ATOM_WELDER_ACT, user, I)
 
 ///Analyzer act

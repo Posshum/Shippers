@@ -272,6 +272,18 @@
 	layer = OBJ_LAYER //To display the decal over wires.
 	beauty = -150
 
+//Possy Add - Fly Soundloop for decaying garbage...
+	var/datum/looping_sound/fly_swarm/soundloop
+
+/obj/effect/decal/cleanable/garbage/Initialize(mapload, list/datum/disease/diseases)
+	. = ..()
+	soundloop = new(list(src), FALSE)
+	soundloop.start()
+
+/obj/effect/decal/cleanable/garbage/Destroy(force)
+	. = ..()
+	QDEL_NULL(soundloop)
+
 /obj/effect/decal/cleanable/squid_ink
 	name = "squid ink"
 	desc = "A puddle of slippery squid ink."

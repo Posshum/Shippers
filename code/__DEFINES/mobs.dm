@@ -243,8 +243,8 @@
 #define NUTRITION_LEVEL_HUNGRY 250
 #define NUTRITION_LEVEL_STARVING 150
 
-#define NUTRITION_LEVEL_START_MIN 250
-#define NUTRITION_LEVEL_START_MAX 400
+#define NUTRITION_LEVEL_START_MIN 400 //Possy Edit - Don't spawn us hungry. We'll become hungry.
+#define NUTRITION_LEVEL_START_MAX 500
 
 //Disgust levels for humans
 #define DISGUST_LEVEL_MAXEDOUT 200
