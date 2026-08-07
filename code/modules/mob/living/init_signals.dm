@@ -218,14 +218,14 @@
 		return
 	else //If we don't have one? Make one.
 		combat_timer_id = addtimer(CALLBACK(src, PROC_REF(exit_combat_mode)), 5 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE) //5 Seconds, just in case you or a friend accidentally whacked you.
-		SEND_SOUND(src, sound('sound/effects/combat_mode_stinger_start.ogg', volume = 50))
+		SEND_SOUND(src, sound('sound/effects/combat_mode_stinger_start.ogg', volume = 25))
 
 /mob/living/proc/exit_combat_mode()
 	if(usr)
 		usr.in_combat = FALSE
 	in_combat = FALSE
 	//wince_check = TRUE
-	SEND_SOUND(src, sound('sound/effects/combat_mode_stinger_end.ogg', volume = 75)) //Louder because this is a bit quieter than the bassy BOOM as the stinger start.
+	SEND_SOUND(src, sound('sound/effects/combat_mode_stinger_end.ogg', volume = 33)) //Louder because this is a bit quieter than the bassy BOOM as the stinger start.
 	if(combat_timer_id != null) //Del it early if this signal is called if it didnt already finish.
 		deltimer(combat_timer_id)
 		combat_timer_id = null
