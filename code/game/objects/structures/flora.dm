@@ -159,7 +159,7 @@
 /obj/structure/flora/tree/palm/Initialize()
 	. = ..()
 	icon_state = pick("palm1","palm2")
-	pixel_x = 0
+	//pixel_x = 0 //Possy Edit
 
 /obj/structure/festivus
 	name = "festivus pole"

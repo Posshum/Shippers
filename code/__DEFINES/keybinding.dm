@@ -78,6 +78,9 @@
 #define COMSIG_KB_MOB_TARGETLEFTLEG_DOWN "keybinding_mob_targetleftleg_down"
 #define COMSIG_KB_MOB_PIXELSHIFT_DOWN "keybinding_mob_pixelshift_down"
 
+#define COMSIG_KB_MOB_TARGETCYCLEWHOLEBODYLOWER_DOWN "keybinding_mob_targetcyclewholebodylower_down" //Poss Addition - Page Up and Page Down cycles the body zone.
+#define COMSIG_KB_MOB_TARGETCYCLEWHOLEBODYUP_DOWN "keybinding_mob_targetcyclewholebodyup_down"
+
 //Robot
 #define COMSIG_KB_SILICON_TOGGLEMODULEONE_DOWN "keybinding_silicon_togglemoduleone_down"
 #define COMSIG_KB_SILICON_TOGGLEMODULETWO_DOWN "keybinding_silicon_togglemoduletwo_down"
