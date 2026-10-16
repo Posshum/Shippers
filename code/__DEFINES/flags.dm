@@ -96,6 +96,10 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define UNIQUE_AREA (1<<7)
 ///Refers to ship areas with docking ports, telling the smoothing subsytem to only smooth tiles within the same ship.
 #define SHIP_SMOOTHING (1<<8)
+/// If false, allows light bulbs and light tubes to randomly break upon late initialization
+#define NO_RANDOM_LIGHT_BREAKAGE (1<<9)
+/// Whether lights in this area have a randomised delay for turning on
+#define STAGGER_LIGHTS (1<<10)
 
 /*
 	These defines are used specifically with the atom/pass_flags bitmask

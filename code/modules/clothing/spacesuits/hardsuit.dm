@@ -707,7 +707,7 @@
 	slowdown = 1
 	armor = list("melee" = 30, "bullet" = 40, "laser" = 10, "energy" = 20, "bomb" = 100, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 80, "wound" = 40)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/bomb
-	supports_variations = VOX_VARIATION
+	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION
 
 /obj/item/clothing/suit/space/hardsuit/bomb/Initialize()
 	. = ..()
@@ -1107,6 +1107,25 @@
 	hardsuit_type = "independent-sec"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 20, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 20)
+	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION
+
+/obj/item/clothing/head/helmet/space/hardsuit/security/independent/heavy
+	name = "Bullshark marine hardsuit helmet"
+	desc = "A four-camera setup fashioned onto a thick plasteel helmet. Your breath echoes in it, leaving a lingering sense of claustrophobia."
+	icon_state = "hardsuit0-indieheavy"
+	item_state = "hardsuit0-indieheavy"
+	hardsuit_type = "indieheavy"
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 35,"energy" = 40, "bomb" = 30, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 35)
+	supports_variations = VOX_VARIATION | SNOUTED_VARIATION
+
+/obj/item/clothing/suit/space/hardsuit/security/independent/heavy
+	name = "Bullshark marine hardsuit"
+	desc = "An outdated heavy hardsuit originating from Lanchester. Due to its thick plating for an open-market approved hardsuit, it finds itself in many mercenary groups and police teams focusing on EVA operations."
+	icon_state = "hardsuit-indieheavy"
+	item_state = "hardsuit-indieheavy"
+	hardsuit_type = "indieheavy"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent/heavy
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 40, "bomb" = 30, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75, "wound" = 35)
 	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION
 
 //Mining

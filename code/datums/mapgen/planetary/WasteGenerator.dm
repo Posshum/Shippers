@@ -143,7 +143,7 @@
 		/mob/living/basic/hivebot/rapid = 15,
 		/mob/living/basic/hivebot/strong = 10,
 		//bots, are hostile
-		/mob/living/simple_animal/bot/firebot/rockplanet = 15,
+		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
 		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
 		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
 		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
@@ -263,8 +263,8 @@
 		/mob/living/basic/hivebot/ranged = 15,
 		/mob/living/basic/hivebot/mechanic = 15,
 		/mob/living/basic/hivebot/strong = 10,
-		/mob/living/basic/hivebot/rapid = 10,
-		/mob/living/simple_animal/bot/firebot/rockplanet = 15,
+		/mob/living/basic/hivebot/ranged = 20,
+		/mob/living/basic/hivebot/rapid = 20,
 		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
 		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
 		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
@@ -328,14 +328,11 @@
 		/obj/effect/spawner/random/anomaly/waste/cave = 1,
 	)
 	mob_spawn_list = list(
-		//hivebots, they're finally difficult.
-		/mob/living/basic/hivebot = 40,
-		/mob/living/basic/hivebot/ranged = 30,
-		/mob/living/basic/hivebot/mechanic = 25,
-		/mob/living/basic/hivebot/rapid = 15,
-		/mob/living/basic/hivebot/strong = 10,
-		//bots, are hostile
-		/mob/living/simple_animal/bot/firebot/rockplanet = 15,
+		/mob/living/basic/hivebot = 50,
+		/mob/living/basic/hivebot/strong = 20,
+		/mob/living/basic/hivebot/ranged = 40,
+		/mob/living/basic/hivebot/rapid = 30,
+		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
 		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
 		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
 		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
@@ -421,14 +418,10 @@
 		/obj/effect/spawner/random/mine = 8,
 	)
 	mob_spawn_list = list(
-		//hivebots, they're finally difficult.
-		/mob/living/basic/hivebot = 40,
-		/mob/living/basic/hivebot/ranged = 30,
-		/mob/living/basic/hivebot/mechanic = 25,
-		/mob/living/basic/hivebot/rapid = 15,
-		/mob/living/basic/hivebot/strong = 10,
-		//bots, are hostile
-		/mob/living/simple_animal/bot/firebot/rockplanet = 15,
+		/mob/living/basic/hivebot/strong = 20,
+		/mob/living/basic/hivebot/ranged = 50,
+		/mob/living/basic/hivebot/rapid = 50,
+		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
 		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
 		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
 		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
@@ -494,14 +487,11 @@
 		/obj/effect/spawner/random/waste/salvageable = 40,
 	)
 	mob_spawn_list = list(
-		//hivebots, they're finally difficult.
-		/mob/living/basic/hivebot = 40,
-		/mob/living/basic/hivebot/ranged = 30,
-		/mob/living/basic/hivebot/mechanic = 25,
-		/mob/living/basic/hivebot/rapid = 15,
-		/mob/living/basic/hivebot/strong = 10,
-		//bots, are hostile
-		/mob/living/simple_animal/bot/firebot/rockplanet = 15,
+		/mob/living/basic/hivebot = 80,
+		/mob/living/basic/hivebot/strong = 80,
+		/mob/living/basic/hivebot/ranged = 50,
+		/mob/living/basic/hivebot/rapid = 50,
+		/mob/living/simple_animal/bot/secbot/ed209/rockplanet = 3,
 		/mob/living/simple_animal/hostile/abandoned_minebot = 15,
 		/mob/living/simple_animal/bot/floorbot/rockplanet = 15,
 		/obj/structure/spawner/hivebot = 15

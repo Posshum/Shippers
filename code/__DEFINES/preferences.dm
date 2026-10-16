@@ -128,7 +128,7 @@
 
 //Limbs stuff
 #define PROSTHETIC_NORMAL "normal"
-#define PROSTHETIC_AMPUTATED "amputated"
+#define PROSTHETIC_NONE "none"
 #define PROSTHETIC_ROBOTIC "prosthetic"
 
 /// You cannot speak or understand this language whatsoever.

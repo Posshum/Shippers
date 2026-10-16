@@ -306,3 +306,13 @@
 	description = span_warning("I'VE JUST BEEN SHOT!")
 	mood_change = -20 //It fucking hurts.
 	timeout = 3 MINUTES //Leaves some good trauma. Yummy.
+
+/datum/mood_event/synthfleshOD
+	mood_change = -20
+	description = span_boldwarning("I JUST THREW UP MY OWN BLOOD AND FLESH!!")
+	timeout = 5 MINUTES
+
+/datum/mood_event/synthfleshminor
+	mood_change = -3
+	description = span_warning("...I don't think I should be coughing up blood")
+	timeout = 5 MINUTES
