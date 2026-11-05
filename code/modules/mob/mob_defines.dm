@@ -229,9 +229,6 @@
 	/// The overlay currently being shown as the typing indicator, so we cut can the same overlay applied
 	var/mutable_appearance/bubble_overlay
 
-	/// The overlay currently being shown as the typing indicator, so we cut can the same overlay applied
-	var/mutable_appearance/bubble_overlay
-
 	/// The mob's current tone indicator.
 	var/mutable_appearance/tone_indicator
 
